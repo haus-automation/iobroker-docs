@@ -20,7 +20,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = u'ioBroker documentation (UNOFFICIAL)'
+project = u'ioBroker Dokumentation (UNOFFICIAL)'
 copyright = u'2021, Matthias Kleine'
 author = u'Matthias Kleine'
 
