@@ -13,6 +13,18 @@ Willkommen auf den Seiten der **inoffiziellen** ioBroker-Dokumentation. Diese Do
 
 **Die Dokumentation ist ausschließlich auf Deutsch verfügbar.**
 
+Was ist der ioBroker?
+---------------------
+
+Wie der Name schon vermuten lässt, handelt es sich beim ioBroker um eine Software-Lösung, welche es ermöglicht, verschiedene Smart-Home Systeme miteinander zu verknüpfen und zwischen diesen Systemen zu vermitteln. Aktuell können über 250 verschiedene Systeme integriert werden.
+
+So kann man zum Beispiel Geräte mit Alexa ansteuern, welche selbst keine Alexa-Integration bieten. Gleiches gilt für HomeKit oder auch Google Home. Aber auch ohne Cloud-Lösungen im rein lokalen Betrieb macht der ioBroker Sinn. Du möchtest auf einem KNX-Taster die Leistung der per Modbus angebundenen PV-Anlage sehen? Kein Problem. Du möchtest mit einem Philips Hue Button einen HomeMatic-Aktor ansteuern? Auch kein Problem.
+
+**Je länger Du mit ioBroker arbeitest, desto mehr Möglichkeiten wirst Du entdecken!** Es lässt sich nahezu jede Lösung anbinden, welche eine Schnittstelle bereitstellt. Der ioBroker steht dann praktisch in der Mitte all dieser Systeme und vermittelt - daher auch der Name **io** (input / output) **Broker** (Vermittler).
+
+.. note::
+    ioBroker ist eine reine Software-Lösung, welche über viele Interfaces/Schnittstellen und Protokollen mit unterschiedlicher Hardware und Software kommunizieren kann.
+
 .. Contents:
 
 .. toctree::

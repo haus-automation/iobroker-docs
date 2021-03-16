@@ -5,6 +5,9 @@ Hardware
 
 Generell lässt sich der ioBroker auf jedem Betriebssystem installieren, auf welchem auch `nodejs <https://nodejs.org/en/>`_ läuft.
 
+.. tip::
+    Achte auf den Energiebedarf Deiner eingesetzten Hardware. ioBroker macht nur Sinn, wenn die Anwendung rund um die Uhr (24/7) verfügbar ist und läuft. Selbst wenige Watt machen über das gesamte Jahr betrachtet einen Unterschied.
+
 Raspberry Pi
 ------------
 

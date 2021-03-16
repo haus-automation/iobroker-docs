@@ -10,8 +10,8 @@ Fertige Images
 
 In der Vergangenheit wurden z.B. für den Raspberry Pi fertige Images angeboten, welche aber heute nicht mehr verwendet werden sollten.
 
-Manuelle Installation
----------------------
+Manuelle Installation (Linux)
+-----------------------------
 
 Unter Linux lässt sich der ioBroker mit nur einem einzigen Befehl installieren:
 
