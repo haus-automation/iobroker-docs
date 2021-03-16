@@ -7,7 +7,7 @@ ioBroker documentation (UNOFFICIAL)
 ===================================
 
 .. tip::
-    Diese Dokumentation ist Open Source und hier zu finden: `GitHub <https://github.com/haus-automation/iobroker-docs>`__. Falls Du einen Fehler findest oder Informationen hinzufügen möchtest, füge gerne neue Inhalte hinzu!
+    Diese Dokumentation ist Open Source und hier zu finden: `GitHub <https://github.com/haus-automation/iobroker-docs>`__. Falls Du einen Fehler findest oder Inhalte ergänzen möchtest, bist Du herzlich dazu eingeladen!
 
 .. Contents:
 
@@ -16,3 +16,6 @@ ioBroker documentation (UNOFFICIAL)
     :caption: Installation
 
     getting-started/installation
+
+.. image:: https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png
+   :target: https://haus-automatisierung.com/iobroker-kurs/
