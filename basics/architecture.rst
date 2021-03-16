@@ -39,6 +39,9 @@ Nehmen wir mal das Beispiel Textverarbeitung. Microsoft Word ist also der Adapte
 
 Warum sollte man mehrere Instanzen für Adapter erstellen? In der Regel kommt das nicht vor. Aber angenommen Du hast mehrere Hue-Bridges von Philips. Dann würde jede Instanz die Kommunikation mit einer Hue-Bridge übernehmen. Du bräuchtest also genauso viele Instanzen des Hue-Adapters wie Du Hue-Bridges zu Hause hast.
 
+.. image:: /images/ioBrokerDoku-Adapter.png
+    :alt: js-controller Adapter
+
 js-controller
 -------------
 
