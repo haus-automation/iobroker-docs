@@ -1,0 +1,15 @@
+# .readthedocs.yaml
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+version: 2
+
+sphinx:
+  configuration: conf.py
+
+formats:
+  - epub
+  - pdf
+
+python:
+  version: 3.7
