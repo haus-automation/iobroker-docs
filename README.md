@@ -1,3 +1,5 @@
+![ioBroker](logo.png)
+
 # ioBroker documentation (UNOFFICIAL)
 
 This is the repository for the german ioBroker documentation available [here](https://iobroker.readthedocs.io/de/latest/).
