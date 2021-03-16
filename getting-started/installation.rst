@@ -3,7 +3,7 @@
 Installation
 ============
 
-Generell lässt sich der ioBroker auf jedem Betriebssystem installieren, auf welchem auch `nodejs <https://nodejs.org/en/>`_. läuft.
+Generell lässt sich der ioBroker auf jedem Betriebssystem installieren, auf welchem auch `nodejs <https://nodejs.org/en/>`_ läuft.
 
 Fertige Images
 --------------

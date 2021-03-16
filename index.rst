@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-ioBroker Dokumentation (UNOFFICIAL)
-===================================
+ioBroker Dokumentation
+======================
 
 .. tip::
     Diese Dokumentation ist Open Source und hier zu finden: `GitHub <https://github.com/haus-automation/iobroker-docs>`_. Falls Du einen Fehler findest oder Inhalte ergänzen möchtest, bist Du herzlich dazu eingeladen!
@@ -21,6 +21,12 @@ Willkommen auf den Seiten der inoffiziellen ioBroker-Dokumentation. Diese Dokume
 
     getting-started/hardware
     getting-started/installation
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Architektur
+
+    basics/architecture
 
 .. image:: https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png
     :target: https://haus-automatisierung.com/iobroker-kurs/

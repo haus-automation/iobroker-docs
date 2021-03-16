@@ -3,7 +3,7 @@
 Hardware
 ========
 
-Generell lässt sich der ioBroker auf jedem Betriebssystem installieren, auf welchem nodejs läuft.
+Generell lässt sich der ioBroker auf jedem Betriebssystem installieren, auf welchem auch `nodejs <https://nodejs.org/en/>`_ läuft.
 
 Raspberry Pi
 ------------
@@ -38,7 +38,8 @@ Micro SD-Karte
 
 ** Link zu einer Produktempfehlung - Natürlich empfehle ich Dir nur Produkte, welche ich selbst gekauft habe und ebenfalls gerne verwende. Wenn Du über einen dieser Links etwas kaufst, bekomme ich eine Provision vom Shop (Affiliate-Link).
 
-**Verwende als Image auf jeden Fall Raspberry Pi OS Lite und NICHT die Desktop-Version.** Warum? Weil die Desktop-Variante viel mehr Ressourcen braucht und extrem viel Overhead mitbringt, welcher nicht gebraucht wird. Die Desktop-Version ist nur erforderlich, wenn Du eine Maus, Tastatur und einen Monitor direkt an dem Raspberry Pi anschließen möchtest um diesen (wie der Name sagt) als Desktop-Computer zu verwenden.
+.. tip::
+    Verwende als Image auf jeden Fall Raspberry Pi OS Lite und NICHT die Desktop-Version. Warum? Weil die Desktop-Variante viel mehr Ressourcen braucht und extrem viel Overhead mitbringt, welcher nicht gebraucht wird. Die Desktop-Version ist nur erforderlich, wenn Du eine Maus, Tastatur und einen Monitor direkt an dem Raspberry Pi anschließen möchtest um diesen (wie der Name sagt) als Desktop-Computer zu verwenden.
 
 Wie genau ein Raspberry Pi 4 für die Installation von ioBroker vorbereitet wird, erfährst Du in diesem Video:
 
