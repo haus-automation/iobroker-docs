@@ -3,18 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ioBroker documentation (UNOFFICIAL)'s documentation!
-===============================================================
+ioBroker documentation (UNOFFICIAL)
+===================================
+
+.. tip::
+    Diese Dokumentation ist Open Source und hier zu finden: `GitHub <https://github.com/haus-automation/iobroker-docs>`__. Falls Du einen Fehler findest oder Informationen hinzufügen möchtest, füge gerne neue Inhalte hinzu!
+
+.. Contents:
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
+    :caption: Installation
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+    getting-started/installation

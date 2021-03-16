@@ -3,12 +3,16 @@
 Installation
 ============
 
-Generell lässt sich der ioBroker auf jedem Betriebssystem installieren.
+Generell lässt sich der ioBroker auf jedem Betriebssystem installieren, auf welchem nodejs läuft.
 
 Hardware
 --------
 
-Raspberry Pi 4
+Als einfachster Einstieg in die ioBroker-Welt wird nach wie vor der Raspberry Pi empfohlen. Dabei handelt es sich um einen kleinen Einplatinen-Computer, welcher sehr klein ist, wenig Leistung im Dauerbetrieb benötigt und ausreichend Leistung für den Betrieb von ioBroker bietet.
+
+Mit der Version 4 des Raspberry Pi wurden erstmals Modelle mit mehr als 1 GB Arbeitsspeicher vorgestellt. Da der ioBroker beim Betrieb mehrerer Adapter relativ viel Arbeitsspeicher benötigt, ist ein System mit mindestens 2 GB RAM empfohlen. Die Variante mit 4 GB oder 8 GB bietet noch einmal deutlich mehr Reserven.
+
+Raspberry Pi 4 (mindestens 2 GB RAM, besser 4 GB)
 
 - `Reichelt ** <https://haus-auto.com/p/rei/RaspberryPi4>`_
 - `Amazon ** <https://haus-auto.com/p/amz/RaspberryPi4>`_
@@ -34,8 +38,13 @@ Micro SD-Karte
 
 ** Link zu einer Produktempfehlung - Natürlich empfehle ich Dir nur Produkte, welche ich selbst gekauft habe und ebenfalls gerne verwende. Wenn Du über einen dieser Links etwas kaufst, bekomme ich eine Provision vom Shop (Affiliate-Link).
 
-Installation
-============
+Fertige Images
+--------------
+
+In der Vergangenheit wurden z.B. für den Raspberry Pi fertige Images angeboten, welche aber heute nicht mehr verwendet werden sollten.
+
+Manuelle Installation
+---------------------
 
 Unter Linux lässt sich der ioBroker mit nur einem einzigen Befehl installieren:
 
