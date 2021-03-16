@@ -51,5 +51,5 @@ Genauso können sich Instanzen beim `js-controller` registrieren, dass diese bes
 .. note::
     Falls Du einige Begriffe hier noch nicht verstanden haben solltest, werden diese in den anderen Grundlagen-Dokumentation noch im Detail erklärt!
 
-.. image:: images/ioBrokerDoku-Instanzen.png
+.. image:: /images/ioBrokerDoku-Instanzen.png
     :alt: js-controller Instanzen

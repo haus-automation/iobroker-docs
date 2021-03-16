@@ -23,7 +23,7 @@ So kann man zum Beispiel Geräte mit Alexa ansteuern, welche selbst keine Alexa-
 **Je länger Du mit ioBroker arbeitest, desto mehr Möglichkeiten wirst Du entdecken!** Es lässt sich nahezu jede Lösung anbinden, welche eine Schnittstelle bereitstellt. Der ioBroker steht dann praktisch in der Mitte all dieser Systeme und vermittelt - daher auch der Name **io** (input / output) **Broker** (Vermittler).
 
 .. note::
-    ioBroker ist eine reine Software-Lösung, welche über viele Interfaces/Schnittstellen und Protokollen mit unterschiedlicher Hardware und Software kommunizieren kann.
+    ioBroker ist eine reine Software-Lösung, welche über viele Interfaces/Schnittstellen und diversen Protokollen mit unterschiedlicher Hardware und Software kommunizieren kann.
 
 .. Contents:
 
