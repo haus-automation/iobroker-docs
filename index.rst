@@ -17,14 +17,14 @@ Willkommen auf den Seiten der inoffiziellen ioBroker-Dokumentation. Diese Dokume
 
 .. toctree::
     :maxdepth: 2
-    :caption: Grundlagen
+    :caption: Erste Schritte
 
     getting-started/hardware
     getting-started/installation
 
 .. toctree::
     :maxdepth: 2
-    :caption: Architektur
+    :caption: Grundlagen
 
     basics/architecture
 
