@@ -13,7 +13,8 @@ Objekt
 
 Ein Objekt beschreibt, welche Informationen genau gespeichert werden können. Es handelt sich bei einem Objekt hauptsächlich Meta-Informationen, welche den Datenpunkt beschreiben. Das sind zum Beispiel:
 
-- Typ (channel, state, ...)
+- ``_id`` - Eindeutige **ID**
+- ``type``- Typ des Objektes (device, channel, state, ...)
 - Name
 - Einheit (z.B. °C oder kWh)
 - Beschreibung
@@ -35,6 +36,8 @@ So wird eine logische Hierarchie aufgebaut. Stell Dir das wie deine Urlaubsfotos
 
 .. image:: /images/ioBrokerDoku-ObjektHierarchie.png
     :alt: Objekt-Hierarchie
+
+Die **ID** ist dabei ein eindeutiger Schlüssel zu einem Objekt. Dieser ist vergleichbar mit dem absoluten Pfad in einem Dateisystem, welcher zu genau einem Ziel führt. In der obigen Grafik siehst Du die verschiedenen IDs einiger Datenpunkte. Über diese ID kommunizierst Du mit dem Objekt.
 
 Objekte werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgelegt:
 
@@ -96,14 +99,14 @@ Löschst Du die Instanz, wird der Namespace ebenfalls gelöscht.
 Weiterhin gibt es den (reservierten) Namespace ``system.`` für das System. Dort ist unter anderem folgendes enthalten:
 
 - ``system.config`` - Systemkonfiguration (Sprache, Datumsformat, Verwahrungsort, ...)
-- ``system.host.<hostname>``` - js-controller-Prozess
+- ``system.host.<hostname>``` - js-controller-Prozess (Uptime, Ressourcen, ...)
 - ``system.repositories`` - Liste der vefügbaren Adpater
 - ``system.certificates`` - Konfigurierte Zertifikate
-- ``system.meta.`` - Meta-Informationen des Systems
-- ``system.user.`` - Benutzer
-- ``system.group.`` - Benutzer-Gruppen
-- ``system.adapter.<adapter-name>`` - default config of an adapter
-- ``system.adapter.<adapter-name>.<instance-nummmer>`` - Informationen zur Instanz (Uptime, Ressourcen, ...)
+- ``system.meta.`` - Meta-Informationen
+- ``system.user.`` - Alle Benutzer des Systems
+- ``system.group.`` - Alle Benutzer-Gruppen des Systems
+- ``system.adapter.<adapter-name>`` - Standard-Konfiguration des Adapters für neue Instanzen
+- ``system.adapter.<adapter-name>.<instance-nummmer>`` - Informationen zur einzelnen Instanz (Uptime, Ressourcen, ...)
 
 .. danger::
     Ändere keine Informationen in dem System-Namespace, wenn Du nicht genau weißt, was Du da tust. Als normaler Anwender gibt es keinen Grund, dort etwas ändern. Diese Informationen sind nur für Entwickler relevant!
