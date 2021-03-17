@@ -5,20 +5,20 @@ Architektur
 
 Der ioBroker ist modular aufgebaut und besteht aus mehreren Komponenten. In der Mitte finden wir das Herzstück des Systems: Den `js-controller`.
 
-Dieser Controller verwaltet alles im Systemen. Von dort werden die einzelnen Instanzen gestartet und mit diesen kommuniziert.
+Dieser Controller verwaltet alles im System. Von dort werden die einzelnen Instanzen gestartet und mit diesen kommuniziert.
 
 Adapter
 -------
 
 Ein Adapter ist ein Stück Software, welches eine bestimmte Aufgabe übernimmt. Diese Aufgabe kann alles mögliche sein.
 
-Es gibt verschiedenste Adapter, welche zum Beispiel
+Es gibt daher verschiedenste Adapter, welche zum Beispiel
 
 - mit Hardware kommunizieren (Philips Hue, KNX, HomeMatic, Loxone, ...)
 - Daten aus dem Internet abrufen (Wetter, Verkehr, ...)
-- Logiken bereitstellen
-- Schnittstellen in den ioBroker von außen öffnen
-- verschiedene Visualisierungsoberflächen bereitstellen
+- Logiken bereitstellen (Szenen, Regeln, ...)
+- Schnittstellen in den ioBroker von außen öffnen (Zugriff von unterwegs)
+- verschiedene Visualisierungsoberflächen bereitstellen (Steuerung per Tablet)
 - den Sonnenstand berechnen
 - Feiertage für dein Bundesland ermitteln
 - die Administrationsoberfläche bereitstellen
@@ -30,17 +30,25 @@ Die Liste der verfügbaren Adapter ist extrem lang und umfasst über 250 verschi
 
 Am Ende ist diese Liste dein Baukasten. Was Du brauchst, installierst Du dazu. Was Du nicht brauchst, lässt Du weg. Ganz einfach.
 
+.. note::
+    Nach der Installation eines Adapters wird automatisch eine Instanz erstellt, um Dir das Leben leichter zu machen.
+
 Instanzen
 ---------
 
 Eine Instanz ist am Ende der eigentliche Prozess, welcher für einen Adapter gestartet wird. Für jeden Adapter können beliebig viele Prozesse (Instanzen) gestartet werden.
 
-Nehmen wir mal das Beispiel Textverarbeitung. Microsoft Word ist also der Adapter und wird einfach nur einmalig installiert. Du kannst aber dann beliebig viele Word-Dokumente parallel öffnen, ohne mehrfach Word installieren zu müssen. Diese Prozesse sind dann die Instanzen.
+Nehmen wir mal das Beispiel Textverarbeitung. *Microsoft Word* ist also der Adapter und wird einfach nur einmalig installiert. Du kannst aber dann beliebig viele Word-Dokumente parallel öffnen, ohne das Programm Word mehrfach installieren zu müssen. Diese Prozesse sind dann die Instanzen.
 
-Warum sollte man mehrere Instanzen für Adapter erstellen? In der Regel kommt das nicht vor. Aber angenommen Du hast mehrere Hue-Bridges von Philips. Dann würde jede Instanz die Kommunikation mit einer Hue-Bridge übernehmen. Du bräuchtest also genauso viele Instanzen des Hue-Adapters wie Du Hue-Bridges zu Hause hast.
+Warum sollte man mehrere Instanzen für Adapter erstellen? In der Regel kommt das nicht vor. Aber angenommen Du hast mehrere Hue-Bridges von Philips im Haus. Dann würde jede Instanz die Kommunikation mit genau einer Hue-Bridge übernehmen. Du bräuchtest also genauso viele Instanzen des Hue-Adapters wie Du Hue-Bridges zu Hause hast.
 
 .. image:: /images/ioBrokerDoku-Adapter.png
     :alt: js-controller Adapter
+
+Ein weiteres Beispiel wären die Wetterdaten von verschiedenen Orten. Möchtest Du bei Dir Zuhause die Regenwahrscheinlichkeit ermitteln, installierst Du einen Wetteradapter und konfigurierst diesen auf deinen Wohnort. Wenn Du dann noch ein Ferienhaus hast, erstellst Du eine weitere Instanz, welche auf den entsprechenden Ort konfiguriert wird und somit von dort die Daten liefert.
+
+.. note::
+    Während Adapter "nur" die Software bereitstellen, enthalten Instanzen die spezifische Konfiguration. Der Adapter gibt dabei nur vor, WAS konfiguriert werden kann. Die exakte Konfiguration wird in der jeweiligen Instanz gespeichert.
 
 js-controller
 -------------

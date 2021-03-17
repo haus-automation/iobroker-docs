@@ -39,6 +39,7 @@ So kann man zum Beispiel Geräte mit Alexa ansteuern, welche selbst keine Alexa-
     :caption: Grundlagen
 
     basics/architecture
+    basics/datastorage
 
 .. image:: https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png
     :target: https://haus-automatisierung.com/iobroker-kurs/
