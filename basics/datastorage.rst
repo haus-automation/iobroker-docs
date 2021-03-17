@@ -11,12 +11,13 @@ Um Daten zu speichern, muss zuerst ein (neues) Objekt angelegt werden. Dieses Ob
 Objekt
 ------
 
-Ein Objekt beschreibt, welche Informationen genau gespeichert werden können. Das sind hauptsächlich Meta-Informationen, welche den Datenpunkt beschreiben. Das sind zum Beispiel:
+Ein Objekt beschreibt, welche Informationen genau gespeichert werden können. Es handelt sich bei einem Objekt hauptsächlich Meta-Informationen, welche den Datenpunkt beschreiben. Das sind zum Beispiel:
 
 - Typ (channel, state, ...)
 - Name
 - Einheit (z.B. °C oder kWh)
 - Beschreibung
+- erlaubter Minimalwert und Maximalwert
 - Lese- und Schreibrechte
 - ...
 
@@ -27,7 +28,7 @@ Angenommen Du hast eine Philips Hue Bridge und hast den Philips Hue-Adapter inst
 Der Namespace (siehe unten) dieser Instanz lautet dann ``hue.0``. Hier siehst Du schon das erste Trennzeichen. Das erste Objekt auf der Root-Ebene heißt also ``hue``. Danach folgt ein weiteres, welches wie die Instanznummer heißt.
 
 Unter diesem Objekt werden dann weitere Objekte angelegt, welche alles Mögliche abbilden können. Dabei werden die Informationen so granular wie möglich abgebildet. So gibt es zum Beispiel für jede angelernte Lampe ein weiteres Objekt, welches dann wieder Objekte darunter enthält.
-So wird eine logische Hierarchie aufgebaut. Stell Dir das wie deine Urlaubsfotos vor, welche Du auch in verschiedene Ordner auf deiner Festplatte ablegst. Alle Fotos aus einem Urlaub kommen zusammen in einen Ordner. Und so ist das mit den Objekten auch. Alles, was zum Beispiele eine einzelne Lampe kann, wird unter ein gemeinsames Objekt gepackt.
+So wird eine logische Hierarchie aufgebaut. Stell Dir das wie deine Urlaubsfotos vor, welche Du auch in verschiedene Ordner auf deiner Festplatte ablegst. Alle Fotos aus einem Urlaub kommen zusammen in einen Ordner. Und so ist das mit den Objekten auch. Alles, was zum Beispiel eine einzelne Lampe kann, wird als einzelne Objekte unter ein gemeinsames Objekt gepackt.
 
 .. note::
     Nicht jeder Datenpunkt hat zwingend einen State. Aus organisatorischen Gründen kann man auch Objekte anlegen, welches nur für die Struktur dienen. Diese Objekte sind vom Typ "Kanal" bzw. Englisch "Channel".
@@ -55,8 +56,20 @@ Ein state ist der eigentliche Wert eines Datenpunktes. Neben dem Wert werden abe
 - ``user`` - Benutzer, welche die Änderung durchgeführt hat (z.B. ``system.user.admin``)
 - ...
 
+Es handelt sich also im Gegensatz zum Objekt um dynamische Daten, welche sich ständig ändern können.
+
 .. note::
     Die meisten dieser Informationen sind für Dich als Anwender nicht interessant. Du arbeitest zu 99% nur mit dem Wert ``val`` eines States. Dennoch solltest Du wissen, dass neben dem Wert noch mehr Informationen gespeichert werden.
+
+Das zugehörige Objekt gibt dabei vor, wie der State aussehen darf. Also in welchem Datentyp der Wert vorgehalten wird, ob der State nur gelesen werden darf oder auch geschrieben werden kann, uvm.
+
+Es ist besonders wichtig zu verstehen, was es mit bestätigten States auf sich hat (siehe ``ack``). Dabei hilft Dir dieses Video:
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; margin-bottom: 2em;">
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/p5FyeifYUnw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
 
 States werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgelegt:
 
@@ -70,9 +83,12 @@ Wenn man von einem Datenpunkt spricht, ist die Kombination aus Objekt mit dem zu
 Namespace
 ---------
 
-Der Namespace (Namensraum) ist ein reservierter Bereich für jeden Adapter.
+Damit die Objekte im System in einer logischen Struktur abgelegt werden, gibt es sog. Namespaces (Namensräume). So wird vermieden, dass nicht jeder Adapter seine Daten an eine andere Stelle in der Hierarchie speichert.
+Außerdem werden auf diese Weise doppelte Namen vermieden und als Entwickler kann man sich in seinem Namespace "frei bewegen".
 
-
+Bleiben wir beim Beispiel Philips Hue, welches schon ötfter in dieser Dokumentation herhalten musste. Erstellst Du eine Instanz vom Hue-Adapter, lautet der Namespace für diesen Adapter ``hue.0``.
+Du erinnerst Dich: Die Null steht dabei für die erste Instanz, da von einem Adpater mehrere Instanzen erstellt werden können. Alles, was der Adapter nun an Objekten bereitstellt, ist in diesem Namespace zu finden.
+Löschst Du die Instanz, wird der Namespace ebenfalls gelöscht.
 
 .. note::
     Als Anwender solltest Du keine eigenen Objekte in Namespaces von Adaptern oder vom System ablegen! Wenn Du eigene Objekte erstellen möchtest, tu dies bitte im Namespace **0_userdata**
