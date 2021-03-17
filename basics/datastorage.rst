@@ -24,6 +24,11 @@ Objekte werden dabei in einer Hierarchie abgebildet. Also in einer Baumstruktur 
 
 Angenommen Du hast eine Philips Hue Bridge und hast den Philips Hue-Adapter installiert. Dann würde für diese Instanz automatisch alle nötigen Objekte für die Steuerung der angelernten Lampen, Strips usw. anlegen.
 
+Der Namespace (siehe unten) dieser Instanz lautet dann ``hue.0``. Hier siehst Du schon das erste Trennzeichen. Das erste Objekt auf der Root-Ebene heißt also ``hue``. Danach folgt ein weiteres, welches wie die Instanznummer heißt.
+
+Unter diesem Objekt werden dann weitere Objekte angelegt, welche alles Mögliche abbilden können. Dabei werden die Informationen so granular wie möglich abgebildet. So gibt es zum Beispiel für jede angelernte Lampe ein weiteres Objekt, welches dann wieder Objekte darunter enthält.
+So wird eine logische Hierarchie aufgebaut. Stell Dir das wie deine Urlaubsfotos vor, welche Du auch in verschiedene Ordner auf deiner Festplatte ablegst. Alle Fotos aus einem Urlaub kommen zusammen in einen Ordner. Und so ist das mit den Objekten auch. Alles, was zum Beispiele eine einzelne Lampe kann, wird unter ein gemeinsames Objekt gepackt.
+
 .. note::
     Nicht jeder Datenpunkt hat zwingend einen State. Aus organisatorischen Gründen kann man auch Objekte anlegen, welches nur für die Struktur dienen. Diese Objekte sind vom Typ "Kanal" bzw. Englisch "Channel".
 
@@ -34,9 +39,12 @@ Objekte werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgeleg
 State
 -----
 
+.. note::
+    Nur Objekte vom Typ ``state`` haben auch einen zugehörigen State. **Nicht jedes Objekt hat einen State, aber jeder State ein Objekt!**
+
 Ein state ist der eigentliche Wert eines Datenpunktes. Neben dem Wert werden aber auch hier noch weitere Informationen vorgehalten, wie zum Beispiel:
 
-- ``val`` - Der aktuelle Wert
+- ``val`` - Der aktuell gespeicherte Wert
 - ``ack`` - Bestätigt-Flag, ob der (neue) Wert vom Adapter bzw. Ziel akzeptiert wurde
 - ``ts`` - Unix Timestamp (Zeitstempel) wann der State zuletzt **aktualisiert** wurde
 - ``lc`` - Unix Zimestamp (Zeitstempel) wann der State zuletzte **geändert** wurde (last change)
@@ -45,7 +53,7 @@ Ein state ist der eigentliche Wert eines Datenpunktes. Neben dem Wert werden abe
 - ...
 
 .. note::
-    Die meisten dieser Informationen sind für Dich als Anwender nicht interessant. Du arbeitest zu 99% nur mit dem Wert (``val```) eines States. Dennoch solltest Du wissen, dass neben dem Wert noch mehr Informationen gespeichert werden.
+    Die meisten dieser Informationen sind für Dich als Anwender nicht interessant. Du arbeitest zu 99% nur mit dem Wert ``val`` eines States. Dennoch solltest Du wissen, dass neben dem Wert noch mehr Informationen gespeichert werden.
 
 States werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgelegt:
 
@@ -78,5 +86,5 @@ Weiterhin gibt es den (reservierten) Namespace ``system.`` für das System. Dort
 - ``system.adapter.<adapter-name>`` - default config of an adapter
 - ``system.adapter.<adapter-name>.<instance-nummmer>`` - Informationen zur Instanz (Uptime, Ressourcen, ...)
 
-.. warning::
-    Ändere keine Informationen in dem System-Namespace, wenn Du nicht genau weißt, was Du da tust. Als normaler Benutzer gibt es keinen Grund dort etwas ändern. Diese Informationen sind nur für Entwickler relevant!
+.. danger::
+    Ändere keine Informationen in dem System-Namespace, wenn Du nicht genau weißt, was Du da tust. Als normaler Anwender gibt es keinen Grund, dort etwas ändern. Diese Informationen sind nur für Entwickler relevant!
