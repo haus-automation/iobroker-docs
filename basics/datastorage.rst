@@ -32,6 +32,9 @@ So wird eine logische Hierarchie aufgebaut. Stell Dir das wie deine Urlaubsfotos
 .. note::
     Nicht jeder Datenpunkt hat zwingend einen State. Aus organisatorischen Gründen kann man auch Objekte anlegen, welches nur für die Struktur dienen. Diese Objekte sind vom Typ "Kanal" bzw. Englisch "Channel".
 
+.. image:: /images/ioBrokerDoku-ObjektHierarchie.png
+    :alt: Objekt-Hierarchie
+
 Objekte werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgelegt:
 
 ``/opt/iobroker/iobroker-data/objects.json`` 
