@@ -3,7 +3,7 @@
 Architektur
 ===========
 
-Der ioBroker ist modular aufgebaut und besteht aus mehreren Komponenten. In der Mitte finden wir das Herzstück des Systems: Den `js-controller`.
+Der ioBroker ist modular aufgebaut und besteht aus mehreren Komponenten. In der Mitte finden wir das Herzstück des Systems: Den ``js-controller``.
 
 Dieser Controller verwaltet alles im System. Von dort werden die einzelnen Instanzen gestartet und mit diesen kommuniziert.
 
@@ -67,7 +67,7 @@ Selbst die Admin-Oberfläche ist eine Instanz eines Adapters, welche genau wie a
 js-controller
 -------------
 
-Kommen wir noch einmal zurück zum angesprochenen `js-controller`. Dieser startet die Prozesse der einzelnen Instanzen und verwaltet die Kommunikation zu diesen.
+Kommen wir noch einmal zurück zum angesprochenen ``js-controller``. Dieser startet die Prozesse der einzelnen Instanzen und verwaltet die Kommunikation zu diesen.
 
 Bleiben wir bei dem Beispiel von Philips Hue. Nachdem also eine neue Instanz für den installierten Adapter gestartet wurde, legt der Adapter Objekte an, welche Deine Räume, Szenen und Lampen repräsentieren, welche Deine Philips Hue Bridge kennt. Diese Objekte kann er aber nicht selbst anlegen, sondern nur den ``js-controller`` darum bitten dies zu tun. Also sendet der Hue-Adapter eine Nachricht an diesen Prozess, und übermittelt die Informationen für das Anlegen der Objekte.
 
