@@ -84,7 +84,7 @@ html_logo = 'logo.png'
 # documentation.
 #
 html_theme_options = {
-    'logo_only': True,
+    'logo_only': False,
     'display_version': False,
 }
 

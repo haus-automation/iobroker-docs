@@ -41,6 +41,14 @@ So kann man zum Beispiel Geräte mit Alexa ansteuern, welche selbst keine Alexa-
     basics/architecture
     basics/datastorage
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Entwicklung
+
+    development/adapter
+    development/objects
+    development/states
+
 .. image:: https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png
     :target: https://haus-automatisierung.com/iobroker-kurs/
 
