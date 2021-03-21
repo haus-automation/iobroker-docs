@@ -45,7 +45,7 @@ Damit Du einfacher den richtigen Adapter für eine Aufgabe finden kannst, sind A
 Instanzen
 ---------
 
-Eine Instanz ist am Ende der eigentliche Prozess, welcher für einen Adapter gestartet wird. Für jeden Adapter können beliebig viele Prozesse (Instanzen) gestartet werden.
+Eine Instanz ist am Ende der eigentliche **Prozess**, welcher für einen Adapter gestartet wird. Für jeden Adapter können beliebig viele Prozesse (Instanzen) gestartet werden.
 
 Nehmen wir mal das Beispiel Textverarbeitung. *Microsoft Word* ist also der Adapter und wird einfach nur einmalig installiert. Du kannst aber dann beliebig viele Word-Dokumente parallel öffnen, ohne das Programm Word mehrfach installieren zu müssen. Diese Prozesse sind dann die Instanzen.
 
@@ -62,10 +62,12 @@ Da es also **mehrere Instanzen vom gleichen Adapter** geben kann, werden diese I
 - ``hue.1``
 - ``hue.2``
 
-Von den meisten Adaptern wirst Du aber nur eine einzelne Instanz haben, welche die Nummer Null (0) bekommt.
+Von den meisten Adaptern wirst Du aber nur eine einzelne Instanz haben, welche die Nummer Null (0) bekommt. Nur in seltenen Fällen werden mehrere Instanzen von einem Adapter erstellt.
 
 .. note::
     Während Adapter "nur" die Software bereitstellen, enthalten Instanzen die spezifische Konfiguration. Der Adapter gibt dabei nur vor, WAS konfiguriert werden kann. Die exakte Konfiguration wird in der jeweiligen Instanz gespeichert (wie zum Beispiel der Wohnort im Wetter-Adapter).
+
+    Einen Adapter zu installieren braucht also erstmal nur Ressourcen auf der Festplatte. Eine neue Instanz davon zu erstellen braucht dann weitere Ressourcen wie CPU-Zeit oder Arbeitsspeicher.
 
 Jede Instanz wird dabei (normalerweise) in einem eigenen Prozess gestartet. Das hat zur Folge, dass der Prozess das restliche System nicht beeinflussen kann. Sollte also ein Adpater abstürzen oder nicht mehr laufen, funktioniert der Rest trotzdem weiter! Dieses Vorgehen braucht zwar deutlich mehr Ressourcen als bei vergleichbaren Lösungen, aber sorgt für viel mehr Stabilität.
 

@@ -21,7 +21,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = u'ioBroker Dokumentation (UNOFFICIAL)'
-copyright = u'2021, Matthias Kleine'
+copyright = u'2021, Matthias Kleine (haus-automatisierung.com)'
 author = u'Matthias Kleine'
 
 # The short X.Y version

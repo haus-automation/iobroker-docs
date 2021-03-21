@@ -76,8 +76,6 @@ Es handelt sich also im Gegensatz zum Objekt um dynamische Daten, welche sich st
 
 Das zugehörige Objekt gibt dabei vor, wie der State aussehen darf. Also in welchem Datentyp der Wert vorgehalten wird, ob der State nur gelesen werden darf oder auch geschrieben werden kann, uvm.
 
-
-
 Es ist besonders wichtig zu verstehen, was es mit bestätigten States auf sich hat (siehe ``ack``). Dabei hilft Dir dieses Video:
 
 .. raw:: html
@@ -96,6 +94,8 @@ Datenpunkt
 ----------
 
 Wenn man von einem Datenpunkt spricht, ist die Kombination aus Objekt mit dem zugehörigen State gemeint.
+
+Die Kombination von Objekte und State ist die einzige Möglichkeit in ioBroker Daten abzulegen. Alles wird auf dieser Struktur abgebildet. Selbst die Konfiguration von Instanzen wird in Datenpunkten gespeichert. Diese findest Du z.B. im System-Namespace.
 
 Namespace
 ---------

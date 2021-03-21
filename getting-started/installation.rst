@@ -3,7 +3,7 @@
 Installation
 ============
 
-Generell lässt sich der ioBroker auf jedem Betriebssystem installieren, auf welchem auch `nodejs <https://nodejs.org/en/>`_ läuft.
+Generell lässt sich der ioBroker auf jedem Betriebssystem installieren, welchs auch `nodejs <https://nodejs.org/en/>`_ unterstützt.
 
 Fertige Images
 --------------
@@ -18,14 +18,21 @@ Manuelle Installation (Linux)
 
 Unter Linux lässt sich der ioBroker mit nur einem einzigen Befehl installieren:
 
-``curl -sLf https://iobroker.net/install.sh | bash -``
+.. code:: console
+
+    curl -sLf https://iobroker.net/install.sh | bash -
 
 Dieser Befehl bereitet das komplette System vor und richtet alles nötige ein:
 
-- nodejs wird heruntergeladen und installiert
-- Neuer ioBroker-Benutzer wird erstellt
-- ioBroker wird an die richtige Stelle im System installiert
+- ``nodejs`` wird in der aktuellen Version heruntergeladen und installiert
+- Ein neuer System-Benutzer wird erstellt (ioBroker)
+- Der ioBroker wird an die richtige Stelle im System installiert
 - Es werden die wichtigsten Adapter installiert und Instanzen hinzugefügt (Admin, Discovery, ...)
 - Ein Autostart für ioBroker wird eingerichtet
 
-Danach kann über den Standard-Port 8083 im Browser die Admin-Oberfläche aufgerufen werden.
+Danach kann über den Standard-Port 8083 im Browser Deiner Wahl die Admin-Oberfläche aufgerufen werden.
+
+Manuelle Installation (Windows)
+-------------------------------
+
+Natürlich kann der ioBroker auch unter Windows installiert werden. Ich persönliche sehe Windows aber als Desktop-Betriebsystem, welches nicht als Server verwendet werden sollte. Eine Installation unter Linux ist daher aus meiner Sicht immer zu bevorzugen.

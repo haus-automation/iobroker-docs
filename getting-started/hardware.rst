@@ -11,9 +11,9 @@ Generell lässt sich der ioBroker auf jedem Betriebssystem installieren, auf wel
 Raspberry Pi
 ------------
 
-Als einfachster Einstieg in die ioBroker-Welt wird nach wie vor der Raspberry Pi empfohlen. Dabei handelt es sich um einen kleinen Einplatinen-Computer, welcher sehr klein ist, wenig Leistung im Dauerbetrieb benötigt und ausreichend Leistung für den Betrieb von ioBroker bietet.
+Als einfachster Einstieg in die ioBroker-Welt wird nach wie vor der Raspberry Pi empfohlen. Dabei handelt es sich um einen kleinen Einplatinen-Computer, welcher sehr klein ist, wenig Leistung im Dauerbetrieb benötigt und ausreichend Ressourcen für den Betrieb von ioBroker bietet.
 
-Mit der Version 4 des Raspberry Pi wurden erstmals Modelle mit mehr als 1 GB Arbeitsspeicher vorgestellt. Da der ioBroker beim Betrieb mehrerer Adapter relativ viel Arbeitsspeicher benötigt, ist ein System mit mindestens 2 GB RAM empfohlen. Die Variante mit 4 GB oder 8 GB bietet noch einmal deutlich mehr Reserven.
+Mit der Version 4 des Raspberry Pi wurden erstmals Modelle mit mehr als 1 GB Arbeitsspeicher vorgestellt. Da der ioBroker beim Betrieb mehrerer Adapter relativ viel Arbeitsspeicher benötigt, ist ein System mit **mindestens 2 GB RAM** empfohlen. Die Variante mit 4 GB oder 8 GB bietet noch einmal deutlich mehr Reserven.
 
 Raspberry Pi 4 (mindestens 2 GB RAM, besser 4 GB)
 
@@ -39,7 +39,7 @@ Micro SD-Karte
 - `Amazon ** <https://haus-auto.com/p/amz/MicroSD>`_
 - `Conrad ** <https://haus-auto.com/p/con/MicroSD>`_
 
-** Link zu einer Produktempfehlung - Natürlich empfehle ich Dir nur Produkte, welche ich selbst gekauft habe und ebenfalls gerne verwende. Wenn Du über einen dieser Links etwas kaufst, bekomme ich eine Provision vom Shop (Affiliate-Link).
+** Link zu einer Produktempfehlung. Wenn Du über einen dieser Links etwas kaufst, bekomme ich eine kleine Provision vom Shop (Affiliate-Link).
 
 .. tip::
     Verwende als Image auf jeden Fall Raspberry Pi OS Lite und NICHT die Desktop-Version. Warum? Weil die Desktop-Variante viel mehr Ressourcen braucht und extrem viel Overhead mitbringt, welcher nicht gebraucht wird. Die Desktop-Version ist nur erforderlich, wenn Du eine Maus, Tastatur und einen Monitor direkt an dem Raspberry Pi anschließen möchtest um diesen (wie der Name sagt) als Desktop-Computer zu verwenden.

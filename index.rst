@@ -20,6 +20,8 @@ Wie der Name schon vermuten lässt, handelt es sich beim ioBroker um eine Softwa
 
 So kann man zum Beispiel Geräte mit Alexa ansteuern, welche selbst keine Alexa-Integration bieten. Gleiches gilt für HomeKit oder auch Google Home. Aber auch ohne Cloud-Lösungen im rein lokalen Betrieb macht der ioBroker Sinn. Du möchtest auf einem KNX-Taster die Leistung der per Modbus angebundenen PV-Anlage sehen? Kein Problem. Du möchtest mit einem Philips Hue Button einen HomeMatic-Aktor ansteuern? Auch kein Problem.
 
+Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinausgehen und Systeme miteinander kombinieren, welche nicht direkt miteinander sprechen können.
+
 **Je länger Du mit ioBroker arbeitest, desto mehr Möglichkeiten wirst Du entdecken!** Es lässt sich nahezu jede Lösung anbinden, welche eine Schnittstelle bereitstellt. Der ioBroker steht dann praktisch in der Mitte all dieser Systeme und vermittelt - daher auch der Name **io** (input / output) **Broker** (Vermittler).
 
 .. note::
