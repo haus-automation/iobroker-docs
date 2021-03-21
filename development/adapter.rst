@@ -178,8 +178,8 @@ Wichtig ist, dass alle Haken grün sind.
 .. tip::
     Prüfe schon während der Entwicklung regelmäßig, ob dein Adapter den Anforderungen entspricht.
 
-Adapter-Listen
---------------
+Adapter-Listen (Repositories)
+-----------------------------
 
 Generell gibt es zwei verschiedene Adapter-Listen, welche vom ioBroker-Team angeboten werden:
 
@@ -223,3 +223,6 @@ Dieses Vorgehen hat den Vorteil, dass man als Adapter-Entwickler genau steuern k
 
 .. note::
     So kann es natürlich vorkommen, dass einige Adapter zwar im latest-Repository vorhanden sind, aber noch nicht im stable-Repository zu finden sind (weil noch in Entwicklung bzw. noch keine stabile Version verfügbar)!
+
+.. image:: /images/ioBrokerDoku-Repositories.png
+    :alt: ioBroker-Repositories
