@@ -130,7 +130,7 @@ Diese Informationen kannst Du direkt in deinem Adapter verwenden. Achte darauf, 
 npm
 ---
 
-Sobald es einen Release deines Adapters gibt, solltest Du eine Versionsnummer vergeben. Achte dabei auf `semantische Versionierung <https://semver.org/lang/de/`_!
+Sobald es einen Release deines Adapters gibt, solltest Du eine Versionsnummer vergeben. Achte dabei auf `semantische Versionierung <https://semver.org/lang/de/>`_!
 
 Die erste Version deines Adapters wird also höchstwahrscheinlich die ``0.0.1`` sein.
 
