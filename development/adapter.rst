@@ -23,7 +23,6 @@ Um einen neuen Adapter zu erstellen, führst Du folgenden Befehl aus:
 Nachdem das Programm ausgeführt wird, werden Dir einige Fragen gestellt, wie Du gerne arbeiten möchtest. Das Ergebnis sieht aktuell so aus:
 
 .. code:: console
-    :caption: Wizard-Ausgaben vom Create-Adapter-Tool
 
     npx: Installierte 147 in 31.103s
 
@@ -108,7 +107,6 @@ Damit Du das nicht manuell machen musst, gibt es vom ioBroker ein Tool, welches 
 Gibst Du dort zum Beispiel ``today`` ein, liefert Dir das Programm folgende Übersetzungen im JSON-Format:
 
 .. code:: json
-    :caption: Beispiel-JSON für Übersetzung
 
     {
         "today": {
@@ -130,7 +128,7 @@ Diese Informationen kannst Du direkt in deinem Adapter verwenden. Achte darauf, 
 npm
 ---
 
-Sobald es einen Release deines Adapters gibt, solltest Du eine Versionsnummer vergeben. Achte dabei auf `semantische Versionierung <https://semver.org/lang/de/>`_!
+Sobald es einen Release deines Adapters gibt, solltest Du eine Versionsnummer vergeben. Achte dabei auf `cap Versionierung <https://semver.org/lang/de/>`_!
 
 Die erste Version deines Adapters wird also höchstwahrscheinlich die ``0.0.1`` sein.
 
@@ -195,7 +193,6 @@ Im ``stable`` werden getestete Adapter aufgenommen. Dort wird neben dem Reposito
 Ein Eintrag sieht dort zum Beispiel so aus:
 
 .. code:: json
-    :caption: Beispiel-JSON für Admin-Adapter im Stable-Repository
 
     "admin": {
         "meta": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/io-package.json",
@@ -209,7 +206,6 @@ Wie Du siehst, ist vom Admin-Adapter in diesem Beispiel aktuell die Version ``4.
 Im Gegensatz dazu hat der Eintrag im Latest-Repository keine definierte Versionsnummer:
 
 .. code:: json
-    :caption: Beispiel-JSON für Admin-Adapter im Latest-Repository
 
     "admin": {
         "meta": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/io-package.json",
