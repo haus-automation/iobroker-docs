@@ -1,7 +1,7 @@
 .. _development-states:
 
 States
-------
+======
 
 ```
 {

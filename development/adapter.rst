@@ -1,5 +1,8 @@
 .. _development-adapter:
 
+Adapter-Entwicklung
+===================
+
 In diesem Abschnitt fasse ich für Dich zusammen, was es bei der Entwicklung von neuen Adaptern zu beachten gibt. Auf dem Weg zum eigenen/neuen Adapter gibt es jede Menge Werkzeuge, welche Dir das Leben leichter machen und Dich sehr schnell zum Ziel bringen werden!
 
 Neuer Adapter
@@ -20,6 +23,7 @@ Um einen neuen Adapter zu erstellen, führst Du folgenden Befehl aus:
 Nachdem das Programm ausgeführt wird, werden Dir einige Fragen gestellt, wie Du gerne arbeiten möchtest. Das Ergebnis sieht aktuell so aus:
 
 .. code:: console
+    :caption: Wizard-Ausgaben vom Create-Adapter-Tool
 
     npx: Installierte 147 in 31.103s
 
@@ -74,7 +78,7 @@ GitHub Repository
 
 Wichtig ist, dass Du den Namenskonventionen für ein neues Repository folgst. Das Repository heißt dabei ``ioBroker.<deinadapter>``. **Achte auf Groß- und Kleinschreibung!** Das B von ioBroker wird im Repository-Namen groß geschrieben! Der komplette rest wird klein geschrieben!
 
-Gültige Namen für das Repository wären also zum Beispiel:
+Gültige Namen für Dein neues **Repository** wären also zum Beispiel:
 
 - ``ioBroker.admin``
 - ``ioBroker.javascript``
@@ -104,6 +108,8 @@ Damit Du das nicht manuell machen musst, gibt es vom ioBroker ein Tool, welches 
 Gibst Du dort zum Beispiel ``today`` ein, liefert Dir das Programm folgende Übersetzungen im JSON-Format:
 
 .. code:: json
+    :caption: Beispiel-JSON für Übersetzung
+
     {
         "today": {
             "en": "today",
@@ -143,6 +149,17 @@ Beschäftige Dich also auf jeden Fall mit diesen Themen:
 .. note::
     Generell haben GitHub und npmjs erstmal nichts miteinadner zu tun. Das sind zwei unterschiedliche Plattformen. GitHub hilft Dir bei der Entwicklung und Issue-Tracking, während npm das fertige Pakete vorhält und an die Nutzer ausliefert. Über diverse Integrationsmöglichen greifen diese beiden Plattformen aber ineinander und vereinfachen den Workflow.
 
+**Der Name deines Paketes für npm unterscheidet sich dabei vom Namen des Repository!** Hier wird das "B" in ioBroker nicht mehr groß geschrieben! Der Paket-Name enthält also nur Kleinbuchstaben.
+
+Gültige Namen für Dein neues **npm Paket** wären also zum Beispiel:
+
+- ``iobroker.admin``
+- ``iobroker.javascript``
+- ``iobroker.luftdaten``
+- ``iobroker.octoprint``
+
+*Solltest Du den Adapter mit dem oben genannten Tool erstellt haben, wird dies bereits automatisch berücksichtigt!*
+
 Adapter prüfen
 --------------
 
@@ -175,6 +192,7 @@ Im ``stable`` werden getestete Adapter aufgenommen. Dort wird neben dem Reposito
 Ein Eintrag sieht dort zum Beispiel so aus:
 
 .. code:: json
+    :caption: Beispiel-JSON für Admin-Adapter im Stable-Repository
 
     "admin": {
         "meta": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/io-package.json",
