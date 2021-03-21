@@ -66,7 +66,7 @@ Nachdem das Programm ausgeführt wird, werden Dir einige Fragen gestellt, wie Du
     ✔ Which continuous integration service should be used? · gh-actions
     ✔ Do you want to receive regular dependency updates through Pull Requests? · yes
 
-Danach werden automatisch alle möglichen Dateien erstellt und Du kannst direkt mit der Entwicklung starten!
+Danach werden automatisch alle nötigen Dateien erstellt und Du kannst direkt mit der Entwicklung starten!
 
 *Natürlich könntest Du auch alle Dateien manuell anlegen - aber das ist nicht zu empfehlen und bedeutet viel mehr Arbeit!*
 
@@ -181,12 +181,15 @@ Wichtig ist, dass alle Haken grün sind.
 Adapter-Listen
 --------------
 
-Generell gibt es zwei Arten von Adapter-Listen:
+Generell gibt es zwei verschiedene Adapter-Listen, welche vom ioBroker-Team angeboten werden:
 
-- ``stable``
-- ``beta`` / ``latest``
+- ``stable`` - wird täglich aktualisiert und hier bereitgestellt: ``http://download.iobroker.net/sources-dist.json``
+- ``beta`` bzw. ``latest`` - wird täglich aktualisiert und hier bereitgestellt: ``http://download.iobroker.net/sources-dist-latest.json``
 
 Beide Listen werden in `diesem GitHub Repository (ioBroker.repositories) <https://github.com/ioBroker/ioBroker.repositories>`_ gepflegt.
+
+- ``stable`` = ``sources-dist-stable.json``
+- ``beta`` bzw. ``latest`` = ``sources-dist.json``
 
 Im ``stable`` werden getestete Adapter aufgenommen. Dort wird neben dem Repository auch eine genaue Version mit angegeben.
 Ein Eintrag sieht dort zum Beispiel so aus:
@@ -201,5 +204,22 @@ Ein Eintrag sieht dort zum Beispiel so aus:
         "version": "4.2.1"
     }
 
+Wie Du siehst, ist vom Admin-Adapter in diesem Beispiel aktuell die Version ``4.2.1`` als stabil definiert. Es kann gut sein, dass auf npm mittlerweile neue Versionen vergeben wurden und diese auch veröffentlicht ist. An diese Version kommt man, wenn man als Verwahrungsort das ``latest`` Repository wählt.
 
-Wie Du siehst, ist vom Admin-Adapter in diesem Beispiel aktuell die Version ``4.2.1`` als stabil definiert. Es kann gut sein, dass auf npm mittlerweile neue Versionen vergeben wurden und diese auch veröffentlicht sind.
+Im Gegensatz dazu hat der Eintrag im Latest-Repository keine definierte Versionsnummer:
+
+.. code:: json
+    :caption: Beispiel-JSON für Admin-Adapter im Latest-Repository
+
+    "admin": {
+        "meta": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/io-package.json",
+        "icon": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/admin/admin.png",
+        "type": "general"
+    }
+
+Hier wird also automatisch immer die letzte freigegebene Version zum Update angeboten (aus npm).
+
+Dieses Vorgehen hat den Vorteil, dass man als Adapter-Entwickler genau steuern kann, welche Nutzer was angeboten bekommen. So können neue Versionen zwar veröffentlicht werden, aber "stable-Nutzer" werden erst später auf eine neue Version gebracht, wenn diese von vielen "latest-Nutzern" bereits getestet wurden.
+
+.. note::
+    So kann es natürlich vorkommen, dass einige Adapter zwar im latest-Repository vorhanden sind, aber noch nicht im stable-Repository zu finden sind (weil noch in Entwicklung bzw. noch keine stabile Version verfügbar)!
