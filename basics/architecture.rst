@@ -28,12 +28,19 @@ Es gibt daher verschiedenste Adapter, welche zum Beispiel
 
 Die Liste der verfügbaren Adapter ist extrem lang und umfasst über 250 verschiedene Integrationen.
 
-Am Ende ist diese Liste dein Baukasten. Was Du brauchst, installierst Du dazu. Was Du nicht brauchst, lässt Du weg. Ganz einfach.
+Diese Liste ist Dein Baukasten. Was Du brauchst, installierst Du dazu. Was Du nicht brauchst, lässt Du weg. Ganz einfach.
 
 .. note::
     Nach der Installation eines Adapters wird automatisch eine neue Instanz erstellt, um Dir das Leben leichter zu machen.
 
-Damit Du einfacher den richtigen Adapter für eine Aufgabe finden kannst, sind diese in Kategorien eingeteilt.
+Damit Du einfacher den richtigen Adapter für eine Aufgabe finden kannst, sind Adapter in Kategorien eingeteilt:
+
+- Allgemein
+- Aufbewahrung
+- Visualisierung
+- Energie
+- Logik
+- ...
 
 Instanzen
 ---------

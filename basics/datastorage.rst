@@ -3,10 +3,15 @@
 Daten-Speicherung
 =================
 
-Um Daten zu speichern, muss zuerst ein (neues) Objekt angelegt werden. Dieses Objekt ist statisch und enthält viele Meta-Daten. Zusätzlich gibt es den dynamischen Zustand (state), welcher den aktuellen Wert hält. Beides zusammen nennt sich Datenpunkt.
+Um Daten zu speichern, muss ein Objekt und ein State existieren. Das Objekt ist statisch und enthält viele Meta-Daten. Zusätzlich gibt es den dynamischen Zustand (State), welcher den aktuellen Wert hält. Beides zusammen nennt sich Datenpunkt.
+
+Die Objekte und States werden in Datenbanken vorgehalten, welche der ``js-controller`` verwaltet. Über diesen können Daten aus den Datenbanken abgefragt oder geändert werden.
+
+.. image:: /images/ioBrokerDoku-Datenspeicher.png
+    :alt: ioBroker Struktur
 
 .. note::
-    Als Anwender muss man nur sehr wenige Objekte selber anlegen, welche zum persistenten Ablegen von eigenen Daten dienen. Die meisten Objekte werden von den einzelnen Adaptern automatisch angelegt.
+    Als Anwender muss man nur sehr wenige Datenpunkte selber anlegen. Die meisten Datenpunkte werden von den einzelnen Adaptern automatisch angelegt.
 
 Objekt
 ------
@@ -46,6 +51,8 @@ Objekte werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgeleg
 
 ``/opt/iobroker/iobroker-data/objects.json`` 
 
+Diese Datei nennt man auch Objekt-Datenbank.
+
 State
 -----
 
@@ -69,6 +76,8 @@ Es handelt sich also im Gegensatz zum Objekt um dynamische Daten, welche sich st
 
 Das zugehörige Objekt gibt dabei vor, wie der State aussehen darf. Also in welchem Datentyp der Wert vorgehalten wird, ob der State nur gelesen werden darf oder auch geschrieben werden kann, uvm.
 
+
+
 Es ist besonders wichtig zu verstehen, was es mit bestätigten States auf sich hat (siehe ``ack``). Dabei hilft Dir dieses Video:
 
 .. raw:: html
@@ -80,6 +89,8 @@ Es ist besonders wichtig zu verstehen, was es mit bestätigten States auf sich h
 States werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgelegt:
 
 ``/opt/iobroker/iobroker-data/states.json`` 
+
+Diese Datei nennt man auch State-Datenbank.
 
 Datenpunkt
 ----------
