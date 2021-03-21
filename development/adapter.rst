@@ -1,6 +1,6 @@
 .. _development-adapter:
 
-In diesem Abschnitt fasse ich für Dich zusammen, was es bei der Entwicklung von neuen Adaptern zu beachten gibt.
+In diesem Abschnitt fasse ich für Dich zusammen, was es bei der Entwicklung von neuen Adaptern zu beachten gibt. Auf dem Weg zum eigenen/neuen Adapter gibt es jede Menge Werkzeuge, welche Dir das Leben leichter machen und Dich sehr schnell zum Ziel bringen werden!
 
 Neuer Adapter
 -------------
@@ -12,55 +12,55 @@ Das Tool findest Du auf `GitHub <https://github.com/ioBroker/create-adapter>`_.
 
 Um einen neuen Adapter zu erstellen, führst Du folgenden Befehl aus:
 
-```
-npx @iobroker/create-adapter 
-```
+.. code:: 
+
+    npx @iobroker/create-adapter 
+
 
 Nachdem das Programm ausgeführt wird, werden Dir einige Fragen gestellt, wie Du gerne arbeiten möchtest. Das Ergebnis sieht aktuell so aus:
 
-```
-pi@raspberrypi4:~ $ npx @iobroker/create-adapter
-npx: Installierte 147 in 31.103s
+.. code:: console
 
-=====================================================
-   Welcome to the ioBroker adapter creator v1.32.0!
-=====================================================
+    npx: Installierte 147 in 31.103s
 
-You can cancel at any point by pressing Ctrl+C.
+    =====================================================
+    Welcome to the ioBroker adapter creator v1.32.0!
+    =====================================================
 
-Let's get started with a few questions about your project!
-✔ Please enter the name of your project: · documentation
-✔ Which title should be shown in the admin UI? · Documentation
-✔ Please enter a short description: · An example adapter for the ioBroker documentation
-✔ Enter some keywords (separated by commas) to describe your project: · documentation,learn,development
-✔ If you have any contributors, please enter their names (seperated by commas): · 
+    You can cancel at any point by pressing Ctrl+C.
 
-Nice! Let's get technical...
-✔ How detailed do you want to configure your project? · yes
-✔ Which features should your project contain? · adapter
-✔ Which additional features should be available in the admin? · No items were selected
-✔ Which category does your adapter fall into? · storage
-✔ When should the adapter be started? · daemon
-✔ From where will the adapter get its data? · local
-✔ How will the adapter receive its data? · push
-✔ Do you want to indicate the connection state? · yes
-✔ Which language do you want to use to code the adapter? · JavaScript
-✔ Use React for the Admin UI? · yes
-✔ Which of the following tools do you want to use? · ESLint, type checking
-✔ Do you prefer tab or space indentation? · Space (4)
-✔ Do you prefer double or single quotes? · single
-✔ How should the main adapter file be structured? · yes
+    Let's get started with a few questions about your project!
+    ✔ Please enter the name of your project: · documentation
+    ✔ Which title should be shown in the admin UI? · Documentation
+    ✔ Please enter a short description: · An example adapter for the ioBroker documentation
+    ✔ Enter some keywords (separated by commas) to describe your project: · documentation,learn,development
+    ✔ If you have any contributors, please enter their names (seperated by commas): · 
 
-Almost done! Just a few administrative details...
-✔ Please enter your name (or nickname): · Matthias Kleine
-✔ What's your name/org on GitHub? · klein0r
-✔ What's your email address? · info@haus-automatisierung.com
-✔ Which protocol should be used for the repo URL? · SSH
-✔ Initialize the GitHub repo automatically? · yes
-✔ Which license should be used for your project? · MIT License
-✔ Which continuous integration service should be used? · gh-actions
-✔ Do you want to receive regular dependency updates through Pull Requests? · yes
-```
+    Nice! Let's get technical...
+    ✔ How detailed do you want to configure your project? · yes
+    ✔ Which features should your project contain? · adapter
+    ✔ Which additional features should be available in the admin? · No items were selected
+    ✔ Which category does your adapter fall into? · storage
+    ✔ When should the adapter be started? · daemon
+    ✔ From where will the adapter get its data? · local
+    ✔ How will the adapter receive its data? · push
+    ✔ Do you want to indicate the connection state? · yes
+    ✔ Which language do you want to use to code the adapter? · JavaScript
+    ✔ Use React for the Admin UI? · yes
+    ✔ Which of the following tools do you want to use? · ESLint, type checking
+    ✔ Do you prefer tab or space indentation? · Space (4)
+    ✔ Do you prefer double or single quotes? · single
+    ✔ How should the main adapter file be structured? · yes
+
+    Almost done! Just a few administrative details...
+    ✔ Please enter your name (or nickname): · Matthias Kleine
+    ✔ What's your name/org on GitHub? · klein0r
+    ✔ What's your email address? · info@haus-automatisierung.com
+    ✔ Which protocol should be used for the repo URL? · SSH
+    ✔ Initialize the GitHub repo automatically? · yes
+    ✔ Which license should be used for your project? · MIT License
+    ✔ Which continuous integration service should be used? · gh-actions
+    ✔ Do you want to receive regular dependency updates through Pull Requests? · yes
 
 Danach werden automatisch alle möglichen Dateien erstellt und Du kannst direkt mit der Entwicklung starten!
 
@@ -103,22 +103,21 @@ Damit Du das nicht manuell machen musst, gibt es vom ioBroker ein Tool, welches 
 
 Gibst Du dort zum Beispiel ``today`` ein, liefert Dir das Programm folgende Übersetzungen im JSON-Format:
 
-```
-{
-  "today": {
-    "en": "today",
-    "de": "heute",
-    "ru": "сегодня",
-    "pt": "hoje",
-    "nl": "vandaag",
-    "fr": "aujourd'hui",
-    "it": "oggi",
-    "es": "hoy dia",
-    "pl": "dzisiaj",
-    "zh-cn": "今天"
-  }
-}
-```
+.. code:: json
+    {
+        "today": {
+            "en": "today",
+            "de": "heute",
+            "ru": "сегодня",
+            "pt": "hoje",
+            "nl": "vandaag",
+            "fr": "aujourd'hui",
+            "it": "oggi",
+            "es": "hoy dia",
+            "pl": "dzisiaj",
+            "zh-cn": "今天"
+        }
+    }
 
 Diese Informationen kannst Du direkt in deinem Adapter verwenden. Achte darauf, dass alle Texte übersetzt sind.
 
@@ -175,13 +174,14 @@ Beide Listen werden in `diesem GitHub Repository (ioBroker.repositories) <https:
 Im ``stable`` werden getestete Adapter aufgenommen. Dort wird neben dem Repository auch eine genaue Version mit angegeben.
 Ein Eintrag sieht dort zum Beispiel so aus:
 
-```
-"admin": {
-    "meta": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/io-package.json",
-    "icon": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/admin/admin.png",
-    "type": "general",
-    "version": "4.2.1"
-},
-```
+.. code:: json
+
+    "admin": {
+        "meta": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/io-package.json",
+        "icon": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/admin/admin.png",
+        "type": "general",
+        "version": "4.2.1"
+    }
+
 
 Wie Du siehst, ist vom Admin-Adapter in diesem Beispiel aktuell die Version ``4.2.1`` als stabil definiert. Es kann gut sein, dass auf npm mittlerweile neue Versionen vergeben wurden und diese auch veröffentlicht sind.
