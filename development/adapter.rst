@@ -20,7 +20,7 @@ Um einen neuen Adapter zu erstellen, führst Du folgenden Befehl aus:
     npx @iobroker/create-adapter 
 
 
-Nachdem das Programm ausgeführt wird, werden Dir einige Fragen gestellt, wie Du gerne arbeiten möchtest. Das Ergebnis sieht aktuell so aus:
+Nachdem das Programm ausgeführt wird, werden Dir einige Fragen gestellt, wie Du gerne arbeiten möchtest. Das Ergebnis sieht beispielsweise so aus:
 
 .. code:: console
 
@@ -99,8 +99,8 @@ Beschäftige Dich also auf jeden Fall mit diesen Themen:
 Übersetzungen
 -------------
 
-Generell ist es sinnvoll, direkt von Anfang an deinen neuen Adapter in mehreren Sprachen zu entwickeln. Die "Basis-Sprache" sollte Englisch sein. Von dort wird in andere Sprachen übersetzt.
-Damit Du das nicht manuell machen musst, gibt es vom ioBroker ein Tool, welches Dir einen Englischen Text in andere Sprachen übersetzt und im richtigen Format für den ioBroker zurückliefert.
+Generell ist es sinnvoll, direkt von Anfang an deinen neuen Adapter in mehrere Sprachen zu übersetzen. Die "Basis-Sprache" sollte Englisch sein. Von dort wird in andere Sprachen übersetzt.
+Damit Du das nicht manuell machen musst, gibt es vom ioBroker-Team ein Tool, welches Dir einen Englischen Text in andere Sprachen übersetzt und im richtigen Format für den ioBroker zurückliefert.
 
 `Zum ioBroker Translator <https://translator.iobroker.in>`_.
 
@@ -125,10 +125,12 @@ Gibst Du dort zum Beispiel ``today`` ein, liefert Dir das Programm folgende Übe
 
 Diese Informationen kannst Du direkt in deinem Adapter verwenden. Achte darauf, dass alle Texte übersetzt sind.
 
+Natürlich ist es so, dass (wie üblich) die erstellen Übersetzungen nicht immer einwandfrei sind. Häufig ist z.B. die Deutsche Übersetzung einfachf falsch oder ergibt keinen Sinn. Kontrolliere noch einmal manuell, ob die Texte korrekt sind. Je mehr Sprachen, desto besser!
+
 npm
 ---
 
-Sobald es einen Release deines Adapters gibt, solltest Du eine Versionsnummer vergeben. Achte dabei auf `cap Versionierung <https://semver.org/lang/de/>`_!
+Sobald es einen Release deines Adapters gibt, solltest Du eine Versionsnummer vergeben. Achte dabei auf `semantische Versionierung <https://semver.org/lang/de/>`_!
 
 Die erste Version deines Adapters wird also höchstwahrscheinlich die ``0.0.1`` sein.
 
