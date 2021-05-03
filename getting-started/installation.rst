@@ -36,3 +36,10 @@ Manuelle Installation (Windows)
 -------------------------------
 
 Natürlich kann der ioBroker auch unter Windows installiert werden. Ich persönliche sehe Windows aber als Desktop-Betriebsystem, welches nicht als Server verwendet werden sollte. Eine Installation unter Linux ist daher aus meiner Sicht immer zu bevorzugen.
+
+Docker-Image
+------------
+
+Das offizielle Docker-Image (von buanet) findest Du hier: `Official Docker Image for ioBroker <https://github.com/buanet/ioBroker.docker>`_
+
+Auf den GitHub-Seiten ist außerdem erklärt, wie man mit dem Image arbeitet.

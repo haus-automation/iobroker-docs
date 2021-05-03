@@ -8,6 +8,10 @@ In diesem Abschnitt fasse ich für Dich zusammen, was es bei der Entwicklung von
 Neuer Adapter
 -------------
 
+**Bevor Du einen neuen Adapter entwickelst, schau am besten nach, ob dieser schon existiert oder angefangen wurde.**
+
+Offene Anfragen für Adapter findest Du - `hier <https://github.com/ioBroker/AdapterRequests/issues>`_
+
 Wenn Du einen neuen Adapter entwickeln möchtest, empfiehlt es sich die Erstellung mit Hilfe des Create-Adapter-Tools durchzuführen. Dieses Tool
 erstellt Dir auf Basis eines Templates ein neues Projekt, mit welchem Du direkt durchstarten kannst.
 
@@ -178,6 +182,8 @@ Wichtig ist, dass alle Haken grün sind.
 .. tip::
     Prüfe schon während der Entwicklung regelmäßig, ob dein Adapter den Anforderungen entspricht.
 
+Das `Repository <https://github.com/ioBroker/ioBroker.repochecker>`_ vom Adapter-Checker kann mit neuen Regeln erweitert werden (siehe ``index.js``).
+
 Adapter-Listen (Repositories)
 -----------------------------
 
@@ -205,7 +211,7 @@ Ein Eintrag sieht dort zum Beispiel so aus:
 
 Wie Du siehst, ist vom Admin-Adapter in diesem Beispiel aktuell die Version ``4.2.1`` als stabil definiert. Es kann gut sein, dass auf npm mittlerweile neue Versionen vergeben wurden und diese auch veröffentlicht ist. An diese Version kommt man, wenn man als Verwahrungsort das ``latest`` Repository wählt.
 
-Im Gegensatz dazu hat der Eintrag im Latest-Repository keine definierte Versionsnummer:
+Im Gegensatz dazu hat der Eintrag im ``beta`` keine definierte Versionsnummer:
 
 .. code:: json
 
@@ -220,7 +226,7 @@ Hier wird also automatisch immer die letzte freigegebene Version zum Update ange
 Dieses Vorgehen hat den Vorteil, dass man als Adapter-Entwickler genau steuern kann, welche Nutzer was angeboten bekommen. So können neue Versionen zwar veröffentlicht werden, aber "stable-Nutzer" werden erst später auf eine neue Version gebracht, wenn diese von vielen "latest-Nutzern" bereits getestet wurden.
 
 .. note::
-    So kann es natürlich vorkommen, dass einige Adapter zwar im latest-Repository vorhanden sind, aber noch nicht im stable-Repository zu finden sind (weil noch in Entwicklung bzw. noch keine stabile Version verfügbar)!
+    Es kann vorkommen, dass einige Adapter zwar im latest-Repository vorhanden sind, aber noch nicht im stable-Repository zu finden sind (weil noch in Entwicklung bzw. noch keine stabile Version verfügbar)!
 
 .. image:: /images/ioBrokerDoku-Repositories.png
     :alt: ioBroker-Repositories

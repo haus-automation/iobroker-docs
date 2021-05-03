@@ -42,6 +42,7 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
 
     basics/architecture
     basics/datastorage
+    basics/logic
 
 .. toctree::
     :maxdepth: 2
@@ -50,6 +51,7 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     development/adapter
     development/objects
     development/states
+    development/encryption
 
 .. image:: https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png
     :target: https://haus-automatisierung.com/iobroker-kurs/

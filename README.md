@@ -30,6 +30,12 @@ To see the available make targets, simply execute `make`.
 
 If you find a typo, error, or think something can be communicated better, fork this repository and make a pull request.
 
+## Sources
+
+- https://github.com/ioBroker/ioBroker.docs
+- https://github.com/ioBroker/ioBroker/tree/master/doc
+- https://github.com/ioBroker/ioBroker.js-controller/tree/master/doc
+
 ## License
 
 MIT License

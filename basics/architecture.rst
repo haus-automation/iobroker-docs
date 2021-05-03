@@ -17,7 +17,7 @@ Es gibt daher verschiedenste Adapter, welche zum Beispiel
 - mit Hardware kommunizieren (Philips Hue, KNX, HomeMatic, Loxone, ...)
 - Daten aus dem Internet abrufen (Wetter, Verkehr, ...)
 - Logiken bereitstellen (Szenen, Regeln, ...)
-- Schnittstellen in den ioBroker von außen öffnen (Zugriff von unterwegs)
+- Schnittstellen in den ioBroker von außen öffnen / Cloud-Verbindungen (Zugriff von unterwegs)
 - verschiedene Visualisierungsoberflächen bereitstellen (Steuerung per Tablet)
 - den Sonnenstand berechnen
 - Feiertage für dein Bundesland ermitteln
@@ -26,7 +26,7 @@ Es gibt daher verschiedenste Adapter, welche zum Beispiel
 - Verbindungen zu Datenbanken herstellen
 - uvm.
 
-Die Liste der verfügbaren Adapter ist extrem lang und umfasst über 250 verschiedene Integrationen.
+Die `Liste der verfügbaren Adapter <http://download.iobroker.net/list.html>`_ ist extrem lang und umfasst über 250 verschiedene Integrationen.
 
 Diese Liste ist Dein Baukasten. Was Du brauchst, installierst Du dazu. Was Du nicht brauchst, lässt Du weg. Ganz einfach.
 
@@ -49,12 +49,12 @@ Eine Instanz ist am Ende der eigentliche **Prozess**, welcher für einen Adapter
 
 Nehmen wir mal das Beispiel Textverarbeitung. *Microsoft Word* ist also der Adapter und wird einfach nur einmalig installiert. Du kannst aber dann beliebig viele Word-Dokumente parallel öffnen, ohne das Programm Word mehrfach installieren zu müssen. Diese Prozesse sind dann die Instanzen.
 
-Warum sollte man mehrere Instanzen für Adapter erstellen? In der Regel kommt das nicht vor. Aber angenommen Du hast mehrere Hue-Bridges von Philips im Haus. Dann würde jede Instanz die Kommunikation mit genau einer Hue-Bridge übernehmen. Du bräuchtest also genauso viele Instanzen des Hue-Adapters wie Du Hue-Bridges zu Hause hast.
+Warum sollte man mehrere Instanzen für Adapter erstellen? In der Praxis kommt das relativ selten vor. Aber angenommen Du hast mehrere Hue-Bridges von Philips im Haus. Dann würde jede Instanz die Kommunikation mit genau einer Hue-Bridge übernehmen. Du bräuchtest also genauso viele Instanzen des Hue-Adapters wie Du Hue-Bridges zu Hause hast.
 
 .. image:: /images/ioBrokerDoku-Adapter.png
     :alt: js-controller Adapter
 
-Ein weiteres Beispiel wären die Wetterdaten von verschiedenen Orten. Möchtest Du bei Dir zu Hause die Regenwahrscheinlichkeit ermitteln, installierst Du einen Wetter-Adapter und konfigurierst diesen auf deinen Wohnort. Wenn Du dann noch ein Ferienhaus hast, erstellst Du eine weitere Instanz, welche auf den entsprechenden Ort konfiguriert wird und somit von dort die Daten liefert.
+Ein weiteres Beispiel wären die Wetterdaten von verschiedenen Orten. Möchtest Du bei Dir zu Hause die Regenwahrscheinlichkeit ermitteln, installierst Du einen Wetter-Adapter und konfigurierst eine Instanz auf deinen Wohnort. Wenn Du dann noch ein Ferienhaus hast, erstellst Du eine weitere Instanz, welche auf den entsprechenden Ort konfiguriert wird und somit von dort die Daten liefert.
 
 Da es also **mehrere Instanzen vom gleichen Adapter** geben kann, werden diese Instanzen durchnummeriert. Standardmäßig startet die Numerierung bei Null. In diesem Beispiel also:
 
@@ -87,3 +87,5 @@ Genauso können sich Instanzen beim ``js-controller`` registrieren, dass diese b
 
 .. image:: /images/ioBrokerDoku-Instanzen.png
     :alt: js-controller Instanzen
+
+`Repository vom js-controller <https://github.com/ioBroker/ioBroker.js-controller>`_
