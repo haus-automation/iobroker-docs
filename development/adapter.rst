@@ -129,7 +129,24 @@ Gibst Du dort zum Beispiel ``today`` ein, liefert Dir das Programm folgende Übe
 
 Diese Informationen kannst Du direkt in deinem Adapter verwenden. Achte darauf, dass alle Texte übersetzt sind.
 
-Natürlich ist es so, dass (wie üblich) die erstellen Übersetzungen nicht immer einwandfrei sind. Häufig ist z.B. die Deutsche Übersetzung einfachf falsch oder ergibt keinen Sinn. Kontrolliere noch einmal manuell, ob die Texte korrekt sind. Je mehr Sprachen, desto besser!
+.. note::
+    Natürlich ist es so, dass (wie üblich) die erstellen Übersetzungen nicht immer einwandfrei sind. Häufig ist z.B. die Deutsche Übersetzung einfachf falsch oder ergibt keinen Sinn. Kontrolliere noch einmal manuell, ob die Texte korrekt sind. Je mehr Sprachen, desto besser!
+
+Alle Texte **müssen** in die folgenden Sprachen übersetzt werden:
+
+- Englisch (en)
+- Deutsch (de)
+
+Alle Text **sollten** zusätzlich auch diese Sprachen übersetzt werden:
+
+- Russisch (ru)
+- Portugisisch (pt)
+- Niederländisch (nl)
+- Französisch (fr)
+- Italienisch (it)
+- Spanisch (es)
+- Polnisch (pl)
+- Chinesisch (zh-cn)
 
 npm
 ---
@@ -221,12 +238,29 @@ Im Gegensatz dazu hat der Eintrag im ``beta`` keine definierte Versionsnummer:
         "type": "general"
     }
 
-Hier wird also automatisch immer die letzte freigegebene Version zum Update angeboten (aus npm).
+Bei dem ``beta`` Repository wird automatisch immer die letzte freigegebene Version zum Update angeboten (von npm).
 
-Dieses Vorgehen hat den Vorteil, dass man als Adapter-Entwickler genau steuern kann, welche Nutzer was angeboten bekommen. So können neue Versionen zwar veröffentlicht werden, aber "stable-Nutzer" werden erst später auf eine neue Version gebracht, wenn diese von vielen "latest-Nutzern" bereits getestet wurden.
+Dieses Vorgehen hat den Vorteil, dass man als Adapter-Entwickler genau steuern kann, welche Nutzer welche Version angeboten bekommen. So können neue Versionen zwar veröffentlicht werden, aber "stable-Nutzer" werden erst später auf eine neue Version gebracht, wenn diese von vielen "beta-Nutzern" bereits getestet wurden.
 
 .. note::
     Es kann vorkommen, dass einige Adapter zwar im latest-Repository vorhanden sind, aber noch nicht im stable-Repository zu finden sind (weil noch in Entwicklung bzw. noch keine stabile Version verfügbar)!
 
 .. image:: /images/ioBrokerDoku-Repositories.png
     :alt: ioBroker-Repositories
+
+Adapter veröffentlichen
+-----------------------
+
+Möchtest Du deinen Adapter nun anderen zur Verfügung stellen, solltest Du diesen erst von erfahrenen Nutzern testen lassen. Erstelle dazu einen neuen `Foren-Beitrag <https://forum.iobroker.net/category/91/tester>`_ mit der Bitte um einen Test.
+
+Danach kannst Du einen Pull-Request für das oben genannte `GitHub Repository (ioBroker.repositories) <https://github.com/ioBroker/ioBroker.repositories>`_ erstellen, indem Du Deinen Adapter dort hinzufügst.
+
+.. note::
+    Bitte beachte, dass Adapter abgelehnt werden, wenn nicht alle Adapter-Checks (siehe oben) erfüllt sind.
+
+Hilfreiche Tools
+----------------
+
+- `Create-Adapter <https://github.com/ioBroker/create-adapter>`_
+- `Adapter-Checker <https://adapter-check.iobroker.in/>`_
+- `Release-Script von AlCalzone <https://github.com/AlCalzone/release-script>`_

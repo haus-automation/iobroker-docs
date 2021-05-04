@@ -1,0 +1,5 @@
+.. _ecosystem-sentry:
+
+Sentry
+======
+
