@@ -49,7 +49,7 @@ Die **ID** ist dabei ein eindeutiger Schlüssel zu einem Objekt. Dieser ist verg
 
 Objekte werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgelegt:
 
-``/opt/iobroker/iobroker-data/objects.json`` 
+``/opt/iobroker/iobroker-data/objects.json``
 
 Diese Datei nennt man auch Objekt-Datenbank.
 
@@ -86,7 +86,7 @@ Es ist besonders wichtig zu verstehen, was es mit bestätigten States auf sich h
 
 States werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgelegt:
 
-``/opt/iobroker/iobroker-data/states.json`` 
+``/opt/iobroker/iobroker-data/states.json``
 
 Diese Datei nennt man auch State-Datenbank.
 

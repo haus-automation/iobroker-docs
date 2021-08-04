@@ -35,6 +35,7 @@ If you find a typo, error, or think something can be communicated better, fork t
 - https://github.com/ioBroker/ioBroker.docs
 - https://github.com/ioBroker/ioBroker/tree/master/doc
 - https://github.com/ioBroker/ioBroker.js-controller/tree/master/doc
+- https://www.iobroker.net/docu/index-42.htm?page_id=2786&lang=de
 
 ## License
 
