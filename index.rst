@@ -47,6 +47,14 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
 
 .. toctree::
     :maxdepth: 2
+    :caption: Ökosystem
+
+    ecosystem/iot
+    ecosystem/ratings
+    ecosystem/sentry
+
+.. toctree::
+    :maxdepth: 2
     :caption: Entwicklung
 
     development/adapter

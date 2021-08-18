@@ -55,9 +55,36 @@ Das Command Line Interface von ioBroker ist sehr mächtig. Hierüber kann im Pri
     iobroker plugin                                              Plugin management
     iobroker version [<adapter>]                                 Show version of js-controller or specified adapter
 
+Weiterhin ist es möglich, zu (fast) jedem Befehl weitere Hilfen aufzurufen. Dafür wird einfach die Option ``--help`` angehängt:
+
+.. code::
+
+    iobroker user --help
+
+    Commands:
+    iobroker user add <user>      Add new user
+    iobroker user del <user>      Delete user
+    iobroker user passwd <user>   Change user password
+    iobroker user enable <user>   Enable user
+    iobroker user disable <user>  Disable user
+    iobroker user get <user>      Get user
+    iobroker user check <user>    Check user password
+
+    Options:
+        --help     Show help  [boolean]
+    -v, --version  Show version  [boolean]
+
 Beispiele
 ---------
 
+- ``iobroker start``: Startet das gesamte ioBroker-System (js-controller und alle Instanzen)
+- ``iobroker stop``: Stoppt das gesamte ioBroker-System (js-controller und alle Instanzen)
 - ``iobroker upgrade --yes``: Aktualisiert alle Adapter, ohne für jeden Adapter nachzufragen, ob die Version wirklich installiert werden soll.
 - ``iobroker upgrade ical@1.11.2``: Aktualisiert einen einzelnen Adpater auf die angegebene Version
+- ``iobroker add wled --host raspberrypi4``: Erstellt eine neue Instanz des wled-Adapters auf dem Host *raspberrypi4*
+- ``iobroker del wled.0``: Löscht die Instanz wled.0
+- ``iobroker update -u``: Listet alle Adapter mit verfügbaren Updates auf
+- ``iobroker update -a``: Listet alle verfügbaren Adapter auf
+- ``iobroker status iot.0``: Prüft, ob eine Instanz des IoT-Adapters läuft
+- ``iobroker user passwd admin``: Passwort vom User "admin" ändern (z.B. falls vergessen)
 

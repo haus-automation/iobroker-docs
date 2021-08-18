@@ -21,7 +21,7 @@ Ein Objekt beschreibt, welche Informationen genau gespeichert werden können. Es
 - ``_id`` - Eindeutige **ID**
 - ``type``- Typ des Objektes (device, channel, state, ...)
 
-Daneben gibt es noch weitere optionale Informationen, welche das Objekt genauer definieren.
+Daneben gibt es noch weitere (optionale) Informationen, welche das Objekt genauer definieren.
 
 - Name
 - Einheit (z.B. °C oder kWh)
