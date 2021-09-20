@@ -47,7 +47,7 @@ Instanzen
 
 Eine Instanz ist am Ende der eigentliche **Prozess**, welcher für einen Adapter gestartet wird. Für jeden Adapter können beliebig viele Prozesse (Instanzen) gestartet werden.
 
-Nehmen wir mal das Beispiel Textverarbeitung. *Microsoft Word* ist also der Adapter und wird einfach nur einmalig installiert. Du kannst aber dann beliebig viele Word-Dokumente parallel öffnen, ohne das Programm Word mehrfach installieren zu müssen. Diese Prozesse sind dann die Instanzen.
+Nehmen wir mal das Beispiel Textverarbeitung. *Microsoft Word* ist also der Adapter und wird einfach nur einmalig installiert. Du kannst aber dann beliebig viele Word-Dokumente parallel öffnen, ohne das Programm Word mehrfach installieren zu müssen. Diese Prozesse sind dann die Instanzen. Was genau diese Prozesse darstellen, hängt von der geöffneten Word-Datei ab - diese Datei wäre dann im ioBroker-Umfeld die Instanz-Konfiguration.
 
 Warum sollte man mehrere Instanzen für Adapter erstellen? In der Praxis kommt das relativ selten vor. Aber angenommen Du hast mehrere Hue-Bridges von Philips im Haus. Dann würde jede Instanz die Kommunikation mit genau einer Hue-Bridge übernehmen. Du bräuchtest also genauso viele Instanzen des Hue-Adapters wie Du Hue-Bridges zu Hause hast.
 

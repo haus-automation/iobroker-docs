@@ -9,3 +9,4 @@ Zusätzlich kann man durch die offene Schnittstelle z.B. auch Geofencing realisi
 
 In jedem Fall ist ein Konto auf der Webseite `iobroker.pro <https://iobroker.pro/>`_ erforderlich. Dieses Kontodaten werden dann im installierten IoT-Adapter hinterlegt.
 
+Durch 
