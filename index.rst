@@ -49,6 +49,7 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     :maxdepth: 2
     :caption: Ökosystem
 
+    ecosystem/domains
     ecosystem/iot
     ecosystem/ratings
     ecosystem/sentry

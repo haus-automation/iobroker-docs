@@ -8,7 +8,7 @@ Generell lässt sich der ioBroker auf jedem Betriebssystem installieren, welchs 
 Fertige Images
 --------------
 
-In der Vergangenheit wurden z.B. für den Raspberry Pi fertige Images angeboten, welche aber heute nicht mehr verwendet werden sollten.
+In der Vergangenheit wurden z.B. für den Raspberry Pi fertige Images angeboten, welche aber heute nicht mehr verwendet werden sollten! Eine manuelle Installation ist immer zu bevorzugen.
 
 Manuelle Installation (Linux)
 -----------------------------
@@ -24,7 +24,7 @@ Unter Linux lässt sich der ioBroker mit nur einem einzigen Befehl installieren:
 
 Dieser Befehl bereitet das komplette System vor und richtet alles nötige ein:
 
-- nodejs wird in der aktuellen Version heruntergeladen und installiert
+- ``nodejs`` wird in der aktuellen Version heruntergeladen und installiert
 - Ein neuer System-Benutzer wird erstellt (ioBroker)
 - Der ioBroker wird an die richtige Stelle im System installiert
 - Es werden die wichtigsten Adapter installiert und Instanzen hinzugefügt (Admin, Discovery, ...)

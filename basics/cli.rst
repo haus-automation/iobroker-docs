@@ -5,7 +5,7 @@ CLI (Command Line Interface)
 
 Das Command Line Interface von ioBroker ist sehr mächtig. Hierüber kann im Prinzip alles gesteuert werden, was über den ioBroker Admin als Weboberfläche auch möglich ist - und noch mehr. Es können also zum Beispiel neue Adapter installiert oder aktualisiert werden, Backups verwaltet werden, Dateirechte angepasst werden und vieles mehr!
 
-.. code::
+.. code:: console
 
     iobroker [command]
 
@@ -57,7 +57,7 @@ Das Command Line Interface von ioBroker ist sehr mächtig. Hierüber kann im Pri
 
 Weiterhin ist es möglich, zu (fast) jedem Befehl weitere Hilfen aufzurufen. Dafür wird einfach die Option ``--help`` angehängt:
 
-.. code::
+.. code:: console
 
     iobroker user --help
 
