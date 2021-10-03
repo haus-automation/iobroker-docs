@@ -12,7 +12,7 @@ iobroker.net
 ------------
 
 - `Cloud-Verbindung (Cloud-Adapter) und Lizenzen <https://iobroker.net/www/>`_
-- `Installations-Script <https://iobroker.net/install.sh>`_
+- `Installations-Script <https://iobroker.net/install.sh>`_ - siehe :ref:`getting-started-installation`
 - `Installations-Fixing-Script <https://iobroker.net/fix.sh>`_
 
 www.iobroker.net
@@ -30,7 +30,7 @@ download.iobroker.net
 sentry.iobroker.net
 -------------------
 
-- `Sentry-Report Management <https://sentry.iobroker.net/>`_
+- `Sentry-Report Management <https://sentry.iobroker.net/>`_ - siehe :ref:`ecosystem-sentry`
 
 forum.iobroker.net
 ------------------
@@ -40,18 +40,18 @@ forum.iobroker.net
 rating.iobroker.net
 -------------------
 
-- `URL für neue Bewertung (POST) <https://rating.iobroker.net/vote>`_
-- `URL für aktuelle Bewertungen (GET) <https://rating.iobroker.net/adapter/wled>`_
+- `URL für neue Bewertung (POST) <https://rating.iobroker.net/vote>`_ - siehe :ref:`ecosystem-ratings`
+- `URL für aktuelle Bewertungen (GET) <https://rating.iobroker.net/adapter/wled>`_ - siehe :ref:`ecosystem-ratings`
 
 translator.iobroker.in
 ----------------------
 
-- `Übersetzungs-Tool (dev) <https://translator.iobroker.in>`_
+- `Übersetzungs-Tool (dev) <https://translator.iobroker.in>`_ - siehe :ref:`development-adapter`
 
 adapter-check.iobroker.in
 -------------------------
 
-- `Adapter-Checker (dev) <https://adapter-check.iobroker.in>`_
+- `Adapter-Checker (dev) <https://adapter-check.iobroker.in>`_ - siehe :ref:`development-adapter`
 
 iobroker.pro
 ------------

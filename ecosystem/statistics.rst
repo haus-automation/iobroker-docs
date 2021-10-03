@@ -8,6 +8,12 @@ Falls konfiguriert, sendet der ioBroker regelmäßig Nutzungsstatistiken an das 
 Modus
 -----
 
+Vieviele Daten übermittelt werden, hängt vom jeweils gewählten Modus ab.
+
+- normal
+- ohne Stadt
+- erweitert
+
 Hier ein Beispiel, was genau gesendet wird. Dies entspricht dem Modus "erweitert" (`extended`):
 
 .. code:: json
