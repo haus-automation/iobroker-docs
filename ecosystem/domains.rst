@@ -12,6 +12,8 @@ iobroker.net
 ------------
 
 - `Cloud-Verbindung (Cloud-Adapter) und Lizenzen <https://iobroker.net/www/>`_
+- `Installations-Script <https://iobroker.net/install.sh>`_
+- `Installations-Fixing-Script <https://iobroker.net/fix.sh>`_
 
 www.iobroker.net
 ----------------
@@ -34,6 +36,12 @@ forum.iobroker.net
 ------------------
 
 - `Offizielles Forum <https://forum.iobroker.net>`_
+
+rating.iobroker.net
+-------------------
+
+- `URL für neue Bewertung (POST) <https://rating.iobroker.net/vote>`_
+- `URL für aktuelle Bewertungen (GET) <https://rating.iobroker.net/adapter/wled>`_
 
 translator.iobroker.in
 ----------------------

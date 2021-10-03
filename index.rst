@@ -53,6 +53,7 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     ecosystem/iot
     ecosystem/ratings
     ecosystem/sentry
+    ecosystem/statistics
 
 .. toctree::
     :maxdepth: 2
