@@ -258,9 +258,10 @@ Danach kannst Du einen Pull-Request für das oben genannte `GitHub Repository (i
 .. note::
     Bitte beachte, dass Adapter abgelehnt werden, wenn nicht alle Adapter-Checks (siehe oben) erfüllt sind.
 
-Hilfreiche Tools
-----------------
+Hilfreiche Tools / Repositories
+-------------------------------
 
 - `Create-Adapter <https://github.com/ioBroker/create-adapter>`_
 - `Adapter-Checker <https://adapter-check.iobroker.in/>`_
 - `Release-Script von AlCalzone <https://github.com/AlCalzone/release-script>`_
+- `Adapter-Examples <https://github.com/ioBroker/ioBroker.example>`_
