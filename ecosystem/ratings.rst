@@ -13,9 +13,7 @@ Seitdem der Admin-Adapter in Version 5 zur Verfügung steht, können die Anwende
 Neue Bewertung
 --------------
 
-POST-Request to:
-
-`https://rating.iobroker.net/vote`
+POST-Request: ``https://rating.iobroker.net/vote``
 
 **Payload:**
 
@@ -49,9 +47,7 @@ POST-Request to:
 Auslesen
 --------
 
-GET-Request to:
-
-`https://rating.iobroker.net/adapter/wled?uuid=xxx`
+GET-Request: ``https://rating.iobroker.net/adapter/wled?uuid=xxx``
 
 **Response:**
 
