@@ -63,6 +63,7 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     development/objects
     development/states
     development/iopackage
+    development/testing
     development/encryption
 
 .. image:: https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png

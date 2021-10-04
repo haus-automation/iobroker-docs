@@ -12,8 +12,8 @@ iobroker.net
 ------------
 
 - `Cloud-Verbindung (Cloud-Adapter) und Lizenzen <https://iobroker.net/www/>`_
-- `Installations-Script <https://iobroker.net/install.sh>`_ - siehe :ref:`getting-started-installation`
-- `Installations-Fixing-Script <https://iobroker.net/fix.sh>`_
+- `Installations-Script <https://iobroker.net/install.sh>`_ (Redirect auf iobroker.live) - siehe :ref:`getting-started-installation`
+- `Installations-Fixing-Script <https://iobroker.net/fix.sh>`_ (Redirect auf iobroker.live)
 
 www.iobroker.net
 ----------------
@@ -24,8 +24,8 @@ download.iobroker.net
 ---------------------
 
 - `Adapter-Liste <http://download.iobroker.net/list.html>`_
-- `Repository default <http://download.iobroker.net/sources-dist.json>`_
-- `Repository latest <http://download.iobroker.net/sources-dist-latest.json>`_
+- `Repository stable <http://download.iobroker.net/sources-dist.json>`_ (Redirect auf repo.iobroker.live)
+- `Repository beta <http://download.iobroker.net/sources-dist-latest.json>`_ (Redirect auf repo.iobroker.live)
 
 sentry.iobroker.net
 -------------------
@@ -61,8 +61,16 @@ iobroker.pro
 iobroker.live
 -------------
 
+- `Installations-Script <http://iobroker.live/install.sh>`_
+- `Installations-Fixing-Script <http://iobroker.live/fix.sh>`_
 - `GitHub Badge (stable Version) <http://iobroker.live/badges/octoprint-stable.svg>`_
 - `GitHub Badge (Installationen) <http://iobroker.live/badges/octoprint-installed.svg>`_
+
+repo.iobroker.live
+------------------
+
+- `Repository stable <http://repo.iobroker.live/sources-dist.json>`_
+- `Repository beta <http://repo.iobroker.live/sources-dist-latest.json>`_
 
 iobroker.link
 -------------

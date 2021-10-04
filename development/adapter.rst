@@ -10,7 +10,7 @@ Neuer Adapter
 
 **Bevor Du einen neuen Adapter entwickelst, schau am besten nach, ob dieser schon existiert oder angefangen wurde.**
 
-Offene Anfragen für Adapter findest Du - `hier <https://github.com/ioBroker/AdapterRequests/issues>`_
+Offene Anfragen für Adapter findest Du `hier <https://github.com/ioBroker/AdapterRequests/issues>`_.
 
 Wenn Du einen neuen Adapter entwickeln möchtest, empfiehlt es sich die Erstellung mit Hilfe des Create-Adapter-Tools durchzuführen. Dieses Tool
 erstellt Dir auf Basis eines Templates ein neues Projekt, mit welchem Du direkt durchstarten kannst.
@@ -22,7 +22,6 @@ Um einen neuen Adapter zu erstellen, führst Du folgenden Befehl aus:
 .. code:: 
 
     npx @iobroker/create-adapter 
-
 
 Nachdem das Programm ausgeführt wird, werden Dir einige Fragen gestellt, wie Du gerne arbeiten möchtest. Das Ergebnis sieht beispielsweise so aus:
 
@@ -79,7 +78,7 @@ GitHub Repository
 .. tip::
     Ich würde generell empfehlen, den Quellcode für den Adapter auf GitHub zu veröffentlichen. Natürlich würden andere Plattformen wie Amazon Code Commit oder Bitbucket genauso funktionieren, allerdings arbeitet der Großteil der ioBroker-Community mit GitHub.
 
-Wichtig ist, dass Du den Namenskonventionen für ein neues Repository folgst. Das Repository heißt dabei ``ioBroker.<deinadapter>``. **Achte auf Groß- und Kleinschreibung!** Das B von ioBroker wird im Repository-Namen groß geschrieben! Der komplette rest wird klein geschrieben!
+Wichtig ist, dass Du den Namenskonventionen für ein neues Repository folgst. Das Repository heißt dabei ``ioBroker.<deinadapter>``. **Achte auf Groß- und Kleinschreibung!** Das B von ioBroker wird im Repository-Namen groß geschrieben! Der komplette Rest wird klein geschrieben!
 
 Gültige Namen für Dein neues **Repository** wären also zum Beispiel:
 
@@ -207,7 +206,7 @@ Adapter-Listen (Repositories)
 Generell gibt es zwei verschiedene Adapter-Listen, welche vom ioBroker-Team angeboten werden:
 
 - ``stable`` - wird täglich aktualisiert und hier bereitgestellt: ``http://download.iobroker.net/sources-dist.json``
-- ``beta`` bzw. ``latest`` - wird täglich aktualisiert und hier bereitgestellt: ``http://download.iobroker.net/sources-dist-latest.json``
+- ``beta`` (auch ``latest`` genannt) - wird täglich aktualisiert und hier bereitgestellt: ``http://download.iobroker.net/sources-dist-latest.json``
 
 Beide Listen werden in `diesem GitHub Repository (ioBroker.repositories) <https://github.com/ioBroker/ioBroker.repositories>`_ gepflegt.
 
@@ -258,8 +257,8 @@ Danach kannst Du einen Pull-Request für das oben genannte `GitHub Repository (i
 .. note::
     Bitte beachte, dass Adapter abgelehnt werden, wenn nicht alle Adapter-Checks (siehe oben) erfüllt sind.
 
-Hilfreiche Tools / Repositories
--------------------------------
+Hilfreiche Tools / Links
+------------------------
 
 - `Create-Adapter <https://github.com/ioBroker/create-adapter>`_
 - `Adapter-Checker <https://adapter-check.iobroker.in/>`_

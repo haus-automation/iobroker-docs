@@ -124,3 +124,9 @@ Weiterhin gibt es den (reservierten) Namespace ``system.`` für das System. Dort
 
 .. danger::
     Ändere keine Informationen in dem System-Namespace, wenn Du nicht genau weißt, was Du da tust. Als normaler Anwender gibt es keinen Grund, dort etwas ändern. Diese Informationen sind nur für Entwickler relevant!
+
+Speicherort
+-----------
+
+Im Standard arbeitet der ioBroker mit dem Dateisystem (``files``) als Speicherort für die Objekt- und States-Datenbank. Dies kann aber auch umkonfiguriert werden, sodass stattdessen `Redis <https://redis.io/>`_ zum Speichern der Daten genutzt wird. Dabei handelt es sich um einen Dienst, welcher zusätzlich auf dem System installiert werden muss.
+

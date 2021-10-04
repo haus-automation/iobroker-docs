@@ -103,7 +103,7 @@ Im Modus "normal" (``normal``) werden weniger Informationen übertragen:
 Backend
 -------
 
-Die Daten werden vom ``js-controller`` an die `http://download.iobroker.net/diag.php` gesendet (POST-Request mit JSON-Payload an ``data``).
+Die Daten werden vom ``js-controller`` an `http://download.iobroker.net/diag.php` gesendet (POST-Request mit JSON-Payload an ``data``).
 
 .. code:: console
 
