@@ -56,7 +56,7 @@ adapter-check.iobroker.in
 iobroker.pro
 ------------
 
-- `Cloud-Verbindung (IoT-Adapter) und Abonnements <https://iobroker.pro/www/>`_
+- `Cloud-Verbindung (IoT-Adapter) und Abonnements <https://iobroker.pro/www/>`_ - siehe :ref:`ecosystem-iot`
 
 iobroker.live
 -------------
@@ -65,12 +65,15 @@ iobroker.live
 - `Installations-Fixing-Script <http://iobroker.live/fix.sh>`_
 - `GitHub Badge (stable Version) <http://iobroker.live/badges/octoprint-stable.svg>`_
 - `GitHub Badge (Installationen) <http://iobroker.live/badges/octoprint-installed.svg>`_
+- `News für den Admin 5 <https://iobroker.live/repo/news.json>`_
 
 repo.iobroker.live
 ------------------
 
-- `Repository stable <http://repo.iobroker.live/sources-dist.json>`_
-- `Repository beta <http://repo.iobroker.live/sources-dist-latest.json>`_
+- `Repository stable <http://repo.iobroker.live/sources-dist.json>`_ - siehe :ref:`ecosystem-repositories`
+- `Repository hash stable <https://repo.iobroker.live/sources-dist-hash.json>`_ - siehe :ref:`ecosystem-repositories`
+- `Repository beta <http://repo.iobroker.live/sources-dist-latest.json>`_ - siehe :ref:`ecosystem-repositories`
+- `Repository hash beta <https://repo.iobroker.live/sources-dist-latest-hash.json>`_ - siehe :ref:`ecosystem-repositories`
 
 iobroker.link
 -------------

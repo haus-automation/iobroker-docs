@@ -90,3 +90,4 @@ Beispiele
 - ``iobroker update -a``: Listet alle verfügbaren Adapter auf
 - ``iobroker user passwd admin``: Passwort vom User "admin" ändern (z.B. falls vergessen)
 - ``iobroker version``: Version des ``js-controller``
+- ``iobroker object get system.config``: Liest den Inhalt des Objektes ``system.config``

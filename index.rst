@@ -42,14 +42,17 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
 
     basics/architecture
     basics/datastorage
-    basics/logic
     basics/cli
+    basics/systemconfig
+    basics/uuid
+    basics/logic
 
 .. toctree::
     :maxdepth: 2
     :caption: Ökosystem
 
     ecosystem/domains
+    ecosystem/repositories
     ecosystem/iot
     ecosystem/ratings
     ecosystem/sentry

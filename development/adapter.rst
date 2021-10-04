@@ -200,59 +200,12 @@ Wichtig ist, dass alle Haken grün sind.
 
 Das `Repository <https://github.com/ioBroker/ioBroker.repochecker>`_ vom Adapter-Checker kann mit neuen Regeln erweitert werden (siehe ``index.js``).
 
-Adapter-Listen (Repositories)
------------------------------
-
-Generell gibt es zwei verschiedene Adapter-Listen, welche vom ioBroker-Team angeboten werden:
-
-- ``stable`` - wird täglich aktualisiert und hier bereitgestellt: ``http://download.iobroker.net/sources-dist.json``
-- ``beta`` (auch ``latest`` genannt) - wird täglich aktualisiert und hier bereitgestellt: ``http://download.iobroker.net/sources-dist-latest.json``
-
-Beide Listen werden in `diesem GitHub Repository (ioBroker.repositories) <https://github.com/ioBroker/ioBroker.repositories>`_ gepflegt.
-
-- ``stable`` = ``sources-dist-stable.json``
-- ``beta`` bzw. ``latest`` = ``sources-dist.json``
-
-Im ``stable`` werden getestete Adapter aufgenommen. Dort wird neben dem Repository auch eine genaue Version mit angegeben.
-Ein Eintrag sieht dort zum Beispiel so aus:
-
-.. code:: json
-
-    "admin": {
-        "meta": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/io-package.json",
-        "icon": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/admin/admin.png",
-        "type": "general",
-        "version": "4.2.1"
-    }
-
-Wie Du siehst, ist vom Admin-Adapter in diesem Beispiel aktuell die Version ``4.2.1`` als stabil definiert. Es kann gut sein, dass auf npm mittlerweile neue Versionen vergeben wurden und diese auch veröffentlicht ist. An diese Version kommt man, wenn man als Verwahrungsort das ``latest`` Repository wählt.
-
-Im Gegensatz dazu hat der Eintrag im ``beta`` keine definierte Versionsnummer:
-
-.. code:: json
-
-    "admin": {
-        "meta": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/io-package.json",
-        "icon": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/admin/admin.png",
-        "type": "general"
-    }
-
-Bei dem ``beta`` Repository wird automatisch immer die letzte freigegebene Version zum Update angeboten (von npm).
-
-Dieses Vorgehen hat den Vorteil, dass man als Adapter-Entwickler genau steuern kann, welche Nutzer welche Version angeboten bekommen. So können neue Versionen zwar veröffentlicht werden, aber "stable-Nutzer" werden erst später auf eine neue Version gebracht, wenn diese von vielen "beta-Nutzern" bereits getestet wurden.
-
-.. note::
-    Es kann vorkommen, dass einige Adapter zwar im latest-Repository vorhanden sind, aber noch nicht im stable-Repository zu finden sind (weil noch in Entwicklung bzw. noch keine stabile Version verfügbar)!
-
-.. image:: /images/ioBrokerDoku-Repositories.png
-    :alt: ioBroker-Repositories
-
 Adapter veröffentlichen
 -----------------------
 
 Möchtest Du deinen Adapter nun anderen zur Verfügung stellen, solltest Du diesen erst von erfahrenen Nutzern testen lassen. Erstelle dazu einen neuen `Foren-Beitrag <https://forum.iobroker.net/category/91/tester>`_ mit der Bitte um einen Test.
 
-Danach kannst Du einen Pull-Request für das oben genannte `GitHub Repository (ioBroker.repositories) <https://github.com/ioBroker/ioBroker.repositories>`_ erstellen, indem Du Deinen Adapter dort hinzufügst.
+Danach kannst Du einen Pull-Request im `GitHub Repository (ioBroker.repositories) <https://github.com/ioBroker/ioBroker.repositories>`_ erstellen, indem Du Deinen Adapter dort hinzufügst. Mehr Details hier: :ref:`ecosystem-repositories`
 
 .. note::
     Bitte beachte, dass Adapter abgelehnt werden, wenn nicht alle Adapter-Checks (siehe oben) erfüllt sind.

@@ -128,5 +128,5 @@ Weiterhin gibt es den (reservierten) Namespace ``system.`` für das System. Dort
 Speicherort
 -----------
 
-Im Standard arbeitet der ioBroker mit dem Dateisystem (``files``) als Speicherort für die Objekt- und States-Datenbank. Dies kann aber auch umkonfiguriert werden, sodass stattdessen `Redis <https://redis.io/>`_ zum Speichern der Daten genutzt wird. Dabei handelt es sich um einen Dienst, welcher zusätzlich auf dem System installiert werden muss.
+Im Standard arbeitet der ioBroker mit dem Dateisystem (``files``) als Speicherort für die Objekt- und States-Datenbank. Dies kann aber auch umkonfiguriert werden, sodass stattdessen z.B. `Redis <https://redis.io/>`_ zum Speichern der Daten genutzt wird. Dabei handelt es sich um einen Dienst, welcher zusätzlich auf dem System installiert werden muss.
 
