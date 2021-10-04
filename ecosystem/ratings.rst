@@ -28,6 +28,8 @@ POST-Request: ``https://rating.iobroker.net/vote``
         "lang": "de"
     }
 
+Hier wird ebenfalls die :ref:`basics-uuid` mitgeliefert.
+
 **Response:**
 
 .. code:: json
@@ -47,7 +49,7 @@ POST-Request: ``https://rating.iobroker.net/vote``
 Auslesen
 --------
 
-GET-Request: ``https://rating.iobroker.net/adapter/wled?uuid=xxx``
+GET-Request: ``https://rating.iobroker.net/adapter/wled?uuid=xxx`` - siehe :ref:`basics-uuid`
 
 **Response:**
 

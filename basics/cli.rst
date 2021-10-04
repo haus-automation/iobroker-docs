@@ -74,20 +74,33 @@ Weiterhin ist es möglich, zu (fast) jedem Befehl weitere Hilfen aufzurufen. Daf
         --help     Show help  [boolean]
     -v, --version  Show version  [boolean]
 
-Beispiele
----------
+Beispiele (System)
+------------------
 
 - ``iobroker start``: Startet das gesamte ioBroker-System (``js-controller`` und alle Instanzen)
 - ``iobroker stop``: Stoppt das gesamte ioBroker-System (``js-controller`` und alle Instanzen)
+- ``iobroker version``: Version des ``js-controller``
+- ``iobroker uuid``: UUID des Systems - siehe :ref:`basics-uuid`
+
+Beispiele (Adapter)
+------------------
+
 - ``iobroker upgrade --yes``: Aktualisiert alle Adapter, ohne für jeden Adapter nachzufragen, ob die Version wirklich installiert werden soll.
 - ``iobroker upgrade ical@1.11.2``: Aktualisiert einen einzelnen Adpater auf die angegebene Version ``1.11.2``
 - ``iobroker add wled``: Erstellt eine neue Instanz des wled-Adapters
-- ``iobroker del wled.0``: Löscht die Instanz wled.0
+- ``iobroker del wled.0``: Löscht die Instanz ``wled.0``
 - ``iobroker del wled``: Deinstalliert den WLED Adapter
 - ``iobroker status iot.0``: Prüft, ob eine Instanz des IoT-Adapters läuft
 - ``iobroker version iot``: Version des IoT-Adapters
 - ``iobroker update -u``: Listet alle Adapter mit verfügbaren Updates auf
 - ``iobroker update -a``: Listet alle verfügbaren Adapter auf
-- ``iobroker user passwd admin``: Passwort vom User "admin" ändern (z.B. falls vergessen)
-- ``iobroker version``: Version des ``js-controller``
+
+Beispiele (User)
+----------------
+
+- ``iobroker user passwd admin``: Passwort vom User "admin" ändern (z.B. falls es vergessen wurde)
+
+Beispiele (Objekte)
+-------------------
+
 - ``iobroker object get system.config``: Liest den Inhalt des Objektes ``system.config``

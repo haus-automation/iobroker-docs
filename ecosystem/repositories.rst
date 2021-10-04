@@ -64,4 +64,20 @@ Das aktive Repository wird dabei im Objekt ``system.config`` im Attribut ``commo
 Update-Prozess
 --------------
 
-TODO
+Das konfigurierte/aktive Repository wird regelmäßig geprüft. Dafür wird die jeweils angegebene URL geändert, sodass stattdessen eine Hash-Datei abgerufen wird.
+
+.. code:: javascript
+
+    urlOrPath = urlOrPath.replace(/\.json$/, '-hash.json');
+
+So wird also z.B. statt ``http://download.iobroker.net/sources-dist.json`` erstmal ``http://download.iobroker.net/sources-dist-hash.json`` abgerufen. Aktuell hat die Datei folgenden Inhalt:
+
+.. code:: json
+
+    {
+        "hash": "a3276c4275647354fa9f81748dde7941",
+        "date": "2021-10-04T14:21:02.483Z",
+        "name": "sources-dist.json"
+    }
+
+Dieser Hash wird mit dem aktuellen Hash in ``system.repositories`` verglichen. Sollte der Hash abweichen, wird die eigentliche JSON-Datei geladen. Dies wurde so gelöst, um den Traffic von tausenden anfragenden Systemen zu reduzieren.
