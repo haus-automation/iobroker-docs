@@ -26,7 +26,7 @@ Es gibt daher verschiedenste Adapter, welche zum Beispiel
 - Verbindungen zu Datenbanken herstellen
 - uvm.
 
-Die `Liste der verfügbaren Adapter <http://download.iobroker.net/list.html>`_ ist extrem lang und umfasst über 250 verschiedene Integrationen.
+Die `Liste der verfügbaren Adapter <http://download.iobroker.net/list.html>`_ ist extrem lang und umfasst über 400 verschiedene Integrationen.
 
 Diese Liste ist Dein Baukasten. Was Du brauchst, installierst Du dazu. Was Du nicht brauchst, lässt Du weg. Ganz einfach.
 
@@ -47,7 +47,7 @@ Instanzen
 
 Eine Instanz ist am Ende der eigentliche **Prozess**, welcher für einen Adapter gestartet wird. Für jeden Adapter können beliebig viele Prozesse (Instanzen) gestartet werden.
 
-Nehmen wir mal das Beispiel Textverarbeitung. *Microsoft Word* ist also der Adapter und wird einfach nur einmalig installiert. Du kannst aber dann beliebig viele Word-Dokumente parallel öffnen, ohne das Programm Word mehrfach installieren zu müssen. Diese Prozesse sind dann die Instanzen. Was genau diese Prozesse darstellen, hängt von der geöffneten Word-Datei ab - diese Datei wäre dann im ioBroker-Umfeld die Instanz-Konfiguration.
+Nehmen wir das Beispiel Textverarbeitung. *Microsoft Word* ist also der Adapter und wird einfach nur einmalig installiert. Du kannst aber dann beliebig viele Word-Dokumente parallel öffnen, ohne das Programm Word mehrfach installieren zu müssen. Diese Prozesse sind dann die Instanzen. Was genau diese Prozesse darstellen, hängt von der geöffneten Word-Datei ab - diese Datei wäre dann im ioBroker-Umfeld die Instanz-Konfiguration.
 
 Warum sollte man mehrere Instanzen für Adapter erstellen? In der Praxis kommt das relativ selten vor. Aber angenommen Du hast mehrere Hue-Bridges von Philips im Haus. Dann würde jede Instanz die Kommunikation mit genau einer Hue-Bridge übernehmen. Du bräuchtest also genauso viele Instanzen des Hue-Adapters wie Du Hue-Bridges zu Hause hast.
 
@@ -76,7 +76,7 @@ Selbst die Admin-Oberfläche ist eine Instanz eines Adapters, welche genau wie a
 js-controller
 -------------
 
-Kommen wir noch einmal zurück zum angesprochenen ``js-controller``. Dieser startet die Prozesse der einzelnen Instanzen und verwaltet die Kommunikation zu diesen.
+Kommen wir noch einmal zurück zum angesprochenen ``js-controller``. Dieser startet die Prozesse der einzelnen Instanzen und verwaltet die Kommunikation mit diesen.
 
 Bleiben wir bei dem Beispiel von Philips Hue. Nachdem also eine neue Instanz für den installierten Adapter gestartet wurde, legt der Adapter Objekte an, welche Deine Räume, Szenen und Lampen repräsentieren, welche Deine Philips Hue Bridge kennt. Diese Objekte kann er aber nicht selbst anlegen, sondern nur den ``js-controller`` darum bitten dies zu tun. Also sendet der Hue-Adapter eine Nachricht an diesen Prozess, und übermittelt die Informationen für das Anlegen der Objekte.
 
@@ -88,4 +88,4 @@ Genauso können sich Instanzen beim ``js-controller`` registrieren, dass diese b
 .. image:: /images/ioBrokerDoku-Instanzen.png
     :alt: js-controller Instanzen
 
-`Repository vom js-controller <https://github.com/ioBroker/ioBroker.js-controller>`_
+`GitHub-Repository vom js-controller <https://github.com/ioBroker/ioBroker.js-controller>`_

@@ -110,7 +110,7 @@ Löschst Du die Instanz, wird der Namespace ebenfalls gelöscht.
 
 Weiterhin gibt es den (reservierten) Namespace ``system.`` für das System. Dort ist unter anderem folgendes enthalten:
 
-- ``system.config`` - Systemkonfiguration (Sprache, Datumsformat, Verwahrungsort, ...)
+- ``system.config`` - Systemkonfiguration (Sprache, Datumsformat, Verwahrungsort, ...) - siehe :ref:`basics-systemconfig`
 - ``system.host.<hostname>``` - js-controller-Prozess (Uptime, Ressourcen, ...)
 - ``system.repositories`` - Liste der vefügbaren Adpater
 - ``system.certificates`` - Konfigurierte Zertifikate

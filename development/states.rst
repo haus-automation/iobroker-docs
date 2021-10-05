@@ -3,7 +3,8 @@
 States
 ======
 
-Lies zuerst die Grundlagen zur :ref:`basics-datastorage`.
+.. note::
+    Lies zuerst die Grundlagen zur :ref:`basics-datastorage`.
 
 States können beispielsweise über das :ref:`basics-cli` ausgelesen werden:
 
