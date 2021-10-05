@@ -43,6 +43,11 @@ rating.iobroker.net
 - `URL für neue Bewertung (POST) <https://rating.iobroker.net/vote>`_ - siehe :ref:`ecosystem-ratings`
 - `URL für aktuelle Bewertungen (GET) <https://rating.iobroker.net/adapter/wled>`_ - siehe :ref:`ecosystem-ratings`
 
+weblate.iobroker.net
+--------------------
+
+- `Übersetzungs-Tool (Web-based continuous localization) <https://weblate.iobroker.net/>`_
+
 translator.iobroker.in
 ----------------------
 

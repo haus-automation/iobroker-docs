@@ -25,6 +25,7 @@ YouTube-Kanäle
 - `Marcels Custom Shop <https://www.youtube.com/channel/UC2SH7dYDX_YYTTYef-bdBFw>`_
 - `Svens ioBroker Tutorials <https://www.youtube.com/channel/UCWNrpBBFbvrK8gAWLDX9QuQ>`_ (inaktiv)
 - `nurChris <https://www.youtube.com/channel/UC7mqX5iCL97hGiT8RidtTAw>`_ (inaktiv)
+- `TeamSpeak SmartHome <https://www.youtube.com/channel/UCdQZAiYa6Yw6p10pX49zQDQ>`_ (inaktiv)
 
 Discord-Server
 --------------
