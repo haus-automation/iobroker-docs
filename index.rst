@@ -35,6 +35,7 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
 
     getting-started/hardware
     getting-started/installation
+    getting-started/resources
 
 .. toctree::
     :maxdepth: 2

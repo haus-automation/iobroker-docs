@@ -3,9 +3,9 @@
 Daten-Speicherung
 =================
 
-Um Daten zu speichern, muss ein Objekt und ein State existieren. Das Objekt ist statisch und enthält viele Meta-Daten. Zusätzlich gibt es den dynamischen Zustand (State), welcher den aktuellen Wert hält. Beides zusammen nennt sich Datenpunkt.
+Um Daten zu speichern, muss ein Objekt und ein Zustand existieren. Das Objekt ist statisch und enthält viele Meta-Daten. Zusätzlich gibt es den dynamischen Zustand (auch "State" genannt), welcher den aktuellen Wert hält. Beides zusammen nennt sich Datenpunkt.
 
-Die Objekte und States werden in Datenbanken vorgehalten, welche der ``js-controller`` verwaltet. Über diesen können Daten aus den Datenbanken abgefragt oder geändert werden.
+Die Objekte und Zustände werden in Datenbanken vorgehalten, welche der ``js-controller`` verwaltet. Über diesen können Daten aus den Datenbanken abgefragt oder geändert werden.
 
 .. image:: /images/ioBrokerDoku-Datenspeicher.png
     :alt: ioBroker Struktur
@@ -40,7 +40,7 @@ Unter diesem Objekt werden dann weitere Objekte angelegt, welche alles Mögliche
 So wird eine logische Hierarchie aufgebaut. Stell Dir das wie deine Urlaubsfotos vor, welche Du auch in verschiedene Ordner auf deiner Festplatte ablegst. Alle Fotos aus einem Urlaub kommen zusammen in einen Ordner. Und so ist das mit den Objekten auch. Alles, was zum Beispiel eine einzelne Lampe kann, wird als einzelne Objekte unter ein gemeinsames Objekt gepackt.
 
 .. note::
-    Nicht jeder Datenpunkt hat zwingend einen State. Aus organisatorischen Gründen kann man auch Objekte anlegen, welches nur für die Struktur dienen. Diese Objekte sind vom Typ "Kanal" bzw. Englisch "Channel".
+    Nicht jeder Datenpunkt hat zwingend einen zugehörigen Zustand. Aus organisatorischen Gründen kann man auch Objekte anlegen, welches nur für die Struktur dienen. Diese Objekte sind vom Typ "Kanal" bzw. Englisch "Channel".
 
 .. image:: /images/ioBrokerDoku-ObjektHierarchie.png
     :alt: Objekt-Hierarchie
@@ -70,11 +70,11 @@ Ein ``state`` ist der eigentliche Wert eines Datenpunktes. Neben dem Wert werden
 Es handelt sich also im Gegensatz zum Objekt um dynamische Daten, welche sich ständig ändern können.
 
 .. note::
-    Die meisten dieser Informationen sind für Dich als Anwender nicht interessant. Du arbeitest zu 99% nur mit dem Wert ``val`` eines States. Dennoch solltest Du wissen, dass neben dem Wert noch mehr Informationen gespeichert werden.
+    Die meisten dieser Informationen sind für Dich als Anwender nicht interessant. Du arbeitest zu 99% nur mit dem Wert ``val`` eines Zustandes. Dennoch solltest Du wissen, dass neben dem Wert noch mehr Informationen gespeichert werden.
 
-Das zugehörige Objekt gibt dabei vor, wie der State aussehen darf. Also in welchem Datentyp der Wert vorgehalten wird, ob der State nur gelesen werden darf oder auch geschrieben werden kann, uvm.
+Das zugehörige Objekt gibt dabei vor, wie der Zustand aussehen darf. Also in welchem Datentyp der Wert vorgehalten wird, ob der Zustand nur gelesen werden darf oder auch geschrieben werden kann, uvm.
 
-Es ist besonders wichtig zu verstehen, was es mit bestätigten States auf sich hat (siehe ``ack``). Dabei hilft Dir dieses Video:
+Es ist besonders wichtig zu verstehen, was es mit bestätigten Zuständen auf sich hat (siehe ``ack``). Dabei hilft Dir dieses Video:
 
 .. raw:: html
 
@@ -82,7 +82,7 @@ Es ist besonders wichtig zu verstehen, was es mit bestätigten States auf sich h
         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/p5FyeifYUnw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-States werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgelegt:
+Zustände werden im Standard als JSON (Text, UTF-8) in der folgenden Datei abgelegt:
 
 ``/opt/iobroker/iobroker-data/states.json``
 
@@ -126,6 +126,6 @@ Weiterhin gibt es den (reservierten) Namespace ``system.`` für das System. Dort
 Speicherort
 -----------
 
-Im Standard arbeitet der ioBroker mit dem Dateisystem (``files``) als Speicherort für die Objekt- und States-Datenbank. Dies kann aber auch umkonfiguriert werden, sodass stattdessen z.B. `Redis <https://redis.io/>`_ zum Speichern der Daten genutzt wird. Dabei handelt es sich um einen Dienst, welcher zusätzlich auf dem System installiert werden muss.
+Im Standard arbeitet der ioBroker mit dem Dateisystem (``files``) als Speicherort für die Objekt- und Zustands-Datenbank. Dies kann aber auch umkonfiguriert werden, sodass stattdessen z.B. `Redis <https://redis.io/>`_ zum Speichern der Daten genutzt wird. Dabei handelt es sich um einen Dienst, welcher zusätzlich auf dem System installiert werden muss.
 
 TODO
