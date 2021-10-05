@@ -43,8 +43,10 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden:
 
 Für Objekte sind die folgenden Attribute verpflichtend:
 
-- ``_id``
-- ``type``
+- ``_id`` - Eindeutige ID
+- ``type`` - Typ des Objektes (siehe unten).
+- ``common`` - ioBroker-Spezifische Eigenschaften (Rollen, Lesezugriff, Schreibzugriff, ...)
+- ``native`` - Eigenschaften des Zielsystems (z.B. eine ID eines Gerätes)
 
 Verfügbaren Typen
 -----------------
@@ -64,7 +66,10 @@ Verfügbaren Typen
 - ``chart`` - Diagramm
 - ``folder`` - Verzeichnis. Beispielsweise ``system.host.raspberrypi-iobroker.notifications``
 
-ref: https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/objectsschema.md
+Common-Eigenschaften
+--------------------
+
+TODO
 
 Typ Host (Beispiel)
 -------------------
