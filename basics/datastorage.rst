@@ -51,22 +51,20 @@ Objekte werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgeleg
 
 ``/opt/iobroker/iobroker-data/objects.json``
 
-Diese Datei nennt man auch Objekt-Datenbank.
+Diese Datei nennt man auch Objekt-Datenbank. Mehr Details unter :ref:`development-objects`.
 
-State
------
+State (Zustand)
+---------------
 
 .. note::
-    Nur Objekte vom Typ ``state`` haben auch einen zugehörigen State. **Nicht jedes Objekt hat einen State, aber jeder State ein Objekt!**
+    Nur Objekte vom Typ ``state`` haben auch einen zugehörigen Zustand. **Nicht jedes Objekt hat einen Zustand, aber jeder Zustand ein Objekt!**
 
-Ein state ist der eigentliche Wert eines Datenpunktes. Neben dem Wert werden aber auch hier noch weitere Informationen vorgehalten, wie zum Beispiel:
+Ein ``state`` ist der eigentliche Wert eines Datenpunktes. Neben dem Wert werden aber auch hier noch weitere Informationen vorgehalten, wie zum Beispiel:
 
 - ``val`` - Der aktuell gespeicherte Wert
 - ``ack`` - Bestätigt-Flag, ob der (neue) Wert vom Adapter bzw. Ziel akzeptiert wurde
-- ``ts`` - Unix Timestamp (Zeitstempel) wann der State zuletzt **aktualisiert** wurde
-- ``lc`` - Unix Zimestamp (Zeitstempel) wann der State zuletzte **geändert** wurde (last change)
-- ``from`` - Welche Instanz hat die Änderung durchgeführt (z.B. ``system.adapter.admin.0``)
-- ``user`` - Benutzer, welche die Änderung durchgeführt hat (z.B. ``system.user.admin``)
+- ``ts`` - Unix Timestamp (Zeitstempel in Millisekunden) wann der Zustand zuletzt **aktualisiert** wurde
+- ``lc`` - Unix Zimestamp (Zeitstempel in Millisekunden) wann der Zustand zuletzt **geändert** wurde (last change)
 - ...
 
 Es handelt sich also im Gegensatz zum Objekt um dynamische Daten, welche sich ständig ändern können.
@@ -88,14 +86,14 @@ States werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgelegt
 
 ``/opt/iobroker/iobroker-data/states.json``
 
-Diese Datei nennt man auch State-Datenbank.
+Diese Datei nennt man auch State-Datenbank. Mehr Details unter :ref:`development-states`.
 
 Datenpunkt
 ----------
 
-Wenn man von einem Datenpunkt spricht, ist die Kombination aus Objekt mit dem zugehörigen State gemeint.
+Wenn man von einem Datenpunkt spricht, ist die Kombination aus Objekt mit dem zugehörigen Zustand gemeint.
 
-Die Kombination von Objekte und State ist die einzige Möglichkeit in ioBroker Daten abzulegen. Alles wird auf dieser Struktur abgebildet. Selbst die Konfiguration von Instanzen wird in Datenpunkten gespeichert. Diese findest Du z.B. im System-Namespace.
+Die Kombination von Objekte und Zustand ist die einzige Möglichkeit in ioBroker Daten abzulegen. Alles wird in dieser Struktur abgebildet. Selbst die Konfiguration von Instanzen wird in Datenpunkten gespeichert. Diese findest Du z.B. im System-Namespace (siehe unten).
 
 Namespace
 ---------
@@ -123,10 +121,11 @@ Weiterhin gibt es den (reservierten) Namespace ``system.`` für das System. Dort
 - ``system.adapter.<adapter-name>.<instance-nummmer>`` - Informationen zur einzelnen Instanz (Uptime, Ressourcen, ...)
 
 .. danger::
-    Ändere keine Informationen in dem System-Namespace, wenn Du nicht genau weißt, was Du da tust. Als normaler Anwender gibt es keinen Grund, dort etwas ändern. Diese Informationen sind nur für Entwickler relevant!
+    Ändere keine Informationen in dem System-Namespace, wenn Du nicht genau weißt, was Du da tust. Als normaler Anwender gibt es keinen Grund, dort etwas ändern. Diese Informationen sind nur für Entwickler relevant! Im Admin-Adapter sieht man diese Objekte auch nur, wenn der Expertenmodus angeschaltet ist.
 
 Speicherort
 -----------
 
 Im Standard arbeitet der ioBroker mit dem Dateisystem (``files``) als Speicherort für die Objekt- und States-Datenbank. Dies kann aber auch umkonfiguriert werden, sodass stattdessen z.B. `Redis <https://redis.io/>`_ zum Speichern der Daten genutzt wird. Dabei handelt es sich um einen Dienst, welcher zusätzlich auf dem System installiert werden muss.
 
+TODO

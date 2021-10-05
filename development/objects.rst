@@ -3,6 +3,8 @@
 Objekte
 =======
 
+Lies zuerst die Grundlagen zur :ref:`basics-datastorage`.
+
 ref: https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/objectsschema.md
 
 .. code:: json

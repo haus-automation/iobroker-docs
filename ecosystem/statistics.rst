@@ -100,7 +100,7 @@ Im Modus "normal" (``normal``) werden weniger Informationen übertragen:
 
 **Es wird darum gebeten, den erweiterten Modus zu aktivieren.**
 
-Es wird in allen Fällen die :ref:`basics-uuid` der Installation mit übermittelt.
+Es wird in allen Fällen die :ref:`basics-uuid` der Installation mit übermittelt. Außerdem wird gesendet, wie Du deine Daten speicherst. Siehe auch :ref:`basics-datastorage`.
 
 Backend
 -------

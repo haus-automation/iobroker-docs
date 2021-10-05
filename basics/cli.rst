@@ -83,7 +83,7 @@ Beispiele (System)
 - ``iobroker uuid``: UUID des Systems - siehe :ref:`basics-uuid`
 
 Beispiele (Adapter)
-------------------
+-------------------
 
 - ``iobroker upgrade --yes``: Aktualisiert alle Adapter, ohne für jeden Adapter nachzufragen, ob die Version wirklich installiert werden soll.
 - ``iobroker upgrade ical@1.11.2``: Aktualisiert einen einzelnen Adpater auf die angegebene Version ``1.11.2``
@@ -91,7 +91,7 @@ Beispiele (Adapter)
 - ``iobroker del wled.0``: Löscht die Instanz ``wled.0``
 - ``iobroker del wled``: Deinstalliert den WLED Adapter
 - ``iobroker status iot.0``: Prüft, ob eine Instanz des IoT-Adapters läuft
-- ``iobroker version iot``: Version des IoT-Adapters
+- ``iobroker version iot``: Version des installierten IoT-Adapters
 - ``iobroker update -u``: Listet alle Adapter mit verfügbaren Updates auf
 - ``iobroker update -a``: Listet alle verfügbaren Adapter auf
 
@@ -103,4 +103,10 @@ Beispiele (User)
 Beispiele (Objekte)
 -------------------
 
-- ``iobroker object get system.config``: Liest den Inhalt des Objektes ``system.config``
+- ``iobroker object get system.config``: Liefert den Inhalt des Objektes ``system.config``
+
+Beispiele (Zustände)
+--------------------
+
+- ``iobroker state get admin.0.info.updatesNumber``: Liefert den kompletten Zustand als JSON
+- ``iobroker state getvalue admin.0.info.updatesNumber``: Liest nur den Wert des Zustandes

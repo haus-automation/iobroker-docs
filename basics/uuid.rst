@@ -3,9 +3,11 @@
 System-UUID
 ===========
 
-Jede Installation bekommt eine zufällige UUID zugewiesen, welche für unterschiedliche Aktionen genutzt wird. Dieses kann Beispielsweise über das :ref:`basics-cli` ausgelesen werden:
+Jede Installation bekommt eine zufällige UUID zugewiesen, welche für unterschiedliche Aktionen genutzt wird. Dieses kann beispielsweise über das :ref:`basics-cli` ausgelesen werden:
 
-``iobroker uuid``
+.. code:: console
+
+    iobroker uuid
 
 Oder über die Objekt-Datenbank ``iobroker object get system.meta.uuid``
 

@@ -3,9 +3,11 @@
 System-Config
 =============
 
-Die aktuelle System-Konfiguration (welche auch über den Admin konfigurierbar ist), wird im Objekt ``system.config`` gespeichert. Dieses kann Beispielsweise über das :ref:`basics-cli` ausgelesen werden:
+Die aktuelle System-Konfiguration (welche auch über den Admin konfigurierbar ist), wird im Objekt ``system.config`` gespeichert. Dieses kann beispielsweise über das :ref:`basics-cli` ausgelesen werden:
 
-``iobroker object get system.config``
+.. code:: console
+
+    iobroker object get system.config
 
 Beispiel-Ausgabe:
 
