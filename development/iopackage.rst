@@ -172,10 +172,8 @@ Eigenschaften (erforderlich)
 
     :type: string
 
-Eigenschaften (optional)
+Eigenschaften (Allgemein)
 ------------------------
-
-**Allgemein**
 
 .. confval:: common.enabled
 
@@ -278,9 +276,17 @@ Eigenschaften (optional)
 
     :type: object
 
-.. confval:: common.pugins
+.. confval:: common.plugins.sentry
 
     Konfiguration des Sentry-Plugins. Siehe :ref:`ecosystem-sentry`
+
+    .. code:: json
+
+        "plugins": {
+            "sentry": {
+                "dsn": "https://xxx@sentry.iobroker.net/xxx"
+            }
+        }
 
     :type: object
 
@@ -570,7 +576,8 @@ Eigenschaften (optional)
 
      :type: array
 
-**Mode: Schedule**
+Eigenschaften (Schedule)
+------------------------
 
 .. confval:: common.schedule
 
@@ -584,7 +591,8 @@ Eigenschaften (optional)
 
     :type: boolean
 
-**Mode: Daemon**
+Eigenschaften (Daemon)
+----------------------
 
 .. confval:: common.restartSchedule
 
@@ -592,7 +600,8 @@ Eigenschaften (optional)
 
     :type: string
 
-**Admin**
+Eigenschaften (Admin)
+---------------------
 
 .. confval:: common.adminColumns
 
