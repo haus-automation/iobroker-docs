@@ -49,28 +49,44 @@ Eigenschaften
 
 Für Objekte sind die folgenden Attribute verpflichtend:
 
-- ``_id`` - Eindeutige ID
-- ``type`` - Typ des Objektes (siehe unten).
-- ``common`` - ioBroker-Spezifische Eigenschaften (Rollen, Lesezugriff, Schreibzugriff, ...)
-- ``native`` - Eigenschaften des Zielsystems (z.B. eine ID eines Gerätes)
+.. confval:: _id
 
-Verfügbaren Typen
------------------
+    Eindeutige ID
 
-- ``state`` - Zustand. Das übergeornete Objekte sollte vom Typ ``channel``, ``device``, ``instance`` oder ``host`` sein.
-- ``channel`` - "Kanal" um mehrere Zustände darunter zu strukturieren. Das übergeornete Objekte sollte vom Typ ``device`` sein.
-- ``device`` - "Gerät" um mehrere Zustände oder Kanäle darunter zu strukturieren. Das übergeornete Objekte sollte vom Typ ``instance`` sein.
-- ``enum`` - "Liste" mit vordefinierten Werten in ``common.members``. that points to the states, channels, devices or files.
-- ``host`` - Ein "Host", welcher einen ``js-controller`` Prozess ausführt. Beispielsweise ``system.host.raspberrypi-iobroker``.
-- ``adapter`` - Die Standard-Konfiguration von einem Adaper. Beispielsweise ``system.adapter.admin``.
-- ``instance`` - Die Konfiguration der einzelnen Instanz. Beispielsweise ``system.adapter.admin.0``. Das übergeornete Objekte sollte vom Typ ``adapter`` sein.
-- ``meta`` - Sich selten ändernde Meta-Informationen wie zum Beispiel die :ref:`basics-uuid` unter ``system.meta.uuid``.
-- ``config`` - Konfigurationen. Beispielsweise ``system.repositories``
-- ``script`` - Skripte unter ``script.js.*``
-- ``user`` - Benutzer des Systems. Beispielsweise ``system.user.admin``
-- ``group`` - Benutzer-Gruppen des Sytems. Beispielsweise ``system.group.administrator``
-- ``chart`` - Diagramm
-- ``folder`` - Verzeichnis. Beispielsweise ``system.host.raspberrypi-iobroker.notifications``
+    :type: string
+
+.. confval:: type
+
+    Typ des Objektes
+
+    - ``state`` - Zustand. Das übergeornete Objekte sollte vom Typ ``channel``, ``device``, ``instance`` oder ``host`` sein. Siehe :ref:`development-states`
+    - ``channel`` - "Kanal" um mehrere Zustände darunter zu strukturieren. Das übergeornete Objekte sollte vom Typ ``device`` sein.
+    - ``device`` - "Gerät" um mehrere Zustände oder Kanäle darunter zu strukturieren. Das übergeornete Objekte sollte vom Typ ``instance`` sein.
+    - ``enum`` - "Liste" mit vordefinierten Werten in ``common.members``. that points to the states, channels, devices or files.
+    - ``host`` - Ein "Host", welcher einen ``js-controller`` Prozess ausführt. Beispielsweise ``system.host.raspberrypi-iobroker``.
+    - ``adapter`` - Die Standard-Konfiguration von einem Adaper. Beispielsweise ``system.adapter.admin``.
+    - ``instance`` - Die Konfiguration der einzelnen Instanz. Beispielsweise ``system.adapter.admin.0``. Das übergeornete Objekte sollte vom Typ ``adapter`` sein.
+    - ``meta`` - Sich selten ändernde Meta-Informationen wie zum Beispiel die :ref:`basics-uuid` unter ``system.meta.uuid``.
+    - ``config`` - Konfigurationen. Beispielsweise ``system.repositories``
+    - ``script`` - Skripte unter ``script.js.*``
+    - ``user`` - Benutzer des Systems. Beispielsweise ``system.user.admin``
+    - ``group`` - Benutzer-Gruppen des Sytems. Beispielsweise ``system.group.administrator``
+    - ``chart`` - Diagramm
+    - ``folder`` - Verzeichnis. Beispielsweise ``system.host.raspberrypi-iobroker.notifications``
+
+    :type: string
+
+.. confval:: common
+
+    ioBroker-Spezifische Eigenschaften (Rollen, Lesezugriff, Schreibzugriff, ...)
+
+    :type: object
+
+.. confval:: native
+
+    Eigenschaften des Zielsystems (z.B. eine ID eines Gerätes)
+
+    :type: object
 
 Common-Eigenschaften
 --------------------

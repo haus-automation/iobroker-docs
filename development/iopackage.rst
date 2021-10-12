@@ -111,7 +111,6 @@ Eigenschaften (optional)
 - ``common.tier`` (number) - Legt fest, in welcher Reihenfolge die Adapter gestartet werden. 1 = Logik, 2 = API und andere Daten, 3 = alle anderen
 - ``common.messagebox`` (boolean) - ``true`` wenn Nachrichten an den Adapter erlaubt sind. Siehe :ref:`development-messagebox`
 - ``common.readme`` (string) - URL zur Readme-Datei (z.B. HTTP-URL zur README.md auf GitHub)
-- ``common.adminUI`` (object) - 
 - ``common.docs`` (object) - 
 - ``common.authors`` (array) - Liste mit Entwicklern des Adapters (siehe Beispiel oben)
 - ``common.license`` (string) - Lizenz des Adapters (z.B. MIT). Gültige Werte sind im Schema zu finden (Link siehe unten)
@@ -181,6 +180,10 @@ Eigenschaften (optional)
 - ``common.adminTab.link`` (string) - 
 - ``common.adminTab.name`` (object) - Titel des Tabs (übersetzt in mehrere Sprachen)
 - ``common.adminTab.singleton`` (boolean) - Legt fest, ob nur ein Tab für alle Instanzen angezeigt werden soll
+- ``common.adminUI`` (object) - Legt fest, wie die Konfiguration im Admin 5 erfolgen soll
+- ``common.adminUI.config`` (string) - Wert: ``json``. Siehe auch ``common.jsonConfig``
+- ``common.adminUI.custom`` (string) - Wert: ``json``. Siehe auch ``common.jsonCustom``
+- ``common.adminUI.tab`` (string) - Erlaubte Werte: ``html``, ``materialize``
 - ``common.jsonConfig`` (boolean) - JSON-Konfiguration für den Admin 5 vorhanden (``admin/jsonConfig.json`` erforderlich)
 - ``common.jsonCustom`` (boolean) - JSON-Konfiguration für den Admin 5 vorhanden (``admin/jsonCustom.json`` erforderlich)
 
