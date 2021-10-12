@@ -44,6 +44,9 @@ Beispiel
         }
     }
 
+Eigenschaften
+-------------
+
 Für Objekte sind die folgenden Attribute verpflichtend:
 
 - ``_id`` - Eindeutige ID
