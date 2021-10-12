@@ -48,6 +48,7 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     basics/systemconfig
     basics/uuid
     basics/logic
+    basics/compactmode
 
 .. toctree::
     :maxdepth: 2
@@ -70,6 +71,8 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     development/iopackage
     development/testing
     development/encryption
+    development/messagebox
+    development/notifications
 
 .. image:: https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png
     :target: https://haus-automatisierung.com/iobroker-kurs/

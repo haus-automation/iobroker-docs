@@ -38,7 +38,7 @@ Ausgabe:
 
 In diesem Beispiel ist der Wert ``0`` (numerisch Null).
 
-Wenn man nur den Wert ``val`` auslesen möchte, geht das wie folgt:
+Wenn man nur den Wert (also die Eigenschaft ``val``) auslesen möchte, geht das per :ref:`basics-cli` wie folgt:
 
 .. code:: console
 
