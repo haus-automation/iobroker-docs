@@ -129,7 +129,7 @@ Eigenschaften (optional)
 - ``common.eraseOnUpload`` (boolean) - Löscht alle existierenden Daten im Adapter-Verzeichnis vor einem Upload
 - ``common.extIcon`` (string) - URL zur Icon-Datei für die Admin-Übersicht (z.B. PNG-Datei auf GitHub)
 - ``common.getHistory`` (boolean) - Legt fest, ob der Adapter den ``getHistory`` Befehl unterstützt
-- ``common.globalDependencies`` (array) - Liste von Abhängigkeiten im gesamten ioBroker-System (Multihost-Betrieb). Zum Beispiel ``{"admin": ">=5.1.19"}``
+- ``common.globalDependencies`` (array) - Liste von Abhängigkeiten im gesamten ioBroker-System (Multihost-Betrieb). Zum Beispiel ``{"admin": ">=5.1.19"}``. Siehe :ref:`basics-multihost`
 - ``common.icon`` (string) - Pfad zum lokalen Icon des Adapters (nach Installation). Sollte im Unterverzeichnis ``admin`` liegen
 - ``common.keywords`` (array) - Liste von Schlüsselwörter, um den Adapter besser finden zu können
 - ``common.localLinks`` (object) - 
@@ -148,7 +148,7 @@ Eigenschaften (optional)
 - ``common.restartAdapters`` (array) - Liste mit Adaptern, welche neugestartet werden sollen, nachdem dieser Adapter installiert wurde (z.B. ``["vis"]``)
 - ``common.serviceStates`` (string / boolean) - 
 - ``common.singletonHost`` (boolean) - Legt fest, ob es nur eine einzelne Instanz pro Host geben darf
-- ``common.singleton`` (boolean) - Legt fest, ob es nur eine einzelne Instanz im gesamten ioBroker-System geben darf (Multihost-Betrieb)
+- ``common.singleton`` (boolean) - Legt fest, ob es nur eine einzelne Instanz im gesamten ioBroker-System geben darf (Multihost-Betrieb). Siehe :ref:`basics-multihost`
 - ``common.stopBeforeUpdate`` (boolean) - Legt fest, ob die Instanzen vor einem Update gestoppt werden müssen
 - ``common.stopTimeout`` (number) - Wartezeit in Millisekunden, bis der Adapter angehalten wird (Standardwert: 500 ms)
 - ``common.subscribable`` (boolean) - 
