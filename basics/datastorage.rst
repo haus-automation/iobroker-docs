@@ -62,7 +62,7 @@ State (Zustand)
 Ein ``state`` ist der eigentliche Wert eines Datenpunktes. Neben dem Wert werden aber auch hier noch weitere Informationen vorgehalten, wie zum Beispiel:
 
 - ``val`` - Der aktuell gespeicherte Wert
-- ``ack`` - Bestätigt-Flag, ob der (neue) Wert vom Adapter bzw. Ziel akzeptiert wurde
+- ``ack`` - Bestätigt-Flag, ob der (neue) Wert vom Adapter bzw. Ziel akzeptiert wurde. Siehe auch :ref:`basics-logic`
 - ``ts`` - Unix Timestamp (Zeitstempel in Millisekunden) wann der Zustand zuletzt **aktualisiert** wurde
 - ``lc`` - Unix Zimestamp (Zeitstempel in Millisekunden) wann der Zustand zuletzt **geändert** wurde (last change)
 - ...
@@ -121,7 +121,7 @@ Weiterhin gibt es den (reservierten) Namespace ``system.`` für das System. Dort
 - ``system.adapter.<adapter-name>.<instance-nummmer>`` - Informationen zur einzelnen Instanz (Uptime, Ressourcen, ...)
 
 .. danger::
-    Ändere keine Informationen in dem System-Namespace, wenn Du nicht genau weißt, was Du da tust. Als normaler Anwender gibt es keinen Grund, dort etwas ändern. Diese Informationen sind nur für Entwickler relevant! Im Admin-Adapter sieht man diese Objekte auch nur, wenn der Expertenmodus angeschaltet ist.
+    Ändere keine Informationen in dem System-Namespace, wenn Du nicht genau weißt, was Du tust. Als normaler Anwender gibt es keinen Grund, dort etwas ändern. Diese Informationen sind nur für Entwickler relevant! Im Admin-Adapter sieht man diese Objekte auch nur dann, wenn der Expertenmodus angeschaltet ist.
 
 Speicherort
 -----------

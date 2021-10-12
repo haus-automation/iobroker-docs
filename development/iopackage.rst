@@ -236,33 +236,33 @@ Eigenschaften (optional)
 
     Typ/Kategorie des Adapters (z.B. ``weather``). Gültige Werte:
 
-    - alarm
-    - climate-control
-    - communication
-    - date-and-time
-    - energy
-    - metering
-    - garden
-    - general
-    - geoposition
-    - hardware
-    - health
-    - household
-    - infrastructure
-    - iot-systems
-    - lighting
-    - logic
-    - messaging
-    - misc-data
-    - multimedia
-    - network
-    - protocols
-    - storage
-    - utility
-    - visualization
-    - visualization-icons
-    - visualization-widgets
-    - weather
+    - ``alarm``
+    - ``climate-control``
+    - ``communication``
+    - ``date-and-time``
+    - ``energy``
+    - ``metering``
+    - ``garden``
+    - ``general``
+    - ``geoposition``
+    - ``hardware``
+    - ``health``
+    - ``household``
+    - ``infrastructure``
+    - ``iot-systems``
+    - ``lighting``
+    - ``logic``
+    - ``messaging``
+    - ``misc-data``
+    - ``multimedia``
+    - ``network``
+    - ``protocols``
+    - ``storage``
+    - ``utility``
+    - ``visualization``
+    - ``visualization-icons``
+    - ``visualization-widgets``
+    - ``weather``
 
     :type: string
 
@@ -305,7 +305,7 @@ Eigenschaften (optional)
 
 .. confval:: common.compact
 
-    Legt fest, ob der Adapter im :ref:`development-messagebox` gestartet werden kann
+    Legt fest, ob der Adapter im :ref:`basics-compactmode` gestartet werden kann
 
     :type: boolean
     :default: ``false``

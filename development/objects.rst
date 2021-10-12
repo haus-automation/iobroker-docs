@@ -57,7 +57,7 @@ Für Objekte sind die folgenden Attribute verpflichtend:
 
 .. confval:: type
 
-    Typ des Objektes
+    Typ des Objektes. Gültige Werte sind:
 
     - ``state`` - Zustand. Das übergeornete Objekte sollte vom Typ ``channel``, ``device``, ``instance`` oder ``host`` sein. Siehe :ref:`development-states`
     - ``channel`` - "Kanal" um mehrere Zustände darunter zu strukturieren. Das übergeornete Objekte sollte vom Typ ``device`` sein.
