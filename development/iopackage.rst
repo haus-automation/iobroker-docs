@@ -94,74 +94,410 @@ Hier eine Beispiel-Datei aus dem Luftdaten-Adapter. Eine Beschreibung der einzel
 Eigenschaften (erforderlich)
 ----------------------------
 
-- ``common.name`` (string) - Name des Adapters (darf nicht "ioBroker" enthalten)
-- ``common.version`` (string) - Aktuelle Version des Adapters
-- ``common.platform`` (string) - Aktuell immer ``Javascript/Node.js``
-- ``common.titleLang`` (object) - Titel des Adapters (übersetzt in mehrere Sprachen) ``{en: 'Adapter', de: 'adapter', ru: 'Драйвер'}``
-- ``common.desc`` (object) - Beschreibung, was der Adapter machen soll (übersetzt in mehrere Sprachen)
-- ``common.news`` (object) - Liste mit Infos zu den verschiedenen Versionen (Updatehistorie / Changelog) (siehe Beispiel oben)
-- ``common.mode`` (string) - Modus des Adapters: ``schedule``, ``daemon``, ``subscribe``, ``schedule``, ``once``, ``extension`` (siehe unten für weitere Optionen)
+.. confval:: common.name
+
+    Name des Adapters (darf nicht "ioBroker" enthalten)
+
+    :type: string
+
+.. confval:: common.version
+
+    Aktuelle Version des Adapters
+
+    :type: string
+
+.. confval:: common.platform
+
+    Aktuell immer ``Javascript/Node.js``
+
+    :type: string
+
+.. confval:: common.titleLang
+
+    Titel des Adapters (übersetzt in mehrere Sprachen) ``{en: 'Adapter', de: 'adapter', ru: 'Драйвер'}``
+
+    :type: object
+
+.. confval:: common.desc
+
+    Beschreibung, was der Adapter machen soll (übersetzt in mehrere Sprachen)
+
+    :type: object
+
+.. confval:: common.news
+
+    Liste mit Infos zu den verschiedenen Versionen (Updatehistorie / Changelog) (siehe Beispiel oben)
+
+	.. code:: json
+
+		"news": {
+			"2.0.3": {
+				"en": "Fixed error logging",
+				"de": "Fehler-Logging behoben"
+			},
+			"2.0.2": {
+				"en": "Added timeout option",
+				"de": "Option für Timeout-Limit hinzugefügt"
+			},
+			"2.0.1": {
+				"en": "Minor bug fixes",
+				"de": "Kleinere Bugfixes"
+			},
+			"2.0.0": {
+				"en": "Updated admin interface to maintain multiple sensors in one instance",
+				"de": "Benutzeroberfläche angepasst, um mehrere Sensoren in einer Instanz verwalten zu können"
+			}
+		}
+
+    :type: object
+
+.. confval:: common.mode
+
+    Modus des Adapters: ``schedule``, ``daemon``, ``subscribe``, ``schedule``, ``once``, ``extension`` (siehe unten für weitere Optionen)
+
+    :type: string
 
 Eigenschaften (optional)
 ------------------------
 
 **Allgemein**
 
-- ``common.enabled`` (boolean) - Legt fest, ob die Instanz gestartet werden soll, oder nicht. Standard: ``true``
-- ``common.tier`` (number) - Legt fest, in welcher Reihenfolge die Adapter gestartet werden. 1 = Logik, 2 = API und andere Daten, 3 = alle anderen
-- ``common.messagebox`` (boolean) - ``true`` wenn Nachrichten an den Adapter erlaubt sind. Siehe :ref:`development-messagebox`
-- ``common.readme`` (string) - URL zur Readme-Datei (z.B. HTTP-URL zur README.md auf GitHub)
-- ``common.docs`` (object) - 
-- ``common.authors`` (array) - Liste mit Entwicklern des Adapters (siehe Beispiel oben)
-- ``common.license`` (string) - Lizenz des Adapters (z.B. MIT). Gültige Werte sind im Schema zu finden (Link siehe unten)
-- ``common.type`` (string) - Typ/Kategorie des Adapters (z.B. ``weather``). Gültige Werte sind im Schema zu finden (Link siehe unten)
-- ``common.unsafePerm`` (boolean) - Legt fest, ob das Adapter-Paket mit dem ``--unsafe-perm`` Parameter für npm installiert werden muss. Siehe `npm Dokumentation <https://docs.npmjs.com/cli/v6/using-npm/config#unsafe-perm>`_
-- ``common.plugins`` (object) - Liste von Plugins (z.B. :ref:`ecosystem-sentry`)
-- ``common.pugins.sentry`` (object) - Konfiguration des Sentry-Plugins. Siehe :ref:`ecosystem-sentry`
-- ``common.availableModes`` (array) - Werte für ``common.mode`` (falls mehr als ein Wert erlaubt ist)
-- ``common.blockly`` (boolean) - Legt fest, ob der Adapter eigene Blockly-Bausteine mitbringt (``admin/blockly.js`` erforderlich)
-- ``common.connectionType`` (string) - Definiert die Qulle der Adapter-Daten (``local`` oder ``cloud``). Wird im Admin ab Version 5 dargestellt
-- ``common.compact`` (boolean) - Legt fest, ob der Adapter im :ref:`development-messagebox` gestartet werden kann
-- ``common.dataFolder`` (string) - Verzeichnis-Pfad, in welchem der Adapter seine Daten ablegt (relativ zu ``iobroker-data``). Die Variable ``%INSTANCE%`` kann ebenfalls im Pfad genutzt werden.
-- ``common.dataSource`` (string) - Legt fest, wie Daten geholt werden sollen. Mögliche Werte: ``poll``, ``push``, ``assumption``
-- ``common.dependencies`` (array) - Liste von Abhängigkeiten auf dem lokalen System, welche für diesen Adapter notwendig sind. Zum Beispiel ``{"js-controller": ">=3.3.0"}``
-- ``common.eraseOnUpload`` (boolean) - Löscht alle existierenden Daten im Adapter-Verzeichnis vor einem Upload
-- ``common.extIcon`` (string) - URL zur Icon-Datei für die Admin-Übersicht (z.B. PNG-Datei auf GitHub)
-- ``common.getHistory`` (boolean) - Legt fest, ob der Adapter den ``getHistory`` Befehl unterstützt
-- ``common.globalDependencies`` (array) - Liste von Abhängigkeiten im gesamten ioBroker-System (Multihost-Betrieb). Zum Beispiel ``{"admin": ">=5.1.19"}``. Siehe :ref:`basics-multihost`
-- ``common.icon`` (string) - Pfad zum lokalen Icon des Adapters (nach Installation). Sollte im Unterverzeichnis ``admin`` liegen
-- ``common.keywords`` (array) - Liste von Schlüsselwörter, um den Adapter besser finden zu können
-- ``common.localLinks`` (object) - 
-- ``common.loglevel`` - Standard Log-Level neuer Instanzen. Möglich Werte: ``debug``, ``info``, ``warn`` oder ``error``
-- ``common.logTransporter`` (boolean) - Legt fest, ob der Adapter die Log-Einträge von anderen Adaptern entgegen nehmen kann (um sie z.B. wo anders zu speichern)
-- ``common.noIntro`` (boolean) - 
-- ``common.noRepository`` (boolean) - 
-- ``common.nogit`` (boolean) - Legt fest, ob eine Installation direkt von GitHub verboten werden soll
-- ``common.nondeletable`` (boolean) - Legt fest, ob ein Adapter gelöscht oder aktualisiert werden kann. Falls ``true``, kümmert sich der ``js-controller`` um diese Aufgaben
-- ``common.onlyWWW`` (boolean) - Legt fest, ob der Adapter nur weitere HTML-Dateien bereitstellt und keine Logik enthält (wie zum Beispiel Widget-Adapter für ``VIS``)
-- ``common.osDependencies.darwin`` (array) - Liste mit erforderlichen MacOS-Paketen für diesen Adapter
-- ``common.osDependencies.linux`` (array) - Liste mit erforderlichen Linux-Paketen für diesen Adapter
-- ``common.osDependencies.win32`` (array) - *Aktuell nicht genutzt, da Linux keinen Paket-Manager hat*
-- ``common.os`` (string / array) - Liste mit unterstützten Betriebssystemen. Mögliche Werte: ``darwin``, ``linux`` oder ``win32``
-- ``common.preserveSettings`` (string / array) - Liste mit Attributen, welche nicht automatisch gelöscht werden sollen (z.B. ``history``)
-- ``common.restartAdapters`` (array) - Liste mit Adaptern, welche neugestartet werden sollen, nachdem dieser Adapter installiert wurde (z.B. ``["vis"]``)
-- ``common.serviceStates`` (string / boolean) - 
-- ``common.singletonHost`` (boolean) - Legt fest, ob es nur eine einzelne Instanz pro Host geben darf
-- ``common.singleton`` (boolean) - Legt fest, ob es nur eine einzelne Instanz im gesamten ioBroker-System geben darf (Multihost-Betrieb). Siehe :ref:`basics-multihost`
-- ``common.stopBeforeUpdate`` (boolean) - Legt fest, ob die Instanzen vor einem Update gestoppt werden müssen
-- ``common.stopTimeout`` (number) - Wartezeit in Millisekunden, bis der Adapter angehalten wird (Standardwert: 500 ms)
-- ``common.subscribable`` (boolean) - 
-- ``common.subscribe`` (string) - 
-- ``common.supportCustoms`` (boolean) - Legt fest, ob es zusätzliche Einstellungen für jeden Datenpunkt gibt (``admin/custom.html`` erforderlich)
-- ``common.supportStopInstance`` (boolean) - Legt fest, ob der Adapter das ``stopInstance`` Signal unterstützt.  Siehe :ref:`development-messagebox`
-- ``common.wakeup`` (boolean) - Legt fest, ob die Instanz gestartet werden soll, wenn ein Wert in ``system.adapter.<adapter-name>.<instance-nummmer>.wakeup`` geschrieben wird.
-- ``common.webByVersion`` (boolean) - 
-- ``common.webExtendable`` (boolean) - Legt fest, ob der Webserver dieses Adapters mit Plugins erweitert werden kann (z.B. ``simple-api``)
-- ``common.webExtension`` (string) - Relativer Pfad der Web-Extension (z.B. ``lib/simpleapi.js``)
-- ``common.webPreSettings`` (object) - 
-- ``common.webservers`` (array) - Liste mit Webservern, welche Inhalte aus dem www-Verzeichnis des Adapters liefern
-- ``common.welcomeScreen`` (array) - 
-- ``common.welcomeScreenPro`` (array) - Identisch zu ``common.welcomeScreen``, allerdings für Zugriff über die ioBroker-Cloud
+.. confval:: common.enabled
+
+    Legt fest, ob die Instanz gestartet werden soll, oder nicht.
+
+    :type: boolean
+    :default: ``true``
+
+.. confval:: common.tier
+
+    Legt fest, in welcher Reihenfolge die Adapter gestartet werden.
+
+    - ``1`` = Logik
+    - ``2`` = API und andere Daten
+    - ``3`` = alle anderen
+
+    :type: number
+    :default: ``3``
+
+.. confval:: common.messagebox
+
+    ``true`` wenn Nachrichten an den Adapter erlaubt sind. Siehe :ref:`development-messagebox`
+
+    :type: boolean
+    :default: ``false``
+
+.. confval:: common.readme
+
+    URL zur Readme-Datei (z.B. HTTP-URL zur README.md auf GitHub)
+
+    :type: string
+
+.. confval:: common.docs
+
+
+
+    :type: object
+
+.. confval:: common.authors
+
+    Liste mit Entwicklern des Adapters (siehe Beispiel oben)
+
+    :type: array
+
+.. confval:: common.license
+
+    Lizenz des Adapters (z.B. MIT). Gültige Werte sind im Schema zu finden (Link siehe unten)
+
+    :type: string
+
+.. confval:: common.type
+    
+    Typ/Kategorie des Adapters (z.B. ``weather``). Gültige Werte sind im Schema zu finden (Link siehe unten)
+
+    :type: string
+
+.. confval:: common.unsafePerm
+    
+    Legt fest, ob das Adapter-Paket mit dem ``--unsafe-perm`` Parameter für npm installiert werden muss. Siehe `npm Dokumentation <https://docs.npmjs.com/cli/v6/using-npm/config#unsafe-perm>`_
+
+    :type: boolean
+
+.. confval:: common.plugins
+    
+    Liste von Plugins (z.B. :ref:`ecosystem-sentry`)
+
+    :type: object
+
+.. confval:: common.pugins
+
+    Konfiguration des Sentry-Plugins. Siehe :ref:`ecosystem-sentry`
+
+    :type: object
+
+.. confval:: common.availableModes
+
+    Werte für ``common.mode`` (falls mehr als ein Wert erlaubt ist)
+
+    :type: array
+
+.. confval:: common.blockly
+
+    Legt fest, ob der Adapter eigene Blockly-Bausteine mitbringt (``admin/blockly.js`` erforderlich)
+
+    :type: boolean
+
+.. confval:: common.connectionType
+
+    Definiert die Qulle der Adapter-Daten (``local`` oder ``cloud``). Wird im Admin ab Version 5 dargestellt
+
+    :type: string
+
+.. confval:: common.compact
+
+    Legt fest, ob der Adapter im :ref:`development-messagebox` gestartet werden kann
+
+    :type: boolean
+
+.. confval:: common.dataFolder
+    
+    Verzeichnis-Pfad, in welchem der Adapter seine Daten ablegt (relativ zu ``iobroker-data``). Die Variable ``%INSTANCE%`` kann ebenfalls im Pfad genutzt werden.
+
+    :type: string
+
+.. confval:: common.dataSource
+    
+    Legt fest, wie Daten geholt werden sollen. Mögliche Werte: ``poll``, ``push``, ``assumption``
+
+    :type: string
+
+.. confval:: common.dependencies
+    
+    Liste von Abhängigkeiten auf dem lokalen System, welche für diesen Adapter notwendig sind. Zum Beispiel ``{"js-controller": ">=3.3.0"}``
+
+    :type: array
+
+.. confval:: common.eraseOnUpload
+    
+    Löscht alle existierenden Daten im Adapter-Verzeichnis vor einem Upload
+
+    :type: boolean
+
+.. confval:: common.extIcon
+    
+    URL zur Icon-Datei für die Admin-Übersicht (z.B. PNG-Datei auf GitHub)
+
+    :type: string
+
+.. confval:: common.getHistory
+    
+    Legt fest, ob der Adapter den ``getHistory`` Befehl unterstützt
+
+    :type: boolean
+
+.. confval:: common.globalDependencies
+    
+    Liste von Abhängigkeiten im gesamten ioBroker-System (Multihost-Betrieb). Zum Beispiel ``{"admin": ">=5.1.19"}``. Siehe :ref:`basics-multihost`
+
+    :type: array
+
+.. confval:: common.icon
+    
+    Pfad zum lokalen Icon des Adapters (nach Installation). Sollte im Unterverzeichnis ``admin`` liegen
+
+    :type: string
+
+.. confval:: common.keywords
+    
+    Liste von Schlüsselwörter, um den Adapter besser finden zu können
+
+    :type: array
+
+.. confval:: common.localLinks
+    
+
+
+    :type: object
+
+.. confval:: common.loglevel
+    
+    Standard Log-Level neuer Instanzen. Möglich Werte: ``debug``, ``info``, ``warn`` oder ``error``
+
+    :type: string
+
+.. confval:: common.logTransporter
+    
+    Legt fest, ob der Adapter die Log-Einträge von anderen Adaptern entgegen nehmen kann (um sie z.B. wo anders zu speichern)
+
+    :type: boolean
+
+.. confval:: common.noIntro
+    
+
+
+    :type: boolean
+
+.. confval:: common.noRepository
+    
+
+
+    :type: boolean
+
+.. confval:: common.nogit
+    
+    Legt fest, ob eine Installation direkt von GitHub verboten werden soll
+
+    :type: boolean
+
+.. confval:: common.nondeletable
+    
+    Legt fest, ob ein Adapter gelöscht oder aktualisiert werden kann. Falls ``true``, kümmert sich der ``js-controller`` um diese Aufgaben
+
+    :type: boolean
+
+.. confval:: common.onlyWWW
+    
+    Legt fest, ob der Adapter nur weitere HTML-Dateien bereitstellt und keine Logik enthält (wie zum Beispiel Widget-Adapter für ``VIS``)
+
+    :type: boolean
+
+.. confval:: common.osDependencies.darwin
+
+    Liste mit erforderlichen MacOS-Paketen für diesen Adapter
+
+    :type: array
+
+.. confval:: common.osDependencies.linux
+
+    Liste mit erforderlichen Linux-Paketen für diesen Adapter
+
+    :type: array
+
+.. confval:: common.osDependencies.win32
+
+    *Aktuell nicht genutzt, da Linux keinen Paket-Manager hat*
+
+    :type: array
+
+.. confval:: common.os
+
+      Liste mit unterstützten Betriebssystemen. Mögliche Werte: ``darwin``, ``linux`` oder ``win32``
+
+     :type: string / array
+
+.. confval:: common.preserveSettings
+
+     Liste mit Attributen, welche nicht automatisch gelöscht werden sollen (z.B. ``history``)
+
+     :type: string / array
+
+.. confval:: common.restartAdapters
+
+     Liste mit Adaptern, welche neugestartet werden sollen, nachdem dieser Adapter installiert wurde (z.B. ``["vis"]``)
+
+     :type: array
+
+.. confval:: common.serviceStates
+
+     
+
+     :type: string / boolean
+
+.. confval:: common.singletonHost
+
+     Legt fest, ob es nur eine einzelne Instanz pro Host geben darf
+
+     :type: boolean
+
+.. confval:: common.singleton
+
+     Legt fest, ob es nur eine einzelne Instanz im gesamten ioBroker-System geben darf (Multihost-Betrieb). Siehe :ref:`basics-multihost`
+
+     :type: boolean
+
+.. confval:: common.stopBeforeUpdate
+
+     Legt fest, ob die Instanzen vor einem Update gestoppt werden müssen
+
+     :type: boolean
+
+.. confval:: common.stopTimeout
+
+     Wartezeit in Millisekunden, bis der Adapter angehalten wird (Standardwert: 500 ms)
+
+     :type: number
+
+.. confval:: common.subscribable
+
+     
+
+     :type: boolean
+
+.. confval:: common.subscribe
+
+     
+
+     :type: string
+
+.. confval:: common.supportCustoms
+
+     Legt fest, ob es zusätzliche Einstellungen für jeden Datenpunkt gibt (``admin/custom.html`` erforderlich)
+
+     :type: boolean
+
+.. confval:: common.supportStopInstance
+
+     Legt fest, ob der Adapter das ``stopInstance`` Signal unterstützt.  Siehe :ref:`development-messagebox`
+
+     :type:  boolean
+
+.. confval:: common.wakeup
+
+     Legt fest, ob die Instanz gestartet werden soll, wenn ein Wert in ``system.adapter.<adapter-name>.<instance-nummmer>.wakeup`` geschrieben wird.
+
+     :type: boolean
+
+.. confval:: common.webByVersion
+
+
+
+     :type: boolean
+
+.. confval:: common.webExtendable
+
+     Legt fest, ob der Webserver dieses Adapters mit Plugins erweitert werden kann (z.B. ``simple-api``)
+
+     :type: boolean
+
+.. confval:: common.webExtension
+
+     Relativer Pfad der Web-Extension (z.B. ``lib/simpleapi.js``)
+
+     :type: string
+
+.. confval:: common.webPreSettings
+
+     
+
+     :type: object
+
+.. confval:: common.webservers
+
+     Liste mit Webservern, welche Inhalte aus dem www-Verzeichnis des Adapters liefern
+
+     :type: array
+
+.. confval:: common.welcomeScreen
+
+     
+
+     :type: array
+
+.. confval:: common.welcomeScreenPro
+
+     Identisch zu ``common.welcomeScreen``, allerdings für Zugriff über die ioBroker-Cloud
+
+     :type: array
 
 **Mode: Schedule**
 
