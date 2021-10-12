@@ -12,7 +12,8 @@ States können beispielsweise über das :ref:`basics-cli` ausgelesen werden:
 
     iobroker state get admin.0.info.updatesNumber
 
-Ausgabe:
+Beispiel
+--------
 
 .. code:: json
 
@@ -25,6 +26,14 @@ Ausgabe:
         "from": "system.adapter.admin.0",
         "user": "system.user.admin"
     }
+
+.. confval:: style_nav_header_background
+
+    Changes the background of the search area in the navigation bar. The value
+    can be anything valid in a CSS `background` property.
+
+    :type: string
+    :default: ``#2980B9``
 
 - ``val`` - Der aktuell gespeicherte Wert
 - ``ack`` - Bestätigt-Flag, ob der (neue) Wert vom Adapter bzw. Ziel akzeptiert wurde

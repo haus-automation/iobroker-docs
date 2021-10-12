@@ -12,6 +12,9 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden:
 
     iobroker state get hue.0.Deckenlampe.bri
 
+Beispiel
+--------
+
 .. code:: json
 
     {
