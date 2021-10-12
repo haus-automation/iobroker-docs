@@ -69,7 +69,7 @@ Von den meisten Adaptern wirst Du aber nur eine einzelne Instanz haben, welche d
 
     Einen Adapter zu installieren braucht also erstmal nur Ressourcen auf der Festplatte. Eine neue Instanz davon zu erstellen braucht dann weitere Ressourcen wie CPU-Zeit oder Arbeitsspeicher.
 
-Jede Instanz wird dabei (normalerweise) in einem eigenen Prozess gestartet. Das hat zur Folge, dass der Prozess das restliche System nicht beeinflussen kann. Sollte also ein Adpater abstürzen oder nicht mehr laufen, funktioniert der Rest trotzdem weiter! Dieses Vorgehen braucht zwar deutlich mehr Ressourcen als bei vergleichbaren Lösungen, aber sorgt für viel mehr Stabilität.
+Jede Instanz wird dabei (normalerweise) in einem eigenen Prozess gestartet. Das hat zur Folge, dass der Prozess das restliche System nicht beeinflussen kann. Sollte also ein Adpater abstürzen oder nicht mehr laufen, funktioniert der Rest trotzdem weiter! Dieses Vorgehen braucht zwar deutlich mehr Ressourcen als bei vergleichbaren Lösungen, aber sorgt für viel mehr Stabilität. Um Ressourcen zu sparen, kann (zu lasten der Stabilität) der :ref:`basics-compactmode` aktiviert werden.
 
 Selbst die Admin-Oberfläche ist eine Instanz eines Adapters, welche genau wie alle anderen Instanzen mit dem ``js-controller`` spricht. Theoretisch könnte man also den ioBroker auch komplett ohne den Admin-Adapter betreiben. Dieser bietet einfach nur eine möglichst komfortable Oberfläche um dein System zu verwalten.
 
