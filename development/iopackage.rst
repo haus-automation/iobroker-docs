@@ -108,13 +108,21 @@ Eigenschaften (erforderlich)
 
 .. confval:: common.platform
 
-    Aktuell immer ``Javascript/Node.js``
+    Die Plattform, auf welcher der Adapter programmiert wurde
 
     :type: string
+	:default: ``Javascript/Node.js``
 
 .. confval:: common.titleLang
 
-    Titel des Adapters (übersetzt in mehrere Sprachen) ``{en: 'Adapter', de: 'adapter', ru: 'Драйвер'}``
+    Titel des Adapters (übersetzt in mehrere Sprachen)
+
+    .. code:: json
+
+        "titleLang": {
+            "en": "Luftdaten.info",
+            "de": "Luftdaten.info"
+        }
 
     :type: object
 
@@ -122,38 +130,45 @@ Eigenschaften (erforderlich)
 
     Beschreibung, was der Adapter machen soll (übersetzt in mehrere Sprachen)
 
+    .. code:: json
+
+        "desc": {
+            "en": "Loads current air quality data from a local or remote sensor",
+            "de": "Lädt aktuelle Luftqualitätsdaten eines lokalen oder Cloud-Sensors"
+        }
+
     :type: object
 
 .. confval:: common.news
 
-    Liste mit Infos zu den verschiedenen Versionen (Updatehistorie / Changelog) (siehe Beispiel oben)
+    Liste mit Infos zu den verschiedenen Versionen (Updatehistorie / Changelog)
 
-	.. code:: json
+    .. code:: json
 
-		"news": {
-			"2.0.3": {
-				"en": "Fixed error logging",
-				"de": "Fehler-Logging behoben"
-			},
-			"2.0.2": {
-				"en": "Added timeout option",
-				"de": "Option für Timeout-Limit hinzugefügt"
-			},
-			"2.0.1": {
-				"en": "Minor bug fixes",
-				"de": "Kleinere Bugfixes"
-			},
-			"2.0.0": {
-				"en": "Updated admin interface to maintain multiple sensors in one instance",
-				"de": "Benutzeroberfläche angepasst, um mehrere Sensoren in einer Instanz verwalten zu können"
-			}
-		}
+        "news": {
+            "2.0.3": {
+                "en": "Fixed error logging",
+                "de": "Fehler-Logging behoben"
+            },
+            "2.0.2": {
+                "en": "Added timeout option",
+                "de": "Option für Timeout-Limit hinzugefügt"
+            },
+            "2.0.1": {
+                "en": "Minor bug fixes",
+                "de": "Kleinere Bugfixes"
+            },
+            "2.0.0": {
+                "en": "Updated admin interface to maintain multiple sensors in one instance",
+                "de": "Benutzeroberfläche angepasst, um mehrere Sensoren in einer Instanz verwalten zu können"
+            }
+        }
 
     :type: object
 
 .. confval:: common.mode
 
-    Modus des Adapters: ``schedule``, ``daemon``, ``subscribe``, ``schedule``, ``once``, ``extension`` (siehe unten für weitere Optionen)
+    Modus des Adapters: ``schedule``, ``daemon``, ``subscribe``, ``schedule``, ``once`` oder ``extension`` (siehe unten für weitere Eigenschaften)
 
     :type: string
 
@@ -164,14 +179,14 @@ Eigenschaften (optional)
 
 .. confval:: common.enabled
 
-    Legt fest, ob die Instanz gestartet werden soll, oder nicht.
+    Legt fest, ob die Instanz gestartet werden soll, oder nicht
 
     :type: boolean
     :default: ``true``
 
 .. confval:: common.tier
 
-    Legt fest, in welcher Reihenfolge die Adapter gestartet werden.
+    Legt fest, in welcher Reihenfolge die Adapter gestartet werden
 
     - ``1`` = Logik
     - ``2`` = API und andere Daten
@@ -182,7 +197,7 @@ Eigenschaften (optional)
 
 .. confval:: common.messagebox
 
-    ``true`` wenn Nachrichten an den Adapter erlaubt sind. Siehe :ref:`development-messagebox`
+    ``true`` wenn Nachrichten per ``sendTo()`` an den Adapter erlaubt sind. Siehe :ref:`development-messagebox`
 
     :type: boolean
     :default: ``false``
@@ -201,7 +216,13 @@ Eigenschaften (optional)
 
 .. confval:: common.authors
 
-    Liste mit Entwicklern des Adapters (siehe Beispiel oben)
+    Liste mit Entwicklern des Adapters
+
+	.. code:: json
+
+		"authors": [
+			"Matthias Kleine <info@haus-automatisierung.com>"
+		]
 
     :type: array
 
@@ -212,19 +233,47 @@ Eigenschaften (optional)
     :type: string
 
 .. confval:: common.type
-    
-    Typ/Kategorie des Adapters (z.B. ``weather``). Gültige Werte sind im Schema zu finden (Link siehe unten)
+
+    Typ/Kategorie des Adapters (z.B. ``weather``). Gültige Werte:
+
+	- alarm
+	- climate-control
+	- communication
+	- date-and-time
+	- energy
+	- metering
+	- garden
+	- general
+	- geoposition
+	- hardware
+	- health
+	- household
+	- infrastructure
+	- iot-systems
+	- lighting
+	- logic
+	- messaging
+	- misc-data
+	- multimedia
+	- network
+	- protocols
+	- storage
+	- utility
+	- visualization
+	- visualization-icons
+	- visualization-widgets
+	- weather
 
     :type: string
 
 .. confval:: common.unsafePerm
-    
+
     Legt fest, ob das Adapter-Paket mit dem ``--unsafe-perm`` Parameter für npm installiert werden muss. Siehe `npm Dokumentation <https://docs.npmjs.com/cli/v6/using-npm/config#unsafe-perm>`_
 
     :type: boolean
 
 .. confval:: common.plugins
-    
+
     Liste von Plugins (z.B. :ref:`ecosystem-sentry`)
 
     :type: object
@@ -246,10 +295,11 @@ Eigenschaften (optional)
     Legt fest, ob der Adapter eigene Blockly-Bausteine mitbringt (``admin/blockly.js`` erforderlich)
 
     :type: boolean
+	:default: ``false``
 
 .. confval:: common.connectionType
 
-    Definiert die Qulle der Adapter-Daten (``local`` oder ``cloud``). Wird im Admin ab Version 5 dargestellt
+    Definiert die Qulle der Adapter-Daten (``local`` oder ``cloud``). Wird im Admin ab Version 5 dargestellt und dient als Information für den Nutzer
 
     :type: string
 
@@ -258,57 +308,74 @@ Eigenschaften (optional)
     Legt fest, ob der Adapter im :ref:`development-messagebox` gestartet werden kann
 
     :type: boolean
+	:default: ``false``
 
 .. confval:: common.dataFolder
-    
+
     Verzeichnis-Pfad, in welchem der Adapter seine Daten ablegt (relativ zu ``iobroker-data``). Die Variable ``%INSTANCE%`` kann ebenfalls im Pfad genutzt werden.
 
     :type: string
 
 .. confval:: common.dataSource
-    
-    Legt fest, wie Daten geholt werden sollen. Mögliche Werte: ``poll``, ``push``, ``assumption``
+
+    Legt fest, wie Daten geholt werden sollen. Mögliche Werte: ``poll``, ``push`` oder ``assumption``
 
     :type: string
 
 .. confval:: common.dependencies
-    
-    Liste von Abhängigkeiten auf dem lokalen System, welche für diesen Adapter notwendig sind. Zum Beispiel ``{"js-controller": ">=3.3.0"}``
+
+    Liste von Abhängigkeiten auf dem lokalen System, welche für diesen Adapter notwendig sind.
+
+	.. code:: json
+
+		"dependencies": [
+			{
+				"js-controller": ">=3.3.0"
+			}
+		]
 
     :type: array
 
 .. confval:: common.eraseOnUpload
-    
+
     Löscht alle existierenden Daten im Adapter-Verzeichnis vor einem Upload
 
     :type: boolean
 
 .. confval:: common.extIcon
-    
+
     URL zur Icon-Datei für die Admin-Übersicht (z.B. PNG-Datei auf GitHub)
 
     :type: string
 
 .. confval:: common.getHistory
-    
+
     Legt fest, ob der Adapter den ``getHistory`` Befehl unterstützt
 
     :type: boolean
 
 .. confval:: common.globalDependencies
-    
-    Liste von Abhängigkeiten im gesamten ioBroker-System (Multihost-Betrieb). Zum Beispiel ``{"admin": ">=5.1.19"}``. Siehe :ref:`basics-multihost`
+
+    Liste von Abhängigkeiten im gesamten ioBroker-System (Multihost-Betrieb). Siehe :ref:`basics-multihost`
+
+	.. code:: json
+
+		"globalDependencies": [
+			{
+				"admin": ">=5.1.19"
+			}
+		]
 
     :type: array
 
 .. confval:: common.icon
-    
+
     Pfad zum lokalen Icon des Adapters (nach Installation). Sollte im Unterverzeichnis ``admin`` liegen
 
     :type: string
 
 .. confval:: common.keywords
-    
+
     Liste von Schlüsselwörter, um den Adapter besser finden zu können
 
     :type: array
@@ -320,43 +387,44 @@ Eigenschaften (optional)
     :type: object
 
 .. confval:: common.loglevel
-    
+
     Standard Log-Level neuer Instanzen. Möglich Werte: ``debug``, ``info``, ``warn`` oder ``error``
 
     :type: string
 
 .. confval:: common.logTransporter
-    
+
     Legt fest, ob der Adapter die Log-Einträge von anderen Adaptern entgegen nehmen kann (um sie z.B. wo anders zu speichern)
 
     :type: boolean
 
 .. confval:: common.noIntro
-    
+
 
 
     :type: boolean
 
 .. confval:: common.noRepository
-    
+
 
 
     :type: boolean
 
 .. confval:: common.nogit
-    
+
     Legt fest, ob eine Installation direkt von GitHub verboten werden soll
 
     :type: boolean
 
 .. confval:: common.nondeletable
-    
+
     Legt fest, ob ein Adapter gelöscht oder aktualisiert werden kann. Falls ``true``, kümmert sich der ``js-controller`` um diese Aufgaben
 
     :type: boolean
+	:default: ``false``
 
 .. confval:: common.onlyWWW
-    
+
     Legt fest, ob der Adapter nur weitere HTML-Dateien bereitstellt und keine Logik enthält (wie zum Beispiel Widget-Adapter für ``VIS``)
 
     :type: boolean
@@ -408,12 +476,14 @@ Eigenschaften (optional)
      Legt fest, ob es nur eine einzelne Instanz pro Host geben darf
 
      :type: boolean
+	 :default: ``false``
 
 .. confval:: common.singleton
 
      Legt fest, ob es nur eine einzelne Instanz im gesamten ioBroker-System geben darf (Multihost-Betrieb). Siehe :ref:`basics-multihost`
 
      :type: boolean
+	 :default: ``false``
 
 .. confval:: common.stopBeforeUpdate
 
@@ -423,9 +493,10 @@ Eigenschaften (optional)
 
 .. confval:: common.stopTimeout
 
-     Wartezeit in Millisekunden, bis der Adapter angehalten wird (Standardwert: 500 ms)
+     Wartezeit in Millisekunden, bis der Adapter angehalten wird
 
      :type: number
+	 :default: ``500``
 
 .. confval:: common.subscribable
 
@@ -501,36 +572,125 @@ Eigenschaften (optional)
 
 **Mode: Schedule**
 
-- ``common.schedule`` (string) - CRON-Definition, wann die Instanzen gestartet werden sollen (kann vom Benutzer angepasst werden)
-- ``common.allowInit`` (boolean) - Legt fest, ob ein Adapter auch außerhalb des definierten Zeitplanes gestartet wird (z.B. nach Änderung der Instanz-Konfiguration)
+.. confval:: common.schedule
+
+	CRON-Definition, wann die Instanzen gestartet werden sollen (kann vom Benutzer angepasst werden)
+
+	:type: string
+
+.. confval:: common.allowInit
+
+	Legt fest, ob ein Adapter auch außerhalb des definierten Zeitplanes gestartet wird (z.B. nach Änderung der Instanz-Konfiguration)
+
+	:type: boolean
 
 **Mode: Daemon**
 
-- ``common.restartSchedule`` (string) - CRON-Definition, wann die laufenden Instanzen neugestartet werden sollen (kann vom Benutzer angepasst werden)
+.. confval:: common.restartSchedule
+
+	CRON-Definition, wann die laufenden Instanzen neugestartet werden sollen (kann vom Benutzer angepasst werden)
+
+	:type: string
 
 **Admin**
 
-- ``common.adminColumns`` (array) - Custom attributes, that must be shown in the admin in the object browser. Like: [{"name": {"en": "KNX address"}, "path": "native.address", "width": 100, "align": "left"}, {"name": "DPT", "path": "native.dpt", "width": 100, "align": "right", "type": "number", "edit": true, "objTypes": ["state", "channel"]}]. type is a type of the attribute (e.g. string, number, boolean) and only needed if edit is enabled. objTypes is a list of the object types, that could have such attribute. Used only in edit mode too.
-- ``common.adminTab.fa-icon`` (string) - `Font-Awesome <https://fontawesome.com/icons>`_ Icon für das Tab
-- ``common.adminTab.ignoreConfigUpdate`` (boolean) - 
-- ``common.adminTab.link`` (string) - 
-- ``common.adminTab.name`` (object) - Titel des Tabs (übersetzt in mehrere Sprachen)
-- ``common.adminTab.singleton`` (boolean) - Legt fest, ob nur ein Tab für alle Instanzen angezeigt werden soll
-- ``common.adminUI`` (object) - Legt fest, wie die Konfiguration im Admin 5 erfolgen soll
-- ``common.adminUI.config`` (string) - Wert: ``json``. Siehe auch ``common.jsonConfig``
-- ``common.adminUI.custom`` (string) - Wert: ``json``. Siehe auch ``common.jsonCustom``
-- ``common.adminUI.tab`` (string) - Erlaubte Werte: ``html``, ``materialize``
-- ``common.jsonConfig`` (boolean) - JSON-Konfiguration für den Admin 5 vorhanden (``admin/jsonConfig.json`` erforderlich)
-- ``common.jsonCustom`` (boolean) - JSON-Konfiguration für den Admin 5 vorhanden (``admin/jsonCustom.json`` erforderlich)
+.. confval:: common.adminColumns
+
+	Custom attributes, that must be shown in the admin in the object browser. Like: [{"name": {"en": "KNX address"}, "path": "native.address", "width": 100, "align": "left"}, {"name": "DPT", "path": "native.dpt", "width": 100, "align": "right", "type": "number", "edit": true, "objTypes": ["state", "channel"]}]. type is a type of the attribute (e.g. string, number, boolean) and only needed if edit is enabled. objTypes is a list of the object types, that could have such attribute. Used only in edit mode too
+
+	:type: array
+
+.. confval:: common.adminTab.fa-icon
+
+	`Font-Awesome <https://fontawesome.com/icons>`_ Icon für das Tab
+
+	:type: string
+
+.. confval:: common.adminTab.ignoreConfigUpdate
+
+	
+
+	:type: boolean
+
+.. confval:: common.adminTab.link
+
+	
+
+	:type: string
+
+.. confval:: common.adminTab.name
+
+	Titel des Tabs (übersetzt in mehrere Sprachen)
+
+	:type: object
+
+.. confval:: common.adminTab.singleton
+
+	Legt fest, ob nur ein Tab für alle Instanzen angezeigt werden soll
+
+	:type: boolean
+
+.. confval:: common.adminUI
+
+	Legt fest, wie die Konfiguration im Admin 5 erfolgen soll
+
+	:type: object
+
+.. confval:: common.adminUI.config
+
+	Wert: ``json`` (``admin/jsonConfig.json`` erforderlich)
+
+	:type: string
+
+.. confval:: common.adminUI.custom
+
+	Wert: ``json`` (``admin/jsonCustom.json`` erforderlich)
+
+	:type: string
+
+.. confval:: common.adminUI.tab
+
+	Erlaubte Werte: ``html``, ``materialize``
+
+	:type: string
 
 **Weitere Optionen**
 
-- ``objects`` (array) - Liste von Objekten, welche für den Adapter erstellt werden sollen
-- ``instanceObjects`` (array) - Liste von Objekten, welche für jede Instanz automatisch erstellt werden
-- ``protectedNative`` (array) - Liste von Attributen, welche nur vom Adapter selbst lesbar sind (z.B. ``["password"]``). Siehe :ref:`development-encryption`
-- ``encryptedNative`` (array) - Liste vo automatisch verschlüsselten Attributen. Siehe :ref:`development-encryption`
-- ``native`` (object) - Liste von vordefinierten Attributen, welche z.B. in der Admin-Konfiguration überschrieben werden können
-- ``notifications`` (array) - Liste von Objekten zur Konfiguration des internen. Siehe :ref:`development-notifications`
+.. confval:: objects
+
+	Liste von Objekten, welche für den Adapter erstellt werden sollen
+
+	:type: array
+
+.. confval:: instanceObjects
+
+	Liste von Objekten, welche für jede Instanz automatisch erstellt werden
+
+	:type: array
+
+.. confval:: protectedNative
+
+	Liste von Attributen, welche nur vom Adapter selbst lesbar sind (z.B. ``["password"]``). Siehe :ref:`development-encryption`
+
+	:type: array
+
+.. confval:: encryptedNative
+
+	Liste vo automatisch verschlüsselten Attributen. Siehe :ref:`development-encryption`
+
+	:type: array
+
+.. confval:: native
+
+	Liste von vordefinierten Attributen, welche z.B. in der Admin-Konfiguration überschrieben werden können
+
+	:type: object
+
+.. confval:: notifications
+
+	Liste von Objekten zur Konfiguration des internen. Siehe :ref:`development-notifications`
+
+	:type: array
 
 Eigenschaften (deprecated)
 --------------------------
