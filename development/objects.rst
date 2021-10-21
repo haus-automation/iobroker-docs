@@ -93,6 +93,21 @@ Common-Eigenschaften
 
 TODO
 
+common.type (optional - (default is mixed==any type) (possible values: number, string, boolean, array, object, mixed, file). As exception the objects with type meta could have common.type=meta.user or meta.folder. It is important to note that array, object, mixed and file must be serialized using JSON.stringify().
+common.min (optional)
+common.max (optional)
+common.step (optional) - increase/decrease interval. E.g. 0.5 for thermostat
+common.unit (optional)
+common.def (optional - the default value)
+common.defAck (optional - if common.def is set this value is used as ack flag, js-controller 2.0.0+)
+common.desc (optional, string or object) - description, object for multilingual description
+common.read (boolean, mandatory) - true if state is readable
+common.write (boolean, mandatory) - true if state is writable
+common.role (string, mandatory) - role of the state (used in user interfaces to indicate which widget to choose, see below)
+common.states (optional) attribute of type number with the object of possible states {'value': 'valueName', 'value2': 'valueName2', 0: 'OFF', 1: 'ON'} or (supported up from admin5) an states array, like ['Start', 'Flight', 'Land']
+common.workingID (string, optional) - if this state has helper state WORKING. Here must be written the full name or just the last part if the first parts are the same with actual. Used for HM.LEVEL and normally has value "WORKING"
+common.custom (optional) - the structure with custom settings for specific adapters. Like {"influxdb.0": {"enabled": true, "alias": "name"}}. enabled attribute is required and if it is not true, the whole attribute will be deleted.
+
 Typ Host (Beispiel)
 -------------------
 

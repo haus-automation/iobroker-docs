@@ -21,7 +21,7 @@ Um einen neuen Adapter zu erstellen, führst Du folgenden Befehl aus:
 
 .. code:: 
 
-    npx @iobroker/create-adapter 
+    npx @iobroker/create-adapter
 
 Nachdem das Programm ausgeführt wird, werden Dir einige Fragen gestellt, wie Du gerne arbeiten möchtest. Das Ergebnis sieht beispielsweise so aus:
 

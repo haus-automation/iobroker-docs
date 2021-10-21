@@ -382,7 +382,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.keywords
 
-    Liste von Schlüsselwörter, um den Adapter besser finden zu können
+    Liste von Schlüsselwörtern, um den Adapter besser finden zu können
 
     :type: array
 

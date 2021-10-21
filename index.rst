@@ -69,6 +69,7 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     development/objects
     development/states
     development/iopackage
+    development/adapter-reference
     development/testing
     development/encryption
     development/messagebox

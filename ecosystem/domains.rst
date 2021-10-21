@@ -23,7 +23,7 @@ www.iobroker.net
 download.iobroker.net
 ---------------------
 
-- `Adapter-Liste <http://download.iobroker.net/list.html>`_
+- `Adapter-Liste <http://download.iobroker.net/list.html>`_ (veraltet, sollte nicht mehr genutzt werden)
 - `Repository stable <http://download.iobroker.net/sources-dist.json>`_ (Redirect auf repo.iobroker.live)
 - `Repository beta <http://download.iobroker.net/sources-dist-latest.json>`_ (Redirect auf repo.iobroker.live)
 
