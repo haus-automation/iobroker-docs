@@ -118,7 +118,7 @@ Weiterhin gibt es den (reservierten) Namespace ``system.`` für das System. Dort
 - ``system.user.`` - Alle Benutzer des Systems
 - ``system.group.`` - Alle Benutzer-Gruppen des Systems
 - ``system.adapter.<adapter-name>`` - Standard-Konfiguration des Adapters für neue Instanzen
-- ``system.adapter.<adapter-name>.<instance-nummmer>`` - Informationen zur einzelnen Instanz (Uptime, Ressourcen, ...)
+- ``system.adapter.<adapter-name>.<instanz-nummmer>`` - Informationen zur einzelnen Instanz (Uptime, Ressourcen, ...)
 
 .. danger::
     Ändere keine Informationen in dem System-Namespace, wenn Du nicht genau weißt, was Du tust. Als normaler Anwender gibt es keinen Grund, dort etwas ändern. Diese Informationen sind nur für Entwickler relevant! Im Admin-Adapter sieht man diese Objekte auch nur dann, wenn der Expertenmodus angeschaltet ist.

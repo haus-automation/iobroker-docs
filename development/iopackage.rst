@@ -168,7 +168,14 @@ Eigenschaften (erforderlich)
 
 .. confval:: common.mode
 
-    Modus des Adapters: ``schedule``, ``daemon``, ``subscribe``, ``schedule``, ``once`` oder ``extension`` (siehe unten für weitere Eigenschaften)
+    Modus des Adapters: ``none``, ``daemon``, ``subscribe``, ``schedule``, ``once`` oder ``extension`` (siehe unten für weitere Eigenschaften)
+
+    - ``none`` - Der Adapter wird nicht gestartet
+    - ``daemon`` - Separat laufender Prozess
+    - ``subscribe`` - Wird gestartet, wenn der State ``system.adapter.<adapter-name>.<instanz-nummmer>.alive`` auf ``true`` gesetzt wird. Wird automatisch beendet, wenn der State auf ``false`` geändert wird. Der State wird automatisch auf ``false`` gesetzt, wenn der Prozess beendet wurde.
+    - ``schedule`` - Wird nach dem in ``common.schedule`` festgelegten Zeitplan automatisch gestartet
+    - ``once`` - Wird jedes Mal automatisch gestartet, wenn das ``system.adater.<adapter-name>.<instanz-nummmer>``-Objekt geändert wird
+    - ``extension`` - ???
 
     :type: string
 
@@ -530,7 +537,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.wakeup
 
-     Legt fest, ob die Instanz gestartet werden soll, wenn ein Wert in ``system.adapter.<adapter-name>.<instance-nummmer>.wakeup`` geschrieben wird.
+     Legt fest, ob die Instanz gestartet werden soll, wenn ein Wert in ``system.adapter.<adapter-name>.<instanz-nummmer>.wakeup`` geschrieben wird.
 
      :type: boolean
 
