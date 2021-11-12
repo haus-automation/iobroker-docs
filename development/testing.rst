@@ -39,10 +39,10 @@ Diese Tests führen allgemeine Unit-Tests durch. Datei ``test/unit.js``:
     // Run unit tests - See https://github.com/ioBroker/testing for a detailed explanation and further options
     tests.unit(path.join(__dirname, '..'));
 
-Tests ausführen
----------------
+Tests lokal ausführen
+---------------------
 
-
+Um alle Tests lokal auszuführen, können diese über npm angestoßen werden.
 
 .. code:: console
 

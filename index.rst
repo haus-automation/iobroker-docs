@@ -66,10 +66,10 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     :caption: Entwicklung
 
     development/adapter
+    development/adapter-reference
     development/objects
     development/states
     development/iopackage
-    development/adapter-reference
     development/testing
     development/encryption
     development/messagebox

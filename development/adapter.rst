@@ -198,6 +198,8 @@ Wichtig ist, dass alle Haken grün sind.
 .. tip::
     Prüfe schon während der Entwicklung regelmäßig, ob dein Adapter den Anforderungen entspricht.
 
+Generell gilt, dass auch hier die Entwicklung weiter geht. Es werden mehr Prüfungen hinzugefügt oder andere entfernt. Wenn dein Adapter also heute alle Tests besteht, muss das bei der nächsten Version nicht mehr unbedingt so sein.
+
 Das `Repository <https://github.com/ioBroker/ioBroker.repochecker>`_ vom Adapter-Checker kann mit neuen Regeln erweitert werden (siehe ``index.js``).
 
 Adapter veröffentlichen

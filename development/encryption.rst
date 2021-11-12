@@ -19,7 +19,7 @@ Zugriff verbieten
 
 Eine kleine Hürde bietet die Funktion, dass der Zugriff auf sensible Konfigurations-Attribute von anderen Adaptern aus verboten wird. Das heißt, dass diese Info einfach nicht ausgeliefert wird. Der Admin-Adapter ist dabei die Ausnahme (immerhin müssen die Daten noch konfigurierbar bleiben).
 
-Dazu kann in der ``io-package.json`` mit einem neuen Attribute festgelegt werden, dass diese Information gefiltert wird, wenn ein anderer Adapter das Objekt liest.
+Dazu kann in der :ref:`development-iopackage` mit einem neuen Attribute festgelegt werden, dass diese Information gefiltert wird, wenn ein anderer Adapter das Objekt liest.
 
 .. code:: json
 

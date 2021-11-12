@@ -6,14 +6,105 @@ Objekte
 .. note::
     Lies zuerst die Grundlagen zur :ref:`basics-datastorage`.
 
-Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden:
+Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
+
+.. confval:: _id
+
+    Eindeutige ID
+
+    :type: string
+
+.. confval:: type
+
+    Typ des Objektes. Gültige Werte sind:
+
+    - ``state`` - Zustand. Das übergeornete Objekte sollte vom Typ ``channel``, ``device``, ``instance`` oder ``host`` sein. Siehe :ref:`development-states`
+    - ``channel`` - "Kanal" um mehrere Zustände darunter zu strukturieren. Das übergeornete Objekte sollte vom Typ ``device`` sein.
+    - ``device`` - "Gerät" um mehrere Zustände oder Kanäle darunter zu strukturieren. Das übergeornete Objekte sollte vom Typ ``instance`` sein.
+    - ``enum`` - "Liste" mit vordefinierten Werten in ``common.members``. that points to the states, channels, devices or files.
+    - ``host`` - Ein "Host", welcher einen ``js-controller`` Prozess ausführt. Beispielsweise ``system.host.raspberrypi-iobroker``.
+    - ``adapter`` - Die Standard-Konfiguration von einem Adaper. Beispielsweise ``system.adapter.admin``.
+    - ``instance`` - Die Konfiguration der einzelnen Instanz. Beispielsweise ``system.adapter.admin.0``. Das übergeornete Objekte sollte vom Typ ``adapter`` sein.
+    - ``meta`` - Sich selten ändernde Meta-Informationen wie zum Beispiel die :ref:`basics-uuid` unter ``system.meta.uuid``.
+    - ``config`` - Konfigurationen. Beispielsweise ``system.repositories``
+    - ``script`` - Skripte unter ``script.js.*``
+    - ``user`` - Benutzer des Systems. Beispielsweise ``system.user.admin``
+    - ``group`` - Benutzer-Gruppen des Sytems. Beispielsweise ``system.group.administrator``
+    - ``chart`` - Diagramm
+    - ``folder`` - Verzeichnis. Beispielsweise ``system.host.raspberrypi-iobroker.notifications``
+
+    :type: string
+
+.. confval:: common.type
+
+    Typ der gespeicherten Daten
+
+    - ``mixed`` - Kann einen beliebigen Wert annehmen (nicht empfohlen)
+    - ``number`` - Numerische Werte
+    - ``string`` - Zeichenketten
+    - ``boolean`` - true / false
+    - ``array`` - Liste von Werten
+    - ``object`` - Objekt
+    - ``json`` - ???
+    - ``file`` - ???
+    - ``multistate`` - Auswahlmöglichkeiten (Enum)
+
+    Eine Ausnahme bilden die Objekte mit ``type`` = ``meta``. Diese können hier noch den Type ``meta.user`` oder ``meta.folder`` bekommen.
+
+    .. warning::
+        Falls der Typ ``array``, ``object`` oder ``mixed`` lautet, muss der Wert als String mit ``JSON.stringify()`` gespeichert werden.
+
+    :type: string
+    :default: ``mixed``
+
+.. confval:: common.role
+
+    Rolle des zugehörigen State (``type`` = ``state``), welche festlegt, wie der Wert im Frontend (Admin) dargestellt werden soll.
+
+    :type: string
+
+.. confval:: common.read
+
+    Legt fest, ob der zugehörige State (``type`` = ``state``) gelesen werden darf. Siehe :ref:`development-states`
+
+    :type: boolean
+
+.. confval:: common.write
+
+    Legt fest, ob der zugehörige State (``type`` = ``state``) geschrieben werden darf. Siehe :ref:`development-states`
+
+    :type: boolean
+
+.. confval:: common.name
+
+    (optional) Name des Objektes - wird im Frontend (wie dem Admin) dargestellt. **Es ist empfohlen, diesen Wert zu setzen!**
+
+    :type: string
+
+.. confval:: native
+
+    Eigenschaften des Zielsystems (z.B. eine ID eines Gerätes)
+
+    :type: object
+
+
+- ``common.min (optional)
+- ``common.max (optional)
+- ``common.step (optional) - increase/decrease interval. E.g. 0.5 for thermostat
+- ``common.unit (optional)
+- ``common.def (optional - the default value)
+- ``common.defAck (optional - if common.def is set this value is used as ack flag, js-controller 2.0.0+)
+- ``common.desc (optional, string or object) - description, object for multilingual description
+- ``common.states (optional) attribute of type number with the object of possible states {'value': 'valueName', 'value2': 'valueName2', 0: 'OFF', 1: 'ON'} or (supported up from admin5) an states array, like ['Start', 'Flight', 'Land']
+- ``common.workingID (string, optional) - if this state has helper state WORKING. Here must be written the full name or just the last part if the first parts are the same with actual. Used for HM.LEVEL and normally has value "WORKING"
+- ``common.custom (optional) - the structure with custom settings for specific adapters. Like {"influxdb.0": {"enabled": true, "alias": "name"}}. enabled attribute is required and if it is not true, the whole attribute will be deleted.
+
+Typ State (Beispiel)
+--------------------
 
 .. code:: console
 
-    iobroker state get hue.0.Deckenlampe.bri
-
-Beispiel
---------
+    iobroker object get hue.0.Deckenlampe.bri
 
 .. code:: json
 
@@ -43,70 +134,6 @@ Beispiel
             "ownerGroup": "system.group.administrator"
         }
     }
-
-Eigenschaften
--------------
-
-Für Objekte sind die folgenden Attribute verpflichtend:
-
-.. confval:: _id
-
-    Eindeutige ID
-
-    :type: string
-
-.. confval:: type
-
-    Typ des Objektes. Gültige Werte sind:
-
-    - ``state`` - Zustand. Das übergeornete Objekte sollte vom Typ ``channel``, ``device``, ``instance`` oder ``host`` sein. Siehe :ref:`development-states`
-    - ``channel`` - "Kanal" um mehrere Zustände darunter zu strukturieren. Das übergeornete Objekte sollte vom Typ ``device`` sein.
-    - ``device`` - "Gerät" um mehrere Zustände oder Kanäle darunter zu strukturieren. Das übergeornete Objekte sollte vom Typ ``instance`` sein.
-    - ``enum`` - "Liste" mit vordefinierten Werten in ``common.members``. that points to the states, channels, devices or files.
-    - ``host`` - Ein "Host", welcher einen ``js-controller`` Prozess ausführt. Beispielsweise ``system.host.raspberrypi-iobroker``.
-    - ``adapter`` - Die Standard-Konfiguration von einem Adaper. Beispielsweise ``system.adapter.admin``.
-    - ``instance`` - Die Konfiguration der einzelnen Instanz. Beispielsweise ``system.adapter.admin.0``. Das übergeornete Objekte sollte vom Typ ``adapter`` sein.
-    - ``meta`` - Sich selten ändernde Meta-Informationen wie zum Beispiel die :ref:`basics-uuid` unter ``system.meta.uuid``.
-    - ``config`` - Konfigurationen. Beispielsweise ``system.repositories``
-    - ``script`` - Skripte unter ``script.js.*``
-    - ``user`` - Benutzer des Systems. Beispielsweise ``system.user.admin``
-    - ``group`` - Benutzer-Gruppen des Sytems. Beispielsweise ``system.group.administrator``
-    - ``chart`` - Diagramm
-    - ``folder`` - Verzeichnis. Beispielsweise ``system.host.raspberrypi-iobroker.notifications``
-
-    :type: string
-
-.. confval:: common
-
-    ioBroker-Spezifische Eigenschaften (Rollen, Lesezugriff, Schreibzugriff, ...)
-
-    :type: object
-
-.. confval:: native
-
-    Eigenschaften des Zielsystems (z.B. eine ID eines Gerätes)
-
-    :type: object
-
-Common-Eigenschaften
---------------------
-
-TODO
-
-common.type (optional - (default is mixed==any type) (possible values: number, string, boolean, array, object, mixed, file). As exception the objects with type meta could have common.type=meta.user or meta.folder. It is important to note that array, object, mixed and file must be serialized using JSON.stringify().
-common.min (optional)
-common.max (optional)
-common.step (optional) - increase/decrease interval. E.g. 0.5 for thermostat
-common.unit (optional)
-common.def (optional - the default value)
-common.defAck (optional - if common.def is set this value is used as ack flag, js-controller 2.0.0+)
-common.desc (optional, string or object) - description, object for multilingual description
-common.read (boolean, mandatory) - true if state is readable
-common.write (boolean, mandatory) - true if state is writable
-common.role (string, mandatory) - role of the state (used in user interfaces to indicate which widget to choose, see below)
-common.states (optional) attribute of type number with the object of possible states {'value': 'valueName', 'value2': 'valueName2', 0: 'OFF', 1: 'ON'} or (supported up from admin5) an states array, like ['Start', 'Flight', 'Land']
-common.workingID (string, optional) - if this state has helper state WORKING. Here must be written the full name or just the last part if the first parts are the same with actual. Used for HM.LEVEL and normally has value "WORKING"
-common.custom (optional) - the structure with custom settings for specific adapters. Like {"influxdb.0": {"enabled": true, "alias": "name"}}. enabled attribute is required and if it is not true, the whole attribute will be deleted.
 
 Typ Host (Beispiel)
 -------------------

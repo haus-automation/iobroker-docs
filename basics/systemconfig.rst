@@ -29,7 +29,7 @@ Beispiel-Ausgabe:
                 "pl": "Konfiguracja systemu",
                 "zh-cn": "系统配置"
             },
-            "city": "Paderborn",
+            "city": "Custom City",
             "country": "Germany",
             "longitude": 8.111,
             "latitude": 51.111,

@@ -168,7 +168,7 @@ Eigenschaften (erforderlich)
 
 .. confval:: common.mode
 
-    Modus des Adapters: ``none``, ``daemon``, ``subscribe``, ``schedule``, ``once`` oder ``extension`` (siehe unten für weitere Eigenschaften)
+    Modus des Adapters
 
     - ``none`` - Der Adapter wird nicht gestartet
     - ``daemon`` - Separat laufender Prozess
@@ -193,9 +193,9 @@ Eigenschaften (Allgemein)
 
     Legt fest, in welcher Reihenfolge die Adapter gestartet werden
 
-    - ``1`` = Logik
-    - ``2`` = API und andere Daten
-    - ``3`` = alle anderen
+    - ``1`` - Logik
+    - ``2`` - API und andere Daten
+    - ``3`` - alle anderen
 
     :type: number
     :default: ``3``
@@ -239,7 +239,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.type
 
-    Typ/Kategorie des Adapters (z.B. ``weather``). Gültige Werte:
+    Typ/Kategorie des Adapters
 
     - ``alarm``
     - ``climate-control``
@@ -389,7 +389,16 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.keywords
 
-    Liste von Schlüsselwörtern, um den Adapter besser finden zu können
+    Liste von Schlüsselwörtern, um den Adapter über die Suche (besser) finden zu können
+
+    .. code:: json
+
+        "keywords": [
+            "web",
+            "weather",
+            "air",
+            "quality"
+        ]
 
     :type: array
 

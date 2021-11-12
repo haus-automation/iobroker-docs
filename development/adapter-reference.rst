@@ -33,7 +33,7 @@ Gerenell ist es empfehlenswert, Objekte über die ``instanceObjects`` in der :re
 
 .. code:: javascript
 
-    await this.delObjectAsync(id, {recursive: true}, () => {
+    this.delObjectAsync(id, {recursive: true}, () => {
         this.log.debug('object deleted: ' + id);
     });
 
