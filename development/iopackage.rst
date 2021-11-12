@@ -760,9 +760,8 @@ Diese Eigenschaften sind für aktuelle Adapter mit dem Admin 5 nicht mehr releva
 - ``common.materializeTab`` (boolean) - Legt fest, ob der Adapter ein eigenes Tab für Admin-Version 3 und 4 bereitstellt
 - ``common.noConfig`` (boolean) - Definiert, ob Instanzen konfiguriert werden können (ab Admin 5 sollte ``adminUI.config = none`` verwendet werden)
 
-Hilfreiche Tools / Links
-------------------------
+Links
+-----
 
 - `Schema-Datei <https://github.com/ioBroker/ioBroker.js-controller/blob/master/packages/controller/schemas/io-package.json>`_
-
-Siehe auch: https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/objectsschema.md
+- `Offizielle Doku <https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/objectsschema.md>`_

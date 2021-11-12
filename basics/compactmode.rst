@@ -7,5 +7,5 @@ Die grunlegende :ref:`basics-architecture` vom ioBroker sieht vor, dass jede Ins
 
 TODO
 
-ref: https://forum.iobroker.net/topic/18338/experimentell-js-controller-compact-mode
-ref: https://forum.iobroker.net/topic/32789/anleitung-für-adapter-entwickler-compact-mode-testen
+- ExtSource: https://forum.iobroker.net/topic/18338/experimentell-js-controller-compact-mode
+- ExtSource: https://forum.iobroker.net/topic/32789/anleitung-für-adapter-entwickler-compact-mode-testen

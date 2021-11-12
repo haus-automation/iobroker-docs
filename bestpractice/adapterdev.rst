@@ -52,9 +52,8 @@ Wie States genau aufgebaut sind, und welche Eigenschaften sie unterstützten, er
         if (err) this.log.error(err);
     });
 
-Links
------
+TODO
 
-- Ref: https://github.com/ioBroker/ioBroker.js-controller/blob/master/packages/adapter/lib/adapter/adapter.js
-- Ref: https://github.com/ioBroker/ioBroker/wiki/Adapter-Development-Documentation
-- Ref: https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/adapterdev.md
+- ExtSource: https://github.com/ioBroker/ioBroker.js-controller/blob/master/packages/adapter/lib/adapter/adapter.js
+- ExtSource: https://github.com/ioBroker/ioBroker/wiki/Adapter-Development-Documentation
+- ExtSource: https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/adapterdev.md

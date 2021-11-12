@@ -3,8 +3,6 @@
 Daten-Verschlüsselung
 =====================
 
-ref: https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/adaptersecurity.md
-
 Normalerweise werden alle Einstellungen in Adaptern unverschlüsselt abgelegt. Das heißt, dass zum Beispiel die Instanz-Konfiguration einfach mit in die Objects-Datenbank geschrieben wird. Im Klartext.
 
 Gerade sensible Informationen sollten daher verschlüsselt abgelegt werden.
@@ -54,3 +52,8 @@ In diesem Beispiel wird also das Passwort verschlüsselt in der Objekt-Datenbank
 Generell ist es sinnvoll, beide Attribute zu kombinieren (wie hier gezeigt). Also auch verschlüsselte Informationen nicht einfach auslesen zu lassen.
 
 Die Verschlüsselung und Entschlüsselung passiert komplett automatisch. Die Informationen müssen also nicht manuell im Code entschlüssel werden.
+
+Links
+-----
+
+- `Offizielle Doku <https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/adaptersecurity.md>`_
