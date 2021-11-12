@@ -15,7 +15,7 @@ Wie Objekte genau aufgebaut sind, und welche Eigenschaften sie unterstützten, e
 
 **Neues Objekt erstellen im eigenen Namespace**
 
-Gerenell ist es empfehlenswert, Objekte über die ``instanceObjects`` in der :ref:`development-iopackage` anzulegen.
+Gerenell ist es empfehlenswert, Objekte über die ``instanceObjects`` in der :ref:`development-iopackage` anzulegen. Solltest Du beim Adapter-Start schon wissen, welche Objekte Du später haben möchtest, nutze diese Funktion.
 
 .. code:: javascript
 

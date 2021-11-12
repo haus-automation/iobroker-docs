@@ -228,3 +228,8 @@ So wird also z.B. statt ``http://download.iobroker.net/sources-dist.json`` erstm
     }
 
 Dieser Hash wird mit dem aktuellen Hash in ``system.repositories`` verglichen. Sollte der Hash abweichen, wird die eigentliche JSON-Datei geladen. Dies wurde so gelöst, um den Traffic von tausenden anfragenden Systemen zu reduzieren.
+
+Links
+-----
+
+- `Repository <https://github.com/ioBroker/ioBroker.repositories>`_

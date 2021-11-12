@@ -312,7 +312,20 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.connectionType
 
-    Definiert die Qulle der Adapter-Daten (``local`` oder ``cloud``). Wird im Admin ab Version 5 dargestellt und dient als Information für den Nutzer
+    Definiert die Qulle der Adapter-Daten. Wird im Admin ab Version 5 dargestellt und dient als Information für den Nutzer
+
+    - ``local`` - Die Kommunikation findet lokal / im eigenen Netzwerk statt (z.B. mit dem Gerät direkt per HTTP)
+    - ``cloud`` - Für den Adapter ist eine aktive Internetverbindung erforderlich. Die Daten werden z.B. vom Server des Herstellers abgerufen.
+
+    :type: string
+
+.. confval:: common.dataSource
+
+    Legt fest, wie Daten geholt werden
+
+    - ``poll`` - Die Daten werden regelmäßig abgefragt (z.B. per Zeitplan)
+    - ``push`` - Das Gerät liefert die Daten selbstständig zum Adapter
+    - ``assumption`` - Der genaue Status ist nicht definiert
 
     :type: string
 
@@ -325,19 +338,13 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.dataFolder
 
-    Verzeichnis-Pfad, in welchem der Adapter seine Daten ablegt (relativ zu ``iobroker-data``). Die Variable ``%INSTANCE%`` kann ebenfalls im Pfad genutzt werden.
-
-    :type: string
-
-.. confval:: common.dataSource
-
-    Legt fest, wie Daten geholt werden sollen. Mögliche Werte: ``poll``, ``push`` oder ``assumption``
+    Verzeichnis-Pfad, in welchem der Adapter seine Daten ablegt (relativ zu ``iobroker-data``). Die Variable ``%INSTANCE%`` kann ebenfalls im Pfad genutzt werden
 
     :type: string
 
 .. confval:: common.dependencies
 
-    Liste von Abhängigkeiten auf dem lokalen System, welche für diesen Adapter notwendig sind.
+    Liste von Abhängigkeiten auf dem lokalen System, welche für diesen Adapter notwendig sind
 
     .. code:: json
 
@@ -403,14 +410,20 @@ Eigenschaften (Allgemein)
     :type: array
 
 .. confval:: common.localLinks
-    
+
 
 
     :type: object
 
 .. confval:: common.loglevel
 
-    Standard Log-Level neuer Instanzen. Möglich Werte: ``debug``, ``info``, ``warn`` oder ``error``
+    Standard Log-Level neuer Instanzen. Empfohlen: ``info``
+
+    - ``silly`` - Alles
+    - ``debug`` - Debug-Nachrichten
+    - ``info`` - Informationen
+    - ``warn`` - Warnungen
+    - ``error`` - Fehler
 
     :type: string
 
@@ -471,7 +484,11 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.os
 
-      Liste mit unterstützten Betriebssystemen. Mögliche Werte: ``darwin``, ``linux`` oder ``win32``
+    Liste mit unterstützten Betriebssystemen
+    
+    - ``darwin`` - Mac OS X
+    - ``linux`` - Linux
+    - ``win32`` - Windows
 
      :type: string / array
 
@@ -682,25 +699,32 @@ Eigenschaften (Admin)
 
 .. confval:: common.adminUI
 
-    Legt fest, wie die Konfiguration im Admin 5 erfolgen soll
+    Legt fest, wie die Konfiguration im Admin erfolgen soll
 
     :type: object
 
 .. confval:: common.adminUI.config
 
-    Wert: ``json`` (``admin/jsonConfig.json`` erforderlich)
+    Legt fest, wie die Konfiguration für die Admin-Oberfläche aufgebaut ist
+
+    - ``none``
+    - ``materialize`` (``admin/index_m.html`` erforderlich - ab Admin Version 4)
+    - ``json`` (``admin/jsonConfig.json`` erforderlich - ab Admin Version 5)
 
     :type: string
 
 .. confval:: common.adminUI.custom
 
-    Wert: ``json`` (``admin/jsonCustom.json`` erforderlich)
+    - ``none``
+    - ``materialize`` (``admin/custom_m.html`` erforderlich - ab Admin Version 4)
+    - ``json`` (``admin/jsonCustom.json`` erforderlich - ab Admin Version 5)
 
     :type: string
 
 .. confval:: common.adminUI.tab
 
-    Erlaubte Werte: ``html``, ``materialize``
+    - ``html``
+    - ``materialize``
 
     :type: string
 
