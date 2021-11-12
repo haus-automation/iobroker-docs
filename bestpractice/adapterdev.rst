@@ -1,7 +1,7 @@
-.. _development-adapterreference:
+.. _bestpractice-adapterdev:
 
-Adapter-Entwicklung (Code)
-==========================
+Adapter-Entwicklung
+===================
 
 In diesem Dokument werden einige Code-Beispiele gesammelt, welche häufig bei der :ref:`development-adapter` benötigt werden.
 
@@ -36,8 +36,6 @@ Gerenell ist es empfehlenswert, Objekte über die ``instanceObjects`` in der :re
     this.delObjectAsync(id, {recursive: true}, () => {
         this.log.debug('object deleted: ' + id);
     });
-
-
 
 States
 ------

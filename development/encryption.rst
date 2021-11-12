@@ -38,7 +38,7 @@ Daten verschlüsseln
 
 Wie Du schon weißt, werden Objekte als JSON in der Datei ``/opt/iobroker/iobroker-data/objects.json`` abgelegt. Jede Eigenschaft wird dabei einfach im Klartext dort gespeichert. Hat nun jemand Zugriff auf diese Datei, können die Daten einfach gelesen werden. Passwörter, API-Token, Benutzernamen usw. liegen also im Klartext in dieser Datei.
 
-Um die Daten nicht mehr im Klartext zu verbreiten, kann man einzelne Attribute verschlüsseln lassen. Dies geschieht ebenfalls über ein Attribut in der ``io-package.json`` des einzelnen Adapters.
+Um die Daten nicht mehr im Klartext zu speichern, kann man einzelne Attribute verschlüsseln lassen. Dies geschieht ebenfalls über ein Attribut in der ``io-package.json`` des einzelnen Adapters.
 
 .. code:: json
 

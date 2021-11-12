@@ -66,7 +66,6 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     :caption: Entwicklung
 
     development/adapter
-    development/adapter-reference
     development/objects
     development/states
     development/iopackage
@@ -74,6 +73,12 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     development/encryption
     development/messagebox
     development/notifications
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Best Practice
+
+    bestpractice/adapterdev
 
 .. image:: https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png
     :target: https://haus-automatisierung.com/iobroker-kurs/
