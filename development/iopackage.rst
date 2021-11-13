@@ -15,7 +15,7 @@ Hier eine Beispiel-Datei aus dem Luftdaten-Adapter. Eine Beschreibung der einzel
     {
         "common": {
             "name": "luftdaten",
-            "version": "2.0.3",
+            "version": "2.1.1",
             "news": {
                 "2.0.3": {
                     "en": "Fixed error logging",
@@ -54,7 +54,6 @@ Hier eine Beispiel-Datei aus dem Luftdaten-Adapter. Eine Beschreibung der einzel
             ],
             "license": "MIT",
             "platform": "Javascript/Node.js",
-            "main": "main.js",
             "icon": "luftdaten.png",
             "extIcon": "https://raw.githubusercontent.com/klein0r/ioBroker.luftdaten/master/admin/luftdaten.png",
             "enabled": true,
@@ -67,7 +66,9 @@ Hier eine Beispiel-Datei aus dem Luftdaten-Adapter. Eine Beschreibung der einzel
             "compact": true,
             "connectionType": "cloud",
             "dataSource": "poll",
-            "materialize": true,
+            "adminUI": {
+                "config": "json"
+            },
             "dependencies": [
                 {
                     "js-controller": ">=3.3.0"
@@ -102,7 +103,7 @@ Eigenschaften (erforderlich)
 
 .. confval:: common.version
 
-    Aktuelle Version des Adapters
+    Aktuelle Version des Adapters (muss mit der Version der `package.json` übereinstimmen)
 
     :type: string
 

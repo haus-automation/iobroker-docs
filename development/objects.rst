@@ -81,6 +81,36 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
 
     :type: string
 
+.. confval:: common.custom
+
+    (optional) Zusatzkonfiguration weiterer Adapter für das Objekt. Wird zum Beispiel für Datenbank-Adapter genutzt. Je Eintrag ist das ``enabled`` Attribut erforderlich.
+
+    .. code:: json
+
+        "custom": {
+            "influxdb.0": {
+                "enabled": true,
+                "storageType": "",
+                "aliasId": "",
+                "changesOnly": true,
+                "debounce": "1000",
+                "changesRelogInterval": "0",
+                "changesMinDelta": "0"
+            },
+            "history.0": {
+                "enabled": true,
+                "aliasId": "",
+                "changesOnly": true,
+                "debounce": 1000,
+                "changesRelogInterval": 0,
+                "changesMinDelta": 0,
+                "maxLength": 960,
+                "retention": 31536000
+            }
+        }
+
+    :type: object
+
 .. confval:: native
 
     Eigenschaften des Zielsystems (z.B. eine ID eines Gerätes)
@@ -97,7 +127,6 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
 - ``common.desc (optional, string or object) - description, object for multilingual description
 - ``common.states (optional) attribute of type number with the object of possible states {'value': 'valueName', 'value2': 'valueName2', 0: 'OFF', 1: 'ON'} or (supported up from admin5) an states array, like ['Start', 'Flight', 'Land']
 - ``common.workingID (string, optional) - if this state has helper state WORKING. Here must be written the full name or just the last part if the first parts are the same with actual. Used for HM.LEVEL and normally has value "WORKING"
-- ``common.custom (optional) - the structure with custom settings for specific adapters. Like {"influxdb.0": {"enabled": true, "alias": "name"}}. enabled attribute is required and if it is not true, the whole attribute will be deleted.
 
 Typ State (Beispiel)
 --------------------

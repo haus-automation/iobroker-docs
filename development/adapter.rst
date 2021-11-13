@@ -212,8 +212,8 @@ Danach kannst Du einen Pull-Request im `GitHub Repository (ioBroker.repositories
 .. note::
     Bitte beachte, dass Adapter abgelehnt werden, wenn nicht alle Adapter-Checks (siehe oben) erfüllt sind.
 
-Hilfreiche Tools / Links
-------------------------
+Links
+-----
 
 - `Create-Adapter <https://github.com/ioBroker/create-adapter>`_
 - `Adapter-Checker <https://adapter-check.iobroker.in/>`_
