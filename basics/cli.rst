@@ -81,13 +81,16 @@ Beispiele (System)
 - ``iobroker stop``: Stoppt das gesamte ioBroker-System (``js-controller`` und alle Instanzen)
 - ``iobroker version``: Version des ``js-controller``
 - ``iobroker uuid``: UUID des Systems - siehe :ref:`basics-uuid`
+- ``iobroker upgrade self``: Aktualisiert den ``js-controller``
 
 Beispiele (Adapter)
 -------------------
 
 - ``iobroker upgrade --yes``: Aktualisiert alle Adapter, ohne für jeden Adapter nachzufragen, ob die Version wirklich installiert werden soll.
-- ``iobroker upgrade ical@1.11.2``: Aktualisiert einen einzelnen Adpater auf die angegebene Version ``1.11.2``
-- ``iobroker add wled``: Erstellt eine neue Instanz des wled-Adapters
+- ``iobroker upgrade ical``: Aktualisiert einen einzelnen Adpater (in diesem Fall ical) auf die aktuellste Version
+- ``iobroker upgrade ical@1.11.2``: Aktualisiert einen einzelnen Adpater (in diesem Fall ical) auf die Version ``1.11.2``
+- ``iobroker add wled@0.6.0``: Installiert die Version ``0.6.0`` des wled-Adapters und erstellt eine neue Instanz
+- ``iobroker add wled``: Installiert die aktuellste Version des wled-Adapters und erstellt eine neue Instanz
 - ``iobroker del wled.0``: Löscht die Instanz ``wled.0``
 - ``iobroker del wled``: Deinstalliert den WLED Adapter
 - ``iobroker status iot.0``: Prüft, ob eine Instanz des IoT-Adapters läuft
@@ -98,15 +101,15 @@ Beispiele (Adapter)
 Beispiele (User)
 ----------------
 
-- ``iobroker user passwd admin``: Passwort vom User "admin" ändern (z.B. falls es vergessen wurde)
+- ``iobroker user passwd admin``: Passwort vom User ``admin`` ändern (z.B. falls es vergessen wurde)
 
 Beispiele (Objekte)
 -------------------
 
-- ``iobroker object get system.config``: Liefert den Inhalt des Objektes ``system.config``
+- ``iobroker object get system.config``: Liefert den Inhalt des Objektes - siehe :ref:`basics-datastorage`
 
 Beispiele (Zustände)
 --------------------
 
 - ``iobroker state get admin.0.info.updatesNumber``: Liefert den kompletten Zustand als JSON
-- ``iobroker state getvalue admin.0.info.updatesNumber``: Liest nur den Wert des Zustandes
+- ``iobroker state getvalue admin.0.info.updatesNumber``: Liefert nur den Wert des Zustandes - siehe :ref:`basics-datastorage`
