@@ -47,12 +47,25 @@ Wie States genau aufgebaut sind, und welche Eigenschaften sie unterstützten, er
 .. code:: javascript
 
     await this.setStateAsync('myState', {val: newValue, ack: true});
+
+Alternativ kann man den neuen Wert auch einzeln übergeben. Allerdings würde ich empfehlen, immer ein komplettes State-Objekt zu übergeben, da dies ansonsten intern passiert. Sollte ``newValue`` (versehentlich) ein Objekt sein, wir es ansonsten als State-Objekt interpretiert, welchem dann wichtige Eigenschaften fehlen werden.
+
+.. code:: javascript
+
     await this.setStateAsync('myState', newValue, true);
     await this.setStateAsync('myState', newValue, true, (err) => {
         if (err) this.log.error(err);
     });
 
-TODO
+this.getCertificates(publicName, privateName, chainedName, callback)
+this.getCertificatesAsync(publicName, privateName, chainedName, callback)
+
+
+
+this.restart()
+
+Links
+-----
 
 - ExtSource: https://github.com/ioBroker/ioBroker.js-controller/blob/master/packages/adapter/lib/adapter/adapter.js
 - ExtSource: https://github.com/ioBroker/ioBroker/wiki/Adapter-Development-Documentation

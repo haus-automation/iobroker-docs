@@ -242,33 +242,33 @@ Eigenschaften (Allgemein)
 
     Typ/Kategorie des Adapters
 
-    - ``alarm``
-    - ``climate-control``
-    - ``communication``
-    - ``date-and-time``
-    - ``energy``
-    - ``metering``
-    - ``garden``
-    - ``general``
-    - ``geoposition``
-    - ``hardware``
-    - ``health``
-    - ``household``
-    - ``infrastructure``
-    - ``iot-systems``
-    - ``lighting``
-    - ``logic``
-    - ``messaging``
-    - ``misc-data``
-    - ``multimedia``
-    - ``network``
-    - ``protocols``
-    - ``storage``
-    - ``utility``
-    - ``visualization``
-    - ``visualization-icons``
-    - ``visualization-widgets``
-    - ``weather``
+    - ``alarm`` - Sicherheitssysteme, Alarmanlagen, ...
+    - ``climate-control`` - Klimasteuerung, Heizung, Luftfilter, ...
+    - ``communication`` - Kommunikation mit anderen Adaptern (REST Api)
+    - ``date-and-time`` - Kalender, Ferien, Feiertage, ...
+    - ``energy`` - PV-Anlage, Verbrauchsdaten, ...
+    - ``metering`` - Energiemessung
+    - ``garden`` - Rasenmähroboter, Bewässerung, ...
+    - ``general`` - Allgemeine Adapter wie Admin
+    - ``geoposition`` - Position von Objekten oder Personen
+    - ``hardware`` - Allgemeine Hardware-Schnittstellen (z.B. für ESP8266, ESP32)
+    - ``health`` - Gesundheitsdaten wie Blutdruck, Blutzucker, ...
+    - ``household`` - Küchengeräte, Haushaltsgeräte, Staubsaugerroboter, ...
+    - ``infrastructure`` - Netzwerktechnik, Drucker, Scanner, Telefone, ...
+    - ``iot-systems`` - Weitere IoT-Geräte, welche nicht in die anderen Kategorien passen
+    - ``lighting`` - Beleuchtung
+    - ``logic`` - Logikmodule für eigene Regeln oder Szenen
+    - ``messaging`` - Nachrichtendienste wie Telegram oder E-Mail
+    - ``misc-data`` - Export und Import von Daten
+    - ``multimedia`` - Fernseher, Receiver, Beamer, ...
+    - ``network`` - Ping, ...
+    - ``protocols`` - Generische Protokolle (wie MQTT)
+    - ``storage`` - Daten-Speicherung wie mySQL oder InfluxDB
+    - ``utility`` - Weitere Tools wie Backup-Adapter
+    - ``visualization`` - Visualisierungs-Adapter
+    - ``visualization-icons`` - Zusätzliche Icons für die Visualisierung
+    - ``visualization-widgets`` - Weitere Widgets für die Visualisierung
+    - ``weather`` - Wetterdaten
 
     :type: string
 
@@ -540,13 +540,13 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.subscribable
 
-     
+     ???
 
      :type: boolean
 
 .. confval:: common.subscribe
 
-     
+     ???
 
      :type: string
 
@@ -763,7 +763,9 @@ Eigenschaften (Admin)
 
 .. confval:: notifications
 
-    Liste von Objekten zur Konfiguration des internen. Siehe :ref:`development-notifications`
+    Liste von Objekten zur Konfiguration zur Konfiguration des internen Notification-Systems. Siehe :ref:`development-notifications`
+
+    **Seit js-controller 3.2.0**
 
     :type: array
 

@@ -3,9 +3,8 @@
 Messagebox
 ==========
 
-Konfiguration in der :ref:`development-iopackage`
+Konfiguration in der :ref:`development-iopackage` (``common.messagebox``)
 
-- ``common.messagebox`` (boolean)
 - ``common.supportStopInstance`` (boolean)
 
 TODO
