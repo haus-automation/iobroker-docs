@@ -89,12 +89,12 @@ Beispiele (Adapter)
 - ``iobroker upgrade --yes``: Aktualisiert alle Adapter, ohne für jeden Adapter nachzufragen, ob die Version wirklich installiert werden soll.
 - ``iobroker upgrade ical``: Aktualisiert einen einzelnen Adpater (in diesem Fall ical) auf die aktuellste Version
 - ``iobroker upgrade ical@1.11.2``: Aktualisiert einen einzelnen Adpater (in diesem Fall ical) auf die Version ``1.11.2``
-- ``iobroker add wled@0.6.0``: Installiert die Version ``0.6.0`` des wled-Adapters und erstellt eine neue Instanz
-- ``iobroker add wled``: Installiert die aktuellste Version des wled-Adapters und erstellt eine neue Instanz
+- ``iobroker add wled@0.6.0``: Installiert die Version ``0.6.0`` des WLED Adapters und erstellt eine neue Instanz
+- ``iobroker add wled``: Installiert die aktuellste Version des WLED Adapters und erstellt eine neue Instanz
 - ``iobroker del wled.0``: Löscht die Instanz ``wled.0``
 - ``iobroker del wled``: Deinstalliert den WLED Adapter
-- ``iobroker status iot.0``: Prüft, ob eine Instanz des IoT-Adapters läuft
-- ``iobroker version iot``: Version des installierten IoT-Adapters
+- ``iobroker status iot.0``: Prüft, ob eine Instanz des IoT Adapters läuft
+- ``iobroker version iot``: Version des installierten IoT Adapters
 - ``iobroker update -u``: Listet alle Adapter mit verfügbaren Updates auf
 - ``iobroker update -a``: Listet alle verfügbaren Adapter auf
 

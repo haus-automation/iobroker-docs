@@ -69,17 +69,18 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     development/objects
     development/states
     development/iopackage
-    development/testing
     development/encryption
     development/messagebox
     development/notifications
 
 .. toctree::
     :maxdepth: 2
-    :caption: Best Practice
+    :caption: Best Practice (DEV)
 
+    bestpractice/environment
     bestpractice/adapterdev
     bestpractice/logging
+    bestpractice/testing
 
 .. image:: https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png
     :target: https://haus-automatisierung.com/iobroker-kurs/

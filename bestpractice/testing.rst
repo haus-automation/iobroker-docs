@@ -1,4 +1,4 @@
-.. _development-testing:
+.. _bestpractice-testing:
 
 Testing
 =======
@@ -7,6 +7,7 @@ Um verschiedene Tests für den eigenen ioBroker-Adapter vorzubereiten, gibt es d
 
 Dabei werden folgende Typen unterschieden:
 
+- Package-Tests prüfen, ob das Paket den generellen Anforderungen vom ioBroker-Team entspricht (ähnlich Adapter-Checker)
 - Unit-Tests (laufen ohne einen ``js-controller``) und arbeiten mit Mocks
 - Integration-Tests arbeiten mit einer ``js-controller``-Instanz, welche automatisch gestartet wird
 
@@ -25,6 +26,8 @@ Diese Tests führen Prüfungen der ``package.json`` und der ``io-package.json`` 
 
 Integration-Tests
 -----------------
+
+TODO
 
 Unit-Test
 ---------
@@ -63,3 +66,16 @@ Damit diese Befehle funktionieren, muss die ``package.json`` des Adapters entspr
         "test": "npm run test:js && npm run test:package"
     }
 
+GitHub Actions
+--------------
+
+TODO
+
+Links
+-----
+
+- `GitHub-Repo testing <https://github.com/ioBroker/testing>`_
+- `GitHub-Repo testing-action-check (GitHub Actions) <https://github.com/ioBroker/testing-action-check>`_
+- `GitHub-Repo testing-action-adapter (GitHub Actions) <https://github.com/ioBroker/testing-action-adapter>`_
+- `GitHub-Repo testing-action-deploy (GitHub Actions) <https://github.com/ioBroker/testing-action-deploy>`_
+- `test-and-release.yml Template <https://github.com/ioBroker/create-adapter/blob/master/templates/_github/workflows/test-and-release.yml.ts>`_

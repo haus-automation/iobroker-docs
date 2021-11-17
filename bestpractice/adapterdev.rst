@@ -67,6 +67,5 @@ this.restart()
 Links
 -----
 
-- ExtSource: https://github.com/ioBroker/ioBroker.js-controller/blob/master/packages/adapter/lib/adapter/adapter.js
-- ExtSource: https://github.com/ioBroker/ioBroker/wiki/Adapter-Development-Documentation
-- ExtSource: https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/adapterdev.md
+- `adapter.js <https://github.com/ioBroker/ioBroker.js-controller/blob/master/packages/adapter/lib/adapter/adapter.js>`_
+- `Offizielle Doku <https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/adapterdev.md>`_
