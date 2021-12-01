@@ -83,6 +83,11 @@ Beispiele (System)
 - ``iobroker uuid``: UUID des Systems - siehe :ref:`basics-uuid`
 - ``iobroker upgrade self``: Aktualisiert den ``js-controller``
 
+Beispiele (Backup)
+------------------
+
+- ``iobroker backup``: Erstellt ein neues Backup anhand der Konfiguration im ``backitup`` Adapter
+
 Beispiele (Adapter)
 -------------------
 

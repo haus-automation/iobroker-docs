@@ -48,7 +48,7 @@ Wie States genau aufgebaut sind, und welche Eigenschaften sie unterstützten, er
 
     await this.setStateAsync('myState', {val: newValue, ack: true});
 
-Alternativ kann man den neuen Wert auch einzeln übergeben. Allerdings würde ich empfehlen, immer ein komplettes State-Objekt zu übergeben, da dies ansonsten intern passiert. Sollte ``newValue`` (versehentlich) ein Objekt sein, wir es ansonsten als State-Objekt interpretiert, welchem dann wichtige Eigenschaften fehlen werden.
+Alternativ kann man den neuen Wert auch einzeln übergeben. Allerdings würde ich empfehlen, immer ein komplettes State-Objekt zu übergeben, da dies ansonsten intern aufgebaut wird. Sollte ``newValue`` (versehentlich) ein Objekt sein, wird es als fertiges State-Objekt interpretiert, welchem dann wichtige Eigenschaften fehlen werden.
 
 .. code:: javascript
 

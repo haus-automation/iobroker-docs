@@ -8,6 +8,11 @@ iobroker.com
 
 - `Unternehmens-Webseite und Shop <https://iobroker.com>`_
 
+iobroker.dev
+------------
+
+- `Developer Portal <https://www.iobroker.dev>`_
+
 iobroker.net
 ------------
 
