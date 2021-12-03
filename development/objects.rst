@@ -26,7 +26,7 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
     - ``adapter`` - Die Standard-Konfiguration von einem Adaper. Beispielsweise ``system.adapter.admin``.
     - ``instance`` - Die Konfiguration der einzelnen Instanz. Beispielsweise ``system.adapter.admin.0``. Das übergeornete Objekte sollte vom Typ ``adapter`` sein.
     - ``meta`` - Sich selten ändernde Meta-Informationen wie zum Beispiel die :ref:`basics-uuid` unter ``system.meta.uuid``.
-    - ``config`` - Konfigurationen. Beispielsweise ``system.repositories``
+    - ``config`` - Konfigurationen. Beispielsweise ``system.config`` oder ``system.repositories``
     - ``script`` - Skripte unter ``script.js.*``
     - ``user`` - Benutzer des Systems. Beispielsweise ``system.user.admin``
     - ``group`` - Benutzer-Gruppen des Sytems. Beispielsweise ``system.group.administrator``
@@ -127,6 +127,124 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
 - ``common.desc (optional, string or object) - description, object for multilingual description
 - ``common.states (optional) attribute of type number with the object of possible states {'value': 'valueName', 'value2': 'valueName2', 0: 'OFF', 1: 'ON'} or (supported up from admin5) an states array, like ['Start', 'Flight', 'Land']
 - ``common.workingID (string, optional) - if this state has helper state WORKING. Here must be written the full name or just the last part if the first parts are the same with actual. Used for HM.LEVEL and normally has value "WORKING"
+
+Typ Config (Beispiel)
+--------------------
+
+.. code:: console
+
+    iobroker object get system.config
+
+Beispiel-Ausgabe:
+
+.. code:: json
+
+    {
+        "_id": "system.config",
+        "type": "config",
+        "common": {
+            "name": {
+                "en": "System configuration",
+                "de": "Systemkonfiguration",
+                "ru": "Конфигурация системы",
+                "pt": "Configuração do sistema",
+                "nl": "Systeem configuratie",
+                "fr": "Configuration du système",
+                "it": "Configurazione di sistema",
+                "es": "Configuración del sistema",
+                "pl": "Konfiguracja systemu",
+                "zh-cn": "系统配置"
+            },
+            "city": "Custom City",
+            "country": "Germany",
+            "longitude": 8.111,
+            "latitude": 51.111,
+            "language": "de",
+            "tempUnit": "°C",
+            "currency": "€",
+            "dontDelete": true,
+            "dateFormat": "DD.MM.YYYY",
+            "isFloatComma": true,
+            "licenseConfirmed": true,
+            "defaultHistory": "",
+            "expertMode": false,
+            "defaultLogLevel": "info",
+            "activeRepo": "stable",
+            "diag": "extended",
+            "tabs": [
+                "tab-intro",
+                "tab-info",
+                "tab-adapters",
+                "tab-instances",
+                "tab-objects",
+                "tab-log",
+                "tab-scenes",
+                "tab-javascript",
+                "tab-text2command-0",
+                "tab-node-red-0"
+            ],
+            "tabsVisible": [
+                {
+                    "name": "tab-intro",
+                    "visible": true
+                },
+                {
+                    "name": "tab-adapters",
+                    "visible": true
+                },
+                {
+                    "name": "tab-instances",
+                    "visible": true
+                },
+                {
+                    "name": "tab-objects",
+                    "visible": true
+                },
+                {
+                    "name": "tab-enums",
+                    "visible": true
+                },
+                {
+                    "name": "tab-logs",
+                    "visible": true
+                },
+                {
+                    "name": "tab-users",
+                    "visible": true
+                },
+                {
+                    "name": "tab-hosts",
+                    "visible": true
+                },
+                {
+                    "name": "tab-files",
+                    "visible": true
+                },
+                {
+                    "name": "tab-backitup-0",
+                    "visible": true
+                }
+            ],
+            "defaultNewAcl": {
+                "object": 1636,
+                "state": 1636,
+                "file": 1632,
+                "owner": "system.user.admin",
+                "ownerGroup": "system.group.administrator"
+            }
+        },
+        "acl": {
+            "owner": "system.user.admin",
+            "ownerGroup": "system.group.administrator",
+            "object": 1604
+        },
+        "native": {
+            "secret": "971640e8df0885faf7d49c90e38423fc65425b2b861d5e7b"
+        },
+        "from": "system.adapter.admin.0",
+        "user": "system.user.admin",
+        "ts": 1633096344214
+    }
 
 Typ State (Beispiel)
 --------------------
@@ -439,7 +557,7 @@ Typ Group (Beispiel)
     }
 
 Typ Folder (Beispiel)
--------------------
+---------------------
 
 .. code:: console
 
@@ -457,6 +575,36 @@ Typ Folder (Beispiel)
         },
         "native": {},
         "_id": "system.host.raspberrypi-iobroker.notifications",
+        "acl": {
+            "object": 1636,
+            "state": 1636,
+            "file": 1632,
+            "owner": "system.user.admin",
+            "ownerGroup": "system.group.administrator"
+        }
+    }
+
+Typ Meta (Beispiel)
+-------------------
+
+.. code:: console
+
+    iobroker object get system.meta.uuid
+
+.. code:: json
+
+    {
+        "type": "meta",
+        "common": {
+            "name": "uuid",
+            "type": "uuid"
+        },
+        "ts": 1633092016485,
+        "from": "system.host.raspberrypi-iobroker.tools",
+        "native": {
+            "uuid": "23b1992b-8d91-a4fc-b201-2bd851bdc807"
+        },
+        "_id": "system.meta.uuid",
         "acl": {
             "object": 1636,
             "state": 1636,

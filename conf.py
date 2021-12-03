@@ -179,6 +179,9 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
+# Font Awesome
+html_css_files = ['https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css']
+
 # Extensions to theme docs
 def setup(app):
     from sphinx.domains.python import PyField

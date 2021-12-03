@@ -19,7 +19,7 @@ Objekt
 Ein Objekt beschreibt, welche Informationen genau gespeichert werden können. Es handelt sich bei einem Objekt hauptsächlich Meta-Informationen, welche den Datenpunkt beschreiben. Erforderlich sind:
 
 - ``_id`` - Eindeutige **ID**
-- ``type``- Typ des Objektes (``device``, ``channel``, ``state``, ...)
+- ``type``- Typ des Objektes (``device``, ``channel``, ``state``, ...) - alle Typen (mit Beispielen) findest Du hier: :ref:`development-objects`
 
 Daneben gibt es noch weitere (optionale) Informationen, welche das Objekt genauer definieren.
 
@@ -51,7 +51,7 @@ Objekte werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgeleg
 
 ``/opt/iobroker/iobroker-data/objects.json``
 
-Diese Datei nennt man auch Objekt-Datenbank. Mehr Details unter :ref:`development-objects`.
+Diese Datei nennt man auch Objekt-Datenbank. Mehr Details (für Entwickler) unter :ref:`development-objects`.
 
 State (Zustand)
 ---------------
@@ -86,7 +86,7 @@ Zustände werden im Standard als JSON (Text, UTF-8) in der folgenden Datei abgel
 
 ``/opt/iobroker/iobroker-data/states.json``
 
-Diese Datei nennt man auch State-Datenbank. Mehr Details unter :ref:`development-states`.
+Diese Datei nennt man auch State-Datenbank. Mehr Details (für Entwickler) unter :ref:`development-states`.
 
 Datenpunkt
 ----------
