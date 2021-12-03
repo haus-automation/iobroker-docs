@@ -1,6 +1,6 @@
 .. _basics-acl:
 
-ACL
-===
+ACL (Access Control List)
+=========================
 
 TODO

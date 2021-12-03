@@ -26,7 +26,7 @@ Es gibt daher verschiedenste Adapter, welche zum Beispiel
 - Verbindungen zu Datenbanken herstellen
 - uvm.
 
-Die `Liste der verfügbaren Adapter <http://download.iobroker.net/list.html>`_ ist extrem lang und umfasst über 400 verschiedene Integrationen.
+Die `Liste der verfügbaren Adapter <https://www.iobroker.net/#de/adapterslist.html>`_ ist extrem lang und umfasst über 400 verschiedene Integrationen.
 
 Diese Liste ist Dein Baukasten. Was Du brauchst, installierst Du dazu. Was Du nicht brauchst, lässt Du weg. Ganz einfach.
 
