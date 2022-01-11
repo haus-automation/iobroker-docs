@@ -412,7 +412,16 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.localLinks
 
+    Konfiguration für Intro-Tab
 
+    .. code:: json
+
+        "localLinks": {
+            "_default": {
+                "link": "%protocol%://%bind%:%port%",
+                "pro": true
+            }
+        }
 
     :type: object
 
@@ -608,7 +617,19 @@ Eigenschaften (Allgemein)
 
      Identisch zu ``common.welcomeScreen``, allerdings für Zugriff über die ioBroker-Cloud
 
-     :type: array
+    .. code:: json
+
+        "welcomeScreenPro": {
+            "link": "admin/index.html",
+            "name": "Admin",
+            "img": "admin/img/admin.png",
+            "color": "pink",
+            "order": 5,
+            "localLinks": "_default",
+            "localLink": true
+        }
+
+     :type: object
 
 Eigenschaften (Schedule)
 ------------------------
