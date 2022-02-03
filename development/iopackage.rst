@@ -97,13 +97,13 @@ Eigenschaften (erforderlich)
 
 .. confval:: common.name
 
-    Name des Adapters (darf nicht "ioBroker" enthalten)
+    Name des Adapters (darf nicht ``ioBroker`` enthalten)
 
     :type: string
 
 .. confval:: common.version
 
-    Aktuelle Version des Adapters (muss mit der Version der `package.json` übereinstimmen)
+    Aktuelle Version des Adapters (muss mit der Version der ``package.json`` übereinstimmen)
 
     :type: string
 
@@ -127,22 +127,9 @@ Eigenschaften (erforderlich)
 
     :type: object
 
-.. confval:: common.desc
-
-    Beschreibung, was der Adapter machen soll (übersetzt in mehrere Sprachen)
-
-    .. code:: json
-
-        "desc": {
-            "en": "Loads current air quality data from a local or remote sensor",
-            "de": "Lädt aktuelle Luftqualitätsdaten eines lokalen oder Cloud-Sensors"
-        }
-
-    :type: object
-
 .. confval:: common.news
 
-    Liste mit Infos zu den verschiedenen Versionen (Updatehistorie / Changelog)
+    Liste mit Infos zu den verschiedenen Versionen (Updatehistorie / Changelog). Darf nicht mehr als 20 Einträge enthalten!
 
     .. code:: json
 
@@ -163,6 +150,19 @@ Eigenschaften (erforderlich)
                 "en": "Updated admin interface to maintain multiple sensors in one instance",
                 "de": "Benutzeroberfläche angepasst, um mehrere Sensoren in einer Instanz verwalten zu können"
             }
+        }
+
+    :type: object
+
+.. confval:: common.desc
+
+    Kurze Beschreibung, was der Adapter macht (übersetzt in mehrere Sprachen)
+
+    .. code:: json
+
+        "desc": {
+            "en": "Loads current air quality data from a local or remote sensor",
+            "de": "Lädt aktuelle Luftqualitätsdaten eines lokalen oder Cloud-Sensors"
         }
 
     :type: object
@@ -216,7 +216,27 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.docs
 
+    Eine Liste von Dokumentations-Dateien, welche im Admin zur Verfügung gestellt werden und auch in der `offiziellen Dokumentation <https://www.iobroker.net/#de/adapters>`_ zu finden sind.
 
+    .. code:: json
+
+        "docs": {
+            "en": "docs/en/admin.md",
+            "ru": "docs/ru/admin.md",
+            "de": [
+                "docs/de/admin.md",
+                "docs/de/admin/tab-adapters.md",
+                "docs/de/admin/tab-instances.md",
+                "docs/de/admin/tab-objects.md"
+            ],
+            "pt": "docs/pt/admin.md",
+            "nl": "docs/nl/admin.md",
+            "es": "docs/es/admin.md",
+            "fr": "docs/fr/admin.md",
+            "it": "docs/it/admin.md",
+            "pl": "docs/pl/admin.md",
+            "zh-cn": "docs/zh-cn/admin.md"
+        }
 
     :type: object
 
@@ -230,7 +250,18 @@ Eigenschaften (Allgemein)
             "Matthias Kleine <info@haus-automatisierung.com>"
         ]
 
-    :type: array
+    Alternative
+
+    .. code:: json
+
+        "authors": [
+            {
+                "name": "Matthias Kleine",
+                "email": "info@haus-automatisierung.com"
+            }
+        ]
+
+    :type: string oder array
 
 .. confval:: common.license
 
@@ -811,5 +842,6 @@ Diese Eigenschaften sind für aktuelle Adapter mit dem Admin 5 nicht mehr releva
 Links
 -----
 
-- `Schema-Datei <https://github.com/ioBroker/ioBroker.js-controller/blob/master/packages/controller/schemas/io-package.json>`_
+- `Schema-Datei <https://github.com/ioBroker/ioBroker.js-controller/blob/master/schemas/io-package.json>`_
+- `SchemaStore <https://github.com/SchemaStore/schemastore/blob/master/src/schemas/json/io-package.json>`_
 - `Offizielle Doku <https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/objectsschema.md>`_
