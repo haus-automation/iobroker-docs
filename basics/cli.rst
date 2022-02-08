@@ -82,6 +82,7 @@ Beispiele (System)
 - ``iobroker version``: Version des ``js-controller``
 - ``iobroker uuid``: UUID des Systems - siehe :ref:`basics-uuid`
 - ``iobroker upgrade self``: Aktualisiert den ``js-controller``
+- ``iobroker host this ``: Initialisiert den aktuellen Host. Sollte aufgerufen werden, wenn z.B. der Hostname des Systems geändert wurde
 
 Beispiele (Backup)
 ------------------
@@ -91,17 +92,23 @@ Beispiele (Backup)
 Beispiele (Adapter)
 -------------------
 
+**Updates und Upgrades**
+
+- ``iobroker update``: Aktualisiert das aktive Repository. Es werden keine Adapter aktualisiert. Siehe :ref:`ecosystem-repositories`
+- ``iobroker update -u``: Listet alle Adapter mit verfügbaren Updates auf
+- ``iobroker update -a``: Listet alle verfügbaren Adapter auf
 - ``iobroker upgrade --yes``: Aktualisiert alle Adapter, ohne für jeden Adapter nachzufragen, ob die Version wirklich installiert werden soll.
 - ``iobroker upgrade ical``: Aktualisiert einen einzelnen Adpater (in diesem Fall ical) auf die aktuellste Version
 - ``iobroker upgrade ical@1.11.2``: Aktualisiert einen einzelnen Adpater (in diesem Fall ical) auf die Version ``1.11.2``
+- ``iobroker version iot``: Version des installierten IoT Adapters
+
+**Adapter und Instanzen verwalten**
+
 - ``iobroker add wled@0.6.0``: Installiert die Version ``0.6.0`` des WLED Adapters und erstellt eine neue Instanz
 - ``iobroker add wled``: Installiert die aktuellste Version des WLED Adapters und erstellt eine neue Instanz
 - ``iobroker del wled.0``: Löscht die Instanz ``wled.0``
 - ``iobroker del wled``: Deinstalliert den WLED Adapter
 - ``iobroker status iot.0``: Prüft, ob eine Instanz des IoT Adapters läuft
-- ``iobroker version iot``: Version des installierten IoT Adapters
-- ``iobroker update -u``: Listet alle Adapter mit verfügbaren Updates auf
-- ``iobroker update -a``: Listet alle verfügbaren Adapter auf
 
 Beispiele (User)
 ----------------
