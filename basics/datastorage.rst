@@ -3,7 +3,7 @@
 Daten-Speicherung
 =================
 
-Um Daten zu speichern, muss ein Objekt und ein Zustand existieren. Das Objekt ist statisch und enthält viele Meta-Daten. Zusätzlich gibt es den dynamischen Zustand (auch "State" genannt), welcher den aktuellen Wert hält. Beides zusammen nennt sich Datenpunkt.
+Um Daten zu speichern, muss ein Objekt und ein Zustand existieren. Das Objekt ist statisch und enthält viele Meta-Daten. Zusätzlich gibt es den dynamischen Zustand (englisch ``state`` genannt), welcher den aktuellen Wert hält. Beides zusammen nennt sich Datenpunkt.
 
 Die Objekte und Zustände werden in Datenbanken vorgehalten, welche der ``js-controller`` verwaltet. Über diesen können Daten aus den Datenbanken abgefragt oder geändert werden.
 
@@ -11,7 +11,7 @@ Die Objekte und Zustände werden in Datenbanken vorgehalten, welche der ``js-con
     :alt: ioBroker Struktur
 
 .. note::
-    Als Anwender muss man nur sehr wenige Datenpunkte selber anlegen. Die meisten Datenpunkte werden von den einzelnen Adaptern automatisch angelegt.
+    Als Anwender muss man nur sehr wenige Datenpunkte selber anlegen. Die meisten Datenpunkte werden von den einzelnen Adaptern (bzw. deren Instanzen) automatisch angelegt.
 
 Objekt
 ------
@@ -30,7 +30,10 @@ Daneben gibt es noch weitere (optionale) Informationen, welche das Objekt genaue
 - Lese- und Schreibrechte
 - ...
 
-Objekte werden dabei in einer Hierarchie abgebildet. Also in einer Baumstruktur - genau wie in vielen Dateisystemen. **Als Trennzeichen der Ebenen wird dabei der Punkt benutzt.**
+Objekte werden dabei in einer Hierarchie abgebildet. Also in einer Baumstruktur - genau wie in vielen Dateisystemen. **Als Trennzeichen der Ebenen wird dabei der Punkt verwendet.**
+
+.. note::
+    Generell wird nahezu alles im ioBroker-System als Objekt abgespeichert. Dazu gehört z.B. auch die Systemkonfiguration, angelegte Benutzer und Gruppen, die Host-Informationen und vieles mehr. Hierfür gibt es noch eine lange Liste an Objekt-Typen, welche den normalen Anwender aber nicht interessieren müssen. Mehr dazu im Abschnitt :ref:`development-objects`
 
 Angenommen Du hast eine Philips Hue Bridge und hast den Philips Hue-Adapter installiert. Dann würde für diese Instanz automatisch alle nötigen Objekte für die Steuerung der angelernten Lampen, Strips usw. anlegen.
 

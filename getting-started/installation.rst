@@ -29,6 +29,7 @@ Dieser Befehl bereitet das komplette System vor und richtet alles nötige ein:
 - Der ioBroker wird an die richtige Stelle im System installiert
 - Es werden die wichtigsten Adapter installiert und Instanzen hinzugefügt (Admin, Discovery, ...)
 - Ein Autostart für ioBroker wird eingerichtet
+- ...
 
 Danach kann über den Standard-Port 8083 im Browser Deiner Wahl die Admin-Oberfläche aufgerufen werden.
 

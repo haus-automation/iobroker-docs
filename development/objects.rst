@@ -31,13 +31,13 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
     - ``user`` - Benutzer des Systems. Beispielsweise ``system.user.admin``
     - ``group`` - Benutzer-Gruppen des Sytems. Beispielsweise ``system.group.administrator``
     - ``chart`` - Diagramm
-    - ``folder`` - Verzeichnis. Beispielsweise ``system.host.raspberrypi-iobroker.notifications``
+    - ``folder`` - Verzeichnis, welches z.B. Geräte (Typ ``device`` sammelt). Beispielsweise ``system.host.raspberrypi-iobroker.notifications``
 
     :type: string
 
 .. confval:: common.type
 
-    Typ der gespeicherten Daten
+    Typ der zu speichernden Daten
 
     - ``mixed`` - Kann einen beliebigen Wert annehmen (nicht empfohlen)
     - ``number`` - Numerische Werte

@@ -5,7 +5,7 @@ System-Config
 
 Die aktuelle System-Konfiguration (welche auch über den Admin konfigurierbar ist), wird im Objekt ``system.config`` (siehe :ref:`development-objects`) gespeichert.
 
-Die Grundkonfiguration des Systems erfolgt allerdings nicht als Objekt, sondern über eine Datei auf der Festplatte: Diese findest Du unter ``/opt/iobroker/iobroker-data/iobroker.json``.
+Die Grundkonfiguration des Systems erfolgt allerdings nicht als Objekt, sondern über eine Datei auf der Festplatte: Diese findest Du unter ``/opt/iobroker/iobroker-data/iobroker.json``. Beispiel:
 
 .. code:: json
 
@@ -96,30 +96,30 @@ Die Grundkonfiguration des Systems erfolgt allerdings nicht als Objekt, sondern 
             "maxDays": 7,
             "noStdout": true,
             "transport": {
-            "file1": {
-                "type": "file",
-                "enabled": true,
-                "filename": "log/iobroker",
-                "fileext": ".log",
-                "maxSize": null,
-                "maxFiles": null
-            },
-            "syslog1": {
-                "type": "syslog",
-                "enabled": false,
-                "host": "localhost",
-                "hostComment": "The host running syslogd, defaults to localhost.",
-                "portComment": "The port on the host that syslog is running on, defaults to syslogd's default port(514/UDP).",
-                "protocol": "udp4",
-                "protocolComment": "The network protocol to log over (e.g. tcp4, udp4, unix, unix-connect, etc).",
-                "pathComment": "The path to the syslog dgram socket (i.e. /dev/log or /var/run/syslog for OS X).",
-                "facilityComment": "Syslog facility to use (Default: local0).",
-                "localhost": "iobroker",
-                "localhostComment": "Host to indicate that log messages are coming from (Default: localhost).",
-                "sysLogTypeComment": "The type of the syslog protocol to use (Default: BSD).",
-                "app_nameComment": "The name of the application (Default: process.title).",
-                "eolComment": "The end of line character to be added to the end of the message (Default: Message without modifications)."
-            }
+                "file1": {
+                    "type": "file",
+                    "enabled": true,
+                    "filename": "log/iobroker",
+                    "fileext": ".log",
+                    "maxSize": null,
+                    "maxFiles": null
+                },
+                "syslog1": {
+                    "type": "syslog",
+                    "enabled": false,
+                    "host": "localhost",
+                    "hostComment": "The host running syslogd, defaults to localhost.",
+                    "portComment": "The port on the host that syslog is running on, defaults to syslogd's default port(514/UDP).",
+                    "protocol": "udp4",
+                    "protocolComment": "The network protocol to log over (e.g. tcp4, udp4, unix, unix-connect, etc).",
+                    "pathComment": "The path to the syslog dgram socket (i.e. /dev/log or /var/run/syslog for OS X).",
+                    "facilityComment": "Syslog facility to use (Default: local0).",
+                    "localhost": "iobroker",
+                    "localhostComment": "Host to indicate that log messages are coming from (Default: localhost).",
+                    "sysLogTypeComment": "The type of the syslog protocol to use (Default: BSD).",
+                    "app_nameComment": "The name of the application (Default: process.title).",
+                    "eolComment": "The end of line character to be added to the end of the message (Default: Message without modifications)."
+                }
             }
         },
         "dataDirComment": "Always relative to iobroker.js-controller/",
