@@ -957,14 +957,14 @@ Typ script
             "verbose": false,
             "enabled": false
         },
-        "from": "system.adapter.admin.0",
-        "user": "system.user.admin",
-        "ts": 1644519738959,
         "acl": {
             "object": 1636,
             "owner": "system.user.admin",
             "ownerGroup": "system.group.administrator"
-        }
+        },
+        "from": "system.adapter.admin.0",
+        "user": "system.user.admin",
+        "ts": 1644519738959
     }
 
 Typ config
@@ -1070,13 +1070,13 @@ Typ config
                 "ownerGroup": "system.group.administrator"
             }
         },
+        "native": {
+            "secret": "971640e8df0885faf7d49c90e38423fc65425b2b861d5e7b"
+        },
         "acl": {
             "owner": "system.user.admin",
             "ownerGroup": "system.group.administrator",
             "object": 1604
-        },
-        "native": {
-            "secret": "971640e8df0885faf7d49c90e38423fc65425b2b861d5e7b"
         },
         "from": "system.adapter.admin.0",
         "user": "system.user.admin",
@@ -1214,13 +1214,13 @@ Typ host
                 }
             }
         },
-        "from": "system.host.raspberrypi-iobroker",
-        "ts": 1633374149865,
         "acl": {
             "object": 1636,
             "owner": "system.user.admin",
             "ownerGroup": "system.group.administrator"
-        }
+        },
+        "from": "system.host.raspberrypi-iobroker",
+        "ts": 1633374149865
     }
 
 Typ script
@@ -1233,6 +1233,8 @@ Typ script
 .. code:: json
 
     {
+        "_id": "script.js.Büro.Licht_einschalten",
+        "type": "script",
         "common": {
             "name": "Licht einschalten",
             "expert": true,
@@ -1243,16 +1245,14 @@ Typ script
             "verbose": false,
             "enabled": true
         },
-        "type": "script",
-        "from": "system.adapter.admin.0",
-        "user": "system.user.admin",
-        "ts": 1628941638315,
-        "_id": "script.js.Büro.Licht_einschalten",
         "acl": {
             "object": 1636,
             "owner": "system.user.admin",
             "ownerGroup": "system.group.administrator"
-        }
+        },
+        "from": "system.adapter.admin.0",
+        "user": "system.user.admin",
+        "ts": 1628941638315
     }
 
 Typ user
@@ -1265,6 +1265,7 @@ Typ user
 .. code:: json
 
     {
+        "_id": "system.user.admin",
         "type": "user",
         "common": {
             "name": "Matthias Kleine",
@@ -1273,7 +1274,6 @@ Typ user
             "enabled": true
         },
         "native": {},
-        "_id": "system.user.admin",
         "acl": {
             "object": 1636,
             "state": 1636,
@@ -1367,6 +1367,7 @@ Typ folder
 .. code:: json
 
     {
+        "_id": "system.host.raspberrypi-iobroker.notifications",
         "type": "folder",
         "common": {
             "name": {
@@ -1375,7 +1376,6 @@ Typ folder
             }
         },
         "native": {},
-        "_id": "system.host.raspberrypi-iobroker.notifications",
         "acl": {
             "object": 1636,
             "state": 1636,
@@ -1395,22 +1395,72 @@ Typ meta
 .. code:: json
 
     {
+        "_id": "system.meta.uuid",
         "type": "meta",
         "common": {
             "name": "uuid",
             "type": "uuid"
         },
-        "ts": 1633092016485,
-        "from": "system.host.raspberrypi-iobroker.tools",
         "native": {
             "uuid": "23b1992b-8d91-a4fc-b201-2bd851bdc807"
         },
-        "_id": "system.meta.uuid",
         "acl": {
             "object": 1636,
             "state": 1636,
             "file": 1632,
             "owner": "system.user.admin",
             "ownerGroup": "system.group.administrator"
-        }
+        },
+        "ts": 1633092016485,
+        "from": "system.host.raspberrypi-iobroker.tools"
+    }
+
+Typ enum
+--------
+
+.. code:: console
+
+    iobroker object get enum.rooms
+
+.. code:: json
+
+    {
+        "_id": "enum.rooms",
+        "type": "enum",
+        "common": {
+            "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCI+DQogICAgPHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTIgNS42OWw1IDQuNVYxOGgtMnYtNkg5djZIN3YtNy44MWw1LTQuNU0xMiAzTDIgMTJoM3Y4aDZ2LTZoMnY2aDZ2LThoM0wxMiAzeiIvPg0KPC9zdmc+",
+            "name": {
+                "en": "Rooms",
+                "de": "Räume",
+                "ru": "Комнаты",
+                "pt": "Quartos",
+                "nl": "Kamers",
+                "fr": "Pièces",
+                "it": "Camere",
+                "es": "Habitaciones",
+                "pl": "Pokoje",
+                "zh-cn": "客房"
+            },
+            "desc": {
+                "en": "List of the rooms",
+                "de": "Liste der Räume",
+                "ru": "Список комнат",
+                "pt": "Lista dos quartos",
+                "nl": "Lijst met kamers",
+                "fr": "Liste des chambres",
+                "it": "Elenco delle stanze",
+                "es": "Lista de las habitaciones",
+                "pl": "Lista pokoi",
+                "zh-cn": "房间清单"
+            },
+            "members": [],
+            "dontDelete": true
+        },
+        "acl": {
+            "owner": "system.user.admin",
+            "ownerGroup": "system.group.administrator",
+            "object": 1911
+        },
+        "from": "system.host.raspberrypi-iobroker.cli",
+        "ts": 1633092016282
     }

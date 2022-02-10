@@ -43,7 +43,7 @@ Nur Objekte des Typs ``state`` haben einen zugehörigen Zustand (siehe unten). B
 - ``common.write`` - Zustand darf vom Nutzer verändert werden (schreiben ohne ``ack``-Flag)
 - ...
 
-Objekte werden dabei in einer Hierarchie abgebildet. Also in einer Baumstruktur - genau wie in vielen Dateisystemen. **Als Trennzeichen der Ebenen wird dabei der Punkt ``.`` verwendet.**
+Objekte werden dabei in einer Hierarchie abgebildet. Also in einer Baumstruktur - genau wie in vielen Dateisystemen. **Als Trennzeichen der Ebenen wird dabei der Punkt ».« verwendet.**
 
 Angenommen Du hast eine Philips Hue Bridge und hast den Philips Hue-Adapter installiert. Dann würde für diese Instanz automatisch alle nötigen Objekte für die Steuerung der angelernten Lampen, LED-Strips usw. anlegen.
 
@@ -122,13 +122,13 @@ Löschst Du die Instanz, wird der Namespace ebenfalls gelöscht.
 
 Weiterhin gibt es den (reservierten) Namespace ``system.`` für das System. Dort ist unter anderem folgendes enthalten:
 
-- ``system.config`` - Systemkonfiguration (Sprache, Datumsformat, Verwahrungsort, ...) - siehe :ref:`basics-systemconfig`
-- ``system.host.<hostname>``` - js-controller-Prozess (Uptime, Ressourcen, ...)
+- ``system.config`` - Systemkonfiguration (Sprache, Datumsformat, Verwahrungsort, ...)
+- ``system.host.*``` - js-controller-Prozess (Uptime, Ressourcen, ...)
 - ``system.repositories`` - Liste der vefügbaren Adpater
 - ``system.certificates`` - Konfigurierte Zertifikate
-- ``system.meta.`` - Meta-Informationen
-- ``system.user.`` - Alle Benutzer des Systems
-- ``system.group.`` - Alle Benutzer-Gruppen des Systems
+- ``system.meta.*`` - Meta-Informationen (wie die System UUID)
+- ``system.user.*`` - Alle Benutzer des Systems
+- ``system.group.*`` - Alle Benutzer-Gruppen des Systems
 - ``system.adapter.<adapter-name>`` - Standard-Konfiguration des Adapters für neue Instanzen
 - ``system.adapter.<adapter-name>.<instanz-nummmer>`` - Informationen zur einzelnen Instanz (Uptime, Ressourcen, ...)
 
