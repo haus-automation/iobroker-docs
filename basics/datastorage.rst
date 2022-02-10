@@ -3,12 +3,21 @@
 Daten-Speicherung
 =================
 
-Um Daten zu speichern, muss ein Objekt und ein Zustand existieren. Das Objekt ist statisch und enthält viele Meta-Daten. Zusätzlich gibt es den dynamischen Zustand (englisch ``state`` genannt), welcher den aktuellen Wert hält. Beides zusammen nennt sich Datenpunkt.
+Generell wird im ioBroker zwischen Objekten und Zuständen unterschieden. Ein Objekt ist statisch und enthält viele Meta-Daten. Zusätzlich gibt es ggf. den dynamischen Zustand (englisch ``state`` genannt), welcher den aktuellen Wert hält. Beides zusammen nennt sich Datenpunkt.
 
-Die Objekte und Zustände werden in Datenbanken vorgehalten, welche der ``js-controller`` verwaltet. Über diesen können Daten aus den Datenbanken abgefragt oder geändert werden.
+Die Objekte und Zustände werden in zwei unterschiedlichen Datenbanken vorgehalten, welche der ``js-controller`` verwaltet. Über diesen können Daten aus den Datenbanken abgefragt oder geändert werden.
 
 .. image:: /images/ioBrokerDoku-Datenspeicher.png
     :alt: ioBroker Struktur
+
+Generell wird nahezu alles im ioBroker als Objekt abgelegt:
+
+- die Systemkonfiguration (Sprache, Datumsformat, Währung, ...)
+- angelete Benutzer und Gruppen
+- Adapter-Einstellungen und Instanz-Konfigurationen
+- ...
+
+Obwohl es sich bei all diesen Daten um Objekte in der Objekt-Datenbank handelt, hat man als Anwender fast ausschließlich mit Objekten vom Typ ``state``, ``channel`` oder ``device`` zu tun. Alle anderen Objekte werden vom System verwaltet und sind z.B. im Admin-Adapter gar nicht sichbar (außer, es wird der Experten-Modus aktiviert).
 
 .. note::
     Als Anwender muss man nur sehr wenige Datenpunkte selber anlegen. Die meisten Datenpunkte werden von den einzelnen Adaptern (bzw. deren Instanzen) automatisch angelegt.
@@ -16,31 +25,31 @@ Die Objekte und Zustände werden in Datenbanken vorgehalten, welche der ``js-con
 Objekt
 ------
 
-Ein Objekt beschreibt, welche Informationen genau gespeichert werden können. Es handelt sich bei einem Objekt hauptsächlich Meta-Informationen, welche den Datenpunkt beschreiben. Erforderlich sind:
+Der Objekt-Typ beschreibt, welche Informationen genau gespeichert werden können. Erforderliche Attribute eines Objektes sind:
 
 - ``_id`` - Eindeutige **ID**
-- ``type``- Typ des Objektes (``device``, ``channel``, ``state``, ...) - alle Typen (mit Beispielen) findest Du hier: :ref:`development-objects`
+- ``type``- Typ des Objektes (meistens ``device``, ``channel`` or ``state``) - alle weiteren Typen (mit Beispielen) findest Du hier: :ref:`development-objects`
+- ``common`` - Weitere Optionen je nach Typ (siehe unten)
 
-Daneben gibt es noch weitere (optionale) Informationen, welche das Objekt genauer definieren.
+Nur Objekte des Typs ``state`` haben einen zugehörigen Zustand (siehe unten). Bei Objekten dieses Typs kann über weitere Attribute definiert werden, welche Daten in den Zustand gespeichert werden dürfen.
 
-- Name
-- Einheit (z.B. °C oder kWh)
-- Beschreibung
-- erlaubter Minimalwert und Maximalwert
-- Lese- und Schreibrechte
+- ``common.name`` - Name des Objektes (ggf. in mehrere Sprachen übersetzt)
+- ``common.type`` - Datentyp der zu speichernden Daten (``string``, ``boolean``, ``number``, ...)
+- ``common.unit`` - Einheit (z.B. °C oder kWh)
+- ``common.desc`` - Beschreibung
+- ``common.min`` - erlaubter Minimalwert (für ``common.type`` = ``number``)
+- ``common.max`` - erlaubter Minimalwert (für ``common.type`` = ``number``)
+- ``common.read`` - Zustand kann gelesen werden
+- ``common.write`` - Zustand darf vom Nutzer verändert werden (schreiben ohne ``ack``-Flag)
 - ...
 
-Objekte werden dabei in einer Hierarchie abgebildet. Also in einer Baumstruktur - genau wie in vielen Dateisystemen. **Als Trennzeichen der Ebenen wird dabei der Punkt verwendet.**
+Objekte werden dabei in einer Hierarchie abgebildet. Also in einer Baumstruktur - genau wie in vielen Dateisystemen. **Als Trennzeichen der Ebenen wird dabei der Punkt ``.`` verwendet.**
 
-.. note::
-    Generell wird nahezu alles im ioBroker-System als Objekt abgespeichert. Dazu gehört z.B. auch die Systemkonfiguration, angelegte Benutzer und Gruppen, die Host-Informationen und vieles mehr. Hierfür gibt es noch eine lange Liste an Objekt-Typen, welche den normalen Anwender aber nicht interessieren müssen. Mehr dazu im Abschnitt :ref:`development-objects`
-
-Angenommen Du hast eine Philips Hue Bridge und hast den Philips Hue-Adapter installiert. Dann würde für diese Instanz automatisch alle nötigen Objekte für die Steuerung der angelernten Lampen, Strips usw. anlegen.
+Angenommen Du hast eine Philips Hue Bridge und hast den Philips Hue-Adapter installiert. Dann würde für diese Instanz automatisch alle nötigen Objekte für die Steuerung der angelernten Lampen, LED-Strips usw. anlegen.
 
 Der Namespace (siehe unten) dieser Instanz lautet dann ``hue.0``. Hier siehst Du schon das erste Trennzeichen. Das erste Objekt auf der Root-Ebene heißt also ``hue``. Danach folgt ein weiteres, welches wie die Instanznummer heißt.
 
-Unter diesem Objekt werden dann weitere Objekte angelegt, welche alles Mögliche abbilden können. Dabei werden die Informationen so granular wie möglich abgebildet. So gibt es zum Beispiel für jede angelernte Lampe ein weiteres Objekt, welches dann wieder Objekte darunter enthält.
-So wird eine logische Hierarchie aufgebaut. Stell Dir das wie deine Urlaubsfotos vor, welche Du auch in verschiedene Ordner auf deiner Festplatte ablegst. Alle Fotos aus einem Urlaub kommen zusammen in einen Ordner. Und so ist das mit den Objekten auch. Alles, was zum Beispiel eine einzelne Lampe kann, wird als einzelne Objekte unter ein gemeinsames Objekt gepackt.
+Unter diesem Objekt werden dann weitere Objekte angelegt, welche alles Mögliche abbilden können. Dabei werden die Informationen so granular wie möglich abgebildet. So gibt es zum Beispiel für jede angelernte Lampe ein weiteres Objekt, welches dann wieder Objekte darunter enthält. So wird eine logische Hierarchie aufgebaut. Stell Dir das wie deine Urlaubsfotos vor, welche Du auch in verschiedene Ordner auf deiner Festplatte ablegst. Alle Fotos aus einem Urlaub kommen zusammen in einen Ordner. Und so ist das mit den Objekten auch. Alles, was zum Beispiel eine einzelne Lampe kann, wird als einzelne Objekte unter ein gemeinsames Objekt gepackt.
 
 .. note::
     Nicht jeder Datenpunkt hat zwingend einen zugehörigen Zustand. Aus organisatorischen Gründen kann man auch Objekte anlegen, welches nur für die Struktur dienen. Diese Objekte sind vom Typ "Kanal" bzw. Englisch "Channel".
