@@ -41,7 +41,7 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
 
     .. code:: json
 
-        "common: {
+        "common": {
             "name": {
                 "en": "Beispiel",
                 "de": "Beispiel",
@@ -193,9 +193,9 @@ Typ state
     .. code:: json
 
         "states": [
-            'ON',
-            'OFF',
-            'UNKNOWN'
+            "ON",
+            "OFF",
+            "UNKNOWN"
         ]
 
     :type: object|array
