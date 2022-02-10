@@ -99,7 +99,7 @@ Typ state
 
 .. confval:: common.type
 
-    Typ der zu speichernden Daten
+    Typ der zu speichernden Daten im Zustand
 
     - ``mixed`` - Kann einen beliebigen Wert annehmen (nicht empfohlen)
     - ``number`` - Numerische Werte
@@ -395,42 +395,6 @@ Typ adapter
             "connectionType": "local",
             "dataSource": "push",
             "news": {
-                "5.2.3": {
-                    "en": "Fixed error in `AutocompleteSendTo`\nFixed error in charts",
-                    "de": "Fehler in `AutocompleteSendTo` behoben\nFehler in Diagrammen behoben",
-                    "ru": "Исправлена ошибка в `AutocompleteSendTo`\nИсправлена ошибка в графиках",
-                    "pt": "Erro corrigido em `AutocompleteSendTo`\nErro corrigido em gráficos",
-                    "nl": "Fout opgelost in `AutocompleteSendTo`\nVaste fout in grafieken",
-                    "fr": "Correction d'une erreur dans 'AutocompleteSendTo'\nCorrection d'une erreur dans les graphiques",
-                    "it": "Risolto errore in `AutocompleteSendTo`\nRisolto errore nei grafici",
-                    "es": "Se corrigió el error en \"AutocompleteSendTo\"\nError fijo en gráficos.",
-                    "pl": "Naprawiono błąd w `AutocompleteSendTo`\nNaprawiono błąd w wykresach",
-                    "zh-cn": "修复了“AutocompleteSendTo”中的错误\n修复了图表中的错误"
-                },
-                "5.2.2": {
-                    "en": "Changed the minimal required js-controller version to 3.3.22 \nUsed web-socket library 8 (no node 10 support anymore)",
-                    "de": "Die minimal erforderliche js-Controller-Version wurde auf 3.3.22 geändert\nVerwendete Web-Socket-Bibliothek 8 (keine Unterstützung von Node 10 mehr)",
-                    "ru": "Изменена минимально необходимая версия js-контроллера на 3.3.22\nИспользуемая библиотека веб-сокетов 8 (больше нет поддержки узла 10)",
-                    "pt": "Alterada a versão mínima necessária do js-controller para 3.3.22\nUtilizou a biblioteca de soquetes da web 8 (sem suporte a nó 10 mais)",
-                    "nl": "De minimaal vereiste js-controllerversie gewijzigd in 3.3.22\nGebruikte web-socket bibliotheek 8 (geen node 10 meer)",
-                    "fr": "Modification de la version minimale requise du contrôleur js en 3.3.22\nBibliothèque de sockets Web 8 utilisée (plus de support pour le nœud 10)",
-                    "it": "Modificata la versione minima richiesta del controller js in 3.3.22\nLibreria web socket usata 8 (nessun supporto per il nodo 10 più)",
-                    "es": "Se cambió la versión mínima requerida de js-controller a 3.3.22\nSe usó la biblioteca 8 de web-socket (ya no es compatible con el nodo 10)",
-                    "pl": "Zmieniono minimalną wymaganą wersję kontrolera js na 3.3.22\nUżywana biblioteka gniazd sieciowych 8 (brak obsługi węzła 10)",
-                    "zh-cn": "将最低要求的 js-controller 版本更改为 3.3.22\n使用了 web-socket 库 8（不再支持 node 10）"
-                },
-                "5.2.1": {
-                    "en": "Allow in expert mode the creation of states and channels in mqtt branch",
-                    "de": "Erlaube im Expertenmodus die Erstellung von Zuständen und Kanälen im mqtt-Zweig",
-                    "ru": "Разрешить в экспертном режиме создание состояний и каналов в ветке mqtt",
-                    "pt": "Permitir no modo especialista a criação de estados e canais no ramal mqtt",
-                    "nl": "Sta in expertmodus het maken van staten en kanalen toe in mqtt branch",
-                    "fr": "Autoriser en mode expert la création d'états et de canaux dans la branche mqtt",
-                    "it": "Consenti in modalità esperto la creazione di stati e canali nel ramo mqtt",
-                    "es": "Permitir en modo experto la creación de estados y canales en rama mqtt",
-                    "pl": "Zezwalaj w trybie eksperta na tworzenie stanów i kanałów w gałęzi mqtt",
-                    "zh-cn": "允许在专家模式下在 mqtt 分支中创建状态和通道"
-                },
                 "5.2.0": {
                     "en": "Fix crash cases reported via sentry\nAdded support for multi-repositories",
                     "de": "Absturzfälle beheben, die über Wache gemeldet wurden\nUnterstützung für Multi-Repositorys hinzugefügt",
@@ -466,18 +430,6 @@ Typ adapter
                     "es": "Función de descubrimiento fijo\nSe corrigieron algunos errores de GUI",
                     "pl": "Naprawiono funkcję wykrywania\nNaprawiono kilka błędów GUI",
                     "zh-cn": "固定发现功能\n修复了一些 GUI 错误"
-                },
-                "5.1.25": {
-                    "en": "Corrected some errors reported via sentry and the github issues",
-                    "de": "Einige Fehler, die über Wache und die Github-Probleme gemeldet wurden, korrigiert",
-                    "ru": "Исправлены некоторые ошибки, о которых сообщалось через часовую, и проблемы с github.",
-                    "pt": "Corrigidos alguns erros relatados via sentry e os problemas do github",
-                    "nl": "Enkele fouten gecorrigeerd die zijn gemeld via sentry en de github-problemen",
-                    "fr": "Correction de certaines erreurs signalées via sentinelle et des problèmes de github",
-                    "it": "Corretti alcuni errori segnalati tramite sentry e problemi con github",
-                    "es": "Se corrigieron algunos errores informados a través de sentry y los problemas de github",
-                    "pl": "Poprawiono niektóre błędy zgłaszane przez Sentry i problemy z githubem",
-                    "zh-cn": "更正了通过哨兵和 github 问题报告的一些错误"
                 }
             },
             "desc": {
@@ -981,6 +933,38 @@ Typ instance
         "from": "system.adapter.admin.0",
         "user": "system.user.admin",
         "ts": 1641911437382
+    }
+
+Typ script
+----------
+
+.. code:: console
+
+    iobroker object get script.js.example_script
+
+.. code:: json
+
+    {
+        "_id": "script.js.example_script",
+        "type": "script",
+        "common": {
+            "name": "example_script",
+            "expert": true,
+            "engineType": "Blockly",
+            "engine": "system.adapter.javascript.0",
+            "source": "console.log('Beispiel-Code');\n\n//JTNDeG1sJTIweG1sbnMlM0QlMjJodHRwcyUzQSUyRiUyRmRldmVsb3BlcnMuZ29vZ2xlLmNvbSUyRmJsb2NrbHklMkZ4bWwlMjIlM0UlM0NibG9jayUyMHR5cGUlM0QlMjJkZWJ1ZyUyMiUyMGlkJTNEJTIydDFZbn5vJTdCbUpGJTYwSkZHVVkqJTNBIUMlMjIlMjB4JTNEJTIyNjMlMjIlMjB5JTNEJTIyMzYzJTIyJTNFJTNDZmllbGQlMjBuYW1lJTNEJTIyU2V2ZXJpdHklMjIlM0Vsb2clM0MlMkZmaWVsZCUzRSUzQ3ZhbHVlJTIwbmFtZSUzRCUyMlRFWFQlMjIlM0UlM0NzaGFkb3clMjB0eXBlJTNEJTIydGV4dCUyMiUyMGlkJTNEJTIybmMlN0N5JTJGYi0lM0ItQzRqbDA0JTdCJTNEJTVCRVIlMjIlM0UlM0NmaWVsZCUyMG5hbWUlM0QlMjJURVhUJTIyJTNFdGVzdCUzQyUyRmZpZWxkJTNFJTNDJTJGc2hhZG93JTNFJTNDYmxvY2slMjB0eXBlJTNEJTIydGV4dCUyMiUyMGlkJTNEJTIyOCkuJTJGJTNBQXpxa0p4TUclNUU3amVLfnglMjIlM0UlM0NmaWVsZCUyMG5hbWUlM0QlMjJURVhUJTIyJTNFQmVpc3BpZWwtQ29kZSUzQyUyRmZpZWxkJTNFJTNDJTJGYmxvY2slM0UlM0MlMkZ2YWx1ZSUzRSUzQyUyRmJsb2NrJTNFJTNDJTJGeG1sJTNF",
+            "debug": false,
+            "verbose": false,
+            "enabled": false
+        },
+        "from": "system.adapter.admin.0",
+        "user": "system.user.admin",
+        "ts": 1644519738959,
+        "acl": {
+            "object": 1636,
+            "owner": "system.user.admin",
+            "ownerGroup": "system.group.administrator"
+        }
     }
 
 Typ config
