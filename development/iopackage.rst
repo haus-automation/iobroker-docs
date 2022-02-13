@@ -122,7 +122,15 @@ Eigenschaften (erforderlich)
 
         "titleLang": {
             "en": "Luftdaten.info",
-            "de": "Luftdaten.info"
+            "de": "Luftdaten.info",
+            "ru": "Luftdaten.info",
+            "pt": "Luftdaten.info",
+            "nl": "Luftdaten.info",
+            "fr": "Luftdaten.info",
+            "it": "Luftdaten.info",
+            "es": "Luftdaten.info",
+            "pl": "Luftdaten.info",
+            "zh-cn": "Luftdaten.info"
         }
 
     :type: object
@@ -162,7 +170,15 @@ Eigenschaften (erforderlich)
 
         "desc": {
             "en": "Loads current air quality data from a local or remote sensor",
-            "de": "Lädt aktuelle Luftqualitätsdaten eines lokalen oder Cloud-Sensors"
+            "de": "Lädt aktuelle Luftqualitätsdaten eines lokalen oder Cloud-Sensors",
+            "ru": "Загружает текущие данные о качестве воздуха с местного или удаленного датчика",
+            "pt": "Carrega dados atuais de qualidade do ar de um sensor local ou remoto",
+            "nl": "Laadt huidige luchtkwaliteitsgegevens van een lokale of externe sensor",
+            "fr": "Charge les données actuelles sur la qualité de l'air à partir d'un capteur local ou distant",
+            "it": "Carica i dati attuali sulla qualità dell'aria da un sensore locale o remoto",
+            "es": "Carga datos actuales de la calidad del aire desde un sensor local o remoto",
+            "pl": "Ładuje aktualne dane o jakości powietrza z lokalnego lub zdalnego czujnika",
+            "zh-cn": "从本地或远程传感器加载当前的空气质量数据"
         }
 
     :type: object
@@ -185,7 +201,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.enabled
 
-    Legt fest, ob die Instanz gestartet werden soll, oder nicht
+    Legt fest, ob eine neue Instanz gestartet werden soll, oder nicht
 
     :type: boolean
     :default: ``true``
@@ -212,11 +228,15 @@ Eigenschaften (Allgemein)
 
     URL zur Readme-Datei (z.B. HTTP-URL zur README.md auf GitHub)
 
+    .. code:: json
+
+        "readme": "https://github.com/klein0r/ioBroker.luftdaten/blob/master/README.md"
+
     :type: string
 
 .. confval:: common.docs
 
-    Eine Liste von Dokumentations-Dateien, welche im Admin zur Verfügung gestellt werden und auch in der `offiziellen Dokumentation <https://www.iobroker.net/#de/adapters>`_ zu finden sind.
+    Eine Liste von Dokumentations-Dateien, welche im Admin zur Verfügung gestellt werden und auch in die `offizielle Dokumentation <https://www.iobroker.net/#de/adapters>`_ aufgenommen werden sollen.
 
     .. code:: json
 
@@ -305,7 +325,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.unsafePerm
 
-    Legt fest, ob das Adapter-Paket mit dem ``--unsafe-perm`` Parameter für npm installiert werden muss. Siehe `npm Dokumentation <https://docs.npmjs.com/cli/v6/using-npm/config#unsafe-perm>`_
+    Legt fest, ob das Adapter-Paket mit dem ``--unsafe-perm`` Parameter für npm installiert werden **muss**. Siehe `npm Dokumentation <https://docs.npmjs.com/cli/v6/using-npm/config#unsafe-perm>`_
 
     :type: boolean
 
@@ -333,6 +353,13 @@ Eigenschaften (Allgemein)
 
     Werte für ``common.mode`` (falls mehr als ein Wert erlaubt ist)
 
+    .. code:: json
+
+        "availableModes": [
+            "schedule",
+            "once"
+        ]
+
     :type: array
 
 .. confval:: common.blockly
@@ -346,6 +373,7 @@ Eigenschaften (Allgemein)
 
     Definiert die Qulle der Adapter-Daten. Wird im Admin ab Version 5 dargestellt und dient als Information für den Nutzer
 
+    - ``none``
     - ``local`` - Die Kommunikation findet lokal / im eigenen Netzwerk statt (z.B. mit dem Gerät direkt per HTTP)
     - ``cloud`` - Für den Adapter ist eine aktive Internetverbindung erforderlich. Die Daten werden z.B. vom Server des Herstellers abgerufen.
 
@@ -355,6 +383,7 @@ Eigenschaften (Allgemein)
 
     Legt fest, wie Daten geholt werden
 
+    - ``none``
     - ``poll`` - Die Daten werden regelmäßig abgefragt (z.B. per Zeitplan)
     - ``push`` - Das Gerät liefert die Daten selbstständig zum Adapter
     - ``assumption`` - Der genaue Status ist nicht definiert
@@ -371,6 +400,10 @@ Eigenschaften (Allgemein)
 .. confval:: common.dataFolder
 
     Verzeichnis-Pfad, in welchem der Adapter seine Daten ablegt (relativ zu ``iobroker-data``). Die Variable ``%INSTANCE%`` kann ebenfalls im Pfad genutzt werden
+
+    .. code:: json
+
+        "dataFolder": "zigbee_%INSTANCE%"
 
     :type: string
 
@@ -398,11 +431,15 @@ Eigenschaften (Allgemein)
 
     URL zur Icon-Datei für die Admin-Übersicht (z.B. PNG-Datei auf GitHub)
 
+    .. code:: json
+
+        "extIcon": "https://raw.githubusercontent.com/klein0r/ioBroker.luftdaten/master/admin/luftdaten.png"
+
     :type: string
 
 .. confval:: common.getHistory
 
-    Legt fest, ob der Adapter den ``getHistory`` Befehl unterstützt
+    Legt fest, ob der Adapter den ``getHistory`` Befehl unterstützt (siehe z.B. InfluxDB-Adapter)
 
     :type: boolean
 
@@ -422,7 +459,11 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.icon
 
-    Pfad zum lokalen Icon des Adapters (nach Installation). Sollte im Unterverzeichnis ``admin`` liegen
+    Pfad zum lokalen Icon des Adapters (nach Installation). Sollte im Unterverzeichnis ``admin/`` liegen
+
+    .. code:: json
+
+        "icon": "luftdaten.png"
 
     :type: string
 
@@ -476,13 +517,13 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.noIntro
 
-
+    TODO
 
     :type: boolean
 
 .. confval:: common.noRepository
 
-
+    TODO
 
     :type: boolean
 
@@ -505,6 +546,12 @@ Eigenschaften (Allgemein)
 
     :type: boolean
 
+.. confval:: common.osDependencies
+
+    Abhängigkeiten für verschiedene Betriebssysteme
+
+    :type: object
+
 .. confval:: common.osDependencies.darwin
 
     Liste mit erforderlichen MacOS-Paketen für diesen Adapter
@@ -526,18 +573,18 @@ Eigenschaften (Allgemein)
 .. confval:: common.os
 
     Liste mit unterstützten Betriebssystemen
-    
+
     - ``darwin`` - Mac OS X
     - ``linux`` - Linux
     - ``win32`` - Windows
 
-     :type: string / array
+    :type: string|array
 
 .. confval:: common.preserveSettings
 
      Liste mit Attributen, welche nicht automatisch gelöscht werden sollen (z.B. ``history``)
 
-     :type: string / array
+     :type: string|array
 
 .. confval:: common.restartAdapters
 
@@ -547,9 +594,9 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.serviceStates
 
-     
+     TODO
 
-     :type: string / boolean
+     :type: string|boolean
 
 .. confval:: common.singletonHost
 
@@ -580,13 +627,13 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.subscribable
 
-     ???
+     TODO
 
      :type: boolean
 
 .. confval:: common.subscribe
 
-     ???
+     TODO
 
      :type: string
 
@@ -610,7 +657,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.webByVersion
 
-
+    TODO
 
      :type: boolean
 
@@ -628,7 +675,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.webPreSettings
 
-     
+     TODO
 
      :type: object
 
@@ -640,7 +687,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.welcomeScreen
 
-     
+     TODO
 
      :type: array
 
@@ -662,12 +709,128 @@ Eigenschaften (Allgemein)
 
      :type: object
 
+.. confval:: common.messages
+
+    Informationen, welche bei der Adapter-Installation angezeigt werden sollen.
+
+    Mögliche Eigenschaften pro Nachricht:
+
+    - ``title`` (erforderlich) - sollte in alle Sprachen übersetzt werden
+    - ``text`` (erforderlich) - sollte in alle Sprachen übersetzt werden
+    - ``buttons`` (erforderlich) - ``ok``, ``agree`` oder ``cancel``
+    - ``condition``
+    - ``link``
+    - ``linkText`` - sollte in alle Sprachen übersetzt werden
+    - ``level`` (``info``, ``warn`` oder ``error``)
+
+    .. code:: json
+
+        "messages": [
+            {
+                "condition": {
+                    "operand": "and",
+                    "rules": [
+                        "oldVersion<4.0.0",
+                        "newVersion>=4.0.0"
+                    ]
+                },
+                "title": {
+                    "en": "Important notice!",
+                    "de": "Wichtiger Hinweis!",
+                    "ru": "Важное замечание!",
+                    "pt": "Notícia importante!",
+                    "nl": "Belangrijke mededeling!",
+                    "fr": "Avis important!",
+                    "it": "Avviso IMPORTANTE!",
+                    "es": "Noticia importante!",
+                    "pl": "Ważna uwaga!",
+                    "zh-cn": "重要通知!"
+                },
+                "text": {
+                    "en": "Do not update to this version if you use ioBroker.vis android app or some applications, that works only with old socket.io library, like Minuvis",
+                    "de": "Aktualisieren Sie nicht auf diese Version, wenn Sie die Android-App ioBroker.vis oder einige Anwendungen verwenden, die nur mit der alten socket.io-Bibliothek funktionieren, wie Minuvis",
+                    "ru": "Не обновляйтесь до этой версии, если вы используете приложение ioBroker.vis для Android или некоторые приложения, которые работают только со старой библиотекой socket.io, например Minuvis.",
+                    "pt": "Não atualize para esta versão se você usa o aplicativo Android ioBroker.vis ou alguns aplicativos que funcionam apenas com a biblioteca socket.io antiga, como Minuvis",
+                    "nl": "Werk niet bij naar deze versie als u de Android-app ioBroker.vis of sommige toepassingen gebruikt, die alleen werken met de oude socket.io-bibliotheek, zoals Minuvis",
+                    "fr": "Ne mettez pas à jour cette version si vous utilisez l'application Android ioBroker.vis ou certaines applications, qui ne fonctionnent qu'avec l'ancienne bibliothèque socket.io, comme Minuvis",
+                    "it": "Non aggiornare a questa versione se usi l'app ioBroker.vis per Android o alcune applicazioni, che funzionano solo con la vecchia libreria socket.io, come Minuvis",
+                    "es": "No actualice a esta versión si usa la aplicación de Android ioBroker.vis o algunas aplicaciones, que solo funcionan con la antigua biblioteca socket.io, como Minuvis",
+                    "pl": "Nie aktualizuj do tej wersji, jeśli używasz aplikacji na Androida ioBroker.vis lub niektórych aplikacji, które działają tylko ze starą biblioteką socket.io, taką jak Minuvis",
+                    "zh-cn": "如果您使用 ioBroker.vis android 应用程序或某些仅适用于旧 socket.io 库的应用程序，请不要更新到此版本，例如 Minuvis"
+                },
+                "level": "warn",
+                "buttons": [
+                    "ok",
+                    "cancel"
+                ]
+            }
+        ]
+
+    :type: array
+
+.. confval:: objects
+
+    Liste von Objekten, welche für den Adapter erstellt werden sollen
+
+    :type: array
+
+.. confval:: instanceObjects
+
+    Liste von Objekten, welche für jede Instanz erstellt werden sollen
+
+    :type: array
+
+.. confval:: protectedNative
+
+    Liste von ``native`` Attributen, welche nur vom Adapter / der jeweiligen Instanz selbst lesbar sind (z.B. ``["password"]``). Siehe :ref:`development-encryption`
+
+    :type: array
+
+.. confval:: encryptedNative
+
+    Liste von automatisch verschlüsselten ``native`` Attributen. Siehe :ref:`development-encryption`
+
+    :type: array
+
+.. confval:: native
+
+    Liste von vordefinierten Attributen, welche z.B. in der Instanz-Konfiguration überschrieben werden können
+
+    .. code:: json
+
+        "native": {
+            "port": 12345,
+            "apiPassword: "xxx",
+            "requestTimeout": 10
+        }
+
+    :type: object
+
+.. confval:: notifications
+
+    **Seit js-controller 3.2.0**
+
+    Liste von Objekten zur Konfiguration zur Konfiguration des internen Notification-Systems. Siehe :ref:`development-notifications`
+
+    - ``scope`` (erforderlich)
+    - ``name`` (erforderlich) - sollte in alle Sprachen übersetzt werden
+    - ``description`` (erforderlich) - sollte in alle Sprachen übersetzt werden
+    - ``categories`` (erforderlich)
+
+    TODO
+
+    :type: array
+
 Eigenschaften (Schedule)
 ------------------------
 
 .. confval:: common.schedule
 
     CRON-Definition, wann die Instanzen gestartet werden sollen (kann vom Benutzer angepasst werden)
+
+    .. code:: json
+
+        "schedule": "*/30 * * * *"
 
     :type: string
 
@@ -691,7 +854,7 @@ Eigenschaften (Admin)
 
 .. confval:: common.adminColumns
 
-    Custom attributes, that must be shown in the admin in the object browser. Like: Type is a type of the attribute (e.g. string, number, boolean) and only needed if edit is enabled. objTypes is a list of the object types, that could have such attribute. Used only in edit mode too
+    Eigene Attribute, welche im Admin als Spalten verfügbar werden sollen.
 
     .. code:: json
 
@@ -720,6 +883,29 @@ Eigenschaften (Admin)
 
     :type: array
 
+.. confval:: common.adminTab
+
+    .. code:: json
+
+        "adminTab": {
+            "name": {
+                "en": "Zigbee",
+                "de": "Zigbee",
+                "ru": "Zigbee",
+                "pt": "Zigbee",
+                "nl": "Zigbee",
+                "fr": "Zigbee",
+                "it": "Zigbee",
+                "es": "Zigbee",
+                "pl": "Zigbee",
+                "zh-cn": "Zigbee"
+            },
+            "singleton": true,
+            "fa-icon": "</i><img style='width:24px;margin-bottom:-6px;' src='/adapter/zigbee/zigbee.svg'><i>"
+        }
+
+    :type: object
+
 .. confval:: common.adminTab.fa-icon
 
     `Font-Awesome <https://fontawesome.com/icons>`_ Icon für das Tab
@@ -728,13 +914,13 @@ Eigenschaften (Admin)
 
 .. confval:: common.adminTab.ignoreConfigUpdate
 
-    
+    TODO
 
     :type: boolean
 
 .. confval:: common.adminTab.link
 
-    
+    Link für den iFrame im Admin-Tab. Unterstützt zu ersetzende Platzhalter wie ``%ip%`` oder ``%port%``.
 
     :type: string
 
@@ -752,7 +938,7 @@ Eigenschaften (Admin)
 
 .. confval:: common.adminUI
 
-    Legt fest, wie die Konfiguration im Admin erfolgen soll
+    Legt fest, wie die Konfiguration im Admin erfolgen soll (für die Instanz-Konfiguration, Tabs und eigene Objekt-Eigenschaften)
 
     :type: object
 
@@ -761,16 +947,15 @@ Eigenschaften (Admin)
     Legt fest, wie die Konfiguration für die Admin-Oberfläche aufgebaut ist
 
     - ``none``
-    - ``materialize`` (``admin/index_m.html`` erforderlich - ab Admin Version 4)
-    - ``json`` (``admin/jsonConfig.json`` erforderlich - ab Admin Version 5)
+    - ``html``
+    - ``materialize`` (``admin/index_m.html`` - ab Admin Version 4)
+    - ``json`` (``admin/jsonConfig.json`` - ab Admin Version 5)
 
     :type: string
 
 .. confval:: common.adminUI.custom
 
-    - ``none``
-    - ``materialize`` (``admin/custom_m.html`` erforderlich - ab Admin Version 4)
-    - ``json`` (``admin/jsonCustom.json`` erforderlich - ab Admin Version 5)
+    - ``json`` (``admin/jsonCustom.json`` - ab Admin Version 5)
 
     :type: string
 
@@ -780,46 +965,6 @@ Eigenschaften (Admin)
     - ``materialize``
 
     :type: string
-
-**Weitere Optionen**
-
-.. confval:: objects
-
-    Liste von Objekten, welche für den Adapter erstellt werden sollen
-
-    :type: array
-
-.. confval:: instanceObjects
-
-    Liste von Objekten, welche für jede Instanz automatisch erstellt werden
-
-    :type: array
-
-.. confval:: protectedNative
-
-    Liste von Attributen, welche nur vom Adapter selbst lesbar sind (z.B. ``["password"]``). Siehe :ref:`development-encryption`
-
-    :type: array
-
-.. confval:: encryptedNative
-
-    Liste vo automatisch verschlüsselten Attributen. Siehe :ref:`development-encryption`
-
-    :type: array
-
-.. confval:: native
-
-    Liste von vordefinierten Attributen, welche z.B. in der Admin-Konfiguration überschrieben werden können
-
-    :type: object
-
-.. confval:: notifications
-
-    Liste von Objekten zur Konfiguration zur Konfiguration des internen Notification-Systems. Siehe :ref:`development-notifications`
-
-    **Seit js-controller 3.2.0**
-
-    :type: array
 
 Eigenschaften (deprecated)
 --------------------------

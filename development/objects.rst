@@ -56,7 +56,7 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
             }
         }
 
-    :type: string oder object
+    :type: string|object
 
 .. confval:: common.custom
 
