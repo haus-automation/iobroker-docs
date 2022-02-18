@@ -58,6 +58,29 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
 
     :type: string|object
 
+.. confval:: common.icon
+
+    *(optional)* Icon, welches z.B. im Admin-Adapter dargestellt werden soll. Mögliche Werte sind:
+
+    - Pfadangabe relativ zum Admin-Verzeichnis (z.B. PNG-Datei)
+    - Base64-String mit den Daten des Icons (SVG, PNG, ...)
+
+    .. code:: json
+
+        "common": {
+            "icon": "/icons/160_hmipw-drs4_thumb.png"
+        }
+
+    oder auch
+
+    .. code:: json
+
+        "common": {
+            "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjRweCI+DQogICAgPHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTIgNS42OWw1IDQuNVYxOGgtMnYtNkg5djZIN3YtNy44MWw1LTQuNU0xMiAzTDIgMTJoM3Y4aDZ2LTZoMnY2aDZ2LThoM0wxMiAzeiIvPg0KPC9zdmc+"
+        }
+
+    :type: string
+
 .. confval:: common.custom
 
     *(optional)* Zusatzkonfiguration weiterer Adapter für das Objekt. Wird zum Beispiel für Datenbank-Adapter genutzt. Je Eintrag ist das ``enabled`` Attribut erforderlich.
@@ -110,8 +133,6 @@ Typ state
     - ``json`` - ???
     - ``file`` - ???
     - ``multistate`` - Auswahlmöglichkeiten (Enum)
-
-    Eine Ausnahme bilden die Objekte mit ``type`` = ``meta``. Diese können hier noch den Type ``meta.user`` oder ``meta.folder`` bekommen.
 
     .. warning::
         Falls der Typ ``array``, ``object`` oder ``mixed`` lautet, muss der Wert als String mit ``JSON.stringify()`` gespeichert werden.
@@ -366,6 +387,8 @@ Typ device
 
 Typ adapter
 -----------
+
+Eine ausführliche Dokumentation der Eigenschaften findest Du in hier: :ref:`development-iopackage`.
 
 .. code:: console
 
@@ -650,6 +673,8 @@ Typ adapter
 
 Typ instance
 ------------
+
+Eine ausführliche Dokumentation der Eigenschaften findest Du in hier: :ref:`development-iopackage`.
 
 .. code:: console
 
@@ -1387,6 +1412,15 @@ Typ folder
 
 Typ meta
 --------
+
+.. confval:: common.type
+
+    - ``meta.user``
+    - ``meta.folder``
+    - ``uuid``
+
+    :type: string
+    :default: ``mixed``
 
 .. code:: console
 
