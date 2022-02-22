@@ -82,7 +82,7 @@ Beispiele (System)
 - ``iobroker version``: Version des ``js-controller``
 - ``iobroker uuid``: UUID des Systems - siehe :ref:`basics-uuid`
 - ``iobroker upgrade self``: Aktualisiert den ``js-controller``
-- ``iobroker host this ``: Initialisiert den aktuellen Host. Sollte aufgerufen werden, wenn z.B. der Hostname des Systems geändert wurde
+- ``iobroker host this``: Initialisiert den aktuellen Host. Sollte aufgerufen werden, wenn z.B. der Hostname des Systems geändert wurde
 
 Beispiele (Backup)
 ------------------
@@ -104,6 +104,8 @@ Beispiele (Adapter)
 
 **Adapter und Instanzen verwalten**
 
+- ``iobroker list adapters``: Listet alle installierten Adapter und ihre Versionen auf
+- ``iobroker list instances``: Listet alle Instanzen auf und zeigt ob diese gerade laufen
 - ``iobroker add wled@0.6.0``: Installiert die Version ``0.6.0`` des WLED Adapters und erstellt eine neue Instanz
 - ``iobroker add wled``: Installiert die aktuellste Version des WLED Adapters und erstellt eine neue Instanz
 - ``iobroker del wled.0``: Löscht die Instanz ``wled.0``
@@ -113,6 +115,7 @@ Beispiele (Adapter)
 Beispiele (User)
 ----------------
 
+- ``iobroker list users``: Listet alle existierenden Benutzer auf
 - ``iobroker user passwd admin``: Passwort vom User ``admin`` ändern (z.B. falls es vergessen wurde)
 
 Beispiele (Objekte)
