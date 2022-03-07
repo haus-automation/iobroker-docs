@@ -82,6 +82,7 @@ Beispiele (System)
 - ``iobroker uuid``: UUID des Systems - siehe :ref:`basics-uuid`
 - ``iobroker upgrade self``: Aktualisiert den ``js-controller``
 - ``iobroker host this``: Initialisiert den aktuellen Host. Sollte aufgerufen werden, wenn z.B. der Hostname des Systems geändert wurde
+- ``iobroker logs --watch``: Aktuelle Log-Meldungen verfolgen (abbrechen mit Strg+C)
 
 Beispiele (Backup)
 ------------------
@@ -96,7 +97,7 @@ Beispiele (Adapter)
 - ``iobroker update``: Aktualisiert das aktive Repository. Es werden keine Adapter aktualisiert. Siehe :ref:`ecosystem-repositories`
 - ``iobroker update -u``: Listet alle Adapter mit verfügbaren Updates auf
 - ``iobroker update -a``: Listet alle verfügbaren Adapter auf
-- ``iobroker upgrade --yes``: Aktualisiert alle Adapter, ohne für jeden Adapter nachzufragen, ob die Version wirklich installiert werden soll.
+- ``iobroker upgrade --yes``: Aktualisiert alle Adapter, ohne für jeden Adapter nachzufragen, ob die Version wirklich installiert werden soll
 - ``iobroker upgrade ical``: Aktualisiert einen einzelnen Adpater (in diesem Fall ical) auf die aktuellste Version
 - ``iobroker upgrade ical@1.11.2``: Aktualisiert einen einzelnen Adpater (in diesem Fall ical) auf die Version ``1.11.2``
 - ``iobroker version iot``: Version des installierten IoT Adapters

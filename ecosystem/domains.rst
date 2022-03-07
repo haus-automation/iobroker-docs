@@ -72,19 +72,21 @@ iobroker.pro
 iobroker.live
 -------------
 
-- `Installations-Script <http://iobroker.live/install.sh>`_
-- `Installations-Fixing-Script <http://iobroker.live/fix.sh>`_
+- `Installations-Script (install.sh) <http://iobroker.live/install.sh>`_
+- `Installations-Fixing-Script (fix.sh) <http://iobroker.live/fix.sh>`_
 - `GitHub Badge (stable Version) <http://iobroker.live/badges/octoprint-stable.svg>`_
 - `GitHub Badge (Installationen) <http://iobroker.live/badges/octoprint-installed.svg>`_
-- `News für den Admin 5 <https://iobroker.live/repo/news.json>`_
+- `News für den Admin 5 (repo/news.json) <https://iobroker.live/repo/news.json>`_
+- `News hash für den Admin 5 (repo/news-hash.json) <https://iobroker.live/repo/news-hash.json>`_
+- `Statistiken der Adapter-Installationen (statistics.json) <http://iobroker.live/statistics.json>`_
 
 repo.iobroker.live
 ------------------
 
 - `Repository stable <http://repo.iobroker.live/sources-dist.json>`_ - siehe :ref:`ecosystem-repositories`
-- `Repository hash stable <https://repo.iobroker.live/sources-dist-hash.json>`_ - siehe :ref:`ecosystem-repositories`
+- `Repository stable hash <https://repo.iobroker.live/sources-dist-hash.json>`_ - siehe :ref:`ecosystem-repositories`
 - `Repository beta <http://repo.iobroker.live/sources-dist-latest.json>`_ - siehe :ref:`ecosystem-repositories`
-- `Repository hash beta <https://repo.iobroker.live/sources-dist-latest-hash.json>`_ - siehe :ref:`ecosystem-repositories`
+- `Repository beta hash <https://repo.iobroker.live/sources-dist-latest-hash.json>`_ - siehe :ref:`ecosystem-repositories`
 
 iobroker.link
 -------------
