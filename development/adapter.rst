@@ -15,15 +15,15 @@ Offene Anfragen für Adapter findest Du `hier <https://github.com/ioBroker/Adapt
 Wenn Du einen neuen Adapter entwickeln möchtest, empfiehlt es sich die Erstellung mit Hilfe des Create-Adapter-Tools durchzuführen. Dieses Tool
 erstellt Dir auf Basis eines Templates ein neues Projekt, mit welchem Du direkt durchstarten kannst.
 
-Das Tool findest Du auf `GitHub <https://github.com/ioBroker/create-adapter>`_.
+`Das Create-Adapter-Tool findest Du auf GitHub <https://github.com/ioBroker/create-adapter>`_.
 
-Um einen neuen Adapter zu erstellen, führst Du folgenden Befehl aus:
+Um einen neuen Adapter zu erstellen, führe folgenden Befehl aus:
 
 .. code:: 
 
     npx @iobroker/create-adapter
 
-Nachdem das Programm ausgeführt wird, werden Dir einige Fragen gestellt, wie Du gerne arbeiten möchtest. Das Ergebnis sieht beispielsweise so aus:
+Wenn das Programm ausgeführt wird, werden einige Fragen gestellt, wie Du gerne arbeiten möchtest. Das Ergebnis sieht beispielsweise so aus:
 
 .. code:: console
 
@@ -125,6 +125,12 @@ Gibst Du dort zum Beispiel ``today`` ein, liefert Dir das Programm folgende Übe
             "zh-cn": "今天"
         }
     }
+
+Alternativ kannst Du auch mit einem POST-Request (z.B. mit curl) die Übersetzungen holen. In diesem Beispiel wird der Text "today" übersetzt.
+
+.. code:: console
+
+    curl -d "text=today&together=true" -H "Content-Type: application/x-www-form-urlencoded" -X POST https://translator.iobroker.in/translator
 
 Diese Informationen kannst Du direkt in deinem Adapter verwenden. Achte darauf, dass alle Texte übersetzt sind.
 
