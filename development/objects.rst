@@ -58,6 +58,20 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
 
     :type: string|object
 
+.. confval:: common.expert
+
+    Objekt nur im Experten-Modus sichtbar (z.B. im Admin-Adapter)
+
+    :type: boolean
+    :default: false
+
+.. confval:: common.dontDelete
+
+    Objekt kann nicht vom Benutzer gelöscht werden (wird auch vom ``js-controller`` geprüft). **Bitte mit Vorsicht verwenden!**
+
+    :type: boolean
+    :default: false
+
 .. confval:: common.icon
 
     *(optional)* Icon, welches z.B. im Admin-Adapter dargestellt werden soll. Mögliche Werte sind:
