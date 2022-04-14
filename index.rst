@@ -43,6 +43,7 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
 
     basics/architecture
     basics/datastorage
+    basics/aliases
     basics/cli
     basics/acl
     basics/systemconfig

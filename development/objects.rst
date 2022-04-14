@@ -120,6 +120,11 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
                 "changesMinDelta": 0,
                 "maxLength": 960,
                 "retention": 31536000
+            },
+            "iot.0": {
+                "smartName": {
+                    "de": "Test"
+                }
             }
         }
 
@@ -234,6 +239,20 @@ Typ state
         ]
 
     :type: object|array
+
+.. confval:: common.alias
+
+    *(optional)* Nur für Objekte innerhalb des Namespace ``alias.0`` relevant. Siehe :ref:`basics-aliases`.
+
+    .. code:: json
+
+        "alias": {
+            "id": "0_userdata.0.test.myNumber",
+            "read": "val - 1",
+            "write": "val + 1"
+        }
+
+    :type: object
 
 .. confval:: common.workingID
 
