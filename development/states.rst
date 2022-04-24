@@ -12,6 +12,13 @@ States können beispielsweise über das :ref:`basics-cli` ausgelesen werden:
 
     iobroker state get admin.0.info.updatesNumber
 
+
+Wenn man nur den Wert (also die Eigenschaft ``val``) auslesen möchte, geht das per :ref:`basics-cli` wie folgt:
+
+.. code:: console
+
+    iobroker state getvalue admin.0.info.updatesNumber
+
 Beispiel
 --------
 
@@ -98,6 +105,8 @@ Eigenschaften
 
     Kommentar (optional)
 
+    Hier wird z.B. vom JavaScript-Adapter der Name des Scripts hinterlegt, welches den Wert zuletzt geändert hat.
+
     :type: string
 
 .. confval:: expire
@@ -106,9 +115,3 @@ Eigenschaften
     In diesem Beispiel ist der Wert ``0`` (numerisch Null).
 
     :type: number
-
-Wenn man nur den Wert (also die Eigenschaft ``val``) auslesen möchte, geht das per :ref:`basics-cli` wie folgt:
-
-.. code:: console
-
-    iobroker state getvalue admin.0.info.updatesNumber
