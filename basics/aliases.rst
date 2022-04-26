@@ -47,3 +47,39 @@ Angenommen Du hast einen Datenpunkt, welcher die aktuelle Windgeschwindigkeit in
 
 Bitte beachte, dass die Datentypen der Objekte korrekt sind. Hier wird der Typ der Quelle höchstwahrscheinlich ``number`` sein. Also sollte unser Alias ebenfalls vom Typ ``number`` sein, da das Ergebnis der Multiplikation ja wieder eine Number ist.
 
+**Wert aus einem JSON extrahieren**
+
+Angenommen ein Zustand (Typ String) enthält folgenden Wert: ``{myAttr: 12}``. Dann kann diesen JSON direkt im Alias geparsed und das Attribut ausgelesen werden:
+
+.. code:: javascript
+
+    JSON.parse(val).myAttr
+
+**Ternary Operator**
+
+Möchte man einen boolschen Wert in einen String umwandeln, kann dafür der Ternary-Operator genutzt werden. Liefert z.B. ein Fensterkontakt ``true`` wenn das Fenster geschlossen ist, kann dieser Wert wie folgt in einen String gewandelt werden:
+
+.. code:: javascript
+
+    val ? 'offen' : 'geschlossen'
+
+Ist der Ausgangswert numerisch, können hier natürlich auch einen Vergleich anstellen. Falls vom lesenden Zustand der Wert kleiner als 15 ist, soll z.B. der Text "kalt" im Alias stehen:
+
+.. code:: javascript
+
+    val < 15 ? 'kalt' : 'warm'
+
+**Regulärer Ausdruck**
+
+Angenommen ein Zustand (Typ String) enthält folgenden Wert: ``123.45°C`` (also inklusive Einheit). Hier könnte man mit einem regulären Ausdruck alles außer Zahlen entfernen und den Wert in eine Gleitkommazahl umwandeln:
+
+.. code:: javascript
+
+    parseFloat(val.replace(/[^\d.]/g, ''))
+
+Genauso könnte der Wert dann noch gerundet werden:
+
+.. code:: javascript
+
+    Math.round(parseFloat(val.replace(/[^\d.]/g, '')))
+
