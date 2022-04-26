@@ -39,9 +39,9 @@ Eigenschaften
 
 .. confval:: val
 
-    Der aktuell gespeicherte Wert
+    Der eigentliche Wert des Zustandes. Der Datentyp hängt vom übergeordneten Objekt ab
 
-    :type: string
+    :type: mixed
 
 .. confval:: ack
 
@@ -51,13 +51,13 @@ Eigenschaften
 
 .. confval:: ts
 
-    Unix Timestamp (Zeitstempel in Millisekunden) wann der Zustand zuletzt **aktualisiert** wurde
+    Unix Timestamp (Zeitstempel in Millisekunden) wann der Zustand zuletzt **aktualisiert** wurde (ts = time stamp)
 
     :type: number
 
 .. confval:: lc
 
-    Unix Zimestamp (Zeitstempel in Millisekunden) wann der Zustand zuletzt **geändert** wurde (last change)
+    Unix Zimestamp (Zeitstempel in Millisekunden) wann der Zustand zuletzt **geändert** wurde (lc = last change)
 
     :type: number
 
@@ -91,27 +91,26 @@ Eigenschaften
 
 .. confval:: from
 
-    Instanz, welche die Änderung durchgeführt hat (z.B. ``system.adapter.admin.0``) (optional)
+    *(optional)* Instanz, welche die Änderung durchgeführt hat (z.B. ``system.adapter.admin.0``)
 
     :type: string
 
 .. confval:: user
 
-    Benutzer, welcher die Änderung durchgeführt hat (z.B. ``system.user.admin``) (optional)
+    *(optional)* Benutzer, welcher die Änderung durchgeführt hat (z.B. ``system.user.admin``)
 
     :type: string
 
 .. confval:: c
 
-    Kommentar (optional)
+    *(optional)* Kommentar
 
-    Hier wird z.B. vom JavaScript-Adapter der Name des Scripts hinterlegt, welches den Wert zuletzt geändert hat.
+    Hier wird z.B. vom JavaScript-Adapter der Name des Scripts hinterlegt, welches den Wert zuletzt geändert hat
 
     :type: string
 
 .. confval:: expire
 
-    Zeit in Sekunden, wann der Wert auf null gesetzt wird (optional)
-    In diesem Beispiel ist der Wert ``0`` (numerisch Null).
+    *(optional)* Zeit in Sekunden, bis der Wert aufläuft / auf ``null`` gesetzt wird
 
     :type: number
