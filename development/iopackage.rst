@@ -788,11 +788,15 @@ Eigenschaften (Allgemein)
 
     Liste von ``native`` Attributen, welche nur vom Adapter / der jeweiligen Instanz selbst lesbar sind (z.B. ``["password"]``). Siehe :ref:`development-encryption`
 
+    Unterstützt seit ``js-controller`` Version 2.0.2
+
     :type: array
 
 .. confval:: encryptedNative
 
     Liste von automatisch verschlüsselten ``native`` Attributen. Siehe :ref:`development-encryption`
+
+    Unterstützt seit ``js-controller`` Version 3.0.3
 
     :type: array
 
