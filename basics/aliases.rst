@@ -69,6 +69,26 @@ Ist der Ausgangswert numerisch, können hier natürlich auch einen Vergleich ans
 
     val < 15 ? 'kalt' : 'warm'
 
+**Datum konvertieren**
+
+Angenommen der Ausgangswert ist ein Unix-Timestamp (z.B. ``1650997245840``). Diesen kann man dann nach belieben umwandeln:
+
+.. code:: javascript
+
+    new Date(val).toISOString() // "2022-04-26T18:20:45.840Z"
+    new Intl.DateTimeFormat('de-DE').format(new Date(val)) // "26.4.2022"
+    new Intl.DateTimeFormat('de-DE', { dateStyle: 'medium' }).format(new Date(val)) // "26.04.2022"
+    new Intl.DateTimeFormat('de-DE', { dateStyle: 'full', timeStyle: 'long' }).format(new Date(val)) // "Dienstag, 26. April 2022 um 20:20:45 MESZ"
+    new Intl.DateTimeFormat('de-DE', { timeStyle: 'medium' }).format(new Date(val)) // "20:20:45"
+
+Wenn man z.B. nur die Stunde und Minute im Format ``HH:SS`` haben möchte, wäre das wie folgt möglich (zwei verschiedene Schreibweisen, gleiches Ergebnis):
+
+.. code:: javascript
+
+    `${new Date(val).getHours()}:${new Date(val).getMinutes()}`
+    new Date(val).getHours() + ':' + ${new Date(val).getMinutes()
+    new Intl.DateTimeFormat('de-DE', { timeStyle: 'short' }).format(new Date(val))
+
 **Regulärer Ausdruck**
 
 Angenommen ein Zustand (Typ String) enthält folgenden Wert: ``123.45°C`` (also inklusive Einheit). Hier könnte man mit einem regulären Ausdruck alles außer Zahlen entfernen und den Wert in eine Gleitkommazahl umwandeln:
@@ -83,3 +103,19 @@ Genauso könnte der Wert dann noch gerundet werden:
 
     Math.round(parseFloat(val.replace(/[^\d.]/g, '')))
 
+**Eigene Logik ausführen**
+
+Am Ende ist es ganz normales JavaScript. Also spricht auch nichts dagegen, eine neue (anonyme) Funktion zu definieren, welche sofort ausgeführt wird. Das könnte so aussehen:
+
+.. code:: javascript
+
+    ((v) => { return v; })(val)
+    (function(v) { return v; })(val)
+
+Warum das Ganze? Jetzt könnte man eigene Variablen deklarieren und damit weiter arbeiten. Würde ich das empfehlen? Eher nicht - aber es ist möglich. Worauf Du zugreifen kannst? Das kannst Du einfach herausfinden:
+
+.. code:: javascript
+
+    Object.getOwnPropertyNames(this).join(', ')
+
+Die interessantesten sind wahrscheinlich ``parseFloat, parseInt, RegExp, Date, JSON, Math, Intl``

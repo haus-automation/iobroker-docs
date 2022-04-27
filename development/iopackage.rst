@@ -639,7 +639,11 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.supportCustoms
 
-     Legt fest, ob es zusätzliche Einstellungen für jeden Datenpunkt gibt (``admin/custom.html`` erforderlich)
+     Legt fest, ob es zusätzliche Einstellungen für jeden Datenpunkt gibt
+
+     - ``admin/custom.html`` erforderlich - ab Admin Version 3
+     - ``admin/custom_m.html`` erforderlich - ab Admin Version 4
+     - ``admin/jsonCustom.json`` erforderlich - ab Admin Version 5
 
      :type: boolean
 
@@ -947,7 +951,7 @@ Eigenschaften (Admin)
     Legt fest, wie die Konfiguration für die Admin-Oberfläche aufgebaut ist
 
     - ``none``
-    - ``html``
+    - ``html`` (``admin/index.html`` - ab Admin Version 3)
     - ``materialize`` (``admin/index_m.html`` - ab Admin Version 4)
     - ``json`` (``admin/jsonConfig.json`` - ab Admin Version 5)
 
@@ -955,6 +959,9 @@ Eigenschaften (Admin)
 
 .. confval:: common.adminUI.custom
 
+    - ``none``
+    - ``html`` (``admin/custom.html`` - ab Admin Version 3)
+    - ``materialize`` (``admin/custom_m.html`` - ab Admin Version 4)
     - ``json`` (``admin/jsonCustom.json`` - ab Admin Version 5)
 
     :type: string
@@ -980,9 +987,9 @@ Diese Eigenschaften sind für aktuelle Adapter mit dem Admin 5 nicht mehr releva
 - ``common.config.minHeight`` - Mindest-Höhe für den Konfigurations-Dialog für Admin 2
 - ``common.config.width`` - Standard-Breite für den Konfigurations-Dialog für Admin 2
 - ``common.config.minWidth`` - Mindest-Breite für den Konfigurations-Dialog für Admin 2
-- ``common.materialize`` (boolean) - Legt fest, ob der Adapter die Admin-Oberfläche für Admin-Version 3 und 4 bereitstellt
-- ``common.materializeTab`` (boolean) - Legt fest, ob der Adapter ein eigenes Tab für Admin-Version 3 und 4 bereitstellt
-- ``common.noConfig`` (boolean) - Definiert, ob Instanzen konfiguriert werden können (ab Admin 5 sollte ``adminUI.config = none`` verwendet werden)
+- ``common.materialize`` (boolean) - Legt fest, ob der Adapter die Admin-Oberfläche für Admin-Version 3 und 4 bereitstellt (ab Admin 5 sollte ``common.adminUI.config`` verwendet werden)
+- ``common.materializeTab`` (boolean) - Legt fest, ob der Adapter ein eigenes Tab für Admin-Version 3 und 4 bereitstellt (ab Admin 5 sollte ``common.adminUI.tab`` verwendet werden)
+- ``common.noConfig`` (boolean) - Definiert, ob Instanzen konfiguriert werden können (ab Admin 5 sollte ``common.adminUI.config = none`` verwendet werden)
 
 Links
 -----
