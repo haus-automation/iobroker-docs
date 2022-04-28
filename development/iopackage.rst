@@ -627,7 +627,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.subscribable
 
-     TODO
+     TODO (siehe autoSubscribe)
 
      :type: boolean
 
@@ -816,8 +816,6 @@ Eigenschaften (Allgemein)
 
 .. confval:: notifications
 
-    **Seit js-controller 3.2.0**
-
     Liste von Objekten zur Konfiguration zur Konfiguration des internen Notification-Systems. Siehe :ref:`development-notifications`
 
     - ``scope`` (erforderlich)
@@ -825,7 +823,7 @@ Eigenschaften (Allgemein)
     - ``description`` (erforderlich) - sollte in alle Sprachen übersetzt werden
     - ``categories`` (erforderlich)
 
-    TODO
+    Unterstützt seit ``js-controller`` Version 3.2.0
 
     :type: array
 
