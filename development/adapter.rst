@@ -5,6 +5,8 @@ Adapter-Entwicklung
 
 In diesem Abschnitt fasse ich für Dich zusammen, was es bei der Entwicklung von neuen Adaptern zu beachten gibt. Auf dem Weg zum eigenen/neuen Adapter gibt es jede Menge Werkzeuge, welche Dir das Leben leichter machen und Dich sehr schnell zum Ziel bringen werden!
 
+Eine Sammlung von Tools, Hinweisen und Informationen findest Du außerdem im `ioBroker Dev-Portal <https://www.iobroker.dev>`_ (mit GitHub-Account einloggen!).
+
 Neuer Adapter
 -------------
 
@@ -27,33 +29,40 @@ Wenn das Programm ausgeführt wird, werden einige Fragen gestellt, wie Du gerne 
 
 .. code:: console
 
-    npx: Installierte 147 in 31.103s
+    Need to install the following packages:
+        @iobroker/create-adapter
+    Ok to proceed? (y) y
 
     =====================================================
-    Welcome to the ioBroker adapter creator v1.32.0!
+    Welcome to the ioBroker adapter creator v2.1.1!
     =====================================================
 
     You can cancel at any point by pressing Ctrl+C.
 
     Let's get started with a few questions about your project!
-    ✔ Please enter the name of your project: · documentation
-    ✔ Which title should be shown in the admin UI? · Documentation
-    ✔ Please enter a short description: · An example adapter for the ioBroker documentation
-    ✔ Enter some keywords (separated by commas) to describe your project: · documentation,learn,development
+    ✔ Please enter the name of your project: · gira-iot
+    ✔ Which title should be shown in the admin UI? · Gira IoT
+    ✔ Please enter a short description: · Integrate your Gira X1 or HomeServer
+    ✔ Enter some keywords (separated by commas) to describe your project: · gira,x1,homeserver,iot
     ✔ If you have any contributors, please enter their names (seperated by commas): · 
 
     Nice! Let's get technical...
     ✔ How detailed do you want to configure your project? · yes
     ✔ Which features should your project contain? · adapter
     ✔ Which additional features should be available in the admin? · No items were selected
-    ✔ Which category does your adapter fall into? · storage
+    ✔ Which category does your adapter fall into? · iot-systems
     ✔ When should the adapter be started? · daemon
     ✔ From where will the adapter get its data? · local
     ✔ How will the adapter receive its data? · push
     ✔ Do you want to indicate the connection state? · yes
+
+    Some more questions about the source code...
     ✔ Which language do you want to use to code the adapter? · JavaScript
     ✔ Use React for the Admin UI? · yes
     ✔ Which of the following tools do you want to use? · ESLint, type checking
+    ✔ Would you like to automate new releases with one simple command? · yes
+    ✔ Would you like to use dev-server to develop and test your code with a simple command line tool? · yes
+    ✔ Please choose the port number on which dev-server should present the admin web interface: · 8081
     ✔ Do you prefer tab or space indentation? · Space (4)
     ✔ Do you prefer double or single quotes? · single
     ✔ How should the main adapter file be structured? · yes
@@ -63,9 +72,9 @@ Wenn das Programm ausgeführt wird, werden einige Fragen gestellt, wie Du gerne 
     ✔ What's your name/org on GitHub? · klein0r
     ✔ What's your email address? · info@haus-automatisierung.com
     ✔ Which protocol should be used for the repo URL? · SSH
-    ✔ Initialize the GitHub repo automatically? · yes
+    ✔ Initialize the GitHub repo automatically? · no
+    ✔ How should your default Git branch be called? · master
     ✔ Which license should be used for your project? · MIT License
-    ✔ Which continuous integration service should be used? · gh-actions
     ✔ Do you want to receive regular dependency updates through Pull Requests? · yes
 
 Danach werden automatisch alle nötigen Dateien erstellt und Du kannst direkt mit der Entwicklung starten!
@@ -103,9 +112,15 @@ Beschäftige Dich also auf jeden Fall mit diesen Themen:
 -------------
 
 Generell ist es sinnvoll, direkt von Anfang an deinen neuen Adapter in mehrere Sprachen zu übersetzen. Die "Basis-Sprache" sollte Englisch sein. Von dort wird in andere Sprachen übersetzt.
-Damit Du das nicht manuell machen musst, gibt es vom ioBroker-Team ein Tool, welches Dir einen Englischen Text in andere Sprachen übersetzt und im richtigen Format für den ioBroker zurückliefert.
 
-`Zum ioBroker Translator <https://translator.iobroker.in>`_.
+.. note::
+    Generell gab es schon viele Ansätze und Werkzeuge, welche Dir bei Übersetzungen im ioBroker helfen sollten. Angefangen von Webseiten, bis zu irgendwelchen gulp-Scripts. Vieles davon existiert heute noch in den meisten Adaptern.
+
+Der aktuellste Weg ist allerdings das Paket - `Adapter-Dev <https://github.com/ioBroker/adapter-dev>`_ (``npm i --save-dev @iobroker/adapter-dev``). Anstatt also Dateien in zig unterschiedlichen Versionen hin und her zu kopieren, sollte dieses Paket verwendet werden.
+
+Alternativ, gibt es vom ioBroker-Team ein Tool, welches Dir einen Englischen Text in alle andere Sprachen übersetzt und im richtigen Format für den ioBroker zurückliefert (JSON).
+
+`Zum ioBroker Translator <https://translator.iobroker.in>`_
 
 Gibst Du dort zum Beispiel ``today`` ein, liefert Dir das Programm folgende Übersetzungen im JSON-Format:
 
@@ -126,13 +141,9 @@ Gibst Du dort zum Beispiel ``today`` ein, liefert Dir das Programm folgende Übe
         }
     }
 
-Alternativ kannst Du auch mit einem POST-Request (z.B. mit curl) die Übersetzungen holen. In diesem Beispiel wird der Text "today" übersetzt.
+Diese Informationen kannst Du direkt in deinem Adapter verwenden.
 
-.. code:: console
-
-    curl -d "text=today&together=true" -H "Content-Type: application/x-www-form-urlencoded" -X POST https://translator.iobroker.in/translator
-
-Diese Informationen kannst Du direkt in deinem Adapter verwenden. Achte darauf, dass alle Texte übersetzt sind.
+**Achte darauf, dass alle Texte übersetzt sind.**
 
 .. note::
     Natürlich ist es so, dass (wie üblich) die erstellen Übersetzungen nicht immer einwandfrei sind. Häufig ist z.B. die Deutsche Übersetzung einfachf falsch oder ergibt keinen Sinn. Kontrolliere noch einmal manuell, ob die Texte korrekt sind. Je mehr Sprachen, desto besser!
@@ -193,9 +204,9 @@ Für einen Adapter gibt es eine Liste an Regeln, an welche Du Dich halten sollte
 
 Diese Regeln einzuhalten ist relativ einfach, da Dir der ``ioBroker Adapter Checker`` genau sagt, was noch getan werden muss bzw. falsch läuft.
 
-Sobald Du also eine erste Version von deinem Adapter fertig hast, Du alles in GitHub-Repository gepusht hast und Dein Paket auf npmjs veröffentlich wurde, kannst Du den Adapter-Checker starten:
+Sobald Du also eine erste Version von deinem Adapter fertig hast, Du alles ins GitHub-Repository gepusht hast und Dein Paket auf npmjs veröffentlich wurde, kannst Du den Adapter-Checker starten:
 
-`Zum ioBroker Adapter-Checker <https://adapter-check.iobroker.in/>`_.
+`Zum ioBroker Adapter-Checker <https://adapter-check.iobroker.in/>`_
 
 **Dort fügst Du die URL von deinem GitHub-Repository ein.**
 
@@ -213,7 +224,7 @@ Adapter veröffentlichen
 
 Möchtest Du deinen Adapter nun anderen zur Verfügung stellen, solltest Du diesen erst von erfahrenen Nutzern testen lassen. Erstelle dazu einen neuen `Foren-Beitrag <https://forum.iobroker.net/category/91/tester>`_ mit der Bitte um einen Test.
 
-Danach kannst Du einen Pull-Request im `GitHub Repository (ioBroker.repositories) <https://github.com/ioBroker/ioBroker.repositories>`_ erstellen, indem Du Deinen Adapter dort hinzufügst. Mehr Details hier: :ref:`ecosystem-repositories`
+**Danach** kannst Du einen Pull-Request im `GitHub Repository (ioBroker.repositories) <https://github.com/ioBroker/ioBroker.repositories>`_ erstellen, indem Du Deinen Adapter dort hinzufügst. Mehr Details hier: :ref:`ecosystem-repositories`.
 
 .. note::
     Bitte beachte, dass Adapter abgelehnt werden, wenn nicht alle Adapter-Checks (siehe oben) erfüllt sind.
@@ -221,7 +232,9 @@ Danach kannst Du einen Pull-Request im `GitHub Repository (ioBroker.repositories
 Links
 -----
 
+- `ioBroker Dev-Portal <https://www.iobroker.dev>`_
 - `Create-Adapter <https://github.com/ioBroker/create-adapter>`_
+- `Adapter-Dev <https://github.com/ioBroker/adapter-dev>`_
 - `Adapter-Checker <https://adapter-check.iobroker.in/>`_
 - `Release-Script von AlCalzone <https://github.com/AlCalzone/release-script>`_
 - `Adapter-Examples <https://github.com/ioBroker/ioBroker.example>`_
