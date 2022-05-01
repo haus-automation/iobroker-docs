@@ -3,21 +3,27 @@
 Adapter-Entwicklung
 ===================
 
-In diesem Abschnitt fasse ich für Dich zusammen, was es bei der Entwicklung von neuen Adaptern zu beachten gibt. Auf dem Weg zum eigenen/neuen Adapter gibt es jede Menge Werkzeuge, welche Dir das Leben leichter machen und Dich sehr schnell zum Ziel bringen werden!
+Was es bei der Entwicklung von neuen Adaptern zu beachten gibt: Auf dem Weg zum eigenen/neuen Adapter gibt es jede Menge Werkzeuge, welche Dir das Leben leichter machen und Dich sehr schnell zum Ziel bringen werden!
 
-Eine Sammlung von Tools, Hinweisen und Informationen findest Du außerdem im `ioBroker Dev-Portal <https://www.iobroker.dev>`_ (mit GitHub-Account einloggen!).
+Eine Sammlung von Tools, Links und Informationen ist im `ioBroker Dev-Portal <https://www.iobroker.dev>`_ zu finden (mit GitHub-Account einloggen!).
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; margin-bottom: 2em;">
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A9UETXyAmL4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
 
 Neuer Adapter
 -------------
 
 **Bevor Du einen neuen Adapter entwickelst, schau am besten nach, ob dieser schon existiert oder angefangen wurde.**
 
-Offene Anfragen für Adapter findest Du `hier <https://github.com/ioBroker/AdapterRequests/issues>`_.
+Offene Anfragen für Adapter sind `hier <https://github.com/ioBroker/AdapterRequests/issues>`_ zu finden.
 
-Wenn Du einen neuen Adapter entwickeln möchtest, empfiehlt es sich die Erstellung mit Hilfe des Create-Adapter-Tools durchzuführen. Dieses Tool
-erstellt Dir auf Basis eines Templates ein neues Projekt, mit welchem Du direkt durchstarten kannst.
+Wenn eine neuer Adapter entwickelt werden soll, empfiehlt es sich die Erstellung des Grundgerüstes mit Hilfe des Create-Adapter-Tools durchzuführen. Dieses Tool
+erstellt auf Basis eines Templates ein komplett neues Projekt, mit welchem man direkt durchstarten kann.
 
-`Das Create-Adapter-Tool findest Du auf GitHub <https://github.com/ioBroker/create-adapter>`_.
+`Das Create-Adapter-Tool auf GitHub <https://github.com/ioBroker/create-adapter>`_.
 
 Um einen neuen Adapter zu erstellen, führe folgenden Befehl aus:
 
@@ -25,7 +31,7 @@ Um einen neuen Adapter zu erstellen, führe folgenden Befehl aus:
 
     npx @iobroker/create-adapter
 
-Wenn das Programm ausgeführt wird, werden einige Fragen gestellt, wie Du gerne arbeiten möchtest. Das Ergebnis sieht beispielsweise so aus:
+Wenn das Programm ausgeführt wird, werden einige Fragen gestellt, wie man gerne arbeiten möchte. Das Ergebnis sieht beispielsweise so aus:
 
 .. code:: console
 
@@ -58,7 +64,7 @@ Wenn das Programm ausgeführt wird, werden einige Fragen gestellt, wie Du gerne 
 
     Some more questions about the source code...
     ✔ Which language do you want to use to code the adapter? · JavaScript
-    ✔ Use React for the Admin UI? · yes
+    ✔ Use React for the Admin UI? · no
     ✔ Which of the following tools do you want to use? · ESLint, type checking
     ✔ Would you like to automate new releases with one simple command? · yes
     ✔ Would you like to use dev-server to develop and test your code with a simple command line tool? · yes
@@ -72,24 +78,24 @@ Wenn das Programm ausgeführt wird, werden einige Fragen gestellt, wie Du gerne 
     ✔ What's your name/org on GitHub? · klein0r
     ✔ What's your email address? · info@haus-automatisierung.com
     ✔ Which protocol should be used for the repo URL? · SSH
-    ✔ Initialize the GitHub repo automatically? · no
-    ✔ How should your default Git branch be called? · master
+    ✔ Initialize the GitHub repo automatically? · yes
+    ✔ How should your default Git branch be called? · main
     ✔ Which license should be used for your project? · MIT License
     ✔ Do you want to receive regular dependency updates through Pull Requests? · yes
 
-Danach werden automatisch alle nötigen Dateien erstellt und Du kannst direkt mit der Entwicklung starten!
+Danach werden automatisch alle nötigen Dateien erstellt und man kann direkt mit der Entwicklung starten!
 
-*Natürlich könntest Du auch alle Dateien manuell anlegen - aber das ist nicht zu empfehlen und bedeutet viel mehr Arbeit!*
+*Natürlich könnte man auch alle Dateien manuell anlegen - aber das ist nicht zu empfehlen und bedeutet sehr viel mehr Arbeit!*
 
 GitHub Repository
 -----------------
 
 .. tip::
-    Ich würde generell empfehlen, den Quellcode für den Adapter auf GitHub zu veröffentlichen. Natürlich würden andere Plattformen wie Amazon Code Commit oder Bitbucket genauso funktionieren, allerdings arbeitet der Großteil der ioBroker-Community mit GitHub.
+    Es ist empfehlenswert, den Quellcode für den Adapter auf GitHub zu veröffentlichen. Natürlich würden andere Plattformen wie Amazon Code Commit oder Bitbucket genauso funktionieren, allerdings arbeitet der Großteil der ioBroker-Community mit GitHub. Und darauf ist das komplett ioBroker-Universrum ausgelegt.
 
-Wichtig ist, dass Du den Namenskonventionen für ein neues Repository folgst. Das Repository heißt dabei ``ioBroker.<deinadapter>``. **Achte auf Groß- und Kleinschreibung!** Das B von ioBroker wird im Repository-Namen groß geschrieben! Der komplette Rest wird klein geschrieben!
+Wichtig ist, dass man den Namenskonventionen für ein neues Repository folgt (darum kümmert sich der Adapter-Creator ebenfalls). Das **Repository** heißt dann ``ioBroker.<deinadapter>``. **Auf Groß- und Kleinschreibung achten!** Das B von ioBroker wird im Repository-Namen groß geschrieben! Der Rest wird klein geschrieben!
 
-Gültige Namen für Dein neues **Repository** wären also zum Beispiel:
+Gültige Namen für ein neues **Repository** wären also zum Beispiel:
 
 - ``ioBroker.admin``
 - ``ioBroker.javascript``
@@ -97,32 +103,31 @@ Gültige Namen für Dein neues **Repository** wären also zum Beispiel:
 - ``ioBroker.octoprint``
 
 .. warning::
-    Achte darauf, dass der von Dir gewählte Name für einen Adapter noch nicht vergeben ist! Die oben genannten Beispiele sind alle schon vorhanden. Ansonsten kannst Du deinen Adapter später nicht veröffentlichen / in die Adapter-Liste mit aufnehmen.
+    Es ist darauf zu achten, dass der gewählte Name für einen Adapter noch nicht vergeben ist! Die oben genannten Beispiele sind alle schon vorhanden. Ansonsten kann der neue Adapter später nicht veröffentlicht werden bzw. in die Adapter-Liste mit aufgenommen werden.
 
 Beschäftige Dich also auf jeden Fall mit diesen Themen:
 
 - ``git commit``
 - ``git push``
-- Remote repositories
-- Branches
-- Tags
-- SSH Key Authentication
+- ``git remote`` / Remote Repositories
+- Branches undTags
+- SSH Key Authentication / SSH Key Agent / SSH Key Forwarding
 
 Übersetzungen
 -------------
 
-Generell ist es sinnvoll, direkt von Anfang an deinen neuen Adapter in mehrere Sprachen zu übersetzen. Die "Basis-Sprache" sollte Englisch sein. Von dort wird in andere Sprachen übersetzt.
+Generell ist es sinnvoll, einen neuen Adapter (direkt von Anfang an) in mehrere Sprachen zu übersetzen. Die "Basis-Sprache" ist dabei Englisch. Von dort wird in andere Sprachen übersetzt.
 
 .. note::
     Generell gab es schon viele Ansätze und Werkzeuge, welche Dir bei Übersetzungen im ioBroker helfen sollten. Angefangen von Webseiten, bis zu irgendwelchen gulp-Scripts. Vieles davon existiert heute noch in den meisten Adaptern.
 
-Der aktuellste Weg ist allerdings das Paket - `Adapter-Dev <https://github.com/ioBroker/adapter-dev>`_ (``npm i --save-dev @iobroker/adapter-dev``). Anstatt also Dateien in zig unterschiedlichen Versionen hin und her zu kopieren, sollte dieses Paket verwendet werden.
+Der aktuellste Weg ist das Paket - `Adapter-Dev <https://github.com/ioBroker/adapter-dev>`_ (``npm i --save-dev @iobroker/adapter-dev``). Anstatt also Dateien in zig unterschiedlichen Versionen hin und her zu kopieren, sollte dieses Paket verwendet werden!
 
-Alternativ, gibt es vom ioBroker-Team ein Tool, welches Dir einen Englischen Text in alle andere Sprachen übersetzt und im richtigen Format für den ioBroker zurückliefert (JSON).
+Alternativ, gibt es vom ioBroker-Team ein Tool, welches einen Englischen Text in alle andere Sprachen übersetzt und im richtigen Format für den ioBroker zurückliefert (JSON).
 
 `Zum ioBroker Translator <https://translator.iobroker.in>`_
 
-Gibst Du dort zum Beispiel ``today`` ein, liefert Dir das Programm folgende Übersetzungen im JSON-Format:
+Gibst man zum Beispiel ``today`` ein, liefert das Programm die folgenden Übersetzungen im JSON-Format:
 
 .. code:: json
 
@@ -141,12 +146,12 @@ Gibst Du dort zum Beispiel ``today`` ein, liefert Dir das Programm folgende Übe
         }
     }
 
-Diese Informationen kannst Du direkt in deinem Adapter verwenden.
+Diese Informationen können direkt im Adapter verwendet werden.
 
-**Achte darauf, dass alle Texte übersetzt sind.**
+**Es ist darauf zu achten, dass ALLE Texte übersetzt sind (inklusive Objekt-Namen).**
 
 .. note::
-    Natürlich ist es so, dass (wie üblich) die erstellen Übersetzungen nicht immer einwandfrei sind. Häufig ist z.B. die Deutsche Übersetzung einfachf falsch oder ergibt keinen Sinn. Kontrolliere noch einmal manuell, ob die Texte korrekt sind. Je mehr Sprachen, desto besser!
+    Leider ist es so, dass (wie üblich) die erstellen Übersetzungen nicht immer einwandfrei sind. Häufig ist z.B. die Deutsche Übersetzung falsch oder ergibt keinen Sinn. Eine manuelle Kontrolle ist in jedem Fall sinnvoll. Ist die Übersetzung von Englisch zu Deutsch korrekt, dann passt es höchstwahrscheinlich auch in den anderen Sprachen.
 
 Alle Texte **müssen** in die folgenden Sprachen übersetzt werden:
 
@@ -167,67 +172,68 @@ Alle Text **sollten** zusätzlich auch diese Sprachen übersetzt werden:
 npm
 ---
 
-Sobald es einen Release deines Adapters gibt, solltest Du eine Versionsnummer vergeben. Achte dabei auf `semantische Versionierung <https://semver.org/lang/de/>`_!
+Sobald es einen "Release" des neuen Adapters gibt, wird eine Versionsnummer vergeben. Dabei ist auf `semantische Versionierung <https://semver.org/lang/de/>`_ zu achten!
 
-Die erste Version deines Adapters wird also höchstwahrscheinlich die ``0.0.1`` sein.
+Die erste Version des Adapters wird also höchstwahrscheinlich die ``0.0.1`` sein.
 
-Generell werden nodejs-Pakete über ``npm`` veröffentlicht. Dieser Paketmanager kümmert sich um deine Abhängigkeiten im Projekt und von dort werden auch die Pakete bei der Installation des Adapters geladen.
+Generell werden nodejs-Pakete über ``npm`` veröffentlicht. Dieser Paketmanager kümmert sich um deine Abhängigkeiten im Projekt (package.json) und von dort werden auch die Pakete bei der Installation des Adapters geladen.
 
 .. tip::
-    Es gibt im Adapter-Creator-Tool (siehe oben) verschiedene Scripts, welche Dir automatisch beim Erstellen eines neuen Releases das Paket auf npm.js veröffentlichen. Dafür musst Du ein Token erstellen, welches im GitHub-Repository hinterlegt wird.
+    Es gibt im Adapter-Creator-Tool (siehe oben) verschiedene Scripts, welche Dir automatisch beim Erstellen eines neuen Releases das Paket auf npmjs.com veröffentlichen. Dafür musst Du ein Token erstellen, welches im GitHub-Repository hinterlegt wird.
 
-Beschäftige Dich also auf jeden Fall mit diesen Themen:
+Folgende Themen sind wichtig (Schlüsselwörter für Google):
 
 - semantische Versionierung
-- `npmjs.org <https://docs.npmjs.com>`_
+- `npmjs.com <https://docs.npmjs.com>`_
 - ``package.json``
+- ``npm install``
 - publish von neuen npm Paketen
 
 .. note::
-    Generell haben GitHub und npmjs erstmal nichts miteinadner zu tun. Das sind zwei unterschiedliche Plattformen. GitHub hilft Dir bei der Entwicklung und Issue-Tracking, während npm das fertige Pakete vorhält und an die Nutzer ausliefert. Über diverse Integrationsmöglichen greifen diese beiden Plattformen aber ineinander und vereinfachen den Workflow.
+    Generell haben GitHub und npmjs erstmal nichts miteinadner zu tun. Das sind zwei unterschiedliche Plattformen. GitHub hilft bei der Entwicklung und Issue-Tracking, während npm das fertige Pakete vorhält und an die Nutzer ausliefert. Über diverse Integrationsmöglichen greifen diese beiden Plattformen aber ineinander und vereinfachen den Workflow!
 
-**Der Name deines Paketes für npm unterscheidet sich dabei vom Namen des Repository!** Hier wird das "B" in ioBroker nicht mehr groß geschrieben! Der Paket-Name enthält also nur Kleinbuchstaben.
+**Der Name des Paketes für npm unterscheidet sich dabei vom Namen des Repository!** Hier wird das "B" in ioBroker nicht mehr groß geschrieben! Der Paket-Name enthält also nur Kleinbuchstaben.
 
-Gültige Namen für Dein neues **npm Paket** wären also zum Beispiel:
+Gültige Namen für ein neues **npm Paket** wären also beispielsweise:
 
 - ``iobroker.admin``
 - ``iobroker.javascript``
 - ``iobroker.luftdaten``
 - ``iobroker.octoprint``
 
-*Solltest Du den Adapter mit dem oben genannten Tool erstellt haben, wird dies bereits automatisch berücksichtigt!*
+*Sollte der Adapter mit dem oben genannten Tool erstellt worden sein, wird dies bereits automatisch berücksichtigt!*
 
 Adapter prüfen
 --------------
 
-Für einen Adapter gibt es eine Liste an Regeln, an welche Du Dich halten solltest. Entspricht Dein Adapter nicht diesen Anforderungen, wird er nicht in die offizielle Liste der verfügbaren Adapter aufgenommen!
+Für einen Adapter gibt es eine Liste an Regeln, welche die Qualität der Adapter erhöhen sollen. Entspricht ein Adapter nicht diesen Anforderungen, wird er nicht in die (offizielle) Liste der verfügbaren Adapter aufgenommen!
 
-Diese Regeln einzuhalten ist relativ einfach, da Dir der ``ioBroker Adapter Checker`` genau sagt, was noch getan werden muss bzw. falsch läuft.
+Diese Regeln einzuhalten ist relativ einfach, da der ``ioBroker Adapter Checker`` genau sagt, was noch getan werden muss bzw. falsch läuft.
 
-Sobald Du also eine erste Version von deinem Adapter fertig hast, Du alles ins GitHub-Repository gepusht hast und Dein Paket auf npmjs veröffentlich wurde, kannst Du den Adapter-Checker starten:
+Sobald also eine erste Version von einem Adapter fertig ist, alles ins GitHub-Repository gepusht wurde und ein Paket auf npmjs.com veröffentlich wurde, kann der Adapter-Checker gestartet werden:
 
 `Zum ioBroker Adapter-Checker <https://adapter-check.iobroker.in/>`_
 
-**Dort fügst Du die URL von deinem GitHub-Repository ein.**
+**Dort wird die URL von einem GitHub-Repository eingefügt.**
 
-Wichtig ist, dass alle Haken grün sind.
+Wichtig ist, dass alle Haken grün sind und möglichst keine Warnungen ausgegeben werden.
 
 .. tip::
-    Prüfe schon während der Entwicklung regelmäßig, ob dein Adapter den Anforderungen entspricht.
+    Es ist sinnvoll, schon während der Entwicklung regelmäßig zu prüfen, ob ein Adapter den Anforderungen entspricht.
 
-Generell gilt, dass auch hier die Entwicklung weiter geht. Es werden mehr Prüfungen hinzugefügt oder andere entfernt. Wenn dein Adapter also heute alle Tests besteht, muss das bei der nächsten Version nicht mehr unbedingt so sein.
+Generell gilt, dass auch hier die Entwicklung weiter geht. Es werden regelmäßig mehr Prüfungen hinzugefügt oder andere entfernt. Wenn ein Adapter also heute alle Tests besteht, muss das bei der nächsten Version nicht mehr unbedingt so sein. Der Repository-Checker wird in unregelmäßigen Abständen Issues in deinem Repository anlegen, falls etwas nicht stimmen sollte.
 
 Das `Repository <https://github.com/ioBroker/ioBroker.repochecker>`_ vom Adapter-Checker kann mit neuen Regeln erweitert werden (siehe ``index.js``).
 
 Adapter veröffentlichen
 -----------------------
 
-Möchtest Du deinen Adapter nun anderen zur Verfügung stellen, solltest Du diesen erst von erfahrenen Nutzern testen lassen. Erstelle dazu einen neuen `Foren-Beitrag <https://forum.iobroker.net/category/91/tester>`_ mit der Bitte um einen Test.
+Soll der neue Adapter nun auch anderen zur Verfügung gestellt werden, sollte dieser von erfahrenen Nutzerb im ioBroker Forum getestet werden. Dazu kann ein neuer `Foren-Beitrag <https://forum.iobroker.net/category/91/tester>`_ mit der Bitte um einen Test erstellt werden.
 
-**Danach** kannst Du einen Pull-Request im `GitHub Repository (ioBroker.repositories) <https://github.com/ioBroker/ioBroker.repositories>`_ erstellen, indem Du Deinen Adapter dort hinzufügst. Mehr Details hier: :ref:`ecosystem-repositories`.
+**Danach** kann ein Pull-Request im `GitHub Repository (ioBroker.repositories) <https://github.com/ioBroker/ioBroker.repositories>`_ erstellt werden, mit welchem der neue Adapter dort hinzugefügt wird. Mehr Details hier: :ref:`ecosystem-repositories`.
 
 .. note::
-    Bitte beachte, dass Adapter abgelehnt werden, wenn nicht alle Adapter-Checks (siehe oben) erfüllt sind.
+    Adapter können abgelehnt werden, wenn nicht alle Adapter-Checks (siehe oben) erfüllt sind.
 
 Links
 -----
