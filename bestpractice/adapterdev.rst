@@ -67,7 +67,7 @@ Gerenell ist es empfehlenswert, Objekte über die ``instanceObjects`` in der :re
 
 **Objekt rekursiv löschen (im eigenen Namespace)**
 
-Unterstützt seit ``js-controller`` Version 2.2.8
+:octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` Version 2.2.8
 
 .. code:: javascript
 

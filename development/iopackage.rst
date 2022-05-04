@@ -786,17 +786,17 @@ Eigenschaften (Allgemein)
 
 .. confval:: protectedNative
 
-    Liste von ``native`` Attributen, welche nur vom Adapter / der jeweiligen Instanz selbst lesbar sind (z.B. ``["password"]``). Siehe :ref:`development-encryption`
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` Version 2.0.2
 
-    Unterstützt seit ``js-controller`` Version 2.0.2
+    Liste von ``native`` Attributen, welche nur vom Adapter / der jeweiligen Instanz selbst lesbar sind (z.B. ``["password"]``). Siehe :ref:`development-encryption`
 
     :type: array
 
 .. confval:: encryptedNative
 
-    Liste von automatisch verschlüsselten ``native`` Attributen. Siehe :ref:`development-encryption`
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` Version 3.0.3
 
-    Unterstützt seit ``js-controller`` Version 3.0.3
+    Liste von automatisch verschlüsselten ``native`` Attributen. Siehe :ref:`development-encryption`
 
     :type: array
 
@@ -816,14 +816,14 @@ Eigenschaften (Allgemein)
 
 .. confval:: notifications
 
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` Version 3.2.0
+
     Liste von Objekten zur Konfiguration zur Konfiguration des internen Notification-Systems. Siehe :ref:`development-notifications`
 
     - ``scope`` (erforderlich)
     - ``name`` (erforderlich) - sollte in alle Sprachen übersetzt werden
     - ``description`` (erforderlich) - sollte in alle Sprachen übersetzt werden
     - ``categories`` (erforderlich)
-
-    Unterstützt seit ``js-controller`` Version 3.2.0
 
     :type: array
 
