@@ -80,14 +80,16 @@ Angenommen der Ausgangswert ist ein Unix-Timestamp (z.B. ``1650997245840``). Die
     new Intl.DateTimeFormat('de-DE', { dateStyle: 'medium' }).format(new Date(val)) // "26.04.2022"
     new Intl.DateTimeFormat('de-DE', { dateStyle: 'full', timeStyle: 'long' }).format(new Date(val)) // "Dienstag, 26. April 2022 um 20:20:45 MESZ"
     new Intl.DateTimeFormat('de-DE', { timeStyle: 'medium' }).format(new Date(val)) // "20:20:45"
+    new Intl.DateTimeFormat('de-DE', { weekday: 'short' }).format(new Date(val)) // Di
+    new Intl.DateTimeFormat('de-DE', { weekday: 'long' }).format(new Date(val)) // Dienstag
 
-Wenn man z.B. nur die Stunde und Minute im Format ``HH:SS`` haben möchte, wäre das wie folgt möglich (zwei verschiedene Schreibweisen, gleiches Ergebnis):
+Wenn man z.B. nur die Stunde und Minute im Format ``HH:SS`` haben möchte, wäre das wie folgt möglich (verschiedene Schreibweisen, gleiches Ergebnis):
 
 .. code:: javascript
 
-    `${new Date(val).getHours()}:${new Date(val).getMinutes()}`
-    new Date(val).getHours() + ':' + ${new Date(val).getMinutes()
-    new Intl.DateTimeFormat('de-DE', { timeStyle: 'short' }).format(new Date(val))
+    `${new Date(val).getHours()}:${new Date(val).getMinutes()}` // 20:20
+    new Date(val).getHours() + ':' + ${new Date(val).getMinutes() // 20:20
+    new Intl.DateTimeFormat('de-DE', { timeStyle: 'short' }).format(new Date(val)) // 20:20
 
 **Regulärer Ausdruck**
 
@@ -105,7 +107,7 @@ Genauso könnte der Wert dann noch gerundet werden:
 
 **Eigene Logik ausführen**
 
-Am Ende ist es ganz normales JavaScript. Also spricht auch nichts dagegen, eine neue (anonyme) Funktion zu definieren, welche sofort ausgeführt wird. Das könnte so aussehen:
+Am Ende ist es ganz normales JavaScript. Also spricht auch (technisch) nichts dagegen, eine neue (anonyme) Funktion zu definieren, welche sofort ausgeführt wird. Das könnte so aussehen:
 
 .. code:: javascript
 

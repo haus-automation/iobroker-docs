@@ -16,7 +16,7 @@ Manuelle Installation (Linux)
 .. note::
     In älteren Anleitungen liest man häufig, dass noch weitere Pakete (wie nodejs) vorher auf dem System installiert werden müssen. Das ist aber nicht mehr nötig, da sich der ioBroker-Installer selbst um die Abhängigkeiten kümmert und diese installiert!
 
-Unter Linux lässt sich der ioBroker mit nur einem einzigen Befehl installieren:
+Unter Linux (z.B. Debian oder Ubuntu) lässt sich der ioBroker mit nur einem einzigen Befehl installieren:
 
 .. code:: console
 
@@ -31,12 +31,12 @@ Dieser Befehl bereitet das komplette System vor und richtet alles nötige ein:
 - Ein Autostart für ioBroker wird eingerichtet
 - ...
 
-Danach kann über den Standard-Port 8083 im Browser Deiner Wahl die Admin-Oberfläche aufgerufen werden.
+Danach kann über den Standard-Port 8081 im Browser Deiner Wahl die Admin-Oberfläche aufgerufen werden.
 
 Manuelle Installation (Windows)
 -------------------------------
 
-Natürlich kann der ioBroker auch unter Windows installiert werden. Ich persönliche sehe Windows aber als Desktop-Betriebsystem, welches nicht als Server verwendet werden sollte. Eine Installation unter Linux ist daher aus meiner Sicht immer zu bevorzugen.
+Natürlich kann der ioBroker auch unter Windows installiert werden. Ich persönliche sehe Windows aber als Desktop-Betriebsystem, welches nicht als Server verwendet werden sollte. Eine Installation unter Linux ist daher immer zu bevorzugen.
 
 Docker-Image
 ------------
