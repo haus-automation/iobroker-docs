@@ -486,12 +486,27 @@ Eigenschaften (Allgemein)
 
     Konfiguration für Intro-Tab
 
+    Eigenschaften:
+
+    - ``link`` (string, erforderlich!)
+    - ``color`` (string)
+    - ``pro`` (boolean)
+    - ``icon`` (string)
+
+    In diesen Links können verschiedene Platzhalter verwendet werden, welche automatisch ersetzt werden:
+
+    - ``%objects%``
+    - ``%hostname%``
+    - ``%protocol%``
+    - ``%port%``
+    - ``%hosts%``
+    - ``%adminInstance%``
+
     .. code:: json
 
         "localLinks": {
             "_default": {
-                "link": "%protocol%://%bind%:%port%",
-                "pro": true
+                "link": "%protocol%://%bind%:%port%"
             }
         }
 
