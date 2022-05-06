@@ -712,7 +712,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.welcomeScreenPro
 
-     Identisch zu ``common.welcomeScreen``, allerdings für Zugriff über die ioBroker-Cloud
+    Identisch zu ``common.welcomeScreen``, allerdings für Zugriff über die ioBroker-Cloud
 
     .. code:: json
 

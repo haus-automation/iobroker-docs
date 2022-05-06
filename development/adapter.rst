@@ -3,9 +3,11 @@
 Adapter-Entwicklung
 ===================
 
-Was es bei der Entwicklung von neuen Adaptern zu beachten gibt: Auf dem Weg zum eigenen/neuen Adapter gibt es jede Menge Werkzeuge, welche Dir das Leben leichter machen und Dich sehr schnell zum Ziel bringen werden!
+Auf dem Weg zum eigenen/neuen Adapter gibt es eine Menge Werkzeuge, welche das Entwickler-Leben leichter machen und sehr schnell erste Ergebnisse ermöglichen!
 
 Eine Sammlung von Tools, Links und Informationen ist im `ioBroker Dev-Portal <https://www.iobroker.dev>`_ zu finden (mit GitHub-Account einloggen!).
+
+Um einen Überblick zu bekommen, wie die Adapter-Entwicklung ablaufen kann, habe ich folgenden Video-Leitfaden (zusätzlich zu dieser Seite) veröffentlicht:
 
 .. raw:: html
 
@@ -13,17 +15,25 @@ Eine Sammlung von Tools, Links und Informationen ist im `ioBroker Dev-Portal <ht
         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A9UETXyAmL4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
+Voraussetzungen
+---------------
+
+1. Ein Linux-System, auf welchem noch kein ioBroker installiert wurde (z.B. Debian)
+2. Ein Konto auf GitHub und npmjs
+3. Grundlegende Kenntnisse in JavaScript (und/oder TypeScript)
+4. Erfahrung mit dem ioBroker und der Arbeitsweise (Objekte, Zustände, Rollen, ...)
+
 Neuer Adapter
 -------------
 
-**Bevor Du einen neuen Adapter entwickelst, schau am besten nach, ob dieser schon existiert oder angefangen wurde.**
+**Bevor Du einen neuen Adapter entwickelst, prüfe auf GitHub, ob dieser schon existiert oder angefangen wurde.**
 
 Offene Anfragen für Adapter sind `hier <https://github.com/ioBroker/AdapterRequests/issues>`_ zu finden.
 
 Wenn eine neuer Adapter entwickelt werden soll, empfiehlt es sich die Erstellung des Grundgerüstes mit Hilfe des Create-Adapter-Tools durchzuführen. Dieses Tool
 erstellt auf Basis eines Templates ein komplett neues Projekt, mit welchem man direkt durchstarten kann.
 
-`Das Create-Adapter-Tool auf GitHub <https://github.com/ioBroker/create-adapter>`_.
+`Create-Adapter-Tool (GitHub) <https://github.com/ioBroker/create-adapter>`_.
 
 Um einen neuen Adapter zu erstellen, führe folgenden Befehl aus:
 
@@ -83,9 +93,14 @@ Wenn das Programm ausgeführt wird, werden einige Fragen gestellt, wie man gerne
     ✔ Which license should be used for your project? · MIT License
     ✔ Do you want to receive regular dependency updates through Pull Requests? · yes
 
-Danach werden automatisch alle nötigen Dateien erstellt und man kann direkt mit der Entwicklung starten!
+Danach werden automatisch alle nötigen Dateien erstellt und es kann direkt mit der Entwicklung gestartet werden!
 
 *Natürlich könnte man auch alle Dateien manuell anlegen - aber das ist nicht zu empfehlen und bedeutet sehr viel mehr Arbeit!*
+
+Dev-Server
+----------
+
+Um das neue Projekt lokal auszuführen
 
 GitHub Repository
 -----------------
