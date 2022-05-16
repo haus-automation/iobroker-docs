@@ -37,22 +37,30 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
 
 .. confval:: common.name
 
-    *(optional)* Name des Objektes - wird im Frontend (wie dem Admin) dargestellt. **Es ist empfohlen, diesen Wert zu setzen!**
+    *(optional)* Name des Objektes - wird im Frontend (wie dem Admin) dargestellt.
+    
+    **Es ist empfohlen, diesen Wert zu setzen und eine mehrsprachige Übersetzung als Objekt zu hinterlegen!**
+
+    .. code:: json
+
+        "common": {
+            "name": "Example"
+        }
 
     .. code:: json
 
         "common": {
             "name": {
-                "en": "Beispiel",
+                "en": "Example",
                 "de": "Beispiel",
-                "ru": "Бейшпиль",
-                "pt": "Beispiel",
-                "nl": "Beispiel",
-                "fr": "Beispiel",
-                "it": "Beispiel",
-                "es": "Beispiel",
-                "pl": "Beispiel",
-                "zh-cn": "贝斯皮尔"
+                "ru": "Пример",
+                "pt": "Exemplo",
+                "nl": "Voorbeeld",
+                "fr": "Exemple",
+                "it": "Esempio",
+                "es": "Ejemplo",
+                "pl": "Przykład",
+                "zh-cn": "例子"
             }
         }
 
@@ -101,29 +109,31 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
 
     .. code:: json
 
-        "custom": {
-            "influxdb.0": {
-                "enabled": true,
-                "storageType": "",
-                "aliasId": "",
-                "changesOnly": true,
-                "debounce": "1000",
-                "changesRelogInterval": "0",
-                "changesMinDelta": "0"
-            },
-            "history.0": {
-                "enabled": true,
-                "aliasId": "",
-                "changesOnly": true,
-                "debounce": 1000,
-                "changesRelogInterval": 0,
-                "changesMinDelta": 0,
-                "maxLength": 960,
-                "retention": 31536000
-            },
-            "iot.0": {
-                "smartName": {
-                    "de": "Test"
+        "common": {
+            "custom": {
+                "influxdb.0": {
+                    "enabled": true,
+                    "storageType": "",
+                    "aliasId": "",
+                    "changesOnly": true,
+                    "debounce": "1000",
+                    "changesRelogInterval": "0",
+                    "changesMinDelta": "0"
+                },
+                "history.0": {
+                    "enabled": true,
+                    "aliasId": "",
+                    "changesOnly": true,
+                    "debounce": 1000,
+                    "changesRelogInterval": 0,
+                    "changesMinDelta": 0,
+                    "maxLength": 960,
+                    "retention": 31536000
+                },
+                "iot.0": {
+                    "smartName": {
+                        "de": "Beispiel"
+                    }
                 }
             }
         }
@@ -167,13 +177,13 @@ Typ state
 
 .. confval:: common.read
 
-    *(optional)* Legt fest, ob der zugehörige State gelesen werden darf. Siehe :ref:`development-states`
+    *(optional)* Legt fest, ob der zugehörige Zustand gelesen werden darf. Siehe :ref:`development-states`
 
     :type: boolean
 
 .. confval:: common.write
 
-    *(optional)* Legt fest, ob der zugehörige State geschrieben werden darf. Siehe :ref:`development-states`
+    *(optional)* Legt fest, ob der zugehörige Zustand geschrieben werden darf. Siehe :ref:`development-states`
 
     :type: boolean
 
@@ -203,13 +213,13 @@ Typ state
 
 .. confval:: common.def
 
-    *(optional)* Standard-Wert des Zustands
+    *(optional)* Standard-Wert (Default) des Zustands
 
     :type: mixed
 
 .. confval:: common.defAck
 
-    *(optional)*
+    *(optional)* TODO
 
 .. confval:: common.desc
 
@@ -223,40 +233,95 @@ Typ state
 
     .. code:: json
 
-        "states": {
-            "value": "valueName",
-            "value2": "valueName2",
-            0: "OFF",
-            1: "ON"
+        "common": {
+            "states": {
+                "value": "valueName",
+                "value2": "valueName2",
+                0: "OFF",
+                1: "ON"
+            }
         }
 
     .. code:: json
 
-        "states": [
-            "ON",
-            "OFF",
-            "UNKNOWN"
-        ]
+        "common": {
+            "states": [
+                "ON",
+                "OFF",
+                "UNKNOWN"
+            ]
+        }
 
     :type: object|array
+
+.. confval:: common.statusStates
+
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``admin`` 5.3.3
+
+    *(optional)* Erlaubt das automatische einfärben mit zusätzlichem Icon eines Objektes, abhängig von einem anderen Zustand im System.
+
+    So können beispielsweise Objekte vom Typ ``device`` grün/rot eingefärbt werden, falls ein weiterer Status auf ``true/false`` wechselt.
+
+    .. code:: json
+
+        "common": {
+            "statusStates": {
+                "onlineId": "0_userdata.0.my.custom.indicator"
+            }
+        }
+
+    Optional kann auch eine Error-ID definiert werden (diese hat Priorität bei der Anzeige):
+
+    .. code:: json
+
+        "common": {
+            "statusStates": {
+                "onlineId": "0_userdata.0.my.custom.indicator",
+                "errorId": "0_userdata.0.my.error.indicator"
+            }
+        }
+
+    - Das Objekt des Zustandes der ``onlineId`` sollte vom ``common.type = "boolean"`` sein und als ``common.role = "indicator.reachable"`` gesetzt haben.
+    - Das Objekt des Zustandes der ``errorId`` sollte vom ``common.type = "boolean"`` sein und als ``common.role = "indicator.maintenance.alarm"`` gesetzt haben.
+
+    :type: object
 
 .. confval:: common.alias
 
     *(optional)* Nur für Objekte innerhalb des Namespace ``alias.0`` relevant. Siehe :ref:`basics-aliases`.
 
+    Weiterhin können eine Lese- (read) und eine Schreib-Funktion definiert werden, welche den Wert konvertieren können. Sind diese nicht definiert, wird der Wert aus dem verknüpften Datenpunkt gespiegelt.
+
     .. code:: json
 
-        "alias": {
-            "id": "0_userdata.0.test.myNumber",
-            "read": "val - 1",
-            "write": "val + 1"
+        "common": {
+            "alias": {
+                "id": "0_userdata.0.test.myNumber",
+                "read": "val - 1",
+                "write": "val + 1"
+            }
+        }
+
+    Es ist ebenfalls möglich, unterschiedliche Datenpunkte zum Lesen und Schreiben zu verwenden. In dem Fall ist ``id`` kein String, sondern ein Objekt.
+
+    .. code:: json
+
+        "common": {
+            "alias": {
+                "id": {
+                    "read": "0_userdata.0.test.myNumber_r",
+                    "write": "0_userdata.0.test.myNumber_w"
+                },
+                "read": "val - 1",
+                "write": "val + 1"
+            }
         }
 
     :type: object
 
 .. confval:: common.workingID
 
-    *(optional)*
+    *(optional)* TODO
 
 .. code:: console
 
@@ -279,7 +344,7 @@ Typ state
         },
         "native": {
             "MIN": -3276.8,
-            "UNIT": "�C",
+            "UNIT": "°C",
             "OPERATIONS": 5,
             "MAX": 3276.7,
             "FLAGS": 1,
