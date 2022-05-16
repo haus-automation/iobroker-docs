@@ -35,6 +35,51 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
 
     :type: string
 
+.. confval:: from
+
+    *Wird automatisch verwaltet* - enthält als Wert den Adapter, welcher das Objekt erstellt hat.
+
+    .. code:: json
+
+        "from": "system.adapter.javascript.0"
+
+    :type: string
+
+.. confval:: user
+
+    *Wird automatisch verwaltet* - enthält als Wert den Benutzer, welcher das Objekt erstellt hat.
+
+    .. code:: json
+
+        "user": "system.user.admin"
+
+    :type: string
+
+.. confval:: ts
+
+    *Wird automatisch verwaltet* - enthält als Wert den Zeitstempel, wann das Objekt erstellt wurde.
+
+    .. code:: json
+
+        "ts": 1616423015563
+
+    :type: number
+
+.. confval:: acl
+
+    *Wird automatisch verwaltet* - enthält die Berechtigungen für das Objekt. Siehe :ref:`basics-acl`
+
+    .. code:: json
+
+        "acl": {
+            "object": 1636,
+            "state": 1636,
+            "owner": "system.user.admin",
+            "ownerGroup": "system.group.administrator"
+        }
+
+    :type: object
+
 .. confval:: common.name
 
     *(optional)* Name des Objektes - wird im Frontend (wie dem Admin) dargestellt.
@@ -486,7 +531,7 @@ Typ device
 Typ adapter
 -----------
 
-Eine ausführliche Dokumentation der Eigenschaften findest Du in hier: :ref:`development-iopackage`.
+Eine ausführliche Dokumentation der Eigenschaften ist hier zu finden: :ref:`development-iopackage`.
 
 .. code:: console
 
@@ -772,7 +817,7 @@ Eine ausführliche Dokumentation der Eigenschaften findest Du in hier: :ref:`dev
 Typ instance
 ------------
 
-Eine ausführliche Dokumentation der Eigenschaften findest Du in hier: :ref:`development-iopackage`.
+Eine ausführliche Dokumentation der Eigenschaften ist hier zu finden: :ref:`development-iopackage`.
 
 .. code:: console
 
