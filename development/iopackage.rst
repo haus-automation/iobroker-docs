@@ -392,6 +392,8 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.compact
 
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` 2.0.2
+
     Legt fest, ob der Adapter im :ref:`basics-compactmode` gestartet werden kann
 
     :type: boolean
@@ -399,7 +401,13 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.dataFolder
 
-    Verzeichnis-Pfad, in welchem der Adapter seine Daten ablegt (relativ zu ``iobroker-data``). Die Variable ``%INSTANCE%`` kann ebenfalls im Pfad genutzt werden
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` 1.5.1
+
+    Verzeichnis-Pfad, in welchem der Adapter seine Daten ablegt (relativ zu ``iobroker-data``).
+
+    Der Platzhalter ``%INSTANCE%`` kann ebenfalls im Pfad genutzt werden und wird automatisch durch die Instanznummer ersetzt (z.B. ``0``).
+
+    Falls angegeben, wird dieses Verzeichnis automatisch vom ``js-controller`` in die Backups mit aufgenommen.
 
     .. code:: json
 
