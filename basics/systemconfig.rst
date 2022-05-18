@@ -5,7 +5,12 @@ System-Config
 
 Die aktuelle System-Konfiguration (welche auch über den Admin konfigurierbar ist), wird im Objekt ``system.config`` (siehe :ref:`development-objects`) gespeichert.
 
-Die Grundkonfiguration des Systems erfolgt allerdings nicht als Objekt, sondern über eine Datei auf der Festplatte: Diese findest Du unter ``/opt/iobroker/iobroker-data/iobroker.json``. Beispiel:
+iobroker.json
+-------------
+
+Die Grundkonfiguration des Systems erfolgt allerdings nicht als Objekt, sondern über eine Datei auf der Festplatte: Diese findest Du unter ``/opt/iobroker/iobroker-data/iobroker.json`` (Linux).
+
+Beispiel:
 
 .. code:: json
 
@@ -14,81 +19,117 @@ Die Grundkonfiguration des Systems erfolgt allerdings nicht als Objekt, sondern 
             "memoryLimitMB": 0,
             "hostname": "",
             "statisticsInterval": 15000,
-            "statisticsIntervalComment": "Interval how often the counters for input/output in adapters and controller will be updated",
+            "// statisticsInterval": "Interval how often the counters for input/output in adapters and controller will be updated",
             "checkDiskInterval": 300000,
-            "checkDiskIntervalComment": "Interval how often the disk size will be checked",
-            "noChmod": false,
+            "// checkDiskInterval": "Interval how often the disk size will be checked",
             "instanceStartInterval": 2000,
-            "noChmodComment": "Flag to test new feature with no chmod call. Must be deleted later and noChmod must be mainline (2018.06.04)",
+            "// noChmod": "Flag to test new feature with no chmod call. Must be deleted later and noChmod must be mainline (2018.06.04)",
             "compact": false,
-            "compactComment": "Controller will try to start the instances as a part of the same process. No spawn will be done. Only by adapters that support it and have flag compact flag in io-package.json",
+            "// compact": "Controller will try to start the instances as a part of the same process. No spawn will be done. Only by adapters that support it and have flag compact flag in io-package.json",
             "allowShellCommands": false,
-            "allowShellCommandsComment": "Allow execution of \"shell\" sendToHost commands",
+            "// allowShellCommands": "Allow execution of \"shell\" sendToHost commands",
             "memLimitWarn": 100,
-            "memLimitWarnComment": "If the available RAM is below this threshold on adapter start, a warning will be logged.",
+            "// memLimitWarn": "If the available RAM is below this threshold on adapter start, a warning will be logged.",
             "memLimitError": 50,
-            "memLimitErrorComment": "If the available RAM is below this threshold on adapter start, an error will be logged."
+            "// memLimitError": "If the available RAM is below this threshold on adapter start, an error will be logged."
         },
         "multihostService": {
             "enabled": false,
-            "secure": true
+            "secure": true,
+            "password":  ""
         },
-        "network": {
-            "IPv4": true,
-            "IPv6": true,
-            "bindAddress": null
-        },
-        "objects": {
-            "type": "file",
-            "typeComment": "Possible values: 'file' - [port 9001], redis - [port 6379], couch - [port 5984].",
+        "objects" : {
+            "type": "jsonl",
+            "// type": "Possible values: 'file' - [port 9001], 'jsonl' - [port 9001], 'redis' - [port 6379 or 26379 for sentinel].",
             "host": "127.0.0.1",
             "port": 9001,
-            "user": "",
-            "pass": "",
             "noFileCache": false,
-            "connectTimeout": 2000,
-            "writeFileInterval": 5000,
-            "options": {
-                "auth_pass": null,
-                "retry_max_delay": 5000
-            },
-            "backup": {
-                "disabled": false,
-                "files": 24,
-                "filesComment": "Minimal number of backup files, after the deletion will be executed according to backupTime settings",
-                "hours": 48,
-                "hoursComment": "All backups older than 48 hours will be deleted. But only if the number of files is greater than of backupNumber",
-                "period": 120,
-                "periodComment": "by default backup every 2 hours. Time is in minutes. To disable backup set the value to 0",
-                "path": "",
-                "pathComment": "Absolute path to backup directory or empty to backup in data directory"
-            },
-            "dataDir": "../../iobroker-data/"
-        },
-        "states": {
-            "type": "redis",
-            "typeComment": "Possible values: 'file' - [port 9000], 'redis' - [port 6379].",
-            "host": "127.0.0.1",
-            "port": 6379,
             "maxQueue": 1000,
-            "user": "",
-            "pass": "",
-            "connectTimeout": 2000,
-            "writeFileInterval": 30000,
+            "connectTimeout": 5000,
+            "writeFileInterval": 5000,
+            "dataDir": "",
             "options": {
                 "auth_pass": null,
-                "retry_max_delay": 5000
+                "retry_max_delay": 5000,
+                "retry_max_count": 19,
+                "db": 0,
+                "family": 0
             },
             "backup": {
                 "disabled": false,
                 "files": 24,
-                "filesComment": "Minimal number of backup files, after the deletion will be executed according to backupTime settings",
+                "// files": "Minimal number of backup files, after the deletion will be executed according to backupTime settings",
                 "hours": 48,
-                "hoursComment": "All backups older than 48 hours will be deleted. But only if the number of files is greater than of backupNumber",
+                "// hours": "All backups older than 48 hours will be deleted. But only if the number of files is greater than of backupNumber",
                 "period": 120,
-                "periodComment": "by default backup every 2 hours. Time is in minutes. To disable backup set the value to 0",
+                "// period": "by default backup every 2 hours. Time is in minutes. To disable backup set the value to 0",
                 "path": "",
-                "pathComment": "Absolute path to backup directory or empty to backup in data directory"
+                "// path": "Absolute path to backup directory or empty to backup in data directory"
+            },
+            "jsonlOptions": {
+                "// autoCompress (1)": "The JSONL DB is append-only and will contain unnecessary entries after a while.",
+                "// autoCompress (2)": "It will be compressed when the uncompressed size is >= size * sizeFactor AND >= sizeFactorMinimumSize",
+                "// autoCompress (3)": "Note that too low values here will cause the DB to be rewritten often.",
+                "autoCompress": {
+                    "sizeFactor": 2,
+                    "sizeFactorMinimumSize": 25000
+                },
+                "// ignoreReadErrors": "If single lines in the DB are corrupted, they can be ignored without losing the whole DB.",
+                "ignoreReadErrors": true,
+                "// throttleFS (1)": "By default, the database immediately writes to the database file. Write accesses can be reduced using the throttleFS option.",
+                "// throttleFS (2)": "Be aware that buffered changes will be lost in case the process crashes.",
+                "throttleFS": {
+                    "// intervalMs": "Write to the database file no more than every intervalMs milliseconds.",
+                    "intervalMs": 60000,
+                    "// maxBufferedCommands": "Force writing after this many changes have been buffered. This reduces memory consumption and data loss in case of a crash.",
+                    "maxBufferedCommands": 100
+                }
+            }
+        },
+        "states" : {
+            "type": "jsonl",
+            "// type": "Possible values: 'file' - [port 9000], 'redis' - [port 6379].",
+            "host": "127.0.0.1",
+            "port": 9000,
+            "connectTimeout": 5000,
+            "writeFileInterval": 30000,
+            "dataDir": "",
+            "options": {
+                "auth_pass": null,
+                "retry_max_delay": 5000,
+                "retry_max_count": 19,
+                "db": 0,
+                "family": 0
+            },
+            "backup": {
+                "disabled": false,
+                "files": 24,
+                "// files": "Minimal number of backup files, after the deletion will be executed according to backupTime settings",
+                "hours": 48,
+                "// hoursC": "All backups older than 48 hours will be deleted. But only if the number of files is greater than of backupNumber",
+                "period": 120,
+                "// period": "by default backup every 2 hours. Time is in minutes. To disable backup set the value to 0",
+                "path": "",
+                "// path": "Absolute path to backup directory or empty to backup in data directory"
+            },
+            "jsonlOptions": {
+                "// autoCompress (1)": "The JSONL DB is append-only and will contain unnecessary entries after a while.",
+                "// autoCompress (2)": "It will be compressed when the uncompressed size is >= size * sizeFactor AND >= sizeFactorMinimumSize",
+                "// autoCompress (3)": "Note that too low values here will cause the DB to be rewritten often.",
+                "autoCompress": {
+                    "sizeFactor": 10,
+                    "sizeFactorMinimumSize": 50000
+                },
+                "// ignoreReadErrors": "If single lines in the DB are corrupted, they can be ignored without losing the whole DB.",
+                "ignoreReadErrors": true,
+                "// throttleFS (1)": "By default, the database immediately writes to the database file. Write accesses can be reduced using the throttleFS option.",
+                "// throttleFS (2)": "Be aware that buffered changes will be lost in case the process crashes.",
+                "throttleFS": {
+                    "// intervalMs": "Write to the database file no more than every intervalMs milliseconds.",
+                    "intervalMs": 60000,
+                    "// maxBufferedCommands": "Force writing after this many changes have been buffered. This reduces memory consumption and data loss in case of a crash.",
+                    "maxBufferedCommands": 2000
+                }
             }
         },
         "log": {
@@ -97,32 +138,50 @@ Die Grundkonfiguration des Systems erfolgt allerdings nicht als Objekt, sondern 
             "noStdout": true,
             "transport": {
                 "file1": {
-                    "type": "file",
-                    "enabled": true,
-                    "filename": "log/iobroker",
-                    "fileext": ".log",
-                    "maxSize": null,
-                    "maxFiles": null
+                "type": "file",
+                "enabled": true,
+                "filename": "log/iobroker",
+                "fileext": ".log",
+                "maxSize":  null,
+                "maxFiles": null
                 },
                 "syslog1": {
                     "type": "syslog",
                     "enabled": false,
+
                     "host": "localhost",
-                    "hostComment": "The host running syslogd, defaults to localhost.",
-                    "portComment": "The port on the host that syslog is running on, defaults to syslogd's default port(514/UDP).",
+                    "// host": "The host running syslogd, defaults to localhost.",
+
+                    "// port": "The port on the host that syslog is running on, defaults to syslogd's default port(514/UDP).",
                     "protocol": "udp4",
-                    "protocolComment": "The network protocol to log over (e.g. tcp4, udp4, unix, unix-connect, etc).",
-                    "pathComment": "The path to the syslog dgram socket (i.e. /dev/log or /var/run/syslog for OS X).",
-                    "facilityComment": "Syslog facility to use (Default: local0).",
+                    "// protocolC": "The network protocol to log over (e.g. tcp4, udp4, unix, unix-connect, etc).",
+
+                    "// path": "The path to the syslog dgram socket (i.e. /dev/log or /var/run/syslog for OS X).",
+                    "// facility": "Syslog facility to use (Default: local0).",
                     "localhost": "iobroker",
-                    "localhostComment": "Host to indicate that log messages are coming from (Default: localhost).",
-                    "sysLogTypeComment": "The type of the syslog protocol to use (Default: BSD).",
-                    "app_nameComment": "The name of the application (Default: process.title).",
-                    "eolComment": "The end of line character to be added to the end of the message (Default: Message without modifications)."
+                    "// localhost": "Host to indicate that log messages are coming from (Default: localhost).",
+                    "// sysLogType": "The type of the syslog protocol to use (Default: BSD).",
+                    "// app_name": "The name of the application (Default: process.title).",
+                    "// eol": "The end of line character to be added to the end of the message (Default: Message without modifications)."
+                },
+                "seq1": {
+                    "type": "seq",
+                    "enabled": false,
+                    "serverUrl": "http://IP:PORT",
+                    "// serverUrl": "The http(s) URL including port of the seq server. If you use HTTPS a real certificate is needed; self signed certs are ot accepted.",
+                    "apiKey": "",
+                    "// apiKey": "The apiKey of the seq system"
                 }
             }
         },
-        "dataDirComment": "Always relative to iobroker.js-controller/",
-        "plugins": {},
-        "dataDir": "../../iobroker-data/"
+        "// dataDir": "Always relative to iobroker.js-controller/",
+        "plugins": {
+
+        }
     }
+
+Links
+-----
+
+- `iobroker-dist.json (js-controller 3.x) <https://github.com/ioBroker/ioBroker.js-controller/blob/3.3.x/conf/iobroker-dist.json>`_
+- `iobroker-dist.json (js-controller 4.x) <https://github.com/ioBroker/ioBroker.js-controller/blob/4.0.x/packages/controller/conf/iobroker-dist.json>`_

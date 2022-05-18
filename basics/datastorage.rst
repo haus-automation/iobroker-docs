@@ -59,9 +59,9 @@ Unter diesem Objekt werden dann weitere Objekte angelegt, welche alles Mögliche
 
 Die **ID** ist dabei ein eindeutiger Schlüssel zu einem Objekt. Dieser ist vergleichbar mit dem absoluten Pfad in einem Dateisystem, welcher zu genau einem Ziel führt. In der obigen Grafik siehst Du die verschiedenen IDs einiger Datenpunkte. Über diese ID kommunizierst Du mit dem Objekt.
 
-Objekte werden unter Linux als JSON (Text, UTF-8) in der folgenden Datei abgelegt:
+Objekte werden unter Linux als `JSON Lines <https://jsonlines.org>`_ (Text, UTF-8) in der folgenden Datei abgelegt:
 
-``/opt/iobroker/iobroker-data/objects.json``
+``/opt/iobroker/iobroker-data/objects.jsonl``
 
 Diese Datei nennt man auch Objekt-Datenbank. Mehr Details (für Entwickler) unter :ref:`development-objects`.
 
@@ -94,9 +94,9 @@ Es ist besonders wichtig zu verstehen, was es mit bestätigten Zuständen auf si
         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/p5FyeifYUnw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-Zustände werden im Standard als JSON (Text, UTF-8) in der folgenden Datei abgelegt:
+Zustände werden im Standard als `JSON Lines <https://jsonlines.org>`_ (Text, UTF-8) in der folgenden Datei abgelegt:
 
-``/opt/iobroker/iobroker-data/states.json``
+``/opt/iobroker/iobroker-data/states.jsonl``
 
 Diese Datei nennt man auch State-Datenbank. Mehr Details (für Entwickler) unter :ref:`development-states`.
 
@@ -138,6 +138,14 @@ Weiterhin gibt es den (reservierten) Namespace ``system.`` für das System. Dort
 Speicherort
 -----------
 
-Im Standard arbeitet der ioBroker mit dem Dateisystem (``files``) als Speicherort für die Objekt- und Zustands-Datenbank. Dies kann aber auch umkonfiguriert werden, sodass stattdessen z.B. `Redis <https://redis.io/>`_ zum Speichern der Daten genutzt wird. Dabei handelt es sich um einen Dienst, welcher zusätzlich auf dem System installiert werden muss.
+Im Standard arbeitet der ioBroker (seit ``js-controller`` 4.x) mit dem Dateiformat (``jsonl``) als Speicherort für die Objekt- und Zustands-Datenbank. Als Speicherort stehen auch andere Lösungen bereit, sodass stattdessen z.B. `Redis <https://redis.io/>`_ zum Speichern der Daten genutzt wird. *Dabei handelt es sich um einen Dienst, welcher zusätzlich auf dem System installiert werden muss.*
 
-TODO
+Unterstützte Formate:
+
+- ``file`` - Speichert unter ``/opt/iobroker/iobroker-data/(objects|states).json`` die Daten im JSON-Format (bis ``js-controller`` 3.x war dies der Standard)
+- ``jsonl`` - Speichert unter ``/opt/iobroker/iobroker-data/(objects|states).jsonl`` die Daten als [JSON Lines](https://jsonlines.org) (ab ``js-controller`` 4.x ist dies der Standard)
+- ``redis`` - Speichert die Daten im Key-Value-Storage über den Dienst `Redis <https://redis.io/>`_ bzw. `Redis Sentinel <https://redis.io/docs/manual/sentinel/>`_
+
+Hierbei wird ein Speichertyp pro Datenbank festgelegt. Das heißt,
+
+Weitere Infos gibt es unter: :ref:`basics-systemconfig`.

@@ -431,6 +431,8 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.eraseOnUpload
 
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` 1.5.1
+
     Löscht alle existierenden Daten im Adapter-Verzeichnis vor einem Upload
 
     :type: boolean
