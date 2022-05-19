@@ -63,7 +63,7 @@ Objekte werden unter Linux als `JSON Lines <https://jsonlines.org>`_ (Text, UTF-
 
 ``/opt/iobroker/iobroker-data/objects.jsonl``
 
-Diese Datei nennt man auch Objekt-Datenbank. Mehr Details (für Entwickler) unter :ref:`development-objects`.
+Diese Datei nennt man auch **Objekt-Datenbank**. Mehr Details (für Entwickler) unter :ref:`development-objects`.
 
 State (Zustand)
 ---------------
@@ -98,7 +98,7 @@ Zustände werden im Standard als `JSON Lines <https://jsonlines.org>`_ (Text, UT
 
 ``/opt/iobroker/iobroker-data/states.jsonl``
 
-Diese Datei nennt man auch State-Datenbank. Mehr Details (für Entwickler) unter :ref:`development-states`.
+Diese Datei nennt man auch **State-Datenbank**. Mehr Details (für Entwickler) unter :ref:`development-states`.
 
 Datenpunkt
 ----------
@@ -143,7 +143,7 @@ Im Standard arbeitet der ioBroker (seit ``js-controller`` 4.x) mit dem Dateiform
 Unterstützte Formate:
 
 - ``file`` - Speichert unter ``/opt/iobroker/iobroker-data/(objects|states).json`` die Daten im JSON-Format (bis ``js-controller`` 3.x war dies der Standard)
-- ``jsonl`` - Speichert unter ``/opt/iobroker/iobroker-data/(objects|states).jsonl`` die Daten als [JSON Lines](https://jsonlines.org) (ab ``js-controller`` 4.x ist dies der Standard)
+- ``jsonl`` - Speichert unter ``/opt/iobroker/iobroker-data/(objects|states).jsonl`` die Daten als `JSON Lines <https://jsonlines.org>`_ (ab ``js-controller`` 4.x ist dies der Standard)
 - ``redis`` - Speichert die Daten im Key-Value-Storage über den Dienst `Redis <https://redis.io/>`_ bzw. `Redis Sentinel <https://redis.io/docs/manual/sentinel/>`_
 
 Hierbei wird ein Speichertyp pro Datenbank festgelegt. Das heißt,
