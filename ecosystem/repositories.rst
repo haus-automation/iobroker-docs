@@ -16,10 +16,11 @@ Pflege der Listen
 Beide Listen werden in `diesem GitHub Repository (ioBroker.repositories) <https://github.com/ioBroker/ioBroker.repositories>`_ gepflegt.
 
 - ``stable`` = ``sources-dist-stable.json``
-- ``beta`` bzw. ``latest`` = ``sources-dist.json``
+- ``beta`` (bzw. früher ``latest``) = ``sources-dist.json``
 
-Im ``stable`` werden getestete Adapter aufgenommen. Dort wird neben dem Repository auch eine genaue Version mit angegeben.
-Ein Eintrag sieht dort zum Beispiel so aus:
+Im ``stable`` werden getestete Adapter aufgenommen. Hier wird **für jedes Repository eine genaue Version angegeben**.
+
+Ein Eintrag sieht beispielsweise so aus:
 
 .. code:: json
 
@@ -30,7 +31,7 @@ Ein Eintrag sieht dort zum Beispiel so aus:
         "version": "5.1.25"
     }
 
-Wie Du siehst, ist vom Admin-Adapter in diesem Beispiel aktuell die Version ``5.1.25`` als stabil (``stable``) definiert.
+Wie man sieht, ist vom Admin-Adapter in diesem Beispiel die Version ``5.1.25`` als stabil (``stable``) definiert.
 
 Es kann gut sein, dass auf npm mittlerweile neue Versionen vergeben wurden und diese auch veröffentlicht ist. Diese Version bekommt man als Nutzer angeboten, wenn man das ``beta`` Repository wählt.
 
@@ -44,12 +45,12 @@ Im Gegensatz dazu hat der Eintrag im ``beta`` Repository keine definierte Versio
         "type": "general"
     }
 
-Bei dem ``beta`` Repository wird automatisch immer die letzte freigegebene Version zum Update angeboten (von npm).
+Bei dem ``beta`` Repository wird immer **die letzte Version zum Update angeboten** (von npm).
 
 Dieses Vorgehen hat den Vorteil, dass man als Adapter-Entwickler genau steuern kann, welche Nutzer welche Version angeboten bekommen. So können neue Versionen zwar veröffentlicht werden, aber "``stable``-Nutzer" werden erst später auf eine neue Version gebracht, wenn diese von vielen "``beta``-Nutzern" bereits getestet wurde.
 
 .. note::
-    Es kann vorkommen, dass einige Adapter zwar im beta-Repository vorhanden sind, aber noch nicht im stable-Repository zu finden sind (weil noch in Entwicklung bzw. noch keine stabile Version verfügbar ist)!
+    Es kann vorkommen, dass einige Adapter zwar im beta-Repository vorhanden sind, aber noch nicht im stable-Repository zu finden sind (weil noch in Entwicklung bzw. noch keine stabile Version verfügbar ist)
 
 .. image:: /images/ioBrokerDoku-Repositories.png
     :alt: ioBroker-Repositories
