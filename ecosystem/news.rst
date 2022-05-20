@@ -57,5 +57,7 @@ Beispiel:
 Links
 -----
 
+- `News für den Admin-Adapter (repo/news.json) <https://iobroker.live/repo/news.json>`_
+- `News hash für den Admin-Adapter (repo/news-hash.json) <https://iobroker.live/repo/news-hash.json>`_
 - `news.json <https://github.com/ioBroker/ioBroker.docs/blob/master/info/news.json>`_
 - `Wie man news hinzufügt <https://github.com/ioBroker/ioBroker.docs/blob/master/info/news.md>`_
