@@ -37,7 +37,7 @@ erstellt auf Basis eines Templates ein komplett neues Projekt, mit welchem man d
 
 Um einen neuen Adapter zu erstellen, führe folgenden Befehl aus:
 
-.. code:: 
+.. code:: console
 
     npx @iobroker/create-adapter
 
