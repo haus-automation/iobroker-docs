@@ -652,7 +652,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.subscribable
 
-     TODO (siehe autoSubscribe)
+    Legt fest, ob dieser Adapter von anderen Adaptern automatisch abonniert werden soll
 
      :type: boolean
 
