@@ -122,6 +122,7 @@ Beispiele (Objekte)
 -------------------
 
 - ``iobroker object get system.config``: Liefert den Inhalt des Objektes - siehe :ref:`basics-datastorage`
+- ``iobroker object set system.config common.language=de``: Einzelne Eigenschaft eines Objektes ändern (in diesem Fall die konfigurierte Sprache)
 
 Beispiele (Zustände)
 --------------------

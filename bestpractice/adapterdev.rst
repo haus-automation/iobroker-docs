@@ -69,11 +69,35 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eige
 
 .. code:: javascript
 
+    // set[Foreign]Object[Async]
+    await this.setObjectAsync(id, obj, options);
+    this.setObject(id, obj, options, callback);
+
+    await = this.setForeignObjectAsync(id, obj, options);
+    this.setForeignObject(id, obj, options, callback)
+
+    // set[Foreign]ObjectNotExists[Async]
     await this.setObjectNotExistsAsync(id, obj, options);
     this.setObjectNotExists(id, obj, options, callback);
 
     await this.setForeignObjectNotExistsAsync(id, obj, options);
     this.setForeignObjectNotExists(id, obj, options, callback);
+
+    // setObjectWithDefaultValue[Async]
+    await this.setObjectWithDefaultValueAsync(id, obj, options);
+    this.setObjectWithDefaultValue(id, obj, options, callback);
+
+    // Wrapper für setObjectNotExists mit type = 'device'
+    await this.createDeviceAsync(deviceName, common, _native, options);
+    this.createDevice(deviceName, common, _native, options, callback);
+
+    // Wrapper für setObjectNotExists mit type = 'channel'
+    await this.createChannelAsync(parentDevice, channelName, roleOrCommon, _native, options);
+    this.createChannel(parentDevice, channelName, roleOrCommon, _native, options, callback);
+
+    // Wrapper für setObjectNotExists mit type = 'state'
+    await this.createStateAsync(parentDevice, parentChannel, stateName, roleOrCommon, _native, options);
+    this.createState(parentDevice, parentChannel, stateName, roleOrCommon, _native, options, callback);
 
 **Bestehendes Objekt aktualisieren (im eigenen Namespace)**
 
@@ -106,6 +130,7 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eige
 
 .. code:: javascript
 
+    // extend[Foreign]Object[Async]
     await this.extendObjectAsync(id, obj, options);
     this.extendObject(id, obj, options, callback);
 
@@ -132,25 +157,51 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eige
 
 .. code:: javascript
 
+    // del[Foreign]Object[Async]
     await this.delObjectAsync(id, options);
     this.delObject(id, options, callback);
 
     await this.delForeignObjectAsync(id, options);
     this.delForeignObject(id, options, callback);
 
+    // Wrapper für delForeignObjectAsync (mit recursive = true)
+    await this.deleteDeviceAsync(deviceName, options);
+    this.deleteDevice(deviceName, options, callback);
+
+    // Wrapper für delForeignObjectAsync (mit recursive = true)
+    await this.deleteChannelAsync(parentDevice, channelName, options);
+    this.deleteChannel(parentDevice, channelName, options, callback);
+
+    // Wrapper für delForeignObjectAsync
+    await this.deleteStateAsync(parentDevice, parentChannel, stateName, options);
+    this.deleteState(parentDevice, parentChannel, stateName, options, callback);
+
 **Objekte lesen**
+
+TODO
+
+Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eigenen Namespace und fremde Objekte.
+
+.. code:: javascript
+
+    // get[Foreign]Object[Async]
+    await this.getObjectAsync(id, options, callback);
+    this.getObject(id, options, callback);
+
+    await this.getForeignObject(id, options, callback);
+    this.getForeignObject(id, options, callback);
+
+    await this.findForeignObjectAsync(id, type, options);
+    this.findForeignObject(id, type, options, callback);
 
 .. code:: javascript
 
     const allObjects = await this.getAdapterObjectsAsync(); // Alle folder, device, channel und state Objekte
-
-    const devices = await this.getDevicesAsync();
-    const channels = await this.getChannelsOfAsync('parentDevice'); // entspricht this.getChannelsAsync()
-    const states = await this.getStatesOfAsync('parentDevice', 'parentChannel');
+    this.getAdapterObjects(callback); // Alle folder, device, channel und state Objekte
 
 **Objekt View**
 
-Möchte man viele Objekte auf einmal aus dem System abfragen, so eignet sich die Funktion ``getObjectViewAsync``. Mit dieser Funktion können alle möglichen Objekt-Typen (siehe :ref:`development-objects`) aus der Objekt-Datenbank abgefragt werden.
+Möchte man viele Objekte auf einmal aus dem System abfragen, so eignet sich die Funktion ``getObjectView``. Mit dieser Funktion können alle möglichen Objekt-Typen (siehe :ref:`development-objects`) aus der Objekt-Datenbank abgefragt werden.
 
 .. code:: javascript
 
@@ -158,6 +209,39 @@ Möchte man viele Objekte auf einmal aus dem System abfragen, so eignet sich die
         startkey: 'system.adapter.',
         endkey: 'system.adapter.\u9999'
     });
+
+Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eigenen Namespace und fremde Objekte.
+
+.. code:: javascript
+
+    await this.getObjectListAsync(params, options);
+    this.getObjectList(params, options, callback);
+
+    await this.getObjectViewAsync(design, search, params, options);
+    this.getObjectView(design, search, params, options, callback);
+
+    // Wrapper für getObjectView mit search "device"  + namespace filter
+    await this.getDevicesAsync();
+    this.getDevices();
+
+    // Wrapper für getObjectView mit search "channel" + namespace filter
+    await this.getChannelsOfAsync(parentDevice, options, callback);
+    this.getChannelsOf(parentDevice, options, callback);
+
+    // Wrapper für getObjectView mit search "state" + namespace filter
+    await this.getStatesOfAsync(parentDevice, parentChannel, options);
+    this.getStatesOf(parentDevice, parentChannel, options, callback);
+
+    // Wrapper für getObjectView mit search "enum"
+    await this.getEnumAsync(_enum, options);
+    this.getEnum(_enum, options, callback);
+
+    await this.getEnumsAsync(_enumList, options);
+    this.getEnums(_enumList, options, callback);
+
+    // Wrapper für getObjectView
+    await this.getForeignObjectsAsync(pattern, type, enums, options);
+    this.getForeignObjects(pattern, type, enums, options, callback);
 
 State (Zustand)
 ---------------
@@ -228,6 +312,21 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
 
     await this.getForeignStatesAsync(pattern, options);
     this.getForeignStates(pattern, options, callback);
+
+Timeout / Interval
+------------------
+
+Die basis Adapter-Implementierung erlaubt das verwalten von Timeouts und Intervals. Das nutzen der Adapter-Funktionen stellt sicher, dass alle Timeouts und Intervals beim Stop der Instanz korrekt abgebrochen werden.
+
+Die Signaturen der Funktionen sind dabei identisch zum JavaScript-Standard.
+
+.. code:: javascript
+
+    this.setTimeout = (callback, timeout, ...args);
+    this.clearTimeout(id);
+
+    this.setInterval(callback, timeout, ...args);
+    this.clearInterval(id);
 
 Links
 -----
