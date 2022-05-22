@@ -29,7 +29,7 @@ Gerenell ist es empfehlenswert, Objekte über die ``instanceObjects`` in der :re
 
 .. code:: javascript
 
-    await this.setObjectNotExistsAsync(deviceName, {
+    await this.setObjectNotExistsAsync('exampleDevice', {
         type: 'device',
         common: {
             name: 'Any name',
@@ -44,7 +44,7 @@ Gerenell ist es empfehlenswert, Objekte über die ``instanceObjects`` in der :re
 
 .. code:: javascript
 
-    await this.setObjectNotExistsAsync(deviceName, {
+    await this.setObjectNotExistsAsync('exampleDevice', {
         type: 'device',
         common: {
             name: {
@@ -65,27 +65,47 @@ Gerenell ist es empfehlenswert, Objekte über die ``instanceObjects`` in der :re
         native: {}
     });
 
+Rückgabe:
+
+.. code:: json
+
+    {"id":"xxx.0.exampleDevice"}
+
+.. note::
+    Je allgemeiner die Funktion, desto weniger Prüfungen werden durchgeführt. "setObject" prüft dabei am wenigsten.
+
+.. code::
+
+    createDevice
+    createChannel
+    createState
+        setObjectNotExists
+            setObjectWithDefaultValue
+                setObject
+
 Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eigenen Namespace und fremde Objekte.
 
 .. code:: javascript
 
     // set[Foreign]Object[Async]
+    // Erstellt (oder überschreibt) das Objekt
     await this.setObjectAsync(id, obj, options);
     this.setObject(id, obj, options, callback);
 
     await = this.setForeignObjectAsync(id, obj, options);
     this.setForeignObject(id, obj, options, callback)
 
+    // Wrapper für set[Foreign]Object
+    this.setObjectWithDefaultValue(id, obj, options, callback);
+
     // set[Foreign]ObjectNotExists[Async]
+    // Erstellt das Objekt nur, wenn es nicht existiert
+    // Wrapper für setObjectWithDefaultValue
     await this.setObjectNotExistsAsync(id, obj, options);
     this.setObjectNotExists(id, obj, options, callback);
 
     await this.setForeignObjectNotExistsAsync(id, obj, options);
     this.setForeignObjectNotExists(id, obj, options, callback);
-
-    // setObjectWithDefaultValue[Async]
-    await this.setObjectWithDefaultValueAsync(id, obj, options);
-    this.setObjectWithDefaultValue(id, obj, options, callback);
 
     // Wrapper für setObjectNotExists mit type = 'device'
     await this.createDeviceAsync(deviceName, common, _native, options);
