@@ -137,45 +137,6 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eige
     await this.extendForeignObjectAsync(id, obj, options);
     this.extendForeignObject(id, obj, options, callback);
 
-**Objekt löschen (im eigenen Namespace)**
-
-:octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` Version 2.2.8
-
-.. code:: javascript
-
-    await this.delObjectAsync(deviceName);
-
-**Objekt rekursiv löschen (im eigenen Namespace)**
-
-:octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` Version 2.2.8
-
-.. code:: javascript
-
-    await this.delObjectAsync(deviceName, { recursive: true });
-
-Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eigenen Namespace und fremde Objekte.
-
-.. code:: javascript
-
-    // del[Foreign]Object[Async]
-    await this.delObjectAsync(id, options);
-    this.delObject(id, options, callback);
-
-    await this.delForeignObjectAsync(id, options);
-    this.delForeignObject(id, options, callback);
-
-    // Wrapper für delForeignObjectAsync (mit recursive = true)
-    await this.deleteDeviceAsync(deviceName, options);
-    this.deleteDevice(deviceName, options, callback);
-
-    // Wrapper für delForeignObjectAsync (mit recursive = true)
-    await this.deleteChannelAsync(parentDevice, channelName, options);
-    this.deleteChannel(parentDevice, channelName, options, callback);
-
-    // Wrapper für delForeignObjectAsync
-    await this.deleteStateAsync(parentDevice, parentChannel, stateName, options);
-    this.deleteState(parentDevice, parentChannel, stateName, options, callback);
-
 **Objekte lesen**
 
 TODO
@@ -243,6 +204,46 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eige
     await this.getForeignObjectsAsync(pattern, type, enums, options);
     this.getForeignObjects(pattern, type, enums, options, callback);
 
+**Objekt löschen (im eigenen Namespace)**
+
+.. note::
+    Der zugehörige State wird ebenfalls gelöscht (falls type = state)
+
+.. code:: javascript
+
+    await this.delObjectAsync(deviceName);
+
+**Objekt rekursiv löschen (im eigenen Namespace)**
+
+:octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` Version 2.2.8
+
+.. code:: javascript
+
+    await this.delObjectAsync(deviceName, { recursive: true });
+
+Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eigenen Namespace und fremde Objekte.
+
+.. code:: javascript
+
+    // del[Foreign]Object[Async]
+    await this.delObjectAsync(id, options);
+    this.delObject(id, options, callback);
+
+    await this.delForeignObjectAsync(id, options);
+    this.delForeignObject(id, options, callback);
+
+    // Wrapper für delForeignObjectAsync (mit recursive = true)
+    await this.deleteDeviceAsync(deviceName, options);
+    this.deleteDevice(deviceName, options, callback);
+
+    // Wrapper für delForeignObjectAsync (mit recursive = true)
+    await this.deleteChannelAsync(parentDevice, channelName, options);
+    this.deleteChannel(parentDevice, channelName, options, callback);
+
+    // Wrapper für delForeignObjectAsync
+    await this.deleteStateAsync(parentDevice, parentChannel, stateName, options);
+    this.deleteState(parentDevice, parentChannel, stateName, options, callback);
+
 State (Zustand)
 ---------------
 
@@ -267,6 +268,7 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
 
 .. code:: javascript
 
+    // set[Foreign]State[Async]
     await this.setStateAsync(id, state, ack, options);
     this.setState(id, state, ack, options, callback);
 
@@ -286,6 +288,7 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
 
 .. code:: javascript
 
+    // set[Foreign]StateChanged[Async]
     await this.setStateChangedAsync(id, state, ack, options);
     this.setStateChanged(id, state, ack, options, callback);
 
@@ -294,7 +297,33 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
 
 **Wert lesen**
 
-Mehrere States auf einmal holen
+Um den aktuellen Zustand eines States zu bekommen, können einzelne Werte aus der Datenbank abgefragt werden:
+
+.. note::
+    Sollte der State ein Alias sein, wird automatisch der State des Verknüpften Objektes zurückgegeben.
+
+.. code:: javascript
+
+    const myState = await this.getState('myState');
+
+Rückgabe:
+
+TODO
+
+Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigenen Namespace und fremde States.
+
+.. code:: javascript
+
+    // get[Foreign]State[Async]
+    await this.getStateAsync(id, options);
+    this.getState(id, options, callback)
+
+    await this.getForeignStateAsync(id, options);
+    this.getForeignStates(id, options, callback);
+
+**Wert lesen (mehrere auf einmal)**
+
+TODO
 
 .. code:: javascript
 
@@ -302,16 +331,34 @@ Mehrere States auf einmal holen
 
 Rückgabe:
 
+TODO
 
 Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigenen Namespace und fremde States.
 
 .. code:: javascript
 
+    // get[Foreign]States[Async]
     await this.getStatesAsync(pattern, options);
     this.getStates(pattern, options, callback);
 
     await this.getForeignStatesAsync(pattern, options);
     this.getForeignStates(pattern, options, callback);
+
+**Wert löschen**
+
+.. note::
+    Das zugehörige Objekt wird nicht gelöscht
+
+Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigenen Namespace und fremde States.
+
+.. code:: javascript
+
+    // del[Foreign]State[Async]
+    await this.delStateAsync(id, options);
+    this.delState(id, options, callback);
+
+    await this.delForeignStateAsync(id, options);
+    this.delForeignState(id, options, callback);
 
 Timeout / Interval
 ------------------
