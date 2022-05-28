@@ -60,6 +60,9 @@ Bereitgestellte Daten
 
 Die offiziellen Repositories werden regelmäßig aktualisiert und auf einem separaten Webserver bereitgestellt. Hier wird der Eintrag mit weiteren Informationen aus der :ref:`development-iopackage` angereichert.
 
+.. note::
+    Die Aktualisierung des beta-Repository findet 2x täglich planmäßig statt (02:00 und 14:00 Uhr UTC). Die Logik dieses Prozesses ist nicht öffentlich dokumentiert.
+
 Unser Beispiel-Eintrag für den Admin-Adapter sieht dann wie folgt aus (zur Übersichtlichkeit wurden Übersetzungen in weitere Sprachen aus dem JSON gelöscht):
 
 .. code:: json
