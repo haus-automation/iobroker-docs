@@ -38,7 +38,9 @@ Als Nutzer kann man im Admin über die Experten-Einstellungen auf jeder Instanz 
 
 Damit läuft das Plugin zwar weiter, aber sendet keine Daten mehr.
 
-Möchte man das Plugin komplett deaktivieren / nicht mehr starten, kann dies über den State ``system.adapter.<adapter>.0.plugins.sentry.enabled`` gesteuert werden.
+Möchte man das Plugin komplett deaktivieren bzw. nicht mehr starten, kann dies über den Zustand ``system.adapter.<adapter>.0.plugins.sentry.enabled`` gesteuert werden. Steht dieser Wert auf ``false``, startet der ``js-controller`` das Plugin für diese Instanz gar nicht mehr.
+
+Um das Plugin für den kompletten Host bzw. alle Instanzen auf dem Host zu deaktivieren, kann der Zustand ``system.host.<host>.plugins.sentry.enabled`` verwendet werden.
 
 Links
 -----
