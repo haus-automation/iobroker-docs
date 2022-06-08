@@ -45,6 +45,7 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
     basics/uuid
     basics/logic
     basics/compactmode
+    basics/backup
 
 .. toctree::
     :maxdepth: 2
