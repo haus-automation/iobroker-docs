@@ -159,7 +159,8 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eige
 
 **Objekte lesen**
 
-<!-- TODO: Add examples -->
+.. todo::
+    Add examples
 
 Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eigenen Namespace und fremde Objekte.
 
@@ -345,7 +346,8 @@ Um den aktuellen Zustand eines States zu bekommen, können einzelne Werte aus de
 
 Rückgabe:
 
-<!-- TODO: Add examples -->
+.. todo::
+    Add examples
 
 Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigenen Namespace und fremde States.
 
@@ -360,7 +362,8 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
 
 **Wert lesen (mehrere auf einmal)**
 
-<!-- TODO: Add examples -->
+.. todo::
+    Add examples
 
 .. code:: javascript
 
@@ -368,7 +371,8 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
 
 Rückgabe:
 
-<!-- TODO: Add examples -->
+.. todo::
+    Add examples
 
 Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigenen Namespace und fremde States.
 

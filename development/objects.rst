@@ -264,7 +264,8 @@ Typ state
 
 .. confval:: common.defAck
 
-    <!-- TODO: Explain common.defAck -->
+    .. todo::
+        Explain common.defAck
 
     *(optional)*
 
@@ -368,7 +369,8 @@ Typ state
 
 .. confval:: common.workingID
 
-    <!-- TODO: Explain common.workingID -->
+    .. todo::
+        Explain common.workingID
 
     *(optional)*
 

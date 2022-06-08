@@ -542,13 +542,15 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.noIntro
 
-    <!-- TODO: Explain common.noIntro -->
+    .. todo::
+        Explain common.noIntro
 
     :type: boolean
 
 .. confval:: common.noRepository
 
-    <!-- TODO: Explain common.noRepository -->
+    .. todo::
+        Explain common.noRepository
 
     :type: boolean
 
@@ -619,7 +621,8 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.serviceStates
 
-     <!-- TODO: Explain common.serviceStates -->
+     .. todo::
+        Explain common.serviceStates
 
      :type: string|boolean
 
@@ -658,7 +661,8 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.subscribe
 
-     <!-- TODO: Explain common.subscribe -->
+     .. todo::
+        Explain common.subscribe
 
      :type: string
 
@@ -686,7 +690,8 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.webByVersion
 
-    <!-- TODO: Explain common.webByVersion -->
+    .. todo::
+        Explain common.webByVersion
 
      :type: boolean
 
@@ -704,7 +709,8 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.webPreSettings
 
-     <!-- TODO: Explain common.webPreSettings -->
+     .. todo::
+        Explain common.webPreSettings
 
      :type: object
 
@@ -716,7 +722,8 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.welcomeScreen
 
-     <!-- TODO: Explain common.welcomeScreen -->
+     .. todo::
+        Explain common.welcomeScreen
 
      :type: array
 
@@ -945,7 +952,8 @@ Eigenschaften (Admin)
 
 .. confval:: common.adminTab.ignoreConfigUpdate
 
-    <!-- TODO: Explain common.adminTab.ignoreConfigUpdate -->
+    .. todo::
+        Explain common.adminTab.ignoreConfigUpdate
 
     :type: boolean
 

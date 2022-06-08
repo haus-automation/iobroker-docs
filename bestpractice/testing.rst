@@ -27,7 +27,8 @@ Diese Tests führen Prüfungen der ``package.json`` und der ``io-package.json`` 
 Integration-Tests
 -----------------
 
-<!-- TODO: Add Integration-Tests -->
+.. todo::
+    Add Integration-Tests
 
 Unit-Test
 ---------
@@ -69,7 +70,8 @@ Damit diese Befehle funktionieren, muss die ``package.json`` des Adapters entspr
 GitHub Actions
 --------------
 
-<!-- TODO: Add GitHub Actions -->
+.. todo::
+    Add GitHub Actions
 
 Links
 -----
