@@ -77,6 +77,7 @@ Mit dem ioBroker kannst Du also über die Grenzen der Hardware-Hersteller hinaus
 
     bestpractice/environment
     bestpractice/adapterdev
+    bestpractice/storefiles
     bestpractice/logging
     bestpractice/testing
 

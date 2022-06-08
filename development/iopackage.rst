@@ -403,7 +403,7 @@ Eigenschaften (Allgemein)
 
     :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` 1.5.1
 
-    Verzeichnis-Pfad, in welchem der Adapter seine Daten ablegt (relativ zu ``iobroker-data``).
+    Verzeichnis-Pfad, in welchem der Adapter seine Daten ablegt (relativ zu ``/opt/iobroker/iobroker-data``). Siehe :ref:`bestpractice-storefiles`
 
     Der Platzhalter ``%INSTANCE%`` kann ebenfalls im Pfad genutzt werden und wird automatisch durch die Instanznummer ersetzt (z.B. ``0``).
 
@@ -411,7 +411,7 @@ Eigenschaften (Allgemein)
 
     .. code:: json
 
-        "dataFolder": "zigbee_%INSTANCE%"
+        "dataFolder": "octoprint.%INSTANCE%"
 
     :type: string
 

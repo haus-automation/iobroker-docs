@@ -1,7 +1,7 @@
 .. _development-states:
 
-States
-======
+Zustände (States)
+=================
 
 .. note::
     Lies zuerst die Grundlagen zur :ref:`basics-datastorage`.

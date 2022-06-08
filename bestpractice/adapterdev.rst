@@ -315,6 +315,23 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
     await this.setForeignStateChangedAsync(id, state, ack, options);
     this.setForeignStateChanged(id, state, ack, options, callback);
 
+**Wert schreiben (binär)*+
+
+:octicon:`git-branch;1em;sd-text-info` Geänderte Signaturen seit ``js-controller`` 4.0.15 (setForeignBinaryState)
+
+Um Binärdaten in States zu speichern, muss das Objekt vom Typ ``common.type = 'file'`` sein. Für mehr Details siehe :ref:`bestpractice-storefiles`.
+
+Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigenen Namespace und fremde States.
+
+.. code:: javascript
+
+    // set[Foreign]BinaryState[Async]
+    await this.setBinaryStateAsync(id, binary, options);
+    this.setBinaryState(id, binary, options, callback);
+
+    await this.setForeignBinaryStateAsync(id, binary, options);
+    this.setForeignBinaryState(id, binary, options, callback);
+
 **Wert lesen**
 
 Um den aktuellen Zustand eines States zu bekommen, können einzelne Werte aus der Datenbank abgefragt werden:
@@ -363,6 +380,23 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
 
     await this.getForeignStatesAsync(pattern, options);
     this.getForeignStates(pattern, options, callback);
+
+**Wert lesen (binär)*+
+
+:octicon:`git-branch;1em;sd-text-info` Geänderte Signaturen seit ``js-controller`` 4.0.15 (getForeignBinaryState)
+
+Um Binärdaten in States zu lesen, muss das Objekt vom Typ ``common.type = 'file'`` sein. Für mehr Details siehe :ref:`bestpractice-storefiles`.
+
+Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigenen Namespace und fremde States.
+
+.. code:: javascript
+
+    // get[Foreign]BinaryState[Async]
+    await this.getBinaryStateAsync(id, options);
+    this.getBinaryState(id, options, callback);
+
+    await this.getForeignBinaryStateAsync(id, options);
+    this.getForeignBinaryState(id, options, callback);
 
 **Wert löschen**
 

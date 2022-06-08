@@ -11,3 +11,6 @@ Konfiguration in der :ref:`development-iopackage` (``notifications``)
 
     async this.registerNotification('system', null, 'test');
 
+
+
+``system.host.<host>.notifications.system``
