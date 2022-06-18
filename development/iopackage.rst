@@ -137,7 +137,9 @@ Eigenschaften (erforderlich)
 
 .. confval:: common.news
 
-    Liste mit Infos zu den verschiedenen Versionen (Updatehistorie / Changelog). Darf nicht mehr als 20 Einträge enthalten!
+    Liste mit Infos zu den verschiedenen Versionen (Updatehistorie / Changelog). Darf nicht mehr als 20 Einträge enthalten! (übersetzt in mehrere Sprachen)
+
+    Wird in der Regel automatisch vom `Release-Script von AlCalzone <https://github.com/AlCalzone/release-script>`_ gefüllt (aus Changelog).
 
     .. code:: json
 
@@ -201,7 +203,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.enabled
 
-    Legt fest, ob eine neue Instanz gestartet werden soll, oder nicht
+    Legt fest, ob eine neue Instanz direkt gestartet werden soll, oder nicht
 
     :type: boolean
     :default: ``true``
@@ -236,7 +238,9 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.docs
 
-    Eine Liste von Dokumentations-Dateien, welche im Admin zur Verfügung gestellt werden und auch in die `offizielle Dokumentation <https://www.iobroker.net/#de/adapters>`_ aufgenommen werden sollen.
+    Eine Liste von Dokumentations-Dateien, welche im Admin zur Verfügung gestellt werden und auch in die `offizielle Dokumentation <https://www.iobroker.net/#de/adapters>`_ aufgenommen werden sollen
+
+    Pro Sprache kann entweder ein Array von Dateien übergeben werden, oder nur ein String
 
     .. code:: json
 
@@ -270,7 +274,7 @@ Eigenschaften (Allgemein)
             "Matthias Kleine <info@haus-automatisierung.com>"
         ]
 
-    Alternative
+    Alternativ
 
     .. code:: json
 
@@ -291,7 +295,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.type
 
-    Typ/Kategorie des Adapters
+    Typ/Kategorie des Adapters - relevant für die Einsortierung im Admin-Adapter.
 
     - ``alarm`` - Sicherheitssysteme, Alarmanlagen, ...
     - ``climate-control`` - Klimasteuerung, Heizung, Luftfilter, ...
@@ -385,7 +389,7 @@ Eigenschaften (Allgemein)
 
     - ``none``
     - ``poll`` - Die Daten werden regelmäßig abgefragt (z.B. per Zeitplan)
-    - ``push`` - Das Gerät liefert die Daten selbstständig zum Adapter
+    - ``push`` - Das Gerät / der Dienst liefert die Daten selbstständig zum Adapter
     - ``assumption`` - Der genaue Status ist nicht definiert
 
     :type: string
@@ -417,13 +421,28 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.dependencies
 
-    Liste von Abhängigkeiten auf dem lokalen System, welche für diesen Adapter notwendig sind
+    Liste von Abhängigkeiten (auf dem gleichen Host), welche für diesen Adapter notwendig sind. Entweder mit genauer Versionsangabe, oder als String.
 
     .. code:: json
 
         "dependencies": [
+            "admin",
             {
                 "js-controller": ">=3.3.0"
+            }
+        ]
+
+    :type: array
+
+.. confval:: common.globalDependencies
+
+    Liste von Abhängigkeiten im gesamten ioBroker-System (Multihost-Betrieb). Entweder mit genauer Versionsangabe, oder als String. Siehe :ref:`basics-multihost`
+
+    .. code:: json
+
+        "globalDependencies": [
+            {
+                "admin": ">=5.1.19"
             }
         ]
 
@@ -439,7 +458,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.extIcon
 
-    URL zur Icon-Datei für die Admin-Übersicht (z.B. PNG-Datei auf GitHub)
+    URL zur Icon-Datei für die Admin-Übersicht (z.B. PNG-Datei auf GitHub). Wird genutzt, wenn der Adapter noch nicht installiert ist.
 
     .. code:: json
 
@@ -453,23 +472,9 @@ Eigenschaften (Allgemein)
 
     :type: boolean
 
-.. confval:: common.globalDependencies
-
-    Liste von Abhängigkeiten im gesamten ioBroker-System (Multihost-Betrieb). Siehe :ref:`basics-multihost`
-
-    .. code:: json
-
-        "globalDependencies": [
-            {
-                "admin": ">=5.1.19"
-            }
-        ]
-
-    :type: array
-
 .. confval:: common.icon
 
-    Pfad zum lokalen Icon des Adapters (nach Installation). Sollte im Unterverzeichnis ``admin/`` liegen
+    Pfad zum lokalen Icon des Adapters (nach Installation). Relativer Pfad zum Unterverzeichnis ``admin/``
 
     .. code:: json
 
@@ -479,7 +484,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.keywords
 
-    Liste von Schlüsselwörtern, um den Adapter über die Suche (besser) finden zu können
+    Liste von Schlüsselwörtern, um den Adapter über die Suche im Admin-Adapter (besser) finden zu können
 
     .. code:: json
 
