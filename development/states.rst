@@ -12,7 +12,6 @@ States können beispielsweise über das :ref:`basics-cli` ausgelesen werden:
 
     iobroker state get admin.0.info.updatesNumber
 
-
 Wenn man nur den Wert (also die Eigenschaft ``val``) auslesen möchte, geht das per :ref:`basics-cli` wie folgt:
 
 .. code:: console
@@ -111,6 +110,6 @@ Eigenschaften
 
 .. confval:: expire
 
-    *(optional)* Zeit in Sekunden, bis der Wert aufläuft / auf ``null`` gesetzt wird
+    *(optional)* Zeit in Sekunden, bis der Wert abläuft (auf ``null`` gesetzt wird)
 
     :type: number

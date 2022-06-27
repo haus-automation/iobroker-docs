@@ -342,12 +342,23 @@ Um den aktuellen Zustand eines States zu bekommen, können einzelne Werte aus de
 
 .. code:: javascript
 
-    const myState = await this.getState('myState');
+    const state = await this.getStateAsync('myState');
+    const value = state ? state.val : undefined;
+    // ...
+
+    // oder
+    this.getState('myState', (err, state) => {
+        if (!err) {
+            // Das hat nich geklappt!
+        } else {
+            const value = state.val;
+            // ...
+        }
+    });
 
 Rückgabe:
 
-.. todo::
-    Add examples
+Es wird ein vollständiges State-Objekt zurückgegeben. Siehe :ref:`development-states`.
 
 Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigenen Namespace und fremde States.
 
