@@ -18,8 +18,8 @@ Eine Adapter-Klasse sollte immer von ``utils.Adapter`` erben. Die Basis-Klasse f
         // ...
     }
 
-Objekt
-------
+Objekte
+-------
 
 Wie Objekte genau aufgebaut sind und welche Eigenschaften sie unterstützten, ist auf der Seite :ref:`development-objects` dokumentiert.
 
@@ -265,10 +265,10 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eige
     await this.deleteStateAsync(parentDevice, parentChannel, stateName, options);
     this.deleteState(parentDevice, parentChannel, stateName, options, callback);
 
-State (Zustand)
----------------
+Zustände (States)
+-----------------
 
-Wie States genau aufgebaut sind und welche Eigenschaften sie unterstützten, ist auf der Seite :ref:`_development-states` dokumentiert.
+Wie States genau aufgebaut sind und welche Eigenschaften sie unterstützten, ist auf der Seite :ref:`development-states` dokumentiert.
 
 **Wert schreiben (aktualisieren)**
 
@@ -316,7 +316,7 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
     await this.setForeignStateChangedAsync(id, state, ack, options);
     this.setForeignStateChanged(id, state, ack, options, callback);
 
-**Wert schreiben (binär)*+
+**Wert schreiben (binär)**
 
 :octicon:`git-branch;1em;sd-text-info` Geänderte Signaturen seit ``js-controller`` 4.0.15 (setForeignBinaryState)
 
@@ -429,10 +429,164 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
     await this.delForeignStateAsync(id, options);
     this.delForeignState(id, options, callback);
 
+Auf Änderungen reagieren
+------------------------
+
+Um Informationen nicht ständig aus der Datenbank abfragen zu müssen, können einzelne States, Objekte oder auch Dateien (Files) (siehe :ref:`bestpractice-storefiles`) abonniert werden. Der ``js-controller`` informiert uns dann über Änderungen.
+
+**Zustände (States)**
+
+1. Abonnieren mit ``subscribe[Foreign]States[Async]``
+2. Event-Handler registrieren
+3. Änderungen im Event-Handler auswerten
+
+.. code:: javascript
+
+    class MyAdapter extends utils.Adapter {
+        /**
+        * @param {Partial<utils.AdapterOptions>} [options={}]
+        */
+        constructor(options) {
+            super({
+                ...options,
+                name: 'my-adapter',
+            });
+
+            this.on('ready', this.onReady.bind(this));
+            this.on('stateChange', this.onStateChange.bind(this));
+        }
+
+        async onReady() {
+            // Alle eigenen States abonnieren
+            await this.subscribeStatesAsync('*');
+
+            // Einen State aus einem anderen Namespace abonnieren
+            await this.subscribeForeignStatesAsync('0_userdata.0.beispiel');
+        }
+
+        /**
+         * @param {string} id
+         * @param {ioBroker.State | null | undefined} state
+         */
+        onStateChange(id, state) {
+            if (state && !state.ack) {
+
+                // Verarbeitung bestätigen
+                this.setForeignState(id, {val: state.val, ack: true});
+            }
+        }
+    }
+
+Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigenen Namespace und fremde States.
+
+.. code:: javascript
+
+    // subscribe[Foreign]States[Async]
+    await this.subscribeStatesAsync(pattern, options);
+    this.subscribeStates(pattern, options, callback);
+
+    await this.subscribeForeignStatesAsync(pattern, options);
+    this.subscribeForeignStates(pattern, options, callback);
+
+**Objekte**
+
+1. Abonnieren mit ``subscribe[Foreign]Objects[Async]``
+2. Event-Handler registrieren
+3. Änderungen im Event-Handler auswerten
+
+.. code:: javascript
+
+    class MyAdapter extends utils.Adapter {
+        /**
+        * @param {Partial<utils.AdapterOptions>} [options={}]
+        */
+        constructor(options) {
+            super({
+                ...options,
+                name: 'my-adapter',
+            });
+
+            this.on('ready', this.onReady.bind(this));
+            this.on('objectChange', this.onObjectChange.bind(this));
+        }
+
+        async onReady() {
+            // Alle eigenen Objekte abonnieren
+            await this.subscribeObjectsAsync('*');
+
+            // Ein Objekt aus einem anderen Namespace abonnieren
+            await this.subscribeForeignObjectsAsync('0_userdata.0.beispiel');
+        }
+
+        /**
+         * @param {string} id
+         * @param {ioBroker.Object | null | undefined} obj
+         */
+        onObjectChange(id, obj) {
+            if (obj) {
+                // Objekt geändert
+            } else {
+                // Objekt gelöscht
+            }
+        }
+    }
+
+Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigenen Namespace und fremde States.
+
+.. code:: javascript
+
+    // subscribe[Foreign]Objects[Async]
+    await this.subscribeObjectsAsync(pattern, options);
+    this.subscribeObjects(pattern, options, callback);
+
+    await this.subscribeForeignObjectsAsync(pattern, options);
+    this.subscribeForeignObjects(pattern, options, callback);
+
+**Dateien (Files)**
+
+.. todo::
+    Test code!
+
+:octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` Version 4.1.0
+
+1. Abonnieren mit ``subscribeFiles[Async]``
+2. Event-Handler registrieren
+3. Änderungen im Event-Handler auswerten
+
+.. code:: javascript
+
+    class MyAdapter extends utils.Adapter {
+        /**
+        * @param {Partial<utils.AdapterOptions>} [options={}]
+        */
+        constructor(options) {
+            super({
+                ...options,
+                name: 'my-adapter',
+            });
+
+            this.on('ready', this.onReady.bind(this));
+            this.on('fileChange', this.onFileChange.bind(this));
+        }
+
+        async onReady() {
+            await this.subscribeFiles(this.namespace);
+        }
+
+        /**
+         * @param {string} id
+         * @param {string} fileName
+         * @param {number} size
+         */
+        onFileChange(id, fileName, size) {
+            
+        }
+    }
+
 Timeout / Interval
 ------------------
 
-Die basis Adapter-Implementierung erlaubt das verwalten von Timeouts und Intervals. Das nutzen der Adapter-Funktionen stellt sicher, dass alle Timeouts und Intervals beim Stop der Instanz korrekt abgebrochen werden.
+Die basis Adapter-Implementierung erlaubt das verwalten von Timeouts und Intervals. Das nutzen dieser Adapter-Funktionen stellt sicher, dass **alle Timeouts und Intervals beim Stop der Instanz korrekt abgebrochen werden**.
 
 Die Signaturen der Funktionen sind dabei identisch zum JavaScript-Standard.
 
