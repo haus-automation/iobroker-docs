@@ -5,10 +5,12 @@ Repositories
 
 Welche Adapter zur Verfügung stehen, wird in sogenannten Repositories hinterlegt. Die Liste an verfügbaren Repositories kann man selbst ändern, um zum Beispiel ein externes Repository zu nutzen. In den allermeisten Fällen wird dies aber niemand machen, sondern nur die Standard-Repositories nutzen.
 
-Generell gibt es zwei verschiedene Adapter-Listen (Repositories), welche vom ioBroker-Team angeboten werden:
+Generell gibt es im Standard zwei verschiedene Adapter-Listen (Repositories), welche vom ioBroker-Team angeboten werden:
 
 - ``stable`` (früher auch ``default`` genannt) - wird täglich aktualisiert und hier bereitgestellt: ``http://download.iobroker.net/sources-dist.json``
 - ``beta`` (früher auch ``latest`` genannt) - wird täglich aktualisiert und hier bereitgestellt: ``http://download.iobroker.net/sources-dist-latest.json``
+
+Theoretisch ist es möglich, weitere Repositories zu hinterlegen. In der Praxis nutzt dieses Feature aber kaum jemand.
 
 Pflege der Listen
 -----------------

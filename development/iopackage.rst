@@ -1013,6 +1013,29 @@ Eigenschaften (Admin)
 
     :type: string
 
+Eigenschaften (VIS)
+-------------------
+
+.. confval:: common.visWidgets
+
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``vis`` 2.0.0
+
+    Definiert die verfügbaren VIS-Widgets im Adapter. Beispiel im offiziellen `Template-Repository <https://github.com/ioBroker/ioBroker.vis-widgets-react-template>`_.
+
+    .. code:: json
+
+        "visWidgets": {
+            "DemoWidget": {
+                "name": "DemoWidget",
+                "url": "vis-widgets-react-template/customWidgets.js",
+                "components": [
+                    "DemoWidget"
+                ]
+            }
+        }
+
+    :type: object
+
 Eigenschaften (deprecated)
 --------------------------
 
