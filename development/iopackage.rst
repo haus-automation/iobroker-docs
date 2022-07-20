@@ -748,7 +748,7 @@ Eigenschaften (Allgemein)
             "localLink": true
         }
 
-     :type: object
+    :type: object
 
 .. confval:: common.messages
 

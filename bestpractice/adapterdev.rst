@@ -396,7 +396,7 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
     await this.getForeignStatesAsync(pattern, options);
     this.getForeignStates(pattern, options, callback);
 
-**Wert lesen (binär)*+
+**Wert lesen (binär)**
 
 :octicon:`git-branch;1em;sd-text-info` Geänderte Signaturen seit ``js-controller`` 4.0.15 (getForeignBinaryState)
 
