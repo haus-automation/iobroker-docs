@@ -2,7 +2,7 @@ Willkommen
 ==========
 
 .. tip::
-    Diese Dokumentation ist Open Source und hier zu finden: `GitHub <https://github.com/haus-automation/iobroker-docs>`_. Falls Du einen Fehler findest oder Inhalte ergänzen möchtest, bist Du herzlich dazu eingeladen!
+    Diese Dokumentation ist Open Source und auf `GitHub zu finden <https://github.com/haus-automation/iobroker-docs>`_. Falls Du einen Fehler findest oder Inhalte ergänzen möchtest, bist Du herzlich dazu eingeladen!
 
 Willkommen auf den Seiten der **inoffiziellen** ioBroker-Dokumentation. Diese Dokumentation wurde von `Matthias Kleine, haus-automatisierung.com <https://haus-automatisierung.com/>`_ ins Leben gerufen und soll als alternative Informationsquelle zur offiziellen Variante stehen.
 
@@ -83,7 +83,7 @@ Mit dem ioBroker kann man also über die Grenzen der Hardware-Hersteller hinausg
     bestpractice/testing
 
 .. image:: https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png
-    :target: https://haus-automatisierung.com/iobroker-kurs/
+    :target: https://haus-automatisierung.com/iobroker-kurs/?refid=iobroker-docs
 
 License
 -------

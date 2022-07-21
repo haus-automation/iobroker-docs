@@ -3,7 +3,7 @@
 Architektur
 ===========
 
-Der ioBroker ist modular aufgebaut und besteht aus mehreren Komponenten. In der Mitte finden wir das Herzstück des Systems: Den ``js-controller``.
+Der ioBroker ist modular aufgebaut und besteht aus mehreren Komponenten. In der Mitte steht das Herzstück des Systems: Der ``js-controller``.
 
 Dieser Controller verwaltet alles im System. Von dort werden die einzelnen Instanzen gestartet und mit diesen kommuniziert.
 
@@ -88,4 +88,7 @@ Genauso können sich Instanzen beim ``js-controller`` registrieren, dass diese b
 .. image:: /images/ioBrokerDoku-Instanzen.png
     :alt: js-controller Instanzen
 
-`GitHub-Repository vom js-controller <https://github.com/ioBroker/ioBroker.js-controller>`_
+Links
+-----
+
+- `GitHub-Repository vom js-controller <https://github.com/ioBroker/ioBroker.js-controller>`_

@@ -6,6 +6,10 @@ This is the repository for the german ioBroker documentation available [here](ht
 
 This documentation is written using [reStructuredText](http://docutils.sourceforge.net/rst.html), powered by [Sphinx](http://www.sphinx-doc.org/en/stable/), and hosted on [ReadTheDocs](http://readthedocs.org).
 
+## Sponsored by
+
+[![ioBroker Master Kurs](https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png)](https://haus-automatisierung.com/iobroker-kurs/?refid=iobroker-docs)
+
 ## Building the docs
 
 Install Software 
