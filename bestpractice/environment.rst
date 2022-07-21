@@ -16,7 +16,7 @@ Beispiel
 
     git clone git@github.com:klein0r/ioBroker.birthdays.git
     cd ioBroker.birthdays/
-    dev-server setup --jsController 3.3.18 --admin 5.1.28
+    dev-server setup --jsController 4.0.23 --admin 6.2.4
     dev-server watch
 
 Für eine ausführliche Dokumentation und alle verfügbaren Parameter, schaue bitte in das `GitHub-Repository <https://github.com/ioBroker/dev-server>`_.
