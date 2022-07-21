@@ -82,9 +82,6 @@ Mit dem ioBroker kann man also über die Grenzen der Hardware-Hersteller hinausg
     bestpractice/logging
     bestpractice/testing
 
-.. image:: https://haus-automatisierung.com/images/ads/ioBroker-Kurs.png
-    :target: https://haus-automatisierung.com/iobroker-kurs/?refid=iobroker-docs
-
 License
 -------
 
