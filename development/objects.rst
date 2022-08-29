@@ -277,7 +277,7 @@ Typ state
 
 .. confval:: common.states
 
-    *(optional)* Liste mit zulässigen Werten für den Zustand
+    *(optional)* Liste mit zulässigen Werten für den Zustand ("Enum")
 
     .. code:: json
 
@@ -290,6 +290,14 @@ Typ state
             }
         }
 
+    Das ältere Format als ``string`` oder ``array`` sollte nicht mehr verwendet werden! Je nach verwendeter Version des ``js-controller`` werden bei weiterer Verwendung entsprechende Warnungen ausgegeben.
+
+    .. code:: json
+
+         "common": {
+            "states": "val1:text1;val2:text2"
+        }
+
     .. code:: json
 
         "common": {
@@ -300,7 +308,7 @@ Typ state
             ]
         }
 
-    :type: object|array
+    :type: object
 
 .. confval:: common.statusStates
 
