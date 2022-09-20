@@ -8,8 +8,8 @@ Um verschiedene Tests für den eigenen ioBroker-Adapter vorzubereiten, gibt es d
 Dabei werden folgende Typen unterschieden:
 
 - Package-Tests prüfen, ob das Paket den generellen Anforderungen vom ioBroker-Team entspricht (ähnlich Adapter-Checker)
-- Unit-Tests (laufen ohne einen ``js-controller``) und arbeiten mit Mocks
-- Integration-Tests arbeiten mit einer ``js-controller``-Instanz, welche automatisch gestartet wird
+- JavaScript-Tests (laufen ohne einen ``js-controller``) und arbeiten mit Mocks
+- Integration-Tests arbeiten mit einer ``js-controller``-Instanz, welche automatisch gestartet / verwaltet wird
 
 Package-Tests
 -------------
@@ -24,24 +24,46 @@ Diese Tests führen Prüfungen der ``package.json`` und der ``io-package.json`` 
     // Validate the package files
     tests.packageFiles(path.join(__dirname, '..'));
 
+JavaScript-Tests
+----------------
+
+Um Tests von einzelnen Dateien oder Klassen auszuführen, eigenen sich JavaScript-Tests, welche `Mocha <https://mochajs.org>`_ bzw. `Chai <https://www.chaijs.com>`_ Tests ausführen. Dabei wir eine zweite JavaScript-Datei neben die zu testende Datei gelegt, welche durch ein Namensschema automatisch als Test erkannt wird. Beispiel:
+
+.. code::
+
+    lib/convert.js
+    lib/convert.test.js
+
+Ein Test sieht dabei wie folgt aus:
+
+.. code:: javascript
+
+    const expect = require('chai').expect;
+    const converter = require('../lib/converter');
+
+    describe('Test conversions', function () {
+
+        it('Test celsiusToFahrenheit', function () {
+            expect(converter.celsiusToFahrenheit(15)).to.be.equal(59);
+            expect(converter.celsiusToFahrenheit(0)).to.be.equal(32);
+            expect(converter.celsiusToFahrenheit(100)).to.be.equal(212);
+            expect(converter.celsiusToFahrenheit(-20)).to.be.equal(-4);
+        });
+
+        it('Test intToHex', function () {
+            expect(converter.intToHex(0)).to.be.equal('00');
+            expect(converter.intToHex(1)).to.be.equal('01');
+            expect(converter.intToHex(15)).to.be.equal('0F');
+            expect(converter.intToHex(255)).to.be.equal('FF');
+        });
+
+    });
+
 Integration-Tests
 -----------------
 
 .. todo::
     Add Integration-Tests
-
-Unit-Test
----------
-
-Diese Tests führen allgemeine Unit-Tests durch. Datei ``test/unit.js``:
-
-.. code:: javascript
-
-    const path = require('path');
-    const { tests } = require('@iobroker/testing');
-
-    // Run unit tests - See https://github.com/ioBroker/testing for a detailed explanation and further options
-    tests.unit(path.join(__dirname, '..'));
 
 Tests lokal ausführen
 ---------------------
@@ -53,7 +75,6 @@ Um alle Tests lokal auszuführen, können diese über npm angestoßen werden.
     npm run test:js
     npm run test:integration
     npm run test:package
-    npm run test:unit
 
 Damit diese Befehle funktionieren, muss die ``package.json`` des Adapters entsprechende Einträge enthalten:
 
@@ -62,7 +83,6 @@ Damit diese Befehle funktionieren, muss die ``package.json`` des Adapters entspr
     "scripts": {
         "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
         "test:package": "mocha test/package --exit",
-        "test:unit": "mocha test/unit --exit",
         "test:integration": "mocha test/integration --exit",
         "test": "npm run test:js && npm run test:package"
     }
