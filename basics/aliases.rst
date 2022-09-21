@@ -20,7 +20,7 @@ Konvertierungen
 Nun kann ein Alias aber nicht nur einen Wert 1:1 spiegeln, sondern die Daten auch in beide Richtungen manipulieren / verändern. So können zum Beispiel Berechnungen durchgeführt werden.
 
 .. note::
-    Viele einfache Konvertierungen könnte man genauso gut mit eigenen Scripts im JavaScript-Adapter realisieren. Das Ergebnis wäre das gleiche. Allerdings verteilt man dann die Logik über das ganze System und es ist schwieriger den Überblick zu behalten. Ein Alias ist aus meiner Sicht immer zu bevorzugen.
+    Viele einfache Konvertierungen könnte man genauso gut mit eigenen Scripts im JavaScript-Adapter realisieren. Das Ergebnis wäre das gleiche. Allerdings "verteilt" man dann die Logik über das ganze System und es ist schwieriger den Überblick zu behalten. Ein Alias ist immer zu bevorzugen, da so auf den ersten Blick zu erkennen ist, wo die Daten eigentlich her kommen.
 
 Der Admin-Adapter bietet dafür im "Objekt bearbeiten"-Dialog für Objekte im ``alias.0`` Namespace ein weites Tab an, wo auch Konvertierungen beim lesen und schreiben aktiviert werden können.
 
@@ -29,7 +29,7 @@ Der Admin-Adapter bietet dafür im "Objekt bearbeiten"-Dialog für Objekte im ``
 
 Am Ende hat man hier alle Möglichkeiten, welche JavaScript bietet. Dabei wird der Parameter ``val`` angeboten, welcher den Wert des verknüpften Datenpunktes enthält.
 
-Angenommen Du hast einen Datenpunkt, welcher die aktuelle Windgeschwindigkeit in Meter pro Sekunde (m/s) enthält. Jetzt interessiert Dich der Wert aber in km/h. Genau das könntest Du mit einem eigenen Alias lösen:
+Angenommen es gibt einen Datenpunkt, welcher die aktuelle Windgeschwindigkeit in Meter pro Sekunde (m/s) enthält. Jetzt soll der Wert aber in km/h umgerechnet werden. Genau das kann mit einem eigenen Alias sehr einfach gelöst werden:
 
 **Lesen (m/s in km/h umrechnen)**
 
@@ -43,7 +43,7 @@ Angenommen Du hast einen Datenpunkt, welcher die aktuelle Windgeschwindigkeit in
 
     val / 3.6
 
-*Eine Schreib-Funktion ergibt in diesem Fall wenig Sinn, weil Du ja den Wert nicht schreiben kannst. Die Quelle wird "readonly" sein.*
+*Eine Schreib-Funktion ergibt in diesem Fall wenig Sinn, der Wert wahrscheinlich nicht geschrieben werden kann. Die Quelle wird "readonly" sein.*
 
 Bitte beachte, dass die Datentypen der Objekte korrekt sind. Hier wird der Typ der Quelle höchstwahrscheinlich ``number`` sein. Also sollte unser Alias ebenfalls vom Typ ``number`` sein, da das Ergebnis der Multiplikation ja wieder eine Number ist.
 
@@ -153,10 +153,10 @@ Am Ende ist es ganz normales JavaScript. Also spricht auch (technisch) nichts da
     ((v) => { return v; })(val)
     (function(v) { return v; })(val)
 
-Warum das Ganze? Jetzt könnte man eigene Variablen deklarieren und damit weiter arbeiten. Würde ich das empfehlen? Eher nicht - aber es ist möglich. Worauf Du zugreifen kannst? Das kannst Du einfach herausfinden:
+Warum das Ganze? Jetzt könnte man eigene Variablen deklarieren und damit weiter arbeiten. Würde ich das empfehlen? Eher nicht - aber es ist möglich. Worauf zugegriffen werden kann? Das kann man einfach herausfinden:
 
 .. code:: javascript
 
     Object.getOwnPropertyNames(this).join(', ')
 
-Die interessantesten sind wahrscheinlich ``parseFloat, parseInt, RegExp, Date, JSON, Math, Intl``
+Die interessantesten Eigenschaften sind wahrscheinlich ``parseFloat, parseInt, RegExp, Date, JSON, Math, Intl`` - also die Beispiele von weiter oben in diesem Artikel.
