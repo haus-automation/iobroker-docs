@@ -43,9 +43,21 @@ Angenommen Du hast einen Datenpunkt, welcher die aktuelle Windgeschwindigkeit in
 
     val / 3.6
 
-*Eine Schreib-Funktion macht in diesem Fall wenig Sinn, weil Du ja den Wert nicht schreiben kannst. Die Quelle wird readonly sein.*
+*Eine Schreib-Funktion ergibt in diesem Fall wenig Sinn, weil Du ja den Wert nicht schreiben kannst. Die Quelle wird "readonly" sein.*
 
 Bitte beachte, dass die Datentypen der Objekte korrekt sind. Hier wird der Typ der Quelle höchstwahrscheinlich ``number`` sein. Also sollte unser Alias ebenfalls vom Typ ``number`` sein, da das Ergebnis der Multiplikation ja wieder eine Number ist.
+
+Ein weiteres Beispiel wäre, Grad Fahrenheit in Celsius umzurechnen:
+
+.. code:: javascript
+
+    (val - 32) * 5 / 9
+
+und beim schreiben könnte man dann Celsius wieder in Fahrenheit zurückrechnen:
+
+.. code:: javascript
+
+    val * 1.8 + 32
 
 **Wert aus einem JSON extrahieren**
 
@@ -91,19 +103,46 @@ Wenn man z.B. nur die Stunde und Minute im Format ``HH:SS`` haben möchte, wäre
     new Date(val).getHours() + ':' + ${new Date(val).getMinutes() // 20:20
     new Intl.DateTimeFormat('de-DE', { timeStyle: 'short' }).format(new Date(val)) // 20:20
 
+**Werte runden**
+
+Um einen numerischen Wert auf eine bestimmte Anzahl Nachkommastellen zu runden, eigenet sich ``.toFixed(x)``. Diese Funktion liefert allerdings einen String zurück! Das Ergebnis müsste also wieder in einen numerischen Wert konvertiert werden.
+
+Auf eine Nachkommastelle runden (mehrere Möglichkeiten):
+
+.. code:: javascript
+
+    Number(val.toFixed(1))
+    Math.round(val * 10) / 10
+
+Der Trick: ``Math.round`` rundet immer auf eine natürliche Zahl. Wenn man eine Nachkommastelle erhalten möchte, kann man z.B. ``123.45`` mit 10 multiplizieren (ergibt ``1234.5``). Dann wird gerundet (ergibt ``1234``) und danach wieder durch 10 geteilt (ergibt ``123.4``).
+
+Sollte der Ausgangswert vom Typ ``String`` sein, muss dieser vorher in einen numerischen Wert konvertiert werden:
+
+.. code:: javascript
+
+    Number(parseFloat(val).toFixed(1))
+
+.. code:: javascript
+
 **Regulärer Ausdruck**
 
 Angenommen ein Zustand (Typ String) enthält folgenden Wert: ``123.45°C`` (also inklusive Einheit). Hier könnte man mit einem regulären Ausdruck alles außer Zahlen entfernen und den Wert in eine Gleitkommazahl umwandeln:
 
 .. code:: javascript
 
-    parseFloat(val.replace(/[^\d.]/g, ''))
+    Number(val.replace(/[^\d.]/g, ''))
+
+Das ginge auch deutlich einfacher, wenn einfach ``parseFloat`` verwendet wird. Mit dieser Funktion werden einfach alle "nicht-Zahlen" automatisch entfernt:
+
+.. code:: javascript
+
+    parseFloat(val)
 
 Genauso könnte der Wert dann noch gerundet werden:
 
 .. code:: javascript
 
-    Math.round(parseFloat(val.replace(/[^\d.]/g, '')))
+    Math.round(Number(val.replace(/[^\d.]/g, '')))
 
 **Eigene Logik ausführen**
 
