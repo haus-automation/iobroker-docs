@@ -693,32 +693,6 @@ Eigenschaften (Allgemein)
 
      :type: boolean
 
-.. confval:: common.webByVersion
-
-    .. todo::
-        Explain common.webByVersion
-
-     :type: boolean
-
-.. confval:: common.webExtendable
-
-     Legt fest, ob der Webserver dieses Adapters mit Plugins erweitert werden kann (z.B. ``simple-api``)
-
-     :type: boolean
-
-.. confval:: common.webExtension
-
-     Relativer Pfad der Web-Extension (z.B. ``lib/simpleapi.js``)
-
-     :type: string
-
-.. confval:: common.webPreSettings
-
-     .. todo::
-        Explain common.webPreSettings
-
-     :type: object
-
 .. confval:: common.webservers
 
      Liste mit Webservern, welche Inhalte aus dem www-Verzeichnis des Adapters liefern
@@ -892,8 +866,50 @@ Eigenschaften (Daemon)
 
     :type: string
 
-Eigenschaften (Admin)
----------------------
+Eigenschaften (Web-Adapter)
+---------------------------
+
+.. confval:: common.webByVersion
+
+    .. todo::
+        Explain common.webByVersion
+
+    :type: boolean
+
+.. confval:: common.webExtendable
+
+    Legt fest, ob dieser Adapters mit Web-Plugins erweitert werden kann (z.B. ``web`` Adapter).
+
+    Adapter mit diesem Attribut:
+
+    - `ioBroker.web <https://github.com/ioBroker/ioBroker.web>`_
+
+    :type: boolean
+
+.. confval:: common.webExtension
+
+    Relativer Pfad zur Web-Extension des Web-Servers
+
+    Adapter mit diesem Attribut:
+
+    - `ioBroker.simple-api <https://github.com/ioBroker/ioBroker.simple-api>`_
+    - `ioBroker.proxy <https://github.com/ioBroker/ioBroker.proxy>`_
+    - `ioBroker.cameras <https://github.com/ioBroker/ioBroker.cameras>`_
+
+    .. code:: json
+
+        "webExtension": "lib/web.js"
+
+    :type: string
+
+.. confval:: common.webPreSettings
+
+    Die hier definierten Attribute werden als JavaScript-Variablen im Window-Scope (``window.${attr}``) deklariert
+
+    :type: object
+
+Eigenschaften (Admin-Adapter)
+-----------------------------
 
 .. confval:: common.adminColumns
 
@@ -1013,8 +1029,8 @@ Eigenschaften (Admin)
 
     :type: string
 
-Eigenschaften (VIS)
--------------------
+Eigenschaften (VIS-Adapter)
+---------------------------
 
 .. confval:: common.visWidgets
 
