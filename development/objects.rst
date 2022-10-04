@@ -67,7 +67,7 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
 
 .. confval:: acl
 
-    *Wird automatisch verwaltet* - enthält die Berechtigungen für das Objekt. Siehe :ref:`basics-acl`
+    *Wird automatisch verwaltet* - enthält die Berechtigungen für das Objekt und ggf. den zugehörigen Zustand. Siehe :ref:`basics-acl`
 
     .. code:: json
 
