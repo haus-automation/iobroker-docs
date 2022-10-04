@@ -13,7 +13,9 @@ Jeder Adapter sollte seine eigene Dokumentation im entsprechenden Repository (me
 
 Es werden regelmäßig die Inhalte von allen Repositories abgeholt und in das Repository `ioBroker.docs <https://github.com/ioBroker/ioBroker.docs>`_ kopiert. Dadurch sind alle Adapter-Dokumentationen auch auf der offiziellen Webseite von ioBroker abrufbar.
 
-Öffnet man nun z.B. im Admin-Adapter eine Adapter-Dokumentation, wird diese ebenfalls von ``https://www.iobroker.net/<lang>/adapterref/iobroker.<adapter>/README.md`` geladen.
+Öffnet man nun z.B. im Admin-Adapter eine Adapter-Dokumentation, wird diese ebenfalls auf ``https://www.iobroker.net/<lang>/adapterref/iobroker.<adapter>/README.md`` geöffnet.
+
+
 
 Links
 -----

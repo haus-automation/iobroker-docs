@@ -83,7 +83,7 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
 .. confval:: common.name
 
     *(optional)* Name des Objektes - wird im Frontend (wie dem Admin) dargestellt.
-    
+
     **Es ist empfohlen, diesen Wert zu setzen und eine mehrsprachige Übersetzung als Objekt zu hinterlegen!**
 
     .. code:: json
@@ -1188,7 +1188,9 @@ Typ config
             "defaultHistory": "",
             "expertMode": false,
             "defaultLogLevel": "info",
-            "activeRepo": "stable",
+            "activeRepo": [
+                "stable"
+            ],
             "diag": "extended",
             "tabs": [
                 "tab-intro",
@@ -1253,7 +1255,21 @@ Typ config
             }
         },
         "native": {
-            "secret": "971640e8df0885faf7d49c90e38423fc65425b2b861d5e7b"
+            "secret": "971640e8df0885faf7d49c90e38423fc65425b2b861d5e7b",
+            "introLinks": [
+                {
+                    "link": "https://iobroker.readthedocs.io/",
+                    "name": "Documentation",
+                    "desc": "Inofficial Documentation",
+                    "linkName": "Open docs",
+                    "color": "",
+                    "image": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMi4wIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzUyIDk2YzAgNTMtNDMgOTYtOTYgOTZzLTk2LTQzLTk2LTk2czQzLTk2IDk2LTk2czk2IDQzIDk2IDk2ek0yNDAgMjQ4VjUxMmwtNDguNC0yNC4yYy0yMC45LTEwLjQtNDMuNS0xNy02Ni44LTE5LjNsLTk2LTkuNkMxMi41IDQ1Ny4yIDAgNDQzLjUgMCA0MjdWMjI0YzAtMTcuNyAxNC4zLTMyIDMyLTMySDYyLjNjNjMuNiAwIDEyNS42IDE5LjYgMTc3LjcgNTZ6bTMyIDI2NFYyNDhjNTIuMS0zNi40IDExNC4xLTU2IDE3Ny43LTU2SDQ4MGMxNy43IDAgMzIgMTQuMyAzMiAzMlY0MjdjMCAxNi40LTEyLjUgMzAuMi0yOC44IDMxLjhsLTk2IDkuNmMtMjMuMiAyLjMtNDUuOSA4LjktNjYuOCAxOS4zTDI3MiA1MTJ6Ii8+PC9zdmc+",
+                    "addTs": true,
+                    "camera": "text",
+                    "interval": 5000,
+                    "enabled": true
+                }
+            ]
         },
         "acl": {
             "owner": "system.user.admin",
