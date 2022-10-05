@@ -3,7 +3,16 @@
 ACL (Access Control List)
 =========================
 
-Im ioBroker werden Rechte für verschiedene Typen definiert:
+Genau wie in vielen anderen Systemen auch, kennt der ioBroker Benutzer und Gruppen. So können Rechte für verschiedene Entitäten gepflegt werden, um Beispielsweise anderen Nutzern im ioBroker eingeschränkte Rechte zu geben. Das kann nützlich sein, damit ein Kunde z.B. nicht den vollen Zugriff auf die Objekt-Datenbank hat und versehentlich Objekte löscht oder verändert.
+
+Leider ist es (wie bei vielen Betriebssystemen) so, dass die Anwender mit Administrator-Rechten arbeiten. So gibt es wohl auf den meisten privaten Windows-PCs nur einen Benutzer, welcher Admin ist und alles darf. Somit beschäftigen sich die meisten Anwender gar nicht mit dem Rechtesystem. Und so ist es bei den ioBroker-Anwendern in den meisten Fällen auch.
+
+Im Standard wird ein Admin-Benutzer angelegt, welcher auch nicht gelöscht werden kann. Dieser hat die Objekt-ID ``system.user.admin`` und ist Mitglied in der Standard-Gruppe ``system.group.administrator``. Diesem Nutzer werden (über die Standardrechte - siehe unten) alle neuen Objekte direkt zugewiesen.
+
+Entitäten
+---------
+
+Im ioBroker werden Rechte für verschiedene Entitäten definiert:
 
 - Object (Objekt)
 - State (Zustand)
@@ -35,7 +44,7 @@ Beispiel-ACL für alle weiteren Objekt-Typen (Attribut ``state`` fehlt):
 Standardrechte
 --------------
 
-Werden beim Anlegen eines neuen Objektes keine Rechte definiert, greifen die definierten Standardrechte aus dem Objekt ``system.config``. Diese Standardrechte können z.B. über den Admin-Adapter angepasst werden.
+Werden beim Anlegen eines neuen Objektes keine Rechte definiert, greifen die Standardrechte aus dem Objekt ``system.config``. Diese Standardrechte können beispielsweise über den Admin-Adapter angepasst werden.
 
 .. code:: json
 
@@ -82,7 +91,10 @@ Alle Rechte (für alle) wäre also ``0x666`` - (binär ``0110 0110 0110``) ergib
 Auf Rechte prüfen
 -----------------
 
-Überprüft werden die Rechte intern - das sieht beispielsweise so aus:
+.. note::
+    Dieser Abschnitt dient nur als Information. Die Rechte-Prüfungen finden intern statt und müssen nicht durch den Anwender geprüft werden!
+
+Über ein logisches UND kann geprüft werden, ob Rechte vorhanden sind - das sieht beispielsweise so aus:
 
 .. code:: javascript
 
@@ -109,3 +121,14 @@ Auf Rechte prüfen
     if (obj.acl.state & 0x2) {
         /* everyone can write state */
     }
+
+Angenommen die Rechte eines Objektes sind dezimal ``1636`` - also ``0x664``. Bei einer Prüfung auf **Leserechte der Gruppe** würde man diesen Wert nun mit ``0x40`` verknüpfen (siehe oben). Beispiel:
+
+.. code::
+
+    1636 -> 0x664 -> 0110 0110 0100 (Objekt-Rechte)
+      64 -> 0x040 -> 0000 0100 0000 (Gruppe Objekt lesen)
+    ------------------------------- UND
+                     0000 0100 0000
+
+Das Ergebnis ist also größer Null und somit hat die Gruppe Leserechte.
