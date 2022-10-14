@@ -92,7 +92,7 @@ Auf Rechte prüfen
 -----------------
 
 .. note::
-    Dieser Abschnitt dient nur als Information. Die Rechte-Prüfungen finden intern statt und müssen nicht durch den Anwender geprüft werden!
+    Dieser Abschnitt dient nur als Information. Die Rechte-Prüfungen finden intern statt und müssen nicht vom Anwender durchgeführt werden!
 
 Über ein logisches UND kann geprüft werden, ob Rechte vorhanden sind - das sieht beispielsweise so aus:
 
