@@ -24,7 +24,7 @@ Nun kann ein Alias aber nicht nur einen Wert 1:1 spiegeln, sondern die Daten auc
 
 Der Admin-Adapter bietet dafür im "Objekt bearbeiten"-Dialog für Objekte im ``alias.0`` Namespace ein weites Tab an, wo auch Konvertierungen beim lesen und schreiben aktiviert werden können.
 
-- "lesen" bedeutet in diesem Fall, dass der Wert von der konfigurierten Quelle geholt wird
+- "lesen" bedeutet in diesem Fall, dass der Wert von der konfigurierten Quelle (Objekt-ID) geholt wird
 - "schreiben" bedeutet, dass der Wert in die konfigurierte ID zurückgeschrieben wird, wenn sich der Wert im Alias ändert
 
 Am Ende hat man hier alle Möglichkeiten, welche JavaScript bietet. Dabei wird der Parameter ``val`` angeboten, welcher den Wert des verknüpften Datenpunktes enthält.
@@ -73,7 +73,7 @@ Möchte man einen boolschen Wert in einen String umwandeln, kann dafür der Tern
 
 .. code:: javascript
 
-    val ? 'offen' : 'geschlossen'
+    val ? 'geschlossen' : 'offen'
 
 Ist der Ausgangswert numerisch, können hier natürlich auch einen Vergleich anstellen. Falls vom lesenden Zustand der Wert kleiner als 15 ist, soll z.B. der Text "kalt" im Alias stehen:
 
@@ -114,13 +114,14 @@ Auf eine Nachkommastelle runden (mehrere Möglichkeiten):
     Number(val.toFixed(1))
     Math.round(val * 10) / 10
 
-Der Trick: ``Math.round`` rundet immer auf eine natürliche Zahl. Wenn man eine Nachkommastelle erhalten möchte, kann man z.B. ``123.45`` mit 10 multiplizieren (ergibt ``1234.5``). Dann wird gerundet (ergibt ``1234``) und danach wieder durch 10 geteilt (ergibt ``123.4``).
+Der Trick: ``Math.round`` rundet immer auf eine natürliche Zahl. Wenn man nur eine Nachkommastelle erhalten möchte, kann man z.B. ``123.45`` mit 10 multiplizieren (ergibt ``1234.5``). Dann wird gerundet (ergibt ``1234``) und danach wieder durch 10 geteilt (ergibt ``123.4``).
 
 Sollte der Ausgangswert vom Typ ``String`` sein, muss dieser vorher in einen numerischen Wert konvertiert werden:
 
 .. code:: javascript
 
     Number(parseFloat(val).toFixed(1))
+    Math.round(parseFloat(val) * 10) / 10
 
 .. code:: javascript
 
@@ -159,4 +160,4 @@ Warum das Ganze? Jetzt könnte man eigene Variablen deklarieren und damit weiter
 
     Object.getOwnPropertyNames(this).join(', ')
 
-Die interessantesten Eigenschaften sind wahrscheinlich ``parseFloat, parseInt, RegExp, Date, JSON, Math, Intl`` - also die Beispiele von weiter oben in diesem Artikel.
+Die interessantesten Eigenschaften sind wahrscheinlich ``parseFloat, parseInt, RegExp, Date, JSON, Math, Intl`` - also die Beispiele von weiter oben in diesem Abschnitt.
