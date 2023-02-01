@@ -29,6 +29,7 @@ Beispiel:
             "it": "Un bel titolo",
             "es": "un buen titulo",
             "pl": "Fajny tytuł",
+            "uk": "Гарний титул",
             "zh-cn": "一个不错的标题"
         },
         "content": {
@@ -41,6 +42,7 @@ Beispiel:
             "it": "Questo è davvero importante",
             "es": "esto es muy importante",
             "pl": "To jest naprawdę ważne",
+            "uk": "Це дійсно важливо",
             "zh-cn": "这真的很重要"
         },
         "id": "socketio-update-web-admin-socketio-stable",

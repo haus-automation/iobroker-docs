@@ -130,6 +130,7 @@ Eigenschaften (erforderlich)
             "it": "Luftdaten.info",
             "es": "Luftdaten.info",
             "pl": "Luftdaten.info",
+            "uk": "Luftdaten.info",
             "zh-cn": "Luftdaten.info"
         }
 
@@ -180,6 +181,7 @@ Eigenschaften (erforderlich)
             "it": "Carica i dati attuali sulla qualità dell'aria da un sensore locale o remoto",
             "es": "Carga datos actuales de la calidad del aire desde un sensor local o remoto",
             "pl": "Ładuje aktualne dane o jakości powietrza z lokalnego lub zdalnego czujnika",
+            "uk": "Поточні дані про якість повітря з локального або віддаленого датчика",
             "zh-cn": "从本地或远程传感器加载当前的空气质量数据"
         }
 
@@ -259,6 +261,7 @@ Eigenschaften (Allgemein)
             "fr": "docs/fr/admin.md",
             "it": "docs/it/admin.md",
             "pl": "docs/pl/admin.md",
+            "uk": "docs/uk/admin.md",
             "zh-cn": "docs/zh-cn/admin.md"
         }
 
@@ -759,19 +762,21 @@ Eigenschaften (Allgemein)
                     "it": "Avviso IMPORTANTE!",
                     "es": "Noticia importante!",
                     "pl": "Ważna uwaga!",
+                    "uk": "Погода!",
                     "zh-cn": "重要通知!"
                 },
                 "text": {
-                    "en": "Do not update to this version if you use ioBroker.vis android app or some applications, that works only with old socket.io library, like Minuvis",
-                    "de": "Aktualisieren Sie nicht auf diese Version, wenn Sie die Android-App ioBroker.vis oder einige Anwendungen verwenden, die nur mit der alten socket.io-Bibliothek funktionieren, wie Minuvis",
-                    "ru": "Не обновляйтесь до этой версии, если вы используете приложение ioBroker.vis для Android или некоторые приложения, которые работают только со старой библиотекой socket.io, например Minuvis.",
-                    "pt": "Não atualize para esta versão se você usa o aplicativo Android ioBroker.vis ou alguns aplicativos que funcionam apenas com a biblioteca socket.io antiga, como Minuvis",
-                    "nl": "Werk niet bij naar deze versie als u de Android-app ioBroker.vis of sommige toepassingen gebruikt, die alleen werken met de oude socket.io-bibliotheek, zoals Minuvis",
-                    "fr": "Ne mettez pas à jour cette version si vous utilisez l'application Android ioBroker.vis ou certaines applications, qui ne fonctionnent qu'avec l'ancienne bibliothèque socket.io, comme Minuvis",
-                    "it": "Non aggiornare a questa versione se usi l'app ioBroker.vis per Android o alcune applicazioni, che funzionano solo con la vecchia libreria socket.io, come Minuvis",
-                    "es": "No actualice a esta versión si usa la aplicación de Android ioBroker.vis o algunas aplicaciones, que solo funcionan con la antigua biblioteca socket.io, como Minuvis",
-                    "pl": "Nie aktualizuj do tej wersji, jeśli używasz aplikacji na Androida ioBroker.vis lub niektórych aplikacji, które działają tylko ze starą biblioteką socket.io, taką jak Minuvis",
-                    "zh-cn": "如果您使用 ioBroker.vis android 应用程序或某些仅适用于旧 socket.io 库的应用程序，请不要更新到此版本，例如 Minuvis"
+                    "en": "Do not update to this version if you are scared",
+                    "de": "Aktualisieren Sie nicht auf diese Version, wenn Sie Angst haben",
+                    "ru": "Не обновляйте эту версию, если вам страшно",
+                    "pt": "Não atualize para esta versão se estiver com medo",
+                    "nl": "Vertaling:",
+                    "fr": "Ne pas mettre à jour cette version si vous avez peur",
+                    "it": "Non aggiornare a questa versione se hai paura",
+                    "es": "No actualice a esta versión si tiene miedo",
+                    "pl": "Nie uaktualniasz tej wersji, jeśli nie będziesz straszony",
+                    "uk": "Чи не оновлюється в цю версію, якщо ви рубати",
+                    "zh-cn": "如果你遇难,不要更新本版本。"
                 },
                 "level": "warn",
                 "buttons": [
@@ -957,6 +962,7 @@ Eigenschaften (Admin-Adapter)
                 "it": "Zigbee",
                 "es": "Zigbee",
                 "pl": "Zigbee",
+                "uk": "Zigbee",
                 "zh-cn": "Zigbee"
             },
             "singleton": true,

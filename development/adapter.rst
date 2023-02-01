@@ -7,7 +7,7 @@ Auf dem Weg zum eigenen/neuen Adapter gibt es eine Menge Werkzeuge, welche das E
 
 Eine Sammlung von Tools, Links und Informationen ist im `ioBroker Dev-Portal <https://www.iobroker.dev>`_ zu finden (mit GitHub-Account einloggen!).
 
-Um einen Überblick zu bekommen, wie die Adapter-Entwicklung ablaufen kann, habe ich folgenden Video-Leitfaden (zusätzlich zu dieser Seite) veröffentlicht:
+Um einen Überblick zu bekommen, wie die Adapter-Entwicklung ablaufen kann, habe ich folgenden Video-Leitfaden (zusätzlich zu dieser Seite) für Dich erstellt:
 
 .. raw:: html
 
@@ -20,8 +20,8 @@ Voraussetzungen
 
 1. Ein Linux-System, auf welchem noch kein ioBroker installiert wurde (z.B. Debian)
 2. Ein Konto auf GitHub und npmjs
-3. Grundlegende Kenntnisse in JavaScript (und/oder TypeScript)
-4. Erfahrung mit dem ioBroker und der Arbeitsweise (Objekte, Zustände, Rollen, ...)
+3. Grundlegende Kenntnisse in JavaScript (und optional TypeScript)
+4. Erfahrung mit dem ioBroker und der Arbeitsweise (Objekte, Zustände, Datentypen, Rollen, ...)
 
 Neuer Adapter
 -------------
@@ -100,7 +100,9 @@ Danach werden automatisch alle nötigen Dateien erstellt und es kann direkt mit 
 Dev-Server
 ----------
 
-Um das neue Projekt lokal auszuführen
+Um das neue Projekt lokal auszuführen, kann der sog. Dev-Server verwendet werden. Dieser legt in einem Unterverzeichnis des aktuellen Projektes eine ioBroker-Installation an und kann diese bei bedarf starten. So hat man für jeden Adapter eine eigene Entwicklungsumgebung. Das schöne ist: JavaScript-Dateien werden automatisch überwacht und ein Neustart der Adapter-Instanz durchgeführt, sobald sich etwas ändert.
+
+`Zum ioBroker Dev-Server <https://github.com/ioBroker/dev-server>`_
 
 GitHub Repository
 -----------------
@@ -157,6 +159,7 @@ Gibst man zum Beispiel ``today`` ein, liefert das Programm die folgenden Überse
             "it": "oggi",
             "es": "hoy dia",
             "pl": "dzisiaj",
+            "uk": "сьогодні",
             "zh-cn": "今天"
         }
     }
@@ -182,6 +185,7 @@ Alle Text **sollten** zusätzlich auch diese Sprachen übersetzt werden:
 - Italienisch (it)
 - Spanisch (es)
 - Polnisch (pl)
+- Ukrainisch (uk)
 - Chinesisch (zh-cn)
 
 npm

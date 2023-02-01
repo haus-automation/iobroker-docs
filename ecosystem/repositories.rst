@@ -132,6 +132,7 @@ Unser Beispiel-Eintrag für den Admin-Adapter sieht dann wie folgt aus (zur Übe
             "fr": "docs/fr/admin.md",
             "it": "docs/it/admin.md",
             "pl": "docs/pl/admin.md",
+            "uk": "docs/uk/admin.md",
             "zh-cn": "docs/zh-cn/admin.md"
         },
         "materialize": true,

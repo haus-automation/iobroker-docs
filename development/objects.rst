@@ -105,6 +105,7 @@ Objekte können beispielsweise über das :ref:`basics-cli` ausgelesen werden.
                 "it": "Esempio",
                 "es": "Ejemplo",
                 "pl": "Przykład",
+                "uk": "Приклад",
                 "zh-cn": "例子"
             }
         }
@@ -569,6 +570,7 @@ Eine ausführliche Dokumentation der Eigenschaften ist hier zu finden: :ref:`dev
                 "nl": "Admin",
                 "it": "Admin",
                 "es": "Admin",
+                "uk": "Головна",
                 "zh-cn": "Admin"
             },
             "title": "Admin",
@@ -585,6 +587,7 @@ Eine ausführliche Dokumentation der Eigenschaften ist hier zu finden: :ref:`dev
                     "it": "Risolti i casi di crash segnalati tramite sentinella\nAggiunto supporto per multi-repository",
                     "es": "Solucionar casos de accidentes informados a través de centinelas\nSoporte agregado para repositorios múltiples",
                     "pl": "Napraw przypadki awarii zgłoszone przez Sentry\nDodano obsługę wielu repozytoriów",
+                    "uk": "Виправлення аварійних випадків, які повідомляються по відправці\\n Додано підтримку мультирепозиторій",
                     "zh-cn": "修复通过哨兵报告的崩溃案例\n添加了对多存储库的支持"
                 },
                 "5.1.29": {
@@ -597,6 +600,7 @@ Eine ausführliche Dokumentation der Eigenschaften ist hier zu finden: :ref:`dev
                     "it": "Risolti i casi di crash segnalati tramite sentinella\nAggiunto supporto per multi-repository",
                     "es": "Solucionar casos de accidentes informados a través de centinelas\nSoporte agregado para repositorios múltiples",
                     "pl": "Napraw przypadki awarii zgłoszone przez Sentry\nDodano obsługę wielu repozytoriów",
+                    "uk": "Виправлення аварійних випадків, які повідомляються по відправці\\n Додано підтримку мультирепозиторій",
                     "zh-cn": "修复通过哨兵报告的崩溃案例\n添加了对多存储库的支持"
                 },
                 "5.1.28": {
@@ -609,6 +613,7 @@ Eine ausführliche Dokumentation der Eigenschaften ist hier zu finden: :ref:`dev
                     "it": "Funzione di scoperta fissa\nRisolti alcuni bug della GUI",
                     "es": "Función de descubrimiento fijo\nSe corrigieron algunos errores de GUI",
                     "pl": "Naprawiono funkcję wykrywania\nNaprawiono kilka błędów GUI",
+                    "uk": "Фіксована функція відкриття\\n Виправлено деякі помилки GUI",
                     "zh-cn": "固定发现功能\n修复了一些 GUI 错误"
                 }
             },
@@ -620,6 +625,7 @@ Eine ausführliche Dokumentation der Eigenschaften ist hier zu finden: :ref:`dev
                 "fr": "La configuration de ioBroker via Web-Interface",
                 "nl": "De configuratie van ioBroker via de webinterface",
                 "it": "La configurazione di ioBroker tramite interfaccia Web",
+                "uk": "Налаштування ioBroker через Web-інтерфейс",
                 "zh-cn": "配置ioBroker的Web界面"
             },
             "docs": {
@@ -645,6 +651,7 @@ Eine ausführliche Dokumentation der Eigenschaften ist hier zu finden: :ref:`dev
                 "fr": "docs/fr/admin.md",
                 "it": "docs/it/admin.md",
                 "pl": "docs/pl/admin.md",
+                "uk": "docs/uk/admin.md",
                 "zh-cn": "docs/zh-cn/admin.md"
             },
             "materialize": true,
@@ -1646,6 +1653,7 @@ Typ enum
                 "it": "Camere",
                 "es": "Habitaciones",
                 "pl": "Pokoje",
+                "uk": "Номери",
                 "zh-cn": "客房"
             },
             "desc": {
@@ -1658,6 +1666,7 @@ Typ enum
                 "it": "Elenco delle stanze",
                 "es": "Lista de las habitaciones",
                 "pl": "Lista pokoi",
+                "uk": "Список номерів",
                 "zh-cn": "房间清单"
             },
             "members": [],

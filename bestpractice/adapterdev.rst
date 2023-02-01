@@ -57,6 +57,7 @@ Gerenell ist es empfehlenswert, Objekte über die ``instanceObjects`` in der :re
                 it: 'Qualche nome',
                 es: 'Cualquier nombre',
                 pl: 'Jakiekolwiek imię',
+                uk: 'Ім\'я',
                 'zh-cn': '任何名字'
             },
             type: 'string',
@@ -138,6 +139,7 @@ Wird ein Objekt aktualisiert, können geschützte Eigenschaften übergeben werde
                 it: 'Qualche nome',
                 es: 'Cualquier nombre',
                 pl: 'Jakiekolwiek imię',
+                uk: 'Ім\'я',
                 'zh-cn': '任何名字'
             },
             type: 'string',

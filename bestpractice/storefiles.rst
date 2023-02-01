@@ -32,6 +32,7 @@ Um Binärdaten in einen Zustand zu speichern, muss dieser als ``common.type = 'f
                 it: 'Miniatura',
                 es: 'Miniatura',
                 pl: 'Miniaturka',
+                uk: 'Напляскване',
                 'zh-cn': '缩略图',
             },
             type: 'file',
@@ -79,6 +80,7 @@ Damit diese Funktionen genutzt werden können, muss ein neues Objekt vom Typ ``m
                 it: 'Archiviazione file',
                 es: 'Almacenamiento de archivos',
                 pl: 'Storage room',
+                uk: 'Зберігання файлів',
                 'zh-cn': '储存'
             },
             type: 'meta.user'
@@ -105,6 +107,7 @@ Alternativ kann dieses Objekt auch über die ``ìnstanceObjects`` in der :ref:`d
                     "it": "Archiviazione file",
                     "es": "Almacenamiento de archivos",
                     "pl": "Storage room",
+                    "uk": "Зберігання файлів",
                     "zh-cn": "储存"
                 },
                 "type": "meta.user"
