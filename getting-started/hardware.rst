@@ -42,7 +42,7 @@ Micro SD-Karte
 ** Link zu einer Produktempfehlung. Wenn Du über einen dieser Links etwas kaufst, bekomme ich eine kleine Provision vom Shop (Affiliate-Link).
 
 .. tip::
-    Verwende als Image auf jeden Fall Raspberry Pi OS Lite und NICHT die Desktop-Version. Warum? Weil die Desktop-Variante viel mehr Ressourcen braucht und extrem viel Overhead mitbringt, welcher nicht gebraucht wird. Die Desktop-Version ist nur erforderlich, wenn Du eine Maus, Tastatur und einen Monitor direkt an dem Raspberry Pi anschließen möchtest um diesen (wie der Name sagt) als Desktop-Computer zu verwenden.
+    Als Image sollte auf jeden Fall Raspberry Pi OS Lite (64-Bit) und NICHT die Desktop-Version verwendet werden! Warum? Die Desktop-Variante benötigt viel mehr Ressourcen und bringt extrem viel Overhead mit, welcher nicht gebraucht wird. Die Desktop-Version ist nur erforderlich, wenn Du eine Maus, Tastatur und einen Monitor direkt an dem Raspberry Pi anschließen möchtest um diesen (wie der Name sagt) als Desktop-Computer zu verwenden.
 
 Wie genau ein Raspberry Pi 4 für die Installation von ioBroker vorbereitet wird, erfährst Du in diesem Video:
 
@@ -55,10 +55,10 @@ Wie genau ein Raspberry Pi 4 für die Installation von ioBroker vorbereitet wird
 Proxmox
 -------
 
-Neben einer nativen Installation, ist auch die Installation in einer virtuellen Maschine oder einem Container möglich. Dafür sollte dann aber etwas leistungsstärkere Hardware wie ein Intel NUC® oder ähnliches verwendet werden.
+Neben einer nativen Installation, ist auch die Installation in einer virtuellen Maschine oder einem LXC Container möglich. Dafür sollte dann aber etwas leistungsstärkere Hardware wie ein Intel NUC® oder ähnliches verwendet werden.
 
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; margin-bottom: 2em;">
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/z1jxRGZDbIQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/p6XmgzhH0Ow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>

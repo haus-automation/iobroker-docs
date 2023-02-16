@@ -69,7 +69,7 @@ Angenommen ein Zustand (Typ String) enthält folgenden Wert: ``{myAttr: 12}``. D
 
 **Ternary Operator**
 
-Möchte man einen boolschen Wert in einen String umwandeln, kann dafür der Ternary-Operator genutzt werden. Liefert z.B. ein Fensterkontakt ``true`` wenn das Fenster geschlossen ist, kann dieser Wert wie folgt in einen String gewandelt werden:
+Möchte man einen boolschen Wert in einen String umwandeln, kann dafür der Ternary-Operator genutzt werden. Liefert z.B. ein Fensterkontakt ``true`` (boolean) wenn das Fenster geschlossen ist, kann dieser Wert wie folgt in einen String gewandelt werden:
 
 .. code:: javascript
 
