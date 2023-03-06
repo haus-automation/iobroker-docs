@@ -203,14 +203,14 @@ Typ state
     - ``number`` - Numerische Werte
     - ``string`` - Zeichenketten
     - ``boolean`` - true / false
-    - ``array`` - Liste von Werten
+    - ``array`` - Liste (Array)
     - ``object`` - Objekt
-    - ``json`` - ???
-    - ``file`` - ???
+    - ``json`` - JSON-String
+    - ``file`` - *deprecated* - Siehe :ref:`bestpractice-storefiles`
     - ``multistate`` - Auswahlmöglichkeiten (Enum)
 
     .. warning::
-        Falls der Typ ``array``, ``object`` oder ``mixed`` lautet, muss der Wert als String mit ``JSON.stringify()`` gespeichert werden.
+        Falls der Typ ``array``, ``object`` oder ``json`` lautet, muss der Wert als String mit ``JSON.stringify()`` gespeichert werden. Eine Besonderheit stellt hier der JavaScript-Adapter dar, welcher diese Aufgabe für die Typen ``array`` und ``object``  automatisch erledigt.
 
     :type: string
     :default: ``mixed``

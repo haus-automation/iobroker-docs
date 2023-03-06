@@ -5,52 +5,6 @@ File Storage
 
 Bei der Adapter-Entwicklung steht man immer wieder vor der Aufgabe, Dateien im System ablegen zu müssen. Dafür gibt es mehrere Wege. Alle haben ihre Vor- und Nachteile.
 
-Binary-State
-------------
-
-:octicon:`git-branch;1em;sd-text-info` Geänderte Signaturen seit ``js-controller`` 4.0.15 (setForeignBinaryState)
-
-Ein Binary-State ist am Ende ein ganz normaler Zustand (State). Der einzige Unterschied ist, dass dieser Binärdaten speichern kann.
-
-.. danger::
-    Die Binärdaten werden in der normalen State-Datenbank abgelegt. Wird Redis verwendet, liegt die komplette Datei somit im Arbeitsspeicher und belegt ggf. knappe Ressourcen.
-
-Um Binärdaten in einen Zustand zu speichern, muss dieser als ``common.type = 'file'`` definiert sein. Beispiel:
-
-.. code:: javascript
-
-    await this.setObjectNotExistsAsync('myThumbnail', {
-        type: 'state',
-        common: {
-            name: {
-                en: 'Thumbnail',
-                de: 'Miniaturansicht',
-                ru: 'Миниатюра',
-                pt: 'Miniatura',
-                nl: 'Miniatuur',
-                fr: 'La vignette',
-                it: 'Miniatura',
-                es: 'Miniatura',
-                pl: 'Miniaturka',
-                uk: 'Напляскване',
-                'zh-cn': '缩略图',
-            },
-            type: 'file',
-            role: 'state',
-            read: true,
-            write: false,
-        },
-        native: {},
-    });
-
-Danach kann mit der Funktion ``setForeignBinaryState`` ein Buffer gespeichert werden:
-
-.. code:: javascript
-
-    const uint8 = new Uint8Array([0x50, 0x89, 0x47, 0x4e]);
-
-    await this.setForeignBinaryStateAsync(`${this.namespace}.myThumbnail`, Buffer.from(data));
-
 Meta-Storage
 ------------
 
@@ -166,6 +120,54 @@ Für den Zugriff stehen die folgenden Funktionen bereit:
     if (!fileExists) {
         await this.writeFileAsync(this.namespace, 'newFile.txt', 'Just created a new test file');
     }
+
+Binary-State
+------------
+
+:octicon:`git-branch;1em;sd-text-info` Geänderte Signaturen seit ``js-controller`` 4.0.15 (setForeignBinaryState)
+
+:octicon:`git-branch;1em;sd-text-info` Deprecated seit ``js-controller`` 4.0.23 - sollte nicht mehr verwendet werden
+
+Ein Binary-State ist am Ende ein ganz normaler Zustand (State). Der einzige Unterschied ist, dass dieser Binärdaten speichern kann.
+
+.. danger::
+    Die Binärdaten werden in der normalen State-Datenbank abgelegt. Wird Redis verwendet, liegt die komplette Datei somit im Arbeitsspeicher und belegt ggf. knappe Ressourcen.
+
+Um Binärdaten in einen Zustand zu speichern, muss dieser als ``common.type = 'file'`` definiert sein. Beispiel:
+
+.. code:: javascript
+
+    await this.setObjectNotExistsAsync('myThumbnail', {
+        type: 'state',
+        common: {
+            name: {
+                en: 'Thumbnail',
+                de: 'Miniaturansicht',
+                ru: 'Миниатюра',
+                pt: 'Miniatura',
+                nl: 'Miniatuur',
+                fr: 'La vignette',
+                it: 'Miniatura',
+                es: 'Miniatura',
+                pl: 'Miniaturka',
+                uk: 'Напляскване',
+                'zh-cn': '缩略图',
+            },
+            type: 'file',
+            role: 'state',
+            read: true,
+            write: false,
+        },
+        native: {},
+    });
+
+Danach kann mit der Funktion ``setForeignBinaryState`` ein Buffer gespeichert werden:
+
+.. code:: javascript
+
+    const uint8 = new Uint8Array([0x50, 0x89, 0x47, 0x4e]);
+
+    await this.setForeignBinaryStateAsync(`${this.namespace}.myThumbnail`, Buffer.from(data));
 
 Direkt schreiben
 ----------------
