@@ -54,6 +54,7 @@ Mit dem ioBroker kann man also über die Grenzen der Hardware-Hersteller hinausg
     ecosystem/domains
     ecosystem/repositories
     ecosystem/documentation
+    ecosystem/licenses
     ecosystem/news
     ecosystem/iot
     ecosystem/ratings
