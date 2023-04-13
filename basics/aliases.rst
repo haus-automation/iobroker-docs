@@ -83,25 +83,52 @@ Ist der Ausgangswert numerisch, können hier natürlich auch einen Vergleich ans
 
 **Datum konvertieren**
 
-Angenommen der Ausgangswert ist ein Unix-Timestamp (z.B. ``1650997245840``). Diesen kann man dann nach belieben umwandeln:
+Angenommen der Ausgangswert ist ein Unix-Timestamp (z.B. ``1650997245840``). Diesen kann man dann nach belieben mit `DateTimeFormat <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat>`_ umwandeln.
+
+Möchte man beispielsweise nur das Datum des Timestamps formatieren, dann gibts es folgende Möglichkeiten:
 
 .. code:: javascript
 
-    new Date(val).toISOString() // "2022-04-26T18:20:45.840Z"
-    new Intl.DateTimeFormat('de-DE').format(new Date(val)) // "26.4.2022"
-    new Intl.DateTimeFormat('de-DE', { dateStyle: 'medium' }).format(new Date(val)) // "26.04.2022"
-    new Intl.DateTimeFormat('de-DE', { dateStyle: 'full', timeStyle: 'long' }).format(new Date(val)) // "Dienstag, 26. April 2022 um 20:20:45 MESZ"
-    new Intl.DateTimeFormat('de-DE', { timeStyle: 'medium' }).format(new Date(val)) // "20:20:45"
-    new Intl.DateTimeFormat('de-DE', { weekday: 'short' }).format(new Date(val)) // Di
-    new Intl.DateTimeFormat('de-DE', { weekday: 'long' }).format(new Date(val)) // Dienstag
+    new Date(val).toISOString() // 2023-04-13T07:20:28.191Z
+    new Intl.DateTimeFormat('de-DE').format(new Date(val)) // 13.4.2023
+    new Intl.DateTimeFormat('de-DE', { dateStyle: 'short' }).format(new Date(val)) // 13.04.23
+    new Intl.DateTimeFormat('de-DE', { dateStyle: 'medium' }).format(new Date(val)) // 13.04.2023
+    new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' }).format(new Date(val)) // 13. April 2023
+    new Intl.DateTimeFormat('de-DE', { dateStyle: 'full' }).format(new Date(val)) // Donnerstag, 13. April 2023
+
+Um nur den Wochentag zu extrahieren, gibt es folgende Möglichkeiten:
+
+.. code:: javascript
+
+    new Intl.DateTimeFormat('de-DE', { weekday: 'narrow' }).format(new Date(val)) // D
+    new Intl.DateTimeFormat('de-DE', { weekday: 'short' }).format(new Date(val)) // Do
+    new Intl.DateTimeFormat('de-DE', { weekday: 'long' }).format(new Date(val)) // Donnerstag
+
+Möchte man nicht das Datum, sondern nur die Uhrzeit formatieren, gibt es verschiedene Möglichkeiten:
+
+.. code:: javascript
+
+    new Intl.DateTimeFormat('de-DE', { timeStyle: 'short' }).format(new Date(val)) // 09:20
+    new Intl.DateTimeFormat('de-DE', { timeStyle: 'medium' }).format(new Date(val)) // 09:20:28
+    new Intl.DateTimeFormat('de-DE', { timeStyle: 'long' }).format(new Date(val)) // 09:20:28 MESZ
+    new Intl.DateTimeFormat('de-DE', { timeStyle: 'full' }).format(new Date(val)) // 09:20:28 Mitteleuropäische Sommerzeit
 
 Wenn man z.B. nur die Stunde und Minute im Format ``HH:SS`` haben möchte, wäre das wie folgt möglich (verschiedene Schreibweisen, gleiches Ergebnis):
 
 .. code:: javascript
 
-    `${new Date(val).getHours()}:${new Date(val).getMinutes()}` // 20:20
-    new Date(val).getHours() + ':' + ${new Date(val).getMinutes() // 20:20
-    new Intl.DateTimeFormat('de-DE', { timeStyle: 'short' }).format(new Date(val)) // 20:20
+    `${new Date(val).getHours()}:${new Date(val).getMinutes()}` // 09:20
+    new Date(val).getHours() + ':' + ${new Date(val).getMinutes() // 09:20
+    new Intl.DateTimeFormat('de-DE', { timeStyle: 'short' }).format(new Date(val)) // 09:20
+
+Natürlich kann auch beliebig kombiniert werden:
+
+.. code:: javascript
+
+    new Intl.DateTimeFormat('de-DE', { dateStyle: 'full', timeStyle: 'full' }).format(new Date(val)) // Donnerstag, 13. April 2023 um 09:20:28 Mitteleuropäische Sommerzeit
+    new Intl.DateTimeFormat('de-DE', { dateStyle: 'full', timeStyle: 'long' }).format(new Date(val)) // Donnerstag, 13. April 2023 um 09:20:28 MESZ
+    new Intl.DateTimeFormat('de-DE', { dateStyle: 'medium', timeStyle: 'medium' }).format(new Date(val)) // 13.04.2023, 09:20:28
+    new Intl.DateTimeFormat('de-DE', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(val)) // 13.04.2023, 09:20
 
 **Werte runden**
 
