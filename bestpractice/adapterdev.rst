@@ -474,7 +474,7 @@ Um Informationen nicht ständig aus der Datenbank abfragen zu müssen, können e
             if (state && !state.ack) {
 
                 // Verarbeitung bestätigen
-                this.setForeignState(id, {val: state.val, ack: true});
+                this.setForeignState(id, { val: state.val, ack: true });
             }
         }
     }
@@ -600,10 +600,30 @@ Die Signaturen der Funktionen sind dabei identisch zum JavaScript-Standard.
     this.setInterval(callback, timeout, ...args);
     this.clearInterval(id);
 
+Lizenzen
+--------
+
+:octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` Version 4.0.15
+
+Alle gültigen :ref:`ecosystem-licenses` für einen Benutzer werden im Objekt ``system.licenses`` abgelegt (intern Lizenz-Manager genannt). Gültige Lizenzen für den aktuellen Adapter können wie folgt abgefragt werden:
+
+.. code:: javascript
+
+    await this.getSuitableLicenses(all?: boolean, adapterName?: string);
+
+Dabei wird der folgende Public Key des js-controller verwendet, um die Lizenz zu verifizieren (der Private Key liegt wahrscheinlich auf irgend einem Cloud-Server um die Lizenzen zu erstellen):
+
+.. code:: console
+
+    /opt/iobroker/node_modules/@iobroker/js-controller-adapter/build/cert/cloudCert.crt
+
+Die Lizenzen werden als `JWT (JSON Web Token) <https://de.wikipedia.org/wiki/JSON_Web_Token>`_ abgelegt.
+
 Links
 -----
 
 - `adapter.js (js-controller 3.x) <https://github.com/ioBroker/ioBroker.js-controller/blob/3.3.x/lib/adapter.js>`_
 - `adapter.js (js-controller 4.x) <https://github.com/ioBroker/ioBroker.js-controller/blob/4.0.x/packages/adapter/src/lib/adapter/adapter.js>`_
+- `adapter.ts (js-controller 5.x) <https://github.com/ioBroker/ioBroker.js-controller/blob/master/packages/adapter/src/lib/adapter/adapter.ts>`_
 - `Adapter-Core <https://github.com/ioBroker/adapter-core>`_
 - `Offizielle Doku <https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/adapterdev.md>`_
