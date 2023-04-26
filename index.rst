@@ -6,21 +6,21 @@ Willkommen
 
 Willkommen auf den Seiten der **inoffiziellen** ioBroker-Dokumentation. Diese Dokumentation wurde von `Matthias Kleine, haus-automatisierung.com <https://haus-automatisierung.com/>`_ ins Leben gerufen und soll als alternative Informationsquelle zur offiziellen Variante stehen.
 
-**Die Dokumentation ist ausschließlich auf Deutsch verfügbar.**
+**Diese Dokumentation ist ausschließlich in Deutscher Sprache verfügbar.**
 
 Was ist der ioBroker?
 ---------------------
 
-Wie der Name schon vermuten lässt, handelt es sich bei ioBroker um eine Software-Lösung, welche es ermöglicht, verschiedene Smart-Home Systeme miteinander zu verknüpfen und zwischen diesen Systemen zu vermitteln. Aktuell können über 250 verschiedene Systeme integriert werden.
+Wie der Name schon vermuten lässt, handelt es sich bei ioBroker um eine Software-Lösung, welche verschiedene Smart-Home Systeme miteinander verknüpft und zwischen diesen Systemen vermittelt. Aktuell können mehr als 250 verschiedene Systeme integriert werden.
 
-So kann man zum Beispiel Geräte mit Alexa ansteuern, welche selbst keine Alexa-Integration bieten. Gleiches gilt für HomeKit oder auch Google Home. Aber auch ohne Cloud-Lösungen im rein lokalen Betrieb macht der ioBroker Sinn. Auf einem KNX-Taster die Leistung der per Modbus angebundenen PV-Anlage sehen? Kein Problem. Mit einem Philips Hue Button einen HomeMatic-Aktor ansteuern? Auch kein Problem.
+So kann beispielsweise Geräte mit Alexa ansteuern, welche selbst keine Alexa-Integration bieten. Gleiches gilt für HomeKit oder auch Google Home. Aber auch ohne Cloud (im rein lokalen Betrieb) bietet eine ioBroker-Installation viele Vorteile. Auf einem KNX-Taster die Leistung der per Modbus angebundenen PV-Anlage sehen? Kein Problem. Mit einem Philips Hue Button einen HomeMatic-Aktor ansteuern? Auch kein Problem.
 
-Mit dem ioBroker kann man also über die Grenzen der Hardware-Hersteller hinausgehen und Systeme miteinander kombinieren, welche nicht direkt miteinander sprechen können.
+Der ioBroker weicht die (künstlichen) Grenzen der Hardware-Hersteller auf und ermöglicht die Kombination von Systemen, welche nicht direkt miteinander sprechen können.
 
-**Je länger man mit dem ioBroker arbeitest, desto mehr Möglichkeiten wird man entdecken!** Es lässt sich nahezu jede Lösung anbinden, welche eine Schnittstelle bereitstellt. Der ioBroker steht dann praktisch in der Mitte all dieser Systeme und vermittelt - daher auch der Name **io** (input / output) **Broker** (Vermittler).
+**Je länger man mit dem ioBroker arbeitet, desto mehr Möglichkeiten wird man entdecken!** Es lässt sich nahezu jede Lösung anbinden, welche eine Schnittstelle bereitstellt. Der ioBroker steht "in der Mitte" all dieser Systeme und vermittelt zwischen diesen - daher auch der Name **io** (input / output) **Broker** (Vermittler).
 
 .. note::
-    ioBroker ist eine reine Software-Lösung, welche über viele Interfaces/Schnittstellen und diversen Protokollen mit unterschiedlicher Hardware und Software kommunizieren kann.
+    Der ioBroker ist eine reine Software-Lösung, welche über viele Interfaces/Schnittstellen und diversen Protokollen mit unterschiedlicher Hardware und Software kommunizieren kann.
 
 .. Contents:
 
@@ -46,6 +46,12 @@ Mit dem ioBroker kann man also über die Grenzen der Hardware-Hersteller hinausg
     basics/logic
     basics/compactmode
     basics/backup
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Adapter
+
+    adapters/weather
 
 .. toctree::
     :maxdepth: 2
@@ -88,7 +94,7 @@ License
 
 MIT License
 
-Copyright (c) 2022 Matthias Kleine <info@haus-automatisierung.com>
+Copyright (c) 2023 Matthias Kleine <info@haus-automatisierung.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
