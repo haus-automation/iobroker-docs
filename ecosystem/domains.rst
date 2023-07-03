@@ -58,7 +58,12 @@ weblate.iobroker.net
 translator.iobroker.in
 ----------------------
 
-- `Übersetzungs-Tool (dev) <https://translator.iobroker.in>`_ - siehe :ref:`development-adapter`
+- `Altes Übersetzungs-Tool (dev) <https://translator.iobroker.in>`_ - abgelöst durch ``translator-ui.iobroker.in``
+
+translator-ui.iobroker.in
+-------------------------
+
+- `Übersetzungs-Tool (dev) <https://translator-ui.iobroker.in>`_ - siehe :ref:`development-adapter`
 
 adapter-check.iobroker.in
 -------------------------
@@ -75,7 +80,7 @@ iobroker.live
 
 - `Installations-Script (install.sh) <http://iobroker.live/install.sh>`_
 - `Installations-Fixing-Script (fix.sh) <http://iobroker.live/fix.sh>`_
-- `GitHub Badge (stable Version) <http://iobroker.live/badges/octoprint-stable.svg>`_
+- `GitHub Badge (Stable-Version) <http://iobroker.live/badges/octoprint-stable.svg>`_
 - `GitHub Badge (Installationen) <http://iobroker.live/badges/octoprint-installed.svg>`_
 - `News für den Admin-Adapter (repo/news.json) <https://iobroker.live/repo/news.json>`_ - siehe :ref:`ecosystem-news`
 - `News hash für den Admin-Adapter (repo/news-hash.json) <https://iobroker.live/repo/news-hash.json>`_ - siehe :ref:`ecosystem-news`

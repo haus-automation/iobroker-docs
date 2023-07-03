@@ -72,6 +72,7 @@ Der ioBroker weicht die (künstlichen) Grenzen der Hardware-Hersteller auf und e
     :caption: Entwicklung
 
     development/adapter
+    development/adminconfig
     development/objects
     development/states
     development/iopackage

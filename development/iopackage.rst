@@ -1004,7 +1004,7 @@ Eigenschaften (Admin-Adapter)
 
 .. confval:: common.adminUI
 
-    Legt fest, wie die Konfiguration im Admin erfolgen soll (für die Instanz-Konfiguration, Tabs und eigene Objekt-Eigenschaften)
+    Legt fest, wie die Konfiguration im Admin erfolgen soll (für die Instanz-Konfiguration, Admin-Tabs und eigene Objekt-Eigenschaften) - siehe :ref:`development-adminconfig`
 
     :type: object
 
@@ -1072,9 +1072,9 @@ Diese Eigenschaften sind für aktuelle Adapter mit dem Admin 5 nicht mehr releva
 - ``common.config.minHeight`` - Mindest-Höhe für den Konfigurations-Dialog für Admin 2
 - ``common.config.width`` - Standard-Breite für den Konfigurations-Dialog für Admin 2
 - ``common.config.minWidth`` - Mindest-Breite für den Konfigurations-Dialog für Admin 2
-- ``common.materialize`` (boolean) - Legt fest, ob der Adapter die Admin-Oberfläche für Admin-Version 3 und 4 bereitstellt (ab Admin 5 sollte ``common.adminUI.config`` verwendet werden)
-- ``common.materializeTab`` (boolean) - Legt fest, ob der Adapter ein eigenes Tab für Admin-Version 3 und 4 bereitstellt (ab Admin 5 sollte ``common.adminUI.tab`` verwendet werden)
-- ``common.noConfig`` (boolean) - Definiert, ob Instanzen konfiguriert werden können (ab Admin 5 sollte ``common.adminUI.config = none`` verwendet werden)
+- ``common.materialize`` (boolean) - Legt fest, ob der Adapter die Admin-Oberfläche für Admin-Version 3 und 4 bereitstellt (ab Admin 5 sollte ``common.adminUI.config`` verwendet werden) - siehe :ref:`development-adminconfig`
+- ``common.materializeTab`` (boolean) - Legt fest, ob der Adapter ein eigenes Tab für Admin-Version 3 und 4 bereitstellt (ab Admin 5 sollte ``common.adminUI.tab`` verwendet werden) - siehe :ref:`development-adminconfig`
+- ``common.noConfig`` (boolean) - Definiert, ob Instanzen konfiguriert werden können (ab Admin 5 sollte ``common.adminUI.config = none`` verwendet werden) - siehe :ref:`development-adminconfig`
 
 Links
 -----

@@ -278,7 +278,9 @@ Typ state
 
 .. confval:: common.states
 
-    *(optional)* Liste mit zulässigen Werten für den Zustand ("Enum")
+    *(optional)* Liste mit zulässigen Werten für den Zustand ("Enum").
+
+    Der Datentyp des Zustandes wird dabei nicht geändert. Diese Infos dienen nur der Darstellung (z.B. im Admin)!
 
     .. code:: json
 
@@ -291,7 +293,10 @@ Typ state
             }
         }
 
-    Das ältere Format als ``string`` oder ``array`` sollte nicht mehr verwendet werden! Je nach verwendeter Version des ``js-controller`` werden bei weiterer Verwendung entsprechende Warnungen ausgegeben.
+    :type: object
+
+    .. warning::
+        Die älteren Formate als ``string`` oder ``array`` sollte nicht mehr verwendet werden! Je nach verwendeter Version des ``js-controller`` werden bei weiterer Verwendung entsprechende Warnungen/Fehler ausgegeben.
 
     .. code:: json
 
@@ -308,8 +313,6 @@ Typ state
                 "UNKNOWN"
             ]
         }
-
-    :type: object
 
 .. confval:: common.statusStates
 

@@ -3,11 +3,11 @@
 Adapter-Entwicklung
 ===================
 
-Auf dem Weg zum eigenen/neuen Adapter gibt es eine Menge Werkzeuge, welche das Entwickler-Leben leichter machen und sehr schnell erste Ergebnisse ermöglichen!
+Auf dem Weg zum eigenen/neuen Adapter gibt es viele Werkzeuge, welche das Entwickler-Leben leichter machen und sehr schnell erste Ergebnisse ermöglichen!
 
 Eine Sammlung von Tools, Links und Informationen ist im `ioBroker Dev-Portal <https://www.iobroker.dev>`_ zu finden (mit GitHub-Account einloggen!).
 
-Um einen Überblick zu bekommen, wie die Adapter-Entwicklung ablaufen kann, habe ich folgenden Video-Leitfaden (zusätzlich zu dieser Seite) für Dich erstellt:
+Um einen Überblick zu bekommen, wie die Adapter-Entwicklung ablaufen kann, habe ich folgenden Video-Leitfaden (zusätzlich zu dieser Seite) erstellt:
 
 .. raw:: html
 
@@ -18,20 +18,22 @@ Um einen Überblick zu bekommen, wie die Adapter-Entwicklung ablaufen kann, habe
 Voraussetzungen
 ---------------
 
-1. Ein Linux-System, auf welchem noch kein ioBroker installiert wurde (z.B. Debian)
-2. Ein Konto auf GitHub und npmjs
+1. Ein Linux-System, auf welchem noch kein ioBroker installiert wurde (z.B. Debian oder Ubuntu)
+2. Ein Konto auf `GitHub <https://github.com>`_ und `npm <https://www.npmjs.com>`_
 3. Grundlegende Kenntnisse in JavaScript (und optional TypeScript)
-4. Erfahrung mit dem ioBroker und der Arbeitsweise (Objekte, Zustände, Datentypen, Rollen, ...)
+4. Grundwissen über git und npm
+5. Erfahrung mit dem ioBroker und der Arbeitsweise (Objekte, Zustände, Datentypen, Rollen, ...)
 
 Neuer Adapter
 -------------
 
-**Bevor Du einen neuen Adapter entwickelst, prüfe auf GitHub, ob dieser schon existiert oder angefangen wurde.**
+.. warning::
+    Bevor ein neuer Adapter entwickelt wird, sollte auf GitHub und im ioBroker-Forum geprüft werden, ob dieser nicht schon existiert oder bereits angefangen wurde.
 
 Offene Anfragen für Adapter sind `hier <https://github.com/ioBroker/AdapterRequests/issues>`_ zu finden.
 
-Wenn eine neuer Adapter entwickelt werden soll, empfiehlt es sich die Erstellung des Grundgerüstes mit Hilfe des Create-Adapter-Tools durchzuführen. Dieses Tool
-erstellt auf Basis eines Templates ein komplett neues Projekt, mit welchem man direkt durchstarten kann.
+Wenn eine neuer Adapter entwickelt werden soll, sollte das Grundgerüst mit Hilfe des Create-Adapter-Tools durchgeführt werden. Dieses Tool
+erstellt auf Basis eines Templates ein komplett neues Projekt, mit welchem man direkt durchstarten kann. Das spart viel Zeit, welche dann in den Adapter fließen kann!
 
 `Create-Adapter-Tool (GitHub) <https://github.com/ioBroker/create-adapter>`_.
 
@@ -100,9 +102,9 @@ Danach werden automatisch alle nötigen Dateien erstellt und es kann direkt mit 
 Dev-Server
 ----------
 
-Um das neue Projekt lokal auszuführen, kann der sog. Dev-Server verwendet werden. Dieser legt in einem Unterverzeichnis des aktuellen Projektes eine ioBroker-Installation an und kann diese bei bedarf starten. So hat man für jeden Adapter eine eigene Entwicklungsumgebung. Das schöne ist: JavaScript-Dateien werden automatisch überwacht und ein Neustart der Adapter-Instanz durchgeführt, sobald sich etwas ändert.
+Um das neue Projekt lokal auszuführen, kann der sog. Dev-Server verwendet werden. Dieser legt in einem Unterverzeichnis des aktuellen Projektes eine ioBroker-Installation an und kann diese bei bedarf starten. So hat man für jeden Adapter eine eigene Entwicklungsumgebung. Das schöne ist: JavaScript-Dateien werden automatisch überwacht und ein Neustart der Adapter-Instanz durchgeführt, sobald sich etwas ändert:
 
-`Zum ioBroker Dev-Server <https://github.com/ioBroker/dev-server>`_
+`ioBroker Dev-Server <https://github.com/ioBroker/dev-server>`_
 
 GitHub Repository
 -----------------
@@ -122,18 +124,18 @@ Gültige Namen für ein neues **Repository** wären also zum Beispiel:
 .. warning::
     Es ist darauf zu achten, dass der gewählte Name für einen Adapter noch nicht vergeben ist! Die oben genannten Beispiele sind alle schon vorhanden. Ansonsten kann der neue Adapter später nicht veröffentlicht werden bzw. in die Adapter-Liste mit aufgenommen werden.
 
-Beschäftige Dich also auf jeden Fall mit diesen Themen:
+Wichtige Themen / Stichworte für die Adapter-Entwicklung (Google-Suche nutzen!):
 
 - ``git commit``
 - ``git push``
 - ``git remote`` / Remote Repositories
-- Branches undTags
+- Branches und Tags
 - SSH Key Authentication / SSH Key Agent / SSH Key Forwarding
 
 Übersetzungen
 -------------
 
-Generell ist es sinnvoll, einen neuen Adapter (direkt von Anfang an) in mehrere Sprachen zu übersetzen. Die "Basis-Sprache" ist dabei Englisch. Von dort wird in andere Sprachen übersetzt.
+Generell ist es sinnvoll, einen neuen Adapter (direkt von Anfang an) in mehrere Sprachen zu übersetzen. Die "Basis-Sprache" ist dabei Englisch. Von dieser wird in andere Sprachen übersetzt.
 
 .. note::
     Generell gab es schon viele Ansätze und Werkzeuge, welche Dir bei Übersetzungen im ioBroker helfen sollten. Angefangen von Webseiten, bis zu irgendwelchen gulp-Scripts. Vieles davon existiert heute noch in den meisten Adaptern.
@@ -142,7 +144,7 @@ Der aktuellste Weg ist das Paket - `Adapter-Dev <https://github.com/ioBroker/ada
 
 Alternativ, gibt es vom ioBroker-Team ein Tool, welches einen Englischen Text in alle andere Sprachen übersetzt und im richtigen Format für den ioBroker zurückliefert (JSON).
 
-`Zum ioBroker Translator <https://translator.iobroker.in>`_
+`ioBroker Translator <https://translator-ui.iobroker.in>`_
 
 Gibst man zum Beispiel ``today`` ein, liefert das Programm die folgenden Übersetzungen im JSON-Format:
 
@@ -225,7 +227,7 @@ Gültige Namen für ein neues **npm Paket** wären also beispielsweise:
 Adapter prüfen
 --------------
 
-Für einen Adapter gibt es eine Liste an Regeln, welche die Qualität der Adapter erhöhen sollen. Entspricht ein Adapter nicht diesen Anforderungen, wird er nicht in die (offizielle) Liste der verfügbaren Adapter aufgenommen!
+Für einen Adapter gibt es eine Liste an Regeln, welche die Qualität der Adapter erhöhen sollen. Entspricht ein Adapter nicht diesen Anforderungen, wird er eventuell nicht in die (offizielle) Liste der verfügbaren Adapter aufgenommen!
 
 Diese Regeln einzuhalten ist relativ einfach, da der ``ioBroker Adapter Checker`` genau sagt, was noch getan werden muss bzw. falsch läuft.
 
@@ -258,7 +260,8 @@ Links
 -----
 
 - `ioBroker Dev-Portal <https://www.iobroker.dev>`_
-- `Create-Adapter <https://github.com/ioBroker/create-adapter>`_
+- `Create-Adapter-Tool <https://github.com/ioBroker/create-adapter>`_
+- `ioBroker Translator <https://translator-ui.iobroker.in>`_
 - `Adapter-Dev <https://github.com/ioBroker/adapter-dev>`_
 - `Adapter-Checker <https://adapter-check.iobroker.in/>`_
 - `Release-Script von AlCalzone <https://github.com/AlCalzone/release-script>`_
