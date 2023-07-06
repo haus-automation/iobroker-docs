@@ -3,14 +3,14 @@
 Repositories
 ============
 
-Welche Adapter zur Verfügung stehen, wird in sogenannten Repositories hinterlegt. Die Liste an verfügbaren Repositories kann man selbst ändern, um zum Beispiel ein externes Repository zu nutzen. In den allermeisten Fällen wird dies aber niemand machen, sondern nur die Standard-Repositories nutzen.
+Welche Adapter zur Verfügung stehen, wird in sogenannten Repositories hinterlegt. Die Liste an verfügbaren Repositories kann man selbst ändern, um zum Beispiel ein externes Repository zu nutzen. In den allermeisten Fällen werden aber ausschließlich die Standard-Repositories genutzt.
 
 Generell gibt es im Standard zwei verschiedene Adapter-Listen (Repositories), welche vom ioBroker-Team angeboten werden:
 
-- ``stable`` (früher auch ``default`` genannt) - wird täglich aktualisiert und hier bereitgestellt: ``http://download.iobroker.net/sources-dist.json``
-- ``beta`` (früher auch ``latest`` genannt) - wird täglich aktualisiert und hier bereitgestellt: ``http://download.iobroker.net/sources-dist-latest.json``
+- ``stable`` (früher auch ``default`` genannt) - wird täglich aktualisiert und hier bereitgestellt: ``https://download.iobroker.net/sources-dist.json``
+- ``beta`` (früher auch ``latest`` genannt) - wird täglich aktualisiert und hier bereitgestellt: ``https://download.iobroker.net/sources-dist-latest.json``
 
-Theoretisch ist es möglich, weitere Repositories zu hinterlegen. In der Praxis nutzt dieses Feature aber kaum jemand.
+Theoretisch ist es möglich, weitere Repositories zu hinterlegen. Seit dem ``js-controller`` in Version 4.x können mehrere Repositories gleichzeitig aktiv sein.
 
 Pflege der Listen
 -----------------
@@ -20,7 +20,7 @@ Beide Listen werden in `diesem GitHub Repository (ioBroker.repositories) <https:
 - ``stable`` = ``sources-dist-stable.json``
 - ``beta`` (bzw. früher ``latest``) = ``sources-dist.json``
 
-Im ``stable`` werden getestete Adapter aufgenommen. Hier wird **für jedes Repository eine genaue Version angegeben**.
+Im ``stable`` werden getestete Adapter-Versionen aufgenommen. Hier wird **für jedes Repository eine genaue Version angegeben**.
 
 Ein Eintrag sieht beispielsweise so aus:
 
@@ -30,12 +30,12 @@ Ein Eintrag sieht beispielsweise so aus:
         "meta": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/io-package.json",
         "icon": "https://raw.githubusercontent.com/ioBroker/ioBroker.admin/master/admin/admin.png",
         "type": "general",
-        "version": "5.1.25"
+        "version": "6.3.5"
     }
 
-Wie man sieht, ist vom Admin-Adapter in diesem Beispiel die Version ``5.1.25`` als stabil (``stable``) definiert.
+In diesem Beispiel wird vom Admin-Adapter die Version ``6.3.5`` als stabil (``stable``) definiert.
 
-Es kann gut sein, dass auf npm mittlerweile neue Versionen vergeben wurden und diese auch veröffentlicht ist. Diese Version bekommt man als Nutzer angeboten, wenn man das ``beta`` Repository wählt.
+Es kann gut sein, dass `auf npm <https://www.npmjs.com/package/iobroker.admin?activeTab=versions>`_ mittlerweile neuere Versionen veröffentlicht wurden. Die aktuellste Version wird über das ``beta`` Repository ausgerollt:
 
 Im Gegensatz dazu hat der Eintrag im ``beta`` Repository keine definierte Versionsnummer:
 
@@ -47,7 +47,7 @@ Im Gegensatz dazu hat der Eintrag im ``beta`` Repository keine definierte Versio
         "type": "general"
     }
 
-Bei dem ``beta`` Repository wird immer **die letzte Version zum Update angeboten** (von npm).
+Im ``beta`` Repository wird immer **die letzte Version zum Update angeboten** (von npm).
 
 Dieses Vorgehen hat den Vorteil, dass man als Adapter-Entwickler genau steuern kann, welche Nutzer welche Version angeboten bekommen. So können neue Versionen zwar veröffentlicht werden, aber "``stable``-Nutzer" werden erst später auf eine neue Version gebracht, wenn diese von vielen "``beta``-Nutzern" bereits getestet wurde.
 
@@ -60,18 +60,39 @@ Dieses Vorgehen hat den Vorteil, dass man als Adapter-Entwickler genau steuern k
 Bereitgestellte Daten
 ---------------------
 
-Die offiziellen Repositories werden regelmäßig aktualisiert und auf einem separaten Webserver bereitgestellt. Hier wird der Eintrag mit weiteren Informationen aus der :ref:`development-iopackage` angereichert.
+Die offiziellen Repositories werden regelmäßig aktualisiert und auf einem separaten Webserver bereitgestellt. Hier wird der Eintrag mit weiteren Informationen aus der :ref:`development-iopackage` der jeweiligen Adapter angereichert.
 
 .. note::
-    Die Aktualisierung des beta-Repository findet 2x täglich planmäßig statt (02:00 und 14:00 Uhr UTC). Die Logik dieses Prozesses ist nicht öffentlich dokumentiert.
+    Die Aktualisierung des beta-Repository findet 2x täglich planmäßig statt (02:00 und 14:00 Uhr UTC). Die Logik dieses Prozesses ist leider nicht öffentlich dokumentiert.
 
-Unser Beispiel-Eintrag für den Admin-Adapter sieht dann wie folgt aus (zur Übersichtlichkeit wurden Übersetzungen in weitere Sprachen aus dem JSON gelöscht):
+Jedes Repository enthält dabei (neben einer Liste aller verfügbaren Adapter) einige Meta-Informationen im Schlüssel ``_repoInfo``:
+
+.. code:: json
+
+    "_repoInfo": {
+        "stable": true,
+        "name": {
+            "en": "Official stable repository",
+            "de": "Offizielles stabiles Repository",
+            "ru": "Официальный стабильный репозиторий",
+            "pt": "Repositório estável oficial",
+            "nl": "Officiële stabiliteit",
+            "fr": "Dépôt stable officiel",
+            "it": "Repository stabile ufficiale",
+            "es": "Repositorio estable oficial",
+            "pl": "Repozytorium",
+            "zh-cn": "A. 正式稳定存放处"
+        },
+        "repoTime": "2023-07-05T06:56:41.309Z"
+    }
+
+Unser Beispiel-Eintrag für den Admin-Adapter sieht dann wie folgt aus (zur Übersichtlichkeit wurden Übersetzungen in weitere Sprachen aus dem JSON entfernt):
 
 .. code:: json
 
     "admin": {
         "name": "admin",
-        "version": "5.1.25",
+        "version": "6.3.5",
         "titleLang": {
             "en": "Admin",
             "de": "Admin"
@@ -80,7 +101,7 @@ Unser Beispiel-Eintrag für den Admin-Adapter sieht dann wie folgt aus (zur Übe
         "connectionType": "local",
         "dataSource": "push",
         "news": {
-            "5.1.25": {
+            "6.3.5": {
                 "en": "Corrected some errors reported via sentry and the github issues",
                 "de": "Einige Fehler, die Ã¼ber Wache und die Github-Probleme gemeldet wurden, korrigiert"
             },
@@ -211,30 +232,80 @@ Unser Beispiel-Eintrag für den Admin-Adapter sieht dann wie folgt aus (zur Übe
 Einstellungen im ioBroker
 -------------------------
 
-Der ioBroker kann zwar mehrere Repositories verwalten (zum Beispiel über den Admin-Adapter), aber nur ein einzelnes Repository kann aktiv sein.
+Die aktivien Repositories werden dabei im Objekt ``system.config`` im Attribut ``common.activeRepo`` hinterlegt (als Array). Siehe :ref:`basics-systemconfig`.
 
-Das aktive Repository wird dabei im Objekt ``system.config`` im Attribut ``common.activeRepo`` hinterlegt. Siehe :ref:`basics-systemconfig`.
+.. code:: json
+
+    "activeRepo": [
+        "beta",
+        "test"
+    ]
+
+Alle Repositories werden im Objekt ``system.repositories`` verwaltet. Dort wird neben der URL der komplette JSON-Response gespeichert. Aus dieser Quelle lädt der Admin-Adapter dann die Adpater-Liste:
+
+.. code:: json
+
+    {
+        "_id": "system.repositories",
+        "type": "config",
+        "common": {
+            "dontDelete": true,
+            "name": {
+                "de": "System-Repositories",
+                "en": "System repositories",
+                "es": "Repositorios del sistema",
+                "fr": "Référentiels système",
+                "it": "Repository di sistema",
+                "nl": "Systeemrepository's",
+                "pl": "Repozytoria systemowe",
+                "pt": "Repositórios do sistema",
+                "ru": "Системные репозитории",
+                "zh-cn": "系统资料库"
+            }
+        },
+        "native": {
+            "repositories": {
+                "beta": {
+                    "hash": "ef2811d7c70dea4a55635f2e3aeeb399",
+                    "json": {},
+                    "link": "https://download.iobroker.net/sources-dist-latest.json",
+                    "time": "2023-07-05T17:42:49.065Z"
+                },
+                "stable": {
+                    "link": "https://download.iobroker.net/sources-dist.json"
+                }
+            }
+        },
+        "acl": {
+            "object": 1604,
+            "owner": "system.user.admin",
+            "ownerGroup": "system.group.administrator"
+        },
+        "from": "system.adapter.admin.0",
+        "user": "system.user.admin",
+        "ts": 1688628692517
+    }
 
 Update-Prozess
 --------------
 
-Das konfigurierte/aktive Repository wird regelmäßig geprüft. Dafür wird die jeweils angegebene URL geändert, sodass stattdessen eine Hash-Datei abgerufen wird.
+Die konfigurierten/aktiven Repositories werden regelmäßig geprüft. Dafür wird die jeweils angegebene URL geändert, sodass stattdessen im ersten Schritt eine Hash-Datei abgerufen wird.
 
 .. code:: javascript
 
     urlOrPath = urlOrPath.replace(/\.json$/, '-hash.json');
 
-So wird also z.B. statt ``http://download.iobroker.net/sources-dist.json`` erstmal ``http://download.iobroker.net/sources-dist-hash.json`` abgerufen. Aktuell hat die Datei folgenden Inhalt:
+So wird also z.B. statt ``https://download.iobroker.net/sources-dist.json`` erstmal ``https://download.iobroker.net/sources-dist-hash.json`` abgerufen. Aktuell hat die Datei folgenden Inhalt:
 
 .. code:: json
 
     {
-        "hash": "a3276c4275647354fa9f81748dde7941",
-        "date": "2021-10-04T14:21:02.483Z",
+        "hash": "2fbf2f0908829d0597a96d04b24c3e0d",
+        "date": "2023-07-05T06:56:41.487Z",
         "name": "sources-dist.json"
     }
 
-Dieser Hash wird mit dem aktuellen Hash in ``system.repositories`` verglichen. Sollte der Hash abweichen, wird die eigentliche JSON-Datei geladen. Dies wurde so gelöst, um den Traffic von tausenden anfragenden Systemen zu reduzieren.
+Dieser Hash wird mit dem aktuellen Hash im Objekt ``system.repositories`` verglichen. Sollte der Hash abweichen, wird die eigentliche JSON-Datei geladen. Dies wurde so gelöst, um den Traffic von tausenden anfragenden Systemen zu reduzieren.
 
 Links
 -----

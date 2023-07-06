@@ -1291,6 +1291,53 @@ Typ config
         "ts": 1633096344214
     }
 
+.. code:: console
+
+    iobroker object get system.repositories
+
+.. code:: json
+
+    {
+        "_id": "system.repositories",
+        "type": "config",
+        "common": {
+            "dontDelete": true,
+            "name": {
+                "de": "System-Repositories",
+                "en": "System repositories",
+                "es": "Repositorios del sistema",
+                "fr": "Référentiels système",
+                "it": "Repository di sistema",
+                "nl": "Systeemrepository's",
+                "pl": "Repozytoria systemowe",
+                "pt": "Repositórios do sistema",
+                "ru": "Системные репозитории",
+                "zh-cn": "系统资料库"
+            }
+        },
+        "native": {
+            "repositories": {
+                "beta": {
+                    "hash": "ef2811d7c70dea4a55635f2e3aeeb399",
+                    "json": {},
+                    "link": "https://download.iobroker.net/sources-dist-latest.json",
+                    "time": "2023-07-05T17:42:49.065Z"
+                },
+                "stable": {
+                    "link": "https://download.iobroker.net/sources-dist.json"
+                }
+            }
+        },
+        "acl": {
+            "object": 1604,
+            "owner": "system.user.admin",
+            "ownerGroup": "system.group.administrator"
+        },
+        "from": "system.adapter.admin.0",
+        "user": "system.user.admin",
+        "ts": 1688628692517
+    }
+
 Typ host
 --------
 
