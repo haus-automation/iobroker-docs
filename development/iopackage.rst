@@ -900,6 +900,8 @@ Eigenschaften (Web-Adapter)
     - `ioBroker.simple-api <https://github.com/ioBroker/ioBroker.simple-api>`_
     - `ioBroker.proxy <https://github.com/ioBroker/ioBroker.proxy>`_
     - `ioBroker.cameras <https://github.com/ioBroker/ioBroker.cameras>`_
+    - `ioBroker.lametric <https://github.com/klein0r/ioBroker.lametric/>`_
+    - `ioBroker.gira-iot <https://github.com/klein0r/ioBroker.gira-iot>`_
 
     .. code:: json
 

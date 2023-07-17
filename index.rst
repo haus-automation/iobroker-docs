@@ -52,6 +52,7 @@ Der ioBroker weicht die (künstlichen) Grenzen der Hardware-Hersteller auf und e
     :caption: Adapter
 
     adapters/weather
+    adapters/api
 
 .. toctree::
     :maxdepth: 2
