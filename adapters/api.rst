@@ -6,8 +6,11 @@ API-Adapter
 Soll von extern auf den ioBroker zugegriffen werden, können mehrere Adapter genutzt werden
 
 - `ioBroker.rest-api <https://github.com/ioBroker/ioBroker.rest-api>`_
-- `ioBroker.simple-api <https://github.com/ioBroker/ioBroker.simple-api>`_
+- `ioBroker.simple-api <https://github.com/ioBroker/ioBroker.simple-api>`_ (deprecated)
 - `ioBroker.web <https://github.com/ioBroker/ioBroker.web>`_
+
+.. warning::
+    Der simple-api-Adapter wird nicht weiter entwickelt und wurde vollständig durch den (umfangreicheren) rest-api-Adapter abgelöst.
 
 Leider ist es etwas undurchsichtig und im ersten Moment verwirrend, welcher Adapter für was genutzt werden sollte. Noch undurchsichtiger wird es, wenn man die Einstellungen des ``web`` Adapters anschaut - denn dieser stellt bei bedarf eine integrierte ``simple-api`` bereit.
 
@@ -16,9 +19,6 @@ Leider ist es etwas undurchsichtig und im ersten Moment verwirrend, welcher Adap
 
 .. tip::
     Auch der rest-api-Adapter kann als Plugin für den web-Adapter gestartet werden. In diesem Fall wird dann nur ein Port (der des web-Adapters) benötigt.
-
-.. warning::
-    Zum aktuellen Zeitpunkt wird der simple-api-Adapter nicht weiter entwickelt und wurde vollständig durch den (umfangreicheren) rest-api-Adapter abgelöst.
 
 Ports
 -----

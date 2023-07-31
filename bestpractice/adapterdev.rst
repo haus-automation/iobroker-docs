@@ -585,10 +585,29 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für States im eigen
         }
     }
 
+Daten formatieren
+-----------------
+
+Um Daten für den Endanwender lesbar zu formatieren, gibt es im Adapter verschiedene Funktionen, welche diese Aufgabe übernehmen:
+
+- `formatDate`
+- `formatValue`
+
+Beide Funktionen beziehen sich im Standard auf die System-Einstellungen (es können ggf. eigene Formatierungs-Optionen übergeben werden).
+
+Bei `formatValue` wird dieses Format als String (mit 2 Zeichen Länge!) übergeben. Dabei ist das erste Zeichen im String das 1000er-Trennzeichen und das zweite definiert das Komma. Eselsbrücke: Die Reihenfolge ist genauso, wie später im Ergebnis.
+
+Beispiele:
+
+- `this.formatValue(2.43425, 3);` - Rückgabe: 2,434
+- `this.formatValue(2.53425, 0);` - Rückgabe: 3 (wird gerundet!)
+- `this.formatValue(1000.123, 2, '.,');` - Rückgabe: 1.000,12
+- `this.formatValue(1000.123, 2, ',.');` - Rückgabe: 1,000.12 (US-Schreibweise)
+
 Timeout / Interval
 ------------------
 
-Die basis Adapter-Implementierung erlaubt das verwalten von Timeouts und Intervals. Das nutzen dieser Adapter-Funktionen stellt sicher, dass **alle Timeouts und Intervals beim Stop der Instanz korrekt abgebrochen werden**.
+Die basis Adapter-Implementierung erlaubt das verwalten von Timeouts und Intervals. Das nutzen dieser Adapter-Funktionen stellt sicher, dass **alle Timeouts und Intervalle beim Stop der Instanz korrekt abgebrochen werden**.
 
 Die Signaturen der Funktionen sind dabei identisch zum JavaScript-Standard.
 

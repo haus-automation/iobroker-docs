@@ -321,7 +321,7 @@ Eigenschaften (Allgemein)
     - ``multimedia`` - Fernseher, Receiver, Beamer, ...
     - ``network`` - Ping, ...
     - ``protocols`` - Generische Protokolle (wie MQTT)
-    - ``storage`` - Daten-Speicherung wie mySQL oder InfluxDB
+    - ``storage`` - Daten-Speicherung wie history, mySQL oder InfluxDB - siehe :ref:`adapters-databases`
     - ``utility`` - Weitere Tools wie Backup-Adapter
     - ``visualization`` - Visualisierungs-Adapter
     - ``visualization-icons`` - Zusätzliche Icons für die Visualisierung
@@ -332,7 +332,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.unsafePerm
 
-    Legt fest, ob das Adapter-Paket mit dem ``--unsafe-perm`` Parameter für npm installiert werden **muss**. Siehe `npm Dokumentation <https://docs.npmjs.com/cli/v6/using-npm/config#unsafe-perm>`_
+    Legt fest, ob das Adapter-Paket mit dem ``--unsafe-perm`` Parameter für npm installiert werden **muss**. Siehe `npm Dokumentation <https://docs.npmjs.com/cli/v9/using-npm/config#unsafe-perm>`_
 
     :type: boolean
 
@@ -502,20 +502,43 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.localLinks
 
-    Konfiguration für Intro-Tab
+    Konfiguration für Intro-Tab und Instanz-Übersicht (Direktlink). Hier können Links für verschiedene Dienste o.ä. hinterlegt werden (auch externe Links).
+
+    Die Instanz muss aktiv sein ``common.enabled: true`` damit diese Links angezeigt werden!
 
     Eigenschaften:
 
     - ``link`` (string, erforderlich!)
     - ``color`` (string)
     - ``pro`` (boolean)
-    - ``icon`` (string)
+
+    .. code:: json
+
+        "localLinks": {
+            "_default": {
+                "link": "https://haus-automatisierung.com",
+                "color": "#fc8326"
+            }
+        }
+
+    Ist der Standard-Name nicht `_default`, wird dieser Name ebenfalls in der Kachel im Intro-Tab angezeigt:
+
+    .. code:: json
+
+        "localLinks": {
+            "iobroker-kurs": {
+                "link": "https://haus-automatisierung.com/iobroker-kurs/",
+                "color": "#fc8326"
+            }
+        }
 
     In diesen Links können verschiedene Platzhalter verwendet werden, welche automatisch ersetzt werden:
 
+    - ``%ip%``
+    - ``%protocol%``
+    - ``%instance%``
     - ``%objects%``
     - ``%hostname%``
-    - ``%protocol%``
     - ``%port%``
     - ``%hosts%``
     - ``%adminInstance%``
