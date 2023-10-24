@@ -8,7 +8,7 @@ In diesem Dokument werden einige Code-Beispiele gesammelt, welche häufig bei de
 .. danger::
     Diese Code-Beispiele sind NICHT für JavaScript-Code im JavaScript-Adapter gedacht! Dort werden teilweise andere Funktionen bzw. unterschiedliche Signaturen genutzt.
 
-Eine Adapter-Klasse sollte immer von ``utils.Adapter`` erben. Die Basis-Klasse findest Du `hier <https://github.com/ioBroker/adapter-core>`_.
+Eine Adapter-Klasse sollte immer von ``utils.Adapter`` erben. Die Basis-Klasse ist `hier <https://github.com/ioBroker/adapter-core>`_ zu finden.
 
 .. code:: javascript
 
@@ -17,6 +17,12 @@ Eine Adapter-Klasse sollte immer von ``utils.Adapter`` erben. Die Basis-Klasse f
     class MyAdapter extends utils.Adapter {
         // ...
     }
+
+Nützliche Eigenschaften
+-----------------------
+
+- ``this.host``
+- ``this.FORBIDDEN_CHARS``
 
 Objekte
 -------

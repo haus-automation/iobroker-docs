@@ -225,8 +225,40 @@ Eigenschaften (Allgemein)
 
     ``true`` wenn Nachrichten per ``sendTo()`` an den Adapter erlaubt sind. Siehe :ref:`development-messagebox`
 
+    Ab ``js-controller`` 5.x sollte ``common.supportedMessages.custom`` verwendet werden!
+
     :type: boolean
     :default: ``false``
+
+.. confval:: common.blockedVersions
+
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` 5.0.14
+
+    Diese Information wird in die :ref:`ecosystem-repositories` (Adapter-Listen) aufgenommen, um zu verhindern dass bestimmte Versionen von Adaptern gestartet werden können (falls gravierende Fehler oder Sicherheitslücken enthalten sind).
+
+    Beispiel vom Alexa2-Adapter:
+
+    .. code:: json
+
+        "blockedVersions": [
+            "~3.14.0",
+            "~3.15.0",
+            "~3.16.0",
+            "3.17.0",
+            "3.17.1",
+            "3.17.2",
+            "3.17.3"
+        ]
+
+    :type: array
+
+.. confval:: common.supportedMessages
+
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` 5.0.14
+
+    Siehe :ref:`development-messagebox`
+
+    :type: object
 
 .. confval:: common.readme
 
@@ -473,6 +505,8 @@ Eigenschaften (Allgemein)
 
     Legt fest, ob der Adapter den ``getHistory`` Befehl unterstützt (siehe z.B. InfluxDB-Adapter)
 
+    Ab ``js-controller`` 5.x sollte ``common.supportedMessages.getHistory`` verwendet werden!
+
     :type: boolean
 
 .. confval:: common.icon
@@ -640,97 +674,99 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.preserveSettings
 
-     Liste mit Attributen, welche nicht automatisch gelöscht werden sollen (z.B. ``history``)
+    Liste mit Attributen, welche nicht automatisch gelöscht werden sollen (z.B. ``history``)
 
-     :type: string|array
+    :type: string|array
 
 .. confval:: common.restartAdapters
 
-     Liste mit Adaptern, welche neugestartet werden sollen, nachdem dieser Adapter installiert wurde (z.B. ``["vis"]``)
+    Liste mit Adaptern, welche neugestartet werden sollen, nachdem dieser Adapter installiert wurde (z.B. ``["vis"]``)
 
-     :type: array
+    :type: array
 
 .. confval:: common.serviceStates
 
-     .. todo::
+    .. todo::
         Explain common.serviceStates
 
-     :type: string|boolean
+    :type: string|boolean
 
 .. confval:: common.singletonHost
 
-     Legt fest, ob es nur eine einzelne Instanz pro Host geben darf
+    Legt fest, ob es nur eine einzelne Instanz pro Host geben darf
 
-     :type: boolean
-     :default: ``false``
+    :type: boolean
+    :default: ``false``
 
 .. confval:: common.singleton
 
-     Legt fest, ob es nur eine einzelne Instanz im gesamten ioBroker-System geben darf (Multihost-Betrieb). Siehe :ref:`basics-multihost`
+    Legt fest, ob es nur eine einzelne Instanz im gesamten ioBroker-System geben darf (Multihost-Betrieb). Siehe :ref:`basics-multihost`
 
-     :type: boolean
-     :default: ``false``
+    :type: boolean
+    :default: ``false``
 
 .. confval:: common.stopBeforeUpdate
 
-     Legt fest, ob die Instanzen vor einem Update gestoppt werden müssen
+    Legt fest, ob die Instanzen vor einem Update gestoppt werden müssen
 
-     :type: boolean
+    :type: boolean
 
 .. confval:: common.stopTimeout
 
-     Wartezeit in Millisekunden, bis der Adapter angehalten wird
+    Wartezeit in Millisekunden, bis der Adapter angehalten wird
 
-     :type: number
-     :default: ``500``
+    :type: number
+    :default: ``500``
 
 .. confval:: common.subscribable
 
     Legt fest, ob dieser Adapter von anderen Adaptern automatisch abonniert werden soll
 
-     :type: boolean
+    :type: boolean
 
 .. confval:: common.subscribe
 
-     .. todo::
+    .. todo::
         Explain common.subscribe
 
-     :type: string
+    :type: string
 
 .. confval:: common.supportCustoms
 
-     Legt fest, ob es zusätzliche Einstellungen für jeden Datenpunkt gibt
+    Legt fest, ob es zusätzliche Einstellungen für jeden Datenpunkt gibt
 
-     - ``admin/custom.html`` erforderlich - ab Admin Version 3
-     - ``admin/custom_m.html`` erforderlich - ab Admin Version 4
-     - ``admin/jsonCustom.json`` erforderlich - ab Admin Version 5
+    - ``admin/custom.html`` erforderlich - ab Admin Version 3
+    - ``admin/custom_m.html`` erforderlich - ab Admin Version 4
+    - ``admin/jsonCustom.json`` erforderlich - ab Admin Version 5
 
-     :type: boolean
+    :type: boolean
 
 .. confval:: common.supportStopInstance
 
-     Legt fest, ob der Adapter das ``stopInstance`` Signal unterstützt.  Siehe :ref:`development-messagebox`
+    Legt fest, ob der Adapter das ``stopInstance`` Signal unterstützt.  Siehe :ref:`development-messagebox`
 
-     :type:  boolean
+    Ab ``js-controller`` 5.x sollte ``common.supportedMessages.stopInstance`` verwendet werden!
+
+    :type:  boolean
 
 .. confval:: common.wakeup
 
-     Legt fest, ob die Instanz gestartet werden soll, wenn ein Wert in ``system.adapter.<adapter-name>.<instanz-nummmer>.wakeup`` geschrieben wird.
+    Legt fest, ob die Instanz gestartet werden soll, wenn ein Wert in ``system.adapter.<adapter-name>.<instanz-nummmer>.wakeup`` geschrieben wird.
 
-     :type: boolean
+    :type: boolean
 
 .. confval:: common.webservers
 
-     Liste mit Webservern, welche Inhalte aus dem www-Verzeichnis des Adapters liefern
+    Liste mit Webservern, welche Inhalte aus dem www-Verzeichnis des Adapters liefern
 
-     :type: array
+    :type: array
 
 .. confval:: common.welcomeScreen
 
-     .. todo::
+    .. todo::
         Explain common.welcomeScreen
 
-     :type: array
+    :type: array
 
 .. confval:: common.welcomeScreenPro
 
@@ -752,7 +788,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: common.messages
 
-    Informationen, welche bei der Adapter-Installation angezeigt werden sollen.
+    Wichtige Informationen/Warnungen/Gefahren, welche im Admin-Adapter als Hinweis angezeigt werden sollen.
 
     Mögliche Eigenschaften pro Nachricht:
 
@@ -855,7 +891,7 @@ Eigenschaften (Allgemein)
 
 .. confval:: notifications
 
-    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` Version 3.2.0
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` Version 5.0.14
 
     Liste von Objekten zur Konfiguration zur Konfiguration des internen Notification-Systems. Siehe :ref:`development-notifications`
 
@@ -863,6 +899,140 @@ Eigenschaften (Allgemein)
     - ``name`` (erforderlich) - sollte in alle Sprachen übersetzt werden
     - ``description`` (erforderlich) - sollte in alle Sprachen übersetzt werden
     - ``categories`` (erforderlich)
+
+    Hier ein Beispiel aus dem Admin-Adapter, welche Notifications für News erlaubt. Diese werden dann im Admin-Adapter dargestellt.
+
+    .. code:: json
+
+        "notifications": [
+            {
+                "scope": "news",
+                "name": {
+                    "en": "News",
+                    "de": "Nachrichten",
+                    "ru": "Новости",
+                    "pt": "Notícias",
+                    "nl": "Nieuws",
+                    "fr": "Actualités",
+                    "it": "Notizie",
+                    "es": "Noticias",
+                    "pl": "News",
+                    "uk": "Новини",
+                    "zh-cn": "新闻"
+                },
+                "description": {
+                    "en": "These notifications represent news regarding installed adapters or general ioBroker information.",
+                    "de": "Diese Benachrichtigungen enthalten Neuigkeiten zu installierten Adaptern oder allgemeine ioBroker-Informationen.",
+                    "ru": "Эти уведомления представляют новости о установленных адаптерах или общей информации ioBroker.",
+                    "pt": "Estas notificações representam notícias sobre adaptadores instalados ou informações gerais do ioBroker.",
+                    "nl": "Deze berichten zijn nieuws over geïnstalleerde adapters of algemene ioBroker informatie.",
+                    "fr": "Ces notifications représentent des nouvelles concernant les adaptateurs installés ou les informations générales ioBroker.",
+                    "it": "Queste notifiche rappresentano notizie riguardanti adattatori installati o informazioni generali su ioBroker.",
+                    "es": "Estas notificaciones representan noticias sobre adaptadores instalados o información general ioBroker.",
+                    "pl": "Noty te reprezentują informacje dotyczące zainstalowanych adapterów lub ogólnie dostępnych informacji ioBrokera.",
+                    "uk": "Ці повідомлення представляють новини про встановлені адаптери або загальні відомості про ioBroker.",
+                    "zh-cn": "这些通知是有关安装的适应器或一般的气箱信息的新闻。."
+                },
+                "categories": [
+                    {
+                        "category": "info",
+                        "name": {
+                            "en": "General news",
+                            "de": "Allgemeine Nachrichten",
+                            "ru": "Общие новости",
+                            "pt": "Notícia geral",
+                            "nl": "Generaal",
+                            "fr": "Nouvelles générales",
+                            "it": "Notizie generali",
+                            "es": "Noticias generales",
+                            "pl": "Strona oficjalna",
+                            "uk": "Новини",
+                            "zh-cn": "新闻"
+                        },
+                        "severity": "notify",
+                        "description": {
+                            "en": "These messages represent general news, which just have informal purpose and do not need to be read immediately.",
+                            "de": "Diese Nachrichten stellen allgemeine Nachrichten dar, die nur informellen Zweck haben und nicht sofort gelesen werden müssen.",
+                            "ru": "Эти сообщения представляют собой общие новости, которые просто имеют неформальную цель и не нужно читать немедленно.",
+                            "pt": "Essas mensagens representam notícias gerais, que apenas têm um propósito informal e não precisam ser lidas imediatamente.",
+                            "nl": "Deze berichten vertegenwoordigen algemene nieuws, wat informeel doel heeft en niet onmiddellijk hoeft te worden gelezen.",
+                            "fr": "Ces messages représentent des nouvelles générales, qui ont juste un but informel et ne doivent pas être lus immédiatement.",
+                            "it": "Questi messaggi rappresentano notizie generali, che hanno solo scopo informale e non devono essere letti immediatamente.",
+                            "es": "Estos mensajes representan noticias generales, que sólo tienen un propósito informal y no necesitan ser leídos inmediatamente.",
+                            "pl": "Wiadomości te reprezentują ogólnokrajowe wiadomości, które tylko mają nieformalny cel i nie muszą być odczytane natychmiast.",
+                            "uk": "Ці повідомлення представляють загальні новини, які просто мають неформальне призначення і не потрібно негайно прочитати.",
+                            "zh-cn": "这些信息是一般新闻,这只是非正式目的,不需要立即阅读。."
+                        },
+                        "regex": [],
+                        "limit": 10
+                    },
+                    {
+                        "category": "warning",
+                        "name": {
+                            "en": "Important news",
+                            "de": "Wichtige Nachrichten",
+                            "ru": "Важные новости",
+                            "pt": "Notícia importante",
+                            "nl": "Belangrijk nieuws",
+                            "fr": "Nouvelles importantes",
+                            "it": "Notizie importanti",
+                            "es": "Noticias importantes",
+                            "pl": "Important news",
+                            "uk": "Новини",
+                            "zh-cn": "重要的新闻"
+                        },
+                        "severity": "info",
+                        "description": {
+                            "en": "These messages represent adapter warnings and important changes in the near future.",
+                            "de": "Diese Nachrichten stellen Adapterwarnungen und wichtige Veränderungen in der nahen Zukunft dar.",
+                            "ru": "Эти сообщения представляют предупреждение о адаптере и важные изменения в ближайшем будущем.",
+                            "pt": "Estas mensagens representam avisos de adaptadores e mudanças importantes no futuro próximo.",
+                            "nl": "Deze berichten vertegenwoordigen adapter waarschuwingen en belangrijke veranderingen in de nabije toekomst.",
+                            "fr": "Ces messages représentent des avertissements d'adaptateur et des changements importants dans un proche avenir.",
+                            "it": "Questi messaggi rappresentano avvisi di adattatore e cambiamenti importanti nel prossimo futuro.",
+                            "es": "Estos mensajes representan advertencias de adaptador y cambios importantes en el futuro cercano.",
+                            "pl": "Wiadomości te reprezentują ostrzeżenia adaptatora i ważne zmiany w najbliższej przyszłości.",
+                            "uk": "Ці повідомлення представляють попередження та важливі зміни в найближчому майбутньому.",
+                            "zh-cn": "这些信息是适应的预警和近期的重要变化。."
+                        },
+                        "regex": [],
+                        "limit": 10
+                    },
+                    {
+                        "category": "danger",
+                        "name": {
+                            "en": "Very important news",
+                            "de": "Sehr wichtige Nachrichten",
+                            "ru": "Очень важные новости",
+                            "pt": "Notícia muito importante",
+                            "nl": "Heel belangrijk",
+                            "fr": "Nouvelles très importantes",
+                            "it": "Notizie molto importanti",
+                            "es": "Noticias muy importantes",
+                            "pl": "Ważne wiadomości",
+                            "uk": "Останні новини",
+                            "zh-cn": "非常重要的新闻"
+                        },
+                        "severity": "alert",
+                        "description": {
+                            "en": "These notifications are very important. They may give you a hint that an adapter upgrade is required right now to maintain functionality.",
+                            "de": "Diese Benachrichtigungen sind sehr wichtig. Sie können Ihnen einen Hinweis geben, dass ein Adapter-Upgrade jetzt erforderlich ist, um die Funktionalität zu erhalten.",
+                            "ru": "Эти уведомления очень важны. Они могут дать вам подсказку, что обновление адаптера требуется прямо сейчас для поддержания функциональности.",
+                            "pt": "Estas notificações são muito importantes. Eles podem lhe dar uma dica de que uma atualização do adaptador é necessária agora para manter a funcionalidade.",
+                            "nl": "Deze berichten zijn heel belangrijk. Ze kunnen je een hint geven dat een adapter upgrade nu nodig is om functionaliteit te behouden.",
+                            "fr": "Ces notifications sont très importantes. Ils peuvent vous donner un indice qu'une mise à niveau d'adaptateur est nécessaire pour maintenir la fonctionnalité.",
+                            "it": "Queste notifiche sono molto importanti. Essi possono dare un suggerimento che un aggiornamento adattatore è necessario in questo momento per mantenere la funzionalità.",
+                            "es": "Estas notificaciones son muy importantes. Pueden darle una pista de que se requiere una actualización del adaptador ahora mismo para mantener la funcionalidad.",
+                            "pl": "Te informacje są bardzo ważne. Mogą dać wskazówki, że ulepszanie adapteru jest niezbędne do utrzymania funkcji.",
+                            "uk": "Ці повідомлення дуже важливі. Вони можуть надати вам підказку, що оновлення адаптера потрібно прямо зараз для підтримки функціональності.",
+                            "zh-cn": "这些通知非常重要。 他们可以向你说明,适应人员升级现在需要保持功能。."
+                        },
+                        "regex": [],
+                        "limit": 10
+                    }
+                ]
+            }
+        ]
 
     :type: array
 

@@ -70,6 +70,13 @@ adapter-check.iobroker.in
 
 - `Adapter-Checker (dev) <https://adapter-check.iobroker.in>`_ - siehe :ref:`development-adapter`
 
+ip.iobroker.in
+--------------
+
+Wird vom Admin-Adapter verwendet, um zu prüfen, ob der Admin ungesichert aus dem Internet über die öffentliche IP-Adresse zu erreichen ist.
+
+- `Security-Checker (webserver) <https://ip.iobroker.in>`_
+
 iobroker.pro
 ------------
 
