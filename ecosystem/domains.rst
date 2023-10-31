@@ -12,6 +12,7 @@ iobroker.dev
 ------------
 
 - `Developer Portal <https://www.iobroker.dev>`_
+- `Adapter-Statistiken (Beispiel Trashschedule) <https://www.iobroker.dev/api/adapter/trashschedule/stats>`_ - siehe :ref:`ecosystem-statistics`
 
 iobroker.net
 ------------
@@ -91,7 +92,7 @@ iobroker.live
 - `GitHub Badge (Installationen) <http://iobroker.live/badges/octoprint-installed.svg>`_
 - `News für den Admin-Adapter (repo/news.json) <https://iobroker.live/repo/news.json>`_ - siehe :ref:`ecosystem-news`
 - `News hash für den Admin-Adapter (repo/news-hash.json) <https://iobroker.live/repo/news-hash.json>`_ - siehe :ref:`ecosystem-news`
-- `Statistiken der Adapter-Installationen (statistics.json) <http://iobroker.live/statistics.json>`_
+- `Statistiken der Adapter-Installationen (statistics.json) <http://iobroker.live/statistics.json>`_ - siehe :ref:`ecosystem-statistics`
 
 repo.iobroker.live
 ------------------

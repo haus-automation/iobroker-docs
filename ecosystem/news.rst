@@ -3,9 +3,11 @@
 Neuigkeiten
 ===========
 
+:octicon:`git-branch;1em;sd-text-info` Seit Admin 6.10.5 werden für die News (intern) :ref:`development-notifications` verwendet.
+
 Um Benutzer über Neuigkeiten rund um ihr ioBroker-System zu informieren, wird in regelmäßigen Abständen eine ``news.json`` von den ioBroker-Servern geladen.
 
-Dabei wird (genau wie bei den - :ref:`ecosystem-repositories`), eine Hash-Datei heruntergeladen und der Hash in einem State gespeichert. Sollte sich der Hash geädndert haben, wird die neue News-Datei vom Admin heruntergeladen und ausgewertet.
+Dabei wird (genau wie bei den - :ref:`ecosystem-repositories`), eine Hash-Datei heruntergeladen und der Hash in einem State (``admin.x.info.newsETag``) gespeichert. Sollte sich der Hash geädndert haben, wird die neue News-Datei vom Admin heruntergeladen und ebenfalls in einen State gespeichert: ``admin.x.info.newsFeed``.
 
 news.json
 ---------
@@ -54,6 +56,14 @@ Beispiel:
             "web": "smaller(3.0.0)",
             "socketio": "smaller(3.0.0)"
         }
+    }
+
+Alternativ kann z.B. geprüft werden, ob Adapter installiert sind, welche die News betreffen. Alle Bedingungen müssen erfüllt sein (UND-Verknüpfung):
+
+.. code:: json
+
+    "conditions": {
+        "squeezebox": "installed"
     }
 
 Links

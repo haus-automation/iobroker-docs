@@ -149,7 +149,7 @@ Unterstützte Formate:
 
 - ``file`` - Speichert unter ``/opt/iobroker/iobroker-data/(objects|states).json`` die Daten im JSON-Format (bis ``js-controller`` 3.x war dies der Standard)
 - ``jsonl`` - Speichert unter ``/opt/iobroker/iobroker-data/(objects|states).jsonl`` die Daten als `JSON Lines <https://jsonlines.org>`_ (ab ``js-controller`` 4.x ist dies der Standard)
-- ``redis`` - Speichert die Daten im Key-Value-Storage über den Dienst `Redis <https://redis.io/>`_ bzw. `Redis Sentinel <https://redis.io/docs/manual/sentinel/>`_
+- ``redis`` - Speichert die Daten im Key-Value-Storage über den Dienst `Redis <https://redis.io/>`_ bzw. `Redis Sentinel <https://redis.io/docs/manual/sentinel/>`_ (ab 15.000 Objekten empfohlen)
 
 Hierbei wird ein Speichertyp pro Datenbank festgelegt. Das heißt,
 
