@@ -613,7 +613,8 @@ Beispiele:
 Timeout / Interval
 ------------------
 
-Die basis Adapter-Implementierung erlaubt das verwalten von Timeouts und Intervals. Das nutzen dieser Adapter-Funktionen stellt sicher, dass **alle Timeouts und Intervalle beim Stop der Instanz korrekt abgebrochen werden**.
+Die Basis-Adapter-Implementierung erlaubt das verwalten von Timeouts und Intervallen. Das nutzen dieser Adapter-Funktionen stellt sicher, dass **alle Timeouts und Intervalle beim Stop der Instanz korrekt abgebrochen/beendet werden**.
+
 
 Die Signaturen der Funktionen sind dabei identisch zum JavaScript-Standard.
 

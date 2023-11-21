@@ -9,6 +9,7 @@ Als Adapter-Entwickler gibt es mehrere Wege eine Konfiguration der Instanz berei
     - JSON-Config custom components
 - Adapter-React
 - Materialize HTML/CSS (deprecated)
+- HTML (deprecated)
 
 Über die :ref:`development-iopackage` Konfiguration wird festgelegt, welche Instanz-Konfiguration, Objekt-Eigenschaften oder Admin-Tabs der jeweilige Adapter unterstützt.
 
@@ -27,6 +28,19 @@ JSON-Config
 .. todo::
     Explain
 
+JSON-Config custom components
+-----------------------------
+
+:octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``admin`` 6
+
+Mit den Standard JSON-Config-Komponenten (siehe oben) kann man schon eine Menge realisieren. Sollte darüber hinaus noch mehr benötigt werden, können eigene Komponenten (sog. Custom Components) hinzugefügt werden.
+
+Beispiele:
+
+- `Template <https://github.com/ioBroker/ioBroker.admin-component-template>`_
+- `Admin easy access <https://github.com/ioBroker/ioBroker.admin-component-easy-access>`_
+- `Telegram-Adapter (Usernames) <https://github.com/iobroker-community-adapters/ioBroker.telegram/tree/master/src>`_
+
 Materialize HTML/CSS
 --------------------
 
@@ -40,11 +54,12 @@ HTML
 
 :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``admin`` 2
 
-.. todo::
-    Explain
+.. warning::
+    Diese Methode ist veraltet und sollte nicht mehr für neue Adapter verwendet werden. In seltenen Fällen gibt es noch sehr alter Adapter, welche auf noch keine neuere Methode aktualisiert wurden.
 
 Links
 -----
 
 - `Adapter-React v5 <https://github.com/ioBroker/adapter-react-v5>`_
 - `Adapter-React-Demo <https://github.com/ioBroker/adapter-react-demo>`_
+- `Admin JsonConfigComponents Schema <https://github.com/ioBroker/ioBroker.admin/blob/master/src/src/components/JsonConfigComponent/SCHEMA.md>`_
