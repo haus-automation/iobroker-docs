@@ -21,8 +21,22 @@ Eine Adapter-Klasse sollte immer von ``utils.Adapter`` erben. Die Basis-Klasse i
 Nützliche Eigenschaften
 -----------------------
 
-- ``this.host``
-- ``this.FORBIDDEN_CHARS``
+- ``this.host`` - 
+- ``this.FORBIDDEN_CHARS`` - 
+- ``this.namespace`` - Der komplette Namespace im Format. z.B. ``admin.0``
+- ``this.instance`` -  Die Instanznummer als numerischer Wert. z.B. ``0``
+- ``this.adapterDir`` - Der abolute Pfad zum Adapter-Verzeichnis (innerhalb node_modules)
+- ``this.ioPack`` - Die ``io-package.json`` als Objekt
+
+Die folgenden Eigenschaften werden nur bereitgestellt, wenn ``useFormatDate: true`` im Constructor übergeben wird.
+
+- ``this.dateFormat``
+- ``this.isFloatComma``
+- ``this.language``
+- ``this.longitude``
+- ``this.latitude``
+
+
 
 Objekte
 -------

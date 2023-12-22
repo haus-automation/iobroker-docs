@@ -121,6 +121,55 @@ Für den Zugriff stehen die folgenden Funktionen bereit:
         await this.writeFileAsync(this.namespace, 'newFile.txt', 'Just created a new test file');
     }
 
+Lesen eines Verzeichnisses:
+
+.. code:: javascript
+
+    const files = await this.readDirAsync(this.namespace, '/');
+
+    /*
+    [
+        {
+            "file": "newFile.txt",
+            "stats": {
+                "dev": 64523,
+                "mode": 33188,
+                "nlink": 1,
+                "uid": 1000,
+                "gid": 1000,
+                "rdev": 0,
+                "blksize": 4096,
+                "ino": 688120,
+                "size": 84247,
+                "blocks": 168,
+                "atimeMs": 1703230920803.272,
+                "mtimeMs": 1703230925247.2634,
+                "ctimeMs": 1703230925247.2634,
+                "birthtimeMs": 1703230920803.272,
+                "atime": "2023-12-22T07:42:00.803Z",
+                "mtime": "2023-12-22T07:42:05.247Z",
+                "ctime": "2023-12-22T07:42:05.247Z",
+                "birthtime": "2023-12-22T07:42:00.803Z"
+            },
+            "isDir": false,
+            "acl": {
+                "owner": "system.user.admin",
+                "ownerGroup": "system.group.administrator",
+                "permissions": 1604,
+                "read": true,
+                "write": true
+            },
+            "modifiedAt": 1703230925251
+        }
+    ]
+    */
+
+    for (const fileMeta of files) {
+        if (!fileMeta.isDir) {
+            await this.adapter.delFileAsync(this.adapter.namespace, fileMeta.file);
+        }
+    }
+
 Binary-State
 ------------
 

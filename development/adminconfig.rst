@@ -18,7 +18,7 @@ Als Adapter-Entwickler gibt es mehrere Wege eine Konfiguration der Instanz berei
 - ``common.adminUI.tab`` legt fest, welche Methode für Admin-Tabs genutzt werden soll - siehe :ref:`development-iopackage`
 
 .. warning::
-    Es gibt noch einige weitere Attribute in der io-package.json, welche dem Admin mitteilen, welche Art genutzt wird. Allerdings sind diese deprecated und sollten nicht mehr verwendet werden!
+    Es gibt noch einige weitere Attribute in der ``io-package.json``, welche dem Admin mitteilen, welche Art genutzt wird. Allerdings sind diese deprecated und sollten nicht mehr verwendet werden!
 
 JSON-Config
 -----------
