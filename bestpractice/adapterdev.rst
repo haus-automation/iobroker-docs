@@ -36,8 +36,6 @@ Die folgenden Eigenschaften werden nur bereitgestellt, wenn ``useFormatDate: tru
 - ``this.longitude``
 - ``this.latitude``
 
-
-
 Objekte
 -------
 
@@ -629,16 +627,40 @@ Timeout / Interval
 
 Die Basis-Adapter-Implementierung erlaubt das verwalten von Timeouts und Intervallen. Das nutzen dieser Adapter-Funktionen stellt sicher, dass **alle Timeouts und Intervalle beim Stop der Instanz korrekt abgebrochen/beendet werden**.
 
-
 Die Signaturen der Funktionen sind dabei identisch zum JavaScript-Standard.
 
 .. code:: javascript
 
-    this.setTimeout = (callback, timeout, ...args);
+    const id = this.setTimeout(callback, timeout, ...args);
     this.clearTimeout(id);
 
-    this.setInterval(callback, timeout, ...args);
+    const id = this.setInterval(callback, timeout, ...args);
     this.clearInterval(id);
+
+Instanz stoppen
+---------------
+
+Soll eine Adapter-Instanz außerplanmäßig gestoppt werden (weil z.B. die Konfiguration fehlerhaft ist), passiert dies über ``terminate()`` oder ``process.exit()``. Hier muss unbedingt geprüft werden, ob die Terminate-Funktion existiert!
+
+Im :ref:`basics-compactmode` laufen alle Instanzen im gleichen Prozess - daher wäre es sehr schlecht, wenn der komplette Prozess beendet würde!
+
+Als Exit-Code kan aus den Adapter-Utils ein Grund gewählt werden.
+
+.. code:: javascript
+
+    if (typeof this.terminate === 'function') {
+        this.terminate(utils.EXIT_CODES.INVALID_ADAPTER_CONFIG);
+    } else {
+        process.exit(utils.EXIT_CODES.INVALID_ADAPTER_CONFIG);
+    }
+
+Wenn ein Adapter vom Typ ``schedule`` seine Arbeit erledigt hat, muss dieser den eigenen Prozess selbst beenden. Ansonsten würde beim nächsten Start (nach Zeitplan) gemeldet, dass die Instanz bereits läuft:
+
+.. code:: javascript
+
+    if (typeof this.stop === 'function') {
+        this.stop();
+    }
 
 Lizenzen
 --------
