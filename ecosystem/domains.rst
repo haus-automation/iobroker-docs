@@ -34,6 +34,7 @@ download.iobroker.net
 - `Adapter-Liste (alt) <http://download.iobroker.net/list.html>`_ (veraltet, sollte nicht mehr genutzt werden)
 - `Repository stable <http://download.iobroker.net/sources-dist.json>`_ (Redirect auf repo.iobroker.live)
 - `Repository beta <http://download.iobroker.net/sources-dist-latest.json>`_ (Redirect auf repo.iobroker.live)
+- `Statistik-Daten (POST) <http://download.iobroker.net/diag.php>` - siehe :ref:`ecosystem-statistics`
 
 sentry.iobroker.net
 -------------------

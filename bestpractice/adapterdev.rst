@@ -260,7 +260,9 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eige
 
 .. code:: javascript
 
-    await this.delObjectAsync(deviceName, { recursive: true });
+    if (this.supportsFeature && this.supportsFeature('ADAPTER_DEL_OBJECT_RECURSIVE')) {
+        await this.delObjectAsync(deviceName, { recursive: true });
+    }
 
 Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eigenen Namespace und fremde Objekte.
 

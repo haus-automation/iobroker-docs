@@ -105,7 +105,7 @@ Es wird in allen Fällen die :ref:`basics-uuid` der Installation mit übermittel
 Backend
 -------
 
-Die Daten werden vom ``js-controller`` an `http://download.iobroker.net/diag.php` gesendet (POST-Request mit JSON-Payload an ``data``).
+Die Daten werden vom ``js-controller`` an ``http://download.iobroker.net/diag.php`` gesendet (POST-Request mit JSON-Payload an ``data``).
 
 .. code:: console
 
