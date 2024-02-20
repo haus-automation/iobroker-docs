@@ -1048,6 +1048,23 @@ Eigenschaften (Allgemein)
 
     :type: array
 
+.. confval:: common.automaticUpgrade
+
+    :octicon:`git-branch;1em;sd-text-info` Unterstützt seit ``js-controller`` 5.1.0
+
+    Ermöglicht es, automatisch Upgrades von Adaptern zu erlauben. Definition nach semver. Mögliche Werte:
+
+    - ``none`` - Keine automatischen Updates
+    - ``patch`` - Nur Patches (letzte Stelle ändert sich)
+    - ``minor`` - Nur Minior-Versionen (mittlere Stelle ändert sich)
+    - ``major`` - Alle neuen Versionen automatisch installieren
+
+    .. code:: json
+
+        "automaticUpgrade": "patch"
+
+    :type: string
+
 Eigenschaften (Schedule)
 ------------------------
 
@@ -1288,5 +1305,4 @@ Links
 -----
 
 - `Schema-Datei <https://github.com/ioBroker/ioBroker.js-controller/blob/master/schemas/io-package.json>`_
-- `SchemaStore <https://github.com/SchemaStore/schemastore/blob/master/src/schemas/json/io-package.json>`_
 - `Offizielle Doku <https://github.com/ioBroker/ioBroker.docs/blob/master/docs/en/dev/objectsschema.md>`_
