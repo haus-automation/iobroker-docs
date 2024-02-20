@@ -52,7 +52,10 @@ Hier eine Beispiel-Datei aus dem Luftdaten-Adapter. Eine Beschreibung der einzel
                 "air",
                 "quality"
             ],
-            "license": "MIT",
+            "licenseInformation": {
+                "license": "MIT",
+                "type": "free"
+            },
             "platform": "Javascript/Node.js",
             "icon": "luftdaten.png",
             "extIcon": "https://raw.githubusercontent.com/klein0r/ioBroker.luftdaten/master/admin/luftdaten.png",
@@ -322,11 +325,20 @@ Eigenschaften (Allgemein)
 
     :type: string oder array
 
-.. confval:: common.license
+.. confval:: common.licenseInformation
 
-    Lizenz des Adapters (z.B. MIT). Gültige Werte sind im Schema zu finden (Link siehe unten)
+    Lizenz des Adapters (z.B. MIT). Gültige Werte sind im Schema zu finden (Link siehe unten).
 
-    :type: string
+    Kann auch genutzt werden, um kostenpflichtige Adapter zu kennzeichnen und Nutzer über Folgekosten zu informieren.
+
+    .. code:: json
+
+        "licenseInformation": {
+            "license": "MIT",
+            "type": "free"
+        }
+
+    :type: object
 
 .. confval:: common.type
 
@@ -1261,6 +1273,7 @@ Diese Eigenschaften sind für aktuelle Adapter mit dem Admin 5 nicht mehr releva
 - ``common.title`` - Langer Name des Adapters für Admin-Version 2, 3 und 4
 - ``common.npmLibs`` - Ersetzt durch Abhängigkeiten in der ``package.json``
 - ``common.main`` - Ersetzt durch ``main`` in der ``package.json``
+- ``common.license`` - Ersetzt durch ``common.licenseInformation``
 - ``common.localLink`` - Ersetzt durch ``common.localLinks``
 - ``common.engineTypes`` - Ersetzt durch ``engine`` in der ``package.json``
 - ``common.config.height`` - Standard-Höhe für den Konfigurations-Dialog für Admin 2
