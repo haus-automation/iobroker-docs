@@ -331,6 +331,11 @@ Eigenschaften (Allgemein)
 
     Kann auch genutzt werden, um kostenpflichtige Adapter zu kennzeichnen und Nutzer über Folgekosten zu informieren.
 
+    - ``free`` - Komplett kostenlos
+    - ``limited`` - Abhängig von der Nutzung ggf. kostenpflichtig (ab x Datenpunkte, ab x Geräte)
+    - ``commercial`` - Nur für kommerzielle Nutzer kostenpflichtig (Privatnutzung kostenlos - z.B. VIS-Adapter)
+    - ``paid`` - Generell kostenpflichtig / lizenzpflichtig
+
     .. code:: json
 
         "licenseInformation": {
