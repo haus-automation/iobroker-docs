@@ -10,12 +10,14 @@ Meta-Storage
 
 Die Adapter-Klasse stellt außerdem Funktionen bereit, welche es erlauben in einem "Meta-Storage" Daten abzulegen. Dieser befindet sich (unter Linux) im Verzeichnis ``/opt/iobroker/iobroker-data/files``.
 
-Diese Methode hat den Vorteil, dass ein Adapter (ähnlich wie bei :ref:`development-objects` und :ref:`development-states`) über eine Änderungen von Dateien benachricht werden kann.
-
-Außerdem können diese Dateien dann über den ioBroker Admin verwaltet werden (Menupunkt "Dateien" - *Experten-Modus aktivieren*).
-
 .. danger::
     Es darf niemals direkt in diese Verzeichnisse geschrieben werden! Es dürfen ausschließlich die Adapter-Funktionen für den Zugriff genutzt werden!
+
+Sollte ``redis`` verwendet werden, liegen die Dateien ebenfalls in der Redis-Datenbank und sind nicht im Dateisystem zu finden!
+
+Diese Methode hat den Vorteil, dass ein Adapter oder Script (ähnlich wie bei :ref:`development-objects` und :ref:`development-states`) über eine Änderungen von Dateien benachricht werden kann.
+
+Außerdem können diese Dateien dann über den ioBroker Admin verwaltet werden (Menupunkt "Dateien").
 
 Damit diese Funktionen genutzt werden können, muss ein neues Objekt vom Typ ``meta.user`` erstellt werden. In der Regel wird dafür der Instanz-Namespace genutzt:
 
@@ -42,7 +44,7 @@ Damit diese Funktionen genutzt werden können, muss ein neues Objekt vom Typ ``m
         native: {}
     });
 
-Alternativ kann dieses Objekt auch über die ``ìnstanceObjects`` in der :ref:`development-iopackage` erstellt werden (leere id):
+Alternativ kann dieses Objekt auch über die ``instanceObjects`` in der :ref:`development-iopackage` erstellt werden (leere id):
 
 .. code:: json
 
