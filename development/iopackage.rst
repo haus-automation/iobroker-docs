@@ -239,6 +239,8 @@ Eigenschaften (Allgemein)
 
     Diese Information wird in die :ref:`ecosystem-repositories` (Adapter-Listen) aufgenommen, um zu verhindern dass bestimmte Versionen von Adaptern gestartet werden können (falls gravierende Fehler oder Sicherheitslücken enthalten sind).
 
+    Dies sort dafür, dass die Version nicht mehr installiert werden kann und dass laufende Instanzen (mit diesen Versionen) bei den Nutzern gestoppt werden!
+
     Beispiel vom Alexa2-Adapter:
 
     .. code:: json

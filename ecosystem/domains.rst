@@ -79,6 +79,11 @@ Wird vom Admin-Adapter verwendet, um zu prüfen, ob der Admin ungesichert aus de
 
 - `Security-Checker (webserver) <https://ip.iobroker.in>`_
 
+app-message.iobroker.in
+-----------------------
+
+Wird vom IoT-Adapter verwendet um Push-Benachrichtigungen an die VISU-App zu versenden.
+
 iobroker.pro
 ------------
 
