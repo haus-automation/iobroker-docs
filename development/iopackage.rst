@@ -192,11 +192,12 @@ Eigenschaften (erforderlich)
 
 .. confval:: common.mode
 
+    :octicon:`git-branch;1em;sd-text-info` ``subscribe`` wurde in ``js-controller`` 6.x entfernt
+
     Modus des Adapters
 
     - ``none`` - Der Adapter wird nicht gestartet
     - ``daemon`` - Separat laufender Prozess
-    - ``subscribe`` - Wird gestartet, wenn der State ``system.adapter.<adapter-name>.<instanz-nummmer>.alive`` auf ``true`` gesetzt wird. Wird automatisch beendet, wenn der State auf ``false`` geändert wird. Der State wird automatisch auf ``false`` gesetzt, wenn der Prozess beendet wurde.
     - ``schedule`` - Wird nach dem in ``common.schedule`` festgelegten Zeitplan automatisch gestartet
     - ``once`` - Wird jedes Mal automatisch gestartet, wenn das ``system.adater.<adapter-name>.<instanz-nummmer>``-Objekt geändert wird
     - ``extension`` - ???
@@ -768,12 +769,6 @@ Eigenschaften (Allgemein)
 
     :type:  boolean
 
-.. confval:: common.wakeup
-
-    Legt fest, ob die Instanz gestartet werden soll, wenn ein Wert in ``system.adapter.<adapter-name>.<instanz-nummmer>.wakeup`` geschrieben wird.
-
-    :type: boolean
-
 .. confval:: common.webservers
 
     Liste mit Webservern, welche Inhalte aus dem www-Verzeichnis des Adapters liefern
@@ -1307,6 +1302,7 @@ Diese Eigenschaften sind für aktuelle Adapter mit dem Admin 5 nicht mehr releva
 - ``common.materialize`` (boolean) - Legt fest, ob der Adapter die Admin-Oberfläche für Admin-Version 3 und 4 bereitstellt (ab Admin 5 sollte ``common.adminUI.config`` verwendet werden) - siehe :ref:`development-adminconfig`
 - ``common.materializeTab`` (boolean) - Legt fest, ob der Adapter ein eigenes Tab für Admin-Version 3 und 4 bereitstellt (ab Admin 5 sollte ``common.adminUI.tab`` verwendet werden) - siehe :ref:`development-adminconfig`
 - ``common.noConfig`` (boolean) - Definiert, ob Instanzen konfiguriert werden können (ab Admin 5 sollte ``common.adminUI.config = none`` verwendet werden) - siehe :ref:`development-adminconfig`
+- ``common.wakeup`` (boolean) - Legt fest, ob die Instanz gestartet werden soll, wenn ein Wert in ``system.adapter.<adapter-name>.<instanz-nummmer>.wakeup`` geschrieben wird
 
 Links
 -----
