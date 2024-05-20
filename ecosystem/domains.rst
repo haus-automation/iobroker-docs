@@ -18,7 +18,7 @@ iobroker.net
 ------------
 
 - `Cloud-Verbindung (Cloud-Adapter) <https://iobroker.net/www/>`_
-- `Lizenz-Verwaltung und API für Lizenzen <https://iobroker.net/www/pricing>`_ - siehe :ref:`_ecosystem-licenses`
+- `Lizenz-Verwaltung und API für Lizenzen <https://iobroker.net/www/pricing>`_ - siehe :ref:`ecosystem-licenses`
 - `Installations-Script <https://iobroker.net/install.sh>`_ (Redirect auf iobroker.live) - siehe :ref:`getting-started-installation`
 - `Installations-Fixing-Script <https://iobroker.net/fix.sh>`_ (Redirect auf iobroker.live)
 

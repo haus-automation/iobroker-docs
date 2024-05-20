@@ -15,7 +15,7 @@ Das Sentry-Plugin wird vom ``js-controller`` als Abhängigkeit automatisch mit i
 Konfiguration (dev)
 -------------------
 
-Die Konfiguration findet in der :ref:`development-iopackage` (``common.pugins.sentry``) statt.
+Die Konfiguration findet in der :ref:`development-iopackage` (``common.plugins.sentry``) statt.
 
 Nachdem ein neues Projekt auf `sentry.iobroker.net <https://sentry.iobroker.net/>`_ (von einem Admin) angelegt wurde, muss der entsprechende DSN im Adapter konfiguriert werden. Beispiel:
 
@@ -30,6 +30,8 @@ Nachdem ein neues Projekt auf `sentry.iobroker.net <https://sentry.iobroker.net/
 Weitere Optionen werden ebenfalls unterstützt (siehe Dokumentation).
 
 Im Standard werden alle unbehandelten Fehler (unhandled exceptions) an Sentry weitergeleitet. Zusätzlich können auch eigene Events an Sentry gesendet werden. Beispiele gibt es ebenfalls in der Dokumentation.
+
+Das Sentry-Plugin wird dabei vom Paket ``@iobroker/js-controller-adapter`` als Abhängigkeit geladen und ist daher immer verfügbar.
 
 Konfiguration (User)
 --------------------
@@ -46,5 +48,5 @@ Links
 -----
 
 - `sentry.iobroker.net <https://sentry.iobroker.net/>`_
-- `Sentry-Plugin Repository <https://github.com/ioBroker/plugin-sentry>`_
-- `Plugin-Base Repository <https://github.com/ioBroker/plugin-base>`_
+- `Sentry-Plugin Repository <https://github.com/ioBroker/plugin-sentry>`_ - ``@iobroker/plugin-sentry``
+- `Plugin-Base Repository <https://github.com/ioBroker/plugin-base>`_ - ``@iobroker/plugin-base``
