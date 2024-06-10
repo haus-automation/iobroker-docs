@@ -43,7 +43,7 @@ Wie Objekte genau aufgebaut sind und welche Eigenschaften sie unterstützten, is
 
 **Neues Objekt erstellen (im eigenen Namespace)**
 
-Gerenell ist es empfehlenswert, Objekte über die ``instanceObjects`` in der :ref:`development-iopackage` anzulegen. Falls beim Adapter-Start bekannst ist, welche Objekte angelegt werden müssen, ist dieser Weg zu bevorzugen. Alternativ können Objekte per Code angelegt werden:
+Generell ist es empfehlenswert, Objekte über die ``instanceObjects`` in der :ref:`development-iopackage` anzulegen. Falls beim Instanz-Start bekannst ist, welche Objekte angelegt werden müssen, ist dieser Weg zu bevorzugen. Alternativ können Objekte per Code angelegt werden:
 
 .. code:: javascript
 
@@ -95,12 +95,9 @@ Rückgabe:
 
 .. code::
 
-    createDevice
-    createChannel
-    createState
-        setObjectNotExists
-            setObjectWithDefaultValue
-                setObject
+    setObjectNotExists
+        setObjectWithDefaultValue
+            setObject
 
 Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eigenen Namespace und fremde Objekte.
 
@@ -125,6 +122,10 @@ Alle Funktionen gibt es asynchron und mit callback. Jeweils für Objekte im eige
 
     await this.setForeignObjectNotExistsAsync(id, obj, options);
     this.setForeignObjectNotExists(id, obj, options, callback);
+
+:octicon:`git-branch;1em;sd-text-info` ``create[Device|Channel|State]`` ist seit ``js-controller`` 6.x deprecated und sollte nicht mehr verwendet werden
+
+.. code:: javascript
 
     // Wrapper für setObjectNotExists mit type = 'device'
     await this.createDeviceAsync(deviceName, common, _native, options);
