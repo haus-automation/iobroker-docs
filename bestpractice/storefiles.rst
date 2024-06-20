@@ -11,7 +11,7 @@ Meta-Storage
 Die Adapter-Klasse stellt außerdem Funktionen bereit, welche es erlauben in einem "Meta-Storage" Daten abzulegen. Dieser befindet sich (unter Linux) im Verzeichnis ``/opt/iobroker/iobroker-data/files``.
 
 .. danger::
-    Es darf niemals direkt in diese Verzeichnisse geschrieben werden! Es dürfen ausschließlich die Adapter-Funktionen für den Zugriff genutzt werden!
+    Es darf niemals direkt in diese Verzeichnisse geschrieben werden! Es dürfen ausschließlich die Adapter-Funktionen für den Zugriff genutzt werden! Ansonsten passen die Meta-Daten nicht mehr zu den Daten im Dateisystem und die ioBroker-Events funktionieren dann auch nicht!
 
 Sollte ``redis`` verwendet werden, liegen die Dateien ebenfalls in der Redis-Datenbank und sind nicht im Dateisystem zu finden!
 
@@ -19,7 +19,9 @@ Diese Methode hat den Vorteil, dass ein Adapter oder Script (ähnlich wie bei :r
 
 Außerdem können diese Dateien dann über den ioBroker Admin verwaltet werden (Menupunkt "Dateien").
 
-Damit diese Funktionen genutzt werden können, muss ein neues Objekt vom Typ ``meta.user`` erstellt werden. In der Regel wird dafür der Instanz-Namespace genutzt:
+Damit diese Funktionen genutzt werden können, muss ein neues Objekt vom Typ ``meta.user`` erstellt (bzw. genutzt) werden. Ein solches Objekt wird im Standard angelegt unter ``0_userdata.0``.
+
+In der Regel wird dafür der eigene Instanz-Namespace verwendet, damit die Verwendung im Admin eindeutiger ist:
 
 .. code:: javascript
 
@@ -172,12 +174,42 @@ Lesen eines Verzeichnisses:
         }
     }
 
-Binary-State
-------------
+Der Vorteil dieser Lösung ist, dass man auch für Datei-Änderungen Events bekommt und entsprechend handeln kann. Das funktioniert dann genauso wie bei States oder Objekten.
+
+**Beispiel:**
+
+.. code:: javascript
+
+    class MyAdapter extends utils.Adapter {
+        constructor(options) {
+            super({
+                ...options,
+                name: 'my-adapter',
+            });
+
+            this.on('ready', this.onReady.bind(this));
+            this.on('fileChange', this.onFileChange.bind(this));
+        }
+
+        async onReady() {
+            this.subscribeForeignFiles(this.namespace, '*');
+        }
+
+        onFileChange(id, fileName, size) {
+            this.log.debug(`[onFileChange]: id: ${id}, fileName: ${fileName}, size: ${size}`);
+        }
+
+        // ...
+    }
+
+Binary-State (deprecated)
+-------------------------
 
 :octicon:`git-branch;1em;sd-text-info` Geänderte Signaturen seit ``js-controller`` 4.0.15 (setForeignBinaryState)
 
 :octicon:`git-branch;1em;sd-text-info` Deprecated seit ``js-controller`` 4.0.23 - sollte nicht mehr verwendet werden
+
+:octicon:`git-branch;1em;sd-text-info` Entfernt seit ``js-controller`` 6.0.0 - kann nicht mehr genutzt werden!
 
 Ein Binary-State ist am Ende ein ganz normaler Zustand (State). Der einzige Unterschied ist, dass dieser Binärdaten speichern kann.
 
@@ -235,7 +267,7 @@ Möchte man Daten direkt ablegen, bieten die Adapter-Core-Utils ein paar hilfrei
     const instanceDir = utils.getAbsoluteInstanceDataDir(this);
     // liefert (unter Linux) z.B. /opt/iobroker/iobroker-data/<adapterName>.<instanceNr>
 
-In diese Verzeichnisse kann man dann mit den normalen Funktion Dateien ablegen (z.B. ``fs``).
+In diese Verzeichnisse kann man dann mit den normalen Funktion Dateien ablegen (z.B. ``node:fs``).
 
 Soll dieses Verzeichnis automatisch in das :ref:`basics-backup` mit aufgenommen werden, kann in der :ref:`development-iopackage` ein ``common.dataFolder`` konfiguriert werden. Beispielsweise
 
@@ -247,8 +279,8 @@ Soll dieses Verzeichnis automatisch in das :ref:`basics-backup` mit aufgenommen 
 
 .. code:: javascript
 
-    const fs = require('fs');
-    const path = require('path');
+    const fs = require('node:fs');
+    const path = require('node:path');
     const utils = require('@iobroker/adapter-core');
 
     class Test extends utils.Adapter {
