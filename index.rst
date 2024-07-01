@@ -91,6 +91,7 @@ Der ioBroker weicht die (künstlichen) Grenzen der Hardware-Hersteller auf und e
     bestpractice/storefiles
     bestpractice/logging
     bestpractice/testing
+    bestpractice/sentry
 
 License
 -------
