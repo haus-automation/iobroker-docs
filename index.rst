@@ -4,7 +4,7 @@ Willkommen
 .. tip::
     Diese Dokumentation ist Open Source und auf `GitHub zu finden <https://github.com/haus-automation/iobroker-docs>`_. Falls Du einen Fehler findest oder Inhalte ergänzen möchtest, bist Du herzlich dazu eingeladen!
 
-Willkommen auf den Seiten der **inoffiziellen** ioBroker-Dokumentation. Diese Dokumentation wurde von `Matthias Kleine, haus-automatisierung.com <https://haus-automatisierung.com/>`_ ins Leben gerufen und soll als alternative Informationsquelle zur offiziellen Variante stehen.
+Willkommen auf den Seiten der **inoffiziellen** ioBroker-Dokumentation. Diese Dokumentation wurde von `Matthias Kleine (haus:automation) <https://haus-automatisierung.com/>`_ ins Leben gerufen und soll als alternative Informationsquelle zur offiziellen Variante stehen.
 
 **Diese Dokumentation ist ausschließlich in Deutscher Sprache verfügbar.**
 
@@ -98,7 +98,7 @@ License
 
 MIT License
 
-Copyright (c) 2023 Matthias Kleine <info@haus-automatisierung.com>
+Copyright (c) 2025 Matthias Kleine <info@haus-automatisierung.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -22,7 +22,7 @@ from sphinx.locale import _
 # -- Project information -----------------------------------------------------
 
 project = u'ioBroker Dokumentation (UNOFFICIAL)'
-project_copyright = u'2023, Matthias Kleine (haus-automatisierung.com)'
+project_copyright = u'2025, Matthias Kleine (haus:automation)'
 author = u'Matthias Kleine'
 
 # The short X.Y version

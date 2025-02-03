@@ -68,4 +68,4 @@ Neben einer nativen Installation, ist auch die Installation in einem Linux-Conta
 Weitere Infos
 -------------
 
-Möchtest Du alle Möglichkeiten und Schritte genauer erklärt bekommen, empfehle ich eine Teilnahme im `ioBroker-Master-Kurs <https://haus-automatisierung.com/iobroker-kurs/?refid=iobroker-docs>`_. Dort gehe ich noch einmal auf die verschiedenen Varianten ein und zeige die Installation auf einem Raspberry Pi oder nativ auf einem Mini-PC.
+Möchtest Du alle Möglichkeiten und Schritte genauer erklärt bekommen, empfehle ich eine Teilnahme im `ioBroker-Master-Kurs <https://haus-automatisierung.com/iobroker-kurs/?refid=iobroker-docs>`_. Dort gehe ich noch einmal auf die verschiedenen Varianten ein und zeige die Installation auf einem Raspberry Pi oder nativ unter Debian auf einem Mini-PC.
