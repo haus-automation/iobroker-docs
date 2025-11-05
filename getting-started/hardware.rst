@@ -6,12 +6,12 @@ Hardware
 Generell lässt sich der ioBroker auf jedem Betriebssystem installieren, auf welchem auch `nodejs <https://nodejs.org/en/>`_ läuft.
 
 .. tip::
-    Achte auf den Energiebedarf Deiner eingesetzten Hardware. ioBroker macht nur Sinn, wenn die Anwendung rund um die Uhr (24/7) verfügbar ist und läuft. Selbst wenige Watt machen über das gesamte Jahr betrachtet einen Unterschied.
+    Achte auf den Energiebedarf Deiner eingesetzten Hardware. ioBroker ist nur sinnvoll, wenn die Anwendung rund um die Uhr (24/7) verfügbar ist und läuft. Selbst wenige Watt machen über das gesamte Jahr betrachtet einen Unterschied!
 
 Raspberry Pi
 ------------
 
-Als preiswerter Einstieg in die ioBroker-Welt wird nach wie vor der Raspberry Pi empfohlen. Dabei handelt es sich um einen kleinen Einplatinen-Computer, welcher sehr klein ist, wenig Leistung im Dauerbetrieb benötigt und ausreichend Ressourcen für den Betrieb von ioBroker bietet.
+Als preiswerter Einstieg in die ioBroker-Welt wird nach wie vor der Raspberry Pi empfohlen. Dabei handelt es sich um einen Einplatinen-Computer, welcher sehr klein ist, wenig Leistung im Dauerbetrieb benötigt und ausreichend Ressourcen für den Betrieb von ioBroker bietet.
 
 Mit der Version 4 des Raspberry Pi wurden erstmals Modelle mit mehr als 1 GB Arbeitsspeicher vorgestellt. Da der ioBroker beim Betrieb mehrerer Adapter relativ viel Arbeitsspeicher benötigt, ist ein System mit **mindestens 2 GB RAM** empfohlen. Die Variante mit 4 GB oder 8 GB bietet noch einmal deutlich mehr Reserven.
 
@@ -44,7 +44,7 @@ Micro SD-Karte
 .. tip::
     Als Image sollte auf jeden Fall Raspberry Pi OS Lite (64-Bit) und NICHT die Desktop-Version verwendet werden! Warum? Die Desktop-Variante benötigt viel mehr Ressourcen und bringt extrem viel Overhead mit, welcher nicht gebraucht wird. Die Desktop-Version ist nur erforderlich, wenn Du eine Maus, Tastatur und einen Monitor direkt an dem Raspberry Pi anschließen möchtest um diesen (wie der Name sagt) als Desktop-Computer zu verwenden.
 
-Seit Ende 2023 gibt es die neue Generation: Den Raspberry Pi 5. Dieser ist aber mittlerweile leider so kostspielig geworden, dass ein einfacher Mini-PC (z.B. ein refurbished-Modell) teilweise günstiger ist und sogar mehr Leistung/Ressourcen bietet. **Daher kann man den Raspberry Pi 5 zwar verwenden, aber der Vorgänger reicht für die meisten Anwendungen nach wie vor aus!** Und wenn man mehr möchte, nutzt man eh einen Mini-PC (z.B. mit Proxmox).
+Seit Ende 2023 gibt es eine neue Generation: den Raspberry Pi 5. Dieser ist leider so kostspielig geworden, dass ein einfacher Mini-PC (z.B. ein refurbished-Modell) teilweise günstiger ist und dabei deutlich mehr Leistung/Ressourcen bietet. **Daher kann man den Raspberry Pi 5 zwar verwenden, aber der Vorgänger reicht für die meisten Anwendungen nach wie vor aus!** Und wenn man mehr möchte, nutzt man eh einen Mini-PC (gerne auch mit Proxmox unten drunter).
 
 Wie genau ein Raspberry Pi für die Installation von ioBroker vorbereitet wird, erfährst Du in diesem Video:
 
