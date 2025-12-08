@@ -2,9 +2,9 @@
 
 # ioBroker documentation (UNOFFICIAL)
 
-This is the repository for the german ioBroker documentation available [here](https://iobroker.readthedocs.io/de/latest/).
+This is the repository for the German ioBroker documentation.
 
-This documentation is written using [reStructuredText](http://docutils.sourceforge.net/rst.html), powered by [Sphinx](http://www.sphinx-doc.org/en/stable/), and hosted on [ReadTheDocs](http://readthedocs.org).
+This documentation is written using [reStructuredText](http://docutils.sourceforge.net/rst.html), powered by [Sphinx](http://www.sphinx-doc.org/en/stable/).
 
 ## Sponsored by
 
